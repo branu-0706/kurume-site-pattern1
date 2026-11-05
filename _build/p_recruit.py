@@ -207,7 +207,6 @@ BODY = f'''
     <div class="section-heading reveal"><p class="section-kicker">OPEN POSITIONS <span>募集要項</span></p><h2 class="section-title" id="open-title">あなたが関わりたい仕事は、<br>どちらですか。</h2><p class="section-heading-desc" style="max-width:700px">取引先と現場をつなぐ営業職と、施工を担う現場職。それぞれの仕事内容と勤務条件です。</p></div>
     <div class="card-grid is-2">
       <article class="link-card reveal" style="background:#f4f6f8" id="opening-sales">
-        <div class="lc-media"><img src="{P}office-pc.jpg" alt="事務所でパソコンに向かう営業職" loading="lazy"></div>
         <div class="lc-body"><small>SALES</small><h3>営業職（法人営業）</h3><p>道路舗装や水道工事が予定どおり進むように、取引先・現場社員・協力会社をつなぐ仕事です。新規開拓の飛び込み営業や個人ノルマはありません。取引先から工事の相談を受け、現場を確認し、見積を作成し、必要な人・材料・日程を整えます。</p>
           <table class="spec-table" style="font-size:12.5px;margin-bottom:18px"><tbody>
             <tr><th scope="row">雇用形態</th><td>正社員</td></tr>
@@ -222,7 +221,6 @@ BODY = f'''
           {ext(SALES_JOB, '営業職に応募する <span aria-hidden="true">↗</span>', 'btn btn-dark')}</div>
       </article>
       <article class="link-card reveal" style="background:#f4f6f8" id="opening-field" data-delay="1">
-        <div class="lc-media"><img src="{P}field-sidewalk2.jpg" alt="歩道の工事現場で作業する現場職" loading="lazy"></div>
         <div class="lc-body"><small>FIELD WORK</small><h3>現場職（建設作業員・土木作業員）</h3><p>東京都内、主に世田谷区周辺の道路舗装工事・水道工事の現場作業です。道具・資材の準備、カラーコーンや規制材の設置、古い舗装の撤去、路盤の整地、アスファルト舗装や転圧の補助、安全確認や誘導など。資格や習熟度に応じて重機・車両の運転も担当します。</p>
           <table class="spec-table" style="font-size:12.5px;margin-bottom:18px"><tbody>
             <tr><th scope="row">雇用形態</th><td>正社員</td></tr>

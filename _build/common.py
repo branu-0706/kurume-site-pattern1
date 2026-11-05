@@ -24,9 +24,9 @@ def ext(url, text, cls=""):
     return f'<a{c} href="{url}" target="_blank" rel="noopener noreferrer">{text}<span class="sr-only">（外部サイトが開きます）</span></a>'
 
 
-def head(title, desc, root):
+def head(title, desc, root, current="top"):
     return f'''<!doctype html>
-<html lang="ja" class="mode-review">
+<html lang="ja" class="mode-review" data-structure="p1" data-design="d1" data-page="{current}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -39,6 +39,8 @@ def head(title, desc, root):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="{root}assets/site.css">
 <script defer src="{root}assets/site.js"></script>
+<link rel="stylesheet" href="{root}assets/compare/switcher.css">
+<script defer src="{root}assets/compare/switcher.js"></script>
 </head>
 <body>
 <!-- デザインデモ（パターン① × デザイン①）。CMS移植前の静的プロトタイプであり、本番公開物ではありません。 -->
@@ -89,7 +91,7 @@ def footer(root):
 
 def page(current, title, desc, depth, body, crumb=None):
     root = "../" * depth
-    out = head(title, desc, root) + header(current, root)
+    out = head(title, desc, root, current) + header(current, root)
     out += '<main id="main">\n'
     if crumb:
         # パンくずはHEROの直後に置く（HEROを最初の視覚要素にするため）
