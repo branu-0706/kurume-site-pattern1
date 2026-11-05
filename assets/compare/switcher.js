@@ -6,6 +6,8 @@
    CMS移植時は、このJSと switcher.css の読み込み2行を消すだけで外せる。 */
 (()=>{
   'use strict';
+  /* 比較ページ（compare/index.html）の中に表示されている時は、外側の操作を使うので出さない */
+  try{if(window.self!==window.top&&/\/compare\/(index\.html)?$/.test(window.top.location.pathname))return;}catch(e){}
   const script=document.currentScript;
   const root=new URL('../../',script.src); // assets/compare/switcher.js → サイトのルート
   const html=document.documentElement;
@@ -54,6 +56,7 @@
       '</fieldset>'+
       '<p class="cmp-note" aria-live="polite"></p>'+
       '<a class="cmp-go" href="#">表示する</a>'+
+      '<a class="cmp-hub" href="'+new URL('compare/index.html#'+cur.s+'-'+cur.d+(cur.d==='d1'&&cur.page!=='top'?'-'+cur.page:''),root).href+'">1画面で切り替えて比較・16画面の一覧</a>'+
     '</div>';
   document.body.appendChild(box);
 

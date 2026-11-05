@@ -31,3 +31,6 @@ write("compare/pattern1/design-a/index.html", cmp_p1_d2.build(), "p1-d2")
 write("compare/pattern1/design-b/index.html", cmp_p1_d3.build(), "p1-d3")
 write("compare/pattern2/design-a/index.html", cmp_p2_d2.build(), "p2-d2")
 write("compare/pattern2/design-b/index.html", cmp_p2_d3.build(), "p2-d3")
+
+# 1画面で切り替える比較ページ（16画面への入口）
+write("compare/index.html", open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "hub.html")).read(), "hub")

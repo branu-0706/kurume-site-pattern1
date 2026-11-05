@@ -20,6 +20,7 @@
 .cmp-note:not(:empty){padding:8px 10px;border:1px solid #efd3a2}
 .cmp-go{display:flex;justify-content:center;align-items:center;min-height:46px;background:#1A2259;color:#fff;font-weight:800;font-size:13px;text-decoration:none;letter-spacing:.04em}
 .cmp-go:hover{background:#04447C}
+.cmp-hub{display:block;margin-top:10px;text-align:center;font-size:12px;font-weight:700;color:#04447C;text-decoration:underline;text-underline-offset:3px}
 .cmp-go[aria-disabled="true"]{background:#e9edf2;color:#4d5c70}
 .cmp-switcher :focus-visible{outline:3px solid #2f7fd0;outline-offset:2px}
 @media(max-width:767px){.cmp-toggle-now{display:none}.cmp-toggle{padding:8px 10px}}

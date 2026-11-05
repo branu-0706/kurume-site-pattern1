@@ -11,6 +11,7 @@ const SITES={
   'パターン①×デザイン③':['compare/pattern1/design-b/index.html'],
   'パターン②×デザイン②':['compare/pattern2/design-a/index.html'],
   'パターン②×デザイン③':['compare/pattern2/design-b/index.html'],
+  '比較ページ':['compare/index.html'],
 };
 const PAGES=Object.values(SITES).flat();
 const SITE_OF=Object.fromEntries(Object.entries(SITES).flatMap(([k,ps])=>ps.map(p=>[p,k])));
