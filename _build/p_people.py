@@ -82,8 +82,22 @@ BODY = f'''
   </div>
 </section>
 
+<!-- 社員の声｜方式B：CMS 42 Card Three ＋ CSS（スマホは横スクロール、JSなし） -->
+<section class="section bg-soft" id="people-voices" aria-labelledby="voices-title" data-cms-id="42" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">VOICES <span>社員の声</span></p><h2 class="section-title" id="voices-title">入る前の不安に、<br>働く人が答えます。</h2></div>
+    <div class="voices reveal gate" data-gate="インタビュー・対談からの引用（原文どおり）。掲載承認を確認">
+      <figure class="voice is-field" style="margin:0"><p>最初は、皆さん見た目的には怖いです。でも、話してみると優しい方が多いですよね、やっぱり。</p><footer><div><b>奥居さん</b>現場職・建築から転職</div></footer></figure>
+      <figure class="voice" style="margin:0"><p>知識は後からで大丈夫です。</p><footer><img src="{P}member-t2.jpg" alt=""><div><b>高畑さん</b>営業職・新卒入社</div></footer></figure>
+      <figure class="voice" style="margin:0"><p>結局は『人と人』の関わりが、新しい依頼や円滑な現場運営に繋がります。</p><footer><img src="{P}member-n.jpg" alt=""><div><b>根岸さん</b>営業職から現場代理人</div></footer></figure>
+      <figure class="voice" style="margin:0"><p>社長は意思決定が驚くほど速く、やる気があれば未経験でもチャンスをくれる人です。</p><footer><img src="{P}member-i.jpg" alt=""><div><b>今井さん</b>営業職・40歳で異業種から</div></footer></figure>
+      <figure class="voice is-field" style="margin:0"><p>まずは、毎日来ることじゃないですかね。最初から何でもできる必要はありません。</p><footer><img src="{P}field-veteran.jpg" alt=""><div><b>松野さん</b>現場の班長・約30年</div></footer></figure>
+    </div>
+  </div>
+</section>
+
 <!-- 03 PRESIDENT｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ 761（歩み）＋ CSS -->
-<section class="section bg-soft" id="people-ceo" aria-labelledby="ceo-title" data-cms-id="54,80,761" data-implementation="B">
+<section class="section" id="people-ceo" aria-labelledby="ceo-title" data-cms-id="54,80,761" data-implementation="B">
   <div class="wrap">
     <div class="half has-optional-media reveal" style="grid-template-columns:.82fr 1fr">
       <div class="half-media review-only"><div class="photo-slot is-portrait"><div><strong>P-02 川島代表（縦4:5）</strong>ご本人の写真を確認のうえ配置<br>※いただいた写真のうち、レンガ壁を背景にした男性の写真がどなたかご確認ください</div></div></div>
@@ -101,7 +115,7 @@ BODY = f'''
 </section>
 
 <!-- 04 SALES TEAM｜方式B：CMS 42 Card Three ＋ 54 Half（詳細）＋ CSS -->
-<section class="section" id="people-sales" aria-labelledby="sales-title" data-cms-id="42,54" data-implementation="B">
+<section class="section bg-soft" id="people-sales" aria-labelledby="sales-title" data-cms-id="42,54" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">SALES TEAM <span>営業職</span></p><h2 class="section-title" id="sales-title">売るだけではない。<br>人と現場をつなぐ仕事。</h2><p class="section-heading-desc" style="max-width:700px">取引先の相談を受けること、現場の状況を知ること、必要な人や材料、工程をつなぐこと。久留米興業の営業職には、業界未経験から仕事を覚えてきた社員が多くいます。</p></div>
     <div class="people-grid">
@@ -114,7 +128,7 @@ BODY = f'''
 </section>
 
 <!-- 05 FIELD TEAM｜方式B：CMS 54 Half ＋ 584 Photo Gallery ＋ CSS -->
-<section class="section bg-soft" id="people-field" aria-labelledby="field-title" data-cms-id="54,584" data-implementation="B">
+<section class="section" id="people-field" aria-labelledby="field-title" data-cms-id="54,584" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">FIELD TEAM <span>現場職</span></p><h2 class="section-title" id="field-title">楽な仕事ではない。<br>けれど、仲間と一日をやり切る仕事。</h2><p class="section-heading-desc" style="max-width:720px">夏場の暑さ、夜間の作業、限られた時間の中で求められる作業量。現場の仕事は決して楽ではありません。それでも、道路は人々の生活に欠かせないもの。約30年現場を見てきた班長と、建築から土木へ移った現場職の2人に話を聞きました。</p></div>
     <div class="members">{"".join(FIELD)}</div>
@@ -128,7 +142,7 @@ BODY = f'''
 </section>
 
 <!-- 06 WORKING TOGETHER｜方式B：CMS 787 Text Two ／ 761 Flow Cards ＋ CSS -->
-<section class="section" id="people-together" aria-labelledby="together-title" data-cms-id="787,761" data-implementation="B">
+<section class="section bg-soft" id="people-together" aria-labelledby="together-title" data-cms-id="787,761" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">WORKING TOGETHER <span>営業と現場</span></p><h2 class="section-title" id="together-title">仕事の役割が違っても、<br>目指す先は同じ。</h2><p class="section-heading-desc" style="max-width:720px">工事の相談を受け、必要な情報を整理する営業職。現場の状況を把握し、実際の施工を進める現場職。週に一度の工程会議で仕事を調整し、夏の暑気払いなどで顔を合わせる機会もあります。</p></div>
     <ol class="flow is-4 reveal gate" data-gate="分担は概略：案件ごとの正式な流れと権限を確認">
@@ -142,7 +156,7 @@ BODY = f'''
 </section>
 
 <!-- 07 OUR TEAM｜方式B：CMS 42 Card Three（職場の雰囲気）。人数グラフ（方式C）は基準日が揃うまで非表示 -->
-<section class="section bg-soft" id="people-data" aria-labelledby="data-title" data-cms-id="42,custom" data-implementation="B／グラフのみC">
+<section class="section" id="people-data" aria-labelledby="data-title" data-cms-id="42,custom" data-implementation="B／グラフのみC">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">OUR TEAM <span>職場のこと</span></p><h2 class="section-title" id="data-title">数字と言葉で見る、<br>久留米興業の人たち。</h2></div>
     <div class="card-grid is-3 reveal gate" data-gate="従業員数・雰囲気は求人票（2026-11-05）の記載より">
