@@ -1,0 +1,170 @@
+<title>久留米興業 サイト確認</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* レイアウト：1カラムの確認資料。上に6ページへの入口、下に納品物の表。 */
+:root{--bg:#f6f7fa;--panel:#fff;--fg:#18253b;--muted:#5d6a7c;--line:#dde3ea;--navy:#1A2259;--blue:#04447C;--accent-fg:#fff;--warn-bg:#fff4e0;--warn-fg:#7a4a00;--ok-bg:#e8f3ec;--ok-fg:#1d5a34;--font:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;--mono:"SFMono-Regular",Menlo,Consolas,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#10142a;--panel:#171c38;--fg:#e6eaf3;--muted:#a3adc2;--line:#2b3356;--navy:#c9d4ff;--blue:#8fbff0;--accent-fg:#10142a;--warn-bg:#3a2a10;--warn-fg:#ffd59a;--ok-bg:#163223;--ok-fg:#9fe0b6;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10142a;--panel:#171c38;--fg:#e6eaf3;--muted:#a3adc2;--line:#2b3356;--navy:#c9d4ff;--blue:#8fbff0;--accent-fg:#10142a;--warn-bg:#3a2a10;--warn-fg:#ffd59a;--ok-bg:#163223;--ok-fg:#9fe0b6;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:14px;line-height:1.8}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px}
+header{display:flex;gap:18px;align-items:center;margin-bottom:28px}
+header img{width:64px;height:auto;background:#fff;padding:3px}
+h1{font-size:clamp(22px,3vw,30px);margin:0;color:var(--navy);text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 0;font-size:13px}
+h2{font-size:19px;color:var(--navy);margin:48px 0 14px;padding-top:16px;border-top:2px solid var(--navy)}
+h3{font-size:15px;color:var(--navy);margin:26px 0 8px}
+p{margin:0 0 12px;max-width:72ch}
+.pages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0}
+.pages a{display:block;background:var(--panel);border:1px solid var(--line);padding:16px 18px;text-decoration:none;color:var(--fg);height:100%;box-sizing:border-box}
+.pages a:hover,.pages a:focus-visible{border-color:var(--blue)}
+.pages b{display:block;font-size:16px;color:var(--navy)}
+.pages span{font-size:12px;color:var(--muted)}
+.pages .no{font:700 12px var(--mono);color:var(--blue)}
+.note{background:var(--panel);border-left:4px solid var(--blue);padding:14px 18px;margin:14px 0}
+.tw{overflow-x:auto;background:var(--panel);border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:720px}
+th,td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+thead th{background:var(--bg);color:var(--navy);white-space:nowrap}
+td code,p code{font-family:var(--mono);font-size:11.5px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;white-space:nowrap}
+.warn{background:var(--warn-bg);color:var(--warn-fg)}.ok{background:var(--ok-bg);color:var(--ok-fg)}
+ul{margin:0 0 12px;padding-left:1.3em}li{margin-bottom:4px}
+a{color:var(--blue)}
+@media(max-width:760px){.pages{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.pages{grid-template-columns:1fr}header{align-items:flex-start}}
+</style>
+<div class="wrap">
+<header><img src="site/assets/kurume-logo.png" alt="久留米興業 ロゴ"><div><h1>久留米興業 サイト確認</h1><p class="sub">構成パターン①「会社理解重視」× デザイン①「コーポレート」｜①〜⑥ 静的プロトタイプ（CMS移植前）</p></div></header>
+
+<ul class="pages">
+<li><a href="site/index.html"><span class="no">①</span><b>TOP</b><span>各ページへの入口</span></a></li>
+<li><a href="site/business/index.html"><span class="no">②</span><b>事業内容</b><span>4事業・現場の流れ・地域</span></a></li>
+<li><a href="site/recruit/index.html"><span class="no">③</span><b>採用情報</b><span>代表メッセージ・キャリア・募集要項・Q&amp;A</span></a></li>
+<li><a href="site/work-environment/index.html"><span class="no">④</span><b>労働環境</b><span>職種別の働き方・1日・福利厚生・取り組み</span></a></li>
+<li><a href="site/people/index.html"><span class="no">⑤</span><b>働くメンバー</b><span>代表・営業・現場・連携</span></a></li>
+<li><a href="site/company/index.html"><span class="no">⑥</span><b>会社情報</b><span>代表メッセージ・会社概要・KRM・アクセス</span></a></li>
+</ul>
+
+<div class="note"><p><b>画面左下の切り替えについて</b></p>
+<p>「確認用」では、承認前の原稿にオレンジの点線と理由が付き、未確定の項目（年収例、現場職の条件、社員データ、マンガ、寮など）も【要確認】付きで表示されます。「公開イメージ」に切り替えると点線が消え、データが未確定の項目は非表示になります。承認が取れた場合の見え方の確認にお使いください。</p>
+<p style="margin:0">この切り替えはデモ専用の仕組みです。CMSには移植しません。</p></div>
+
+<h2 id="links">リンク先（後ほどご指定いただくもの）</h2>
+<p>サイト外へのリンクは1か所（<code>build/common.py</code>）にまとめてあり、ご指定のURLに差し替えて再生成できます。今は、実在を確認した次のURLを仮で入れています。</p>
+<div class="tw"><table><thead><tr><th>用途</th><th>使っている場所</th><th>仮のリンク先</th></tr></thead><tbody>
+<tr><td>お問い合わせ</td><td>ヘッダー、フッター、①CONTACT、②CONTACT</td><td><code>kurume-k.jp/contact</code>（公式フォーム）</td></tr>
+<tr><td>施工実績</td><td>①WORKS、②HERO・水道・WORKS・CONTACT</td><td><code>kurume-k.jp/achievement</code></td></tr>
+<tr><td>お知らせ</td><td>①NEWS（一覧と記事2件）</td><td><code>kurume-k.jp/news</code> ほか記事URL</td></tr>
+<tr><td>営業職の応募</td><td>③募集要項</td><td>CAREECONの営業求人</td></tr>
+<tr><td>現場職の応募</td><td>③募集要項</td><td><code>kurume-k.jp/recruit</code></td></tr>
+<tr><td>災害救援の記事</td><td>②COMMUNITY</td><td>公式記事（2024年）</td></tr>
+<tr><td>KRM</td><td>⑥関連会社</td><td><code>krm-setagaya.jp</code></td></tr>
+<tr><td>地図</td><td>⑥アクセス</td><td>Googleマップの住所検索</td></tr>
+</tbody></table></div>
+
+<h3>サイト内の回遊（6ページ内で完結）</h3>
+<div class="tw"><table><thead><tr><th>ページ</th><th>主なリンク先</th></tr></thead><tbody>
+<tr><td>① TOP</td><td>HERO→⑥・③／ABOUT→⑥／BUSINESS各カード→②の各事業／VALUES→⑥大切にしていること／WORK STYLE→④／PEOPLE→⑤（代表・営業・現場）／RECRUIT→③キャリア・募集職種／CONTACT→②・③</td></tr>
+<tr><td>② 事業内容</td><td>4事業へのページ内移動／PROCESS→⑤／TEAMWORK→④・⑤／CROSS-LINK→⑤・④・③</td></tr>
+<tr><td>③ 採用情報</td><td>代表→⑤代表／評価→④福利厚生／労働環境→④／CTA→⑤・④</td></tr>
+<tr><td>④ 労働環境</td><td>職種カード→③の各職種／福利厚生→③募集職種／CTA→⑤・③・②</td></tr>
+<tr><td>⑤ 働くメンバー</td><td>代表→③代表メッセージ・⑥代表メッセージ／CTA→②・④・③</td></tr>
+<tr><td>⑥ 会社情報</td><td>代表→⑤代表／CTA→②・⑤・③</td></tr>
+</tbody></table></div>
+
+<h2 id="cms">CMS移植マップ</h2>
+<p>方式A＝CMS標準Sectionのまま、B＝標準Section＋CSS（必要な動きは共通JS）、C＝独自HTML＋CSSを一体、JSは別管理。IDは旧案件の観測値なので、本番で入力欄・見出しタグ・CSSの効き方を確認します。HTML内の各セクションにも <code>data-cms-id</code>（ID）と <code>data-implementation</code>（方式）を記録しています。どちらもCMSに設定する値ではなく、開発用のメモです。</p>
+<div class="tw"><table><thead><tr><th>ページ</th><th>セクション（アンカー）</th><th>CMS ID</th><th>方式</th><th>追加CSS / JS・独自コードの理由</th></tr></thead><tbody>
+<tr><td>①</td><td>01 HERO</td><td>独自（734/721参考）</td><td>C</td><td>文字配置・CTA2本・オーバーレイの自由度のため（決定済み）。フェードインはCSS、JSは共通</td></tr>
+<tr><td>①</td><td>02 ABOUT／03 BUSINESS／04 VALUES</td><td>54／16／80+54</td><td>B</td><td>背景色・カードのホバー・ネイビー帯をCSSで調整</td></tr>
+<tr><td>①</td><td>05 WORKS</td><td>718</td><td>A/B</td><td>一覧の抽出ができなければ静的カード</td></tr>
+<tr><td>①</td><td>06 WORK STYLE／07 PEOPLE／08 RECRUIT</td><td>54／42／54+90</td><td>B</td><td>人物カードは写真承認まで文字の図柄</td></tr>
+<tr><td>①</td><td>09 NEWS／10 CONTACT</td><td>101／90+23</td><td>A／B</td><td>ブログ連携まで実在記事のみ</td></tr>
+<tr><td>②</td><td>01 HERO（business-hero）</td><td>734</td><td>B</td><td>背景写真・左寄せ・左濃右薄のオーバーレイをCSSで調整</td></tr>
+<tr><td>②</td><td>02 PURPOSE／03 INDEX</td><td>80／16</td><td>B</td><td>カード全体をページ内リンク化</td></tr>
+<tr><td>②</td><td>04 SERVICES（service-gas〜sewer）</td><td>54×4</td><td>B</td><td>左右反転はセクション固有のCSS（<code>.is-rev</code>）。スマホは「ラベル→見出し→画像→本文」の順にCSSで並べ替え</td></tr>
+<tr><td>②</td><td>05 PROCESS</td><td>761（写真は762相当）</td><td>B</td><td>5工程。写真は撤去・敷き均し・仕上げの3工程に対応</td></tr>
+<tr><td>②</td><td>06 TEAMWORK／07 COMMUNITY</td><td>54+787／54</td><td>B</td><td>07は全幅ネイビー</td></tr>
+<tr><td>②</td><td>08 WORKS／09 CROSS-LINK／10 CONTACT</td><td>718／42+90／90+23</td><td>A/B・B</td><td>—</td></tr>
+<tr><td>③</td><td>01 HERO／02 代表メッセージ</td><td>734／54+35</td><td>B</td><td>代表写真は承認まで出さず、公開イメージでは本文を1カラムにする</td></tr>
+<tr><td>③</td><td>03 CAREER PATH</td><td>761×2</td><td>B</td><td>タブではなく2列＋アンカー（スマホは職種ボタン）。縦線はCSS</td></tr>
+<tr><td>③</td><td>04 評価／05 労働環境へ</td><td>787+22／54+90</td><td>B</td><td>年収表は承認まで描画しない</td></tr>
+<tr><td>③</td><td>06 募集要項</td><td>54×2+22</td><td>B</td><td>2職種を同じ大きさで並べる</td></tr>
+<tr><td>③</td><td>07 Q&amp;A</td><td><code>faq_accordion</code> 候補</td><td>B候補／C</td><td>カタログに標準のアコーディオンがあるためBを第一候補に変更。不可なら独自HTML＋CSS、JS別。デモは <code>details/summary</code> で、JSがなくても開閉できる。FAQの構造化データ（JSON-LD）は要確認の2問を除く6問</td></tr>
+<tr><td>③</td><td>08 CTA</td><td>90+23</td><td>B</td><td>—</td></tr>
+<tr><td>④</td><td>01 HERO／02 考え方／03 職種別</td><td>734／54+80／787+22</td><td>B</td><td>比較表はスマホで縦積み</td></tr>
+<tr><td>④</td><td>04 1日の流れ</td><td>761×2</td><td>B</td><td>時刻なしの業務フロー</td></tr>
+<tr><td>④</td><td>05 マンガ</td><td>584／762</td><td>B（特殊なコマ表現のみC）</td><td>素材未制作のため公開時はセクションごと非表示</td></tr>
+<tr><td>④</td><td>06 働く場所／07 福利厚生／08 取り組み／09 CTA</td><td>762+54／42+22／54×3／42+90+23</td><td>B</td><td>08は左右交互</td></tr>
+<tr><td>⑤</td><td>01 HERO／02 メンバー／03 代表</td><td>734／54+35／54+80</td><td>B</td><td>—</td></tr>
+<tr><td>⑤</td><td>04 営業職／05 現場職</td><td>42+54／54+584</td><td>B</td><td>カードから同じページ内の詳細へ移動。現場職の人物カード（42）は取材後に追加</td></tr>
+<tr><td>⑤</td><td>06 営業と現場</td><td>787／761</td><td>B</td><td>—</td></tr>
+<tr><td>⑤</td><td>07 社員データ</td><td>独自</td><td>C</td><td>標準Sectionにグラフ機能が見当たらないため。数値表を併記し、canvasは使わない。実数が揃うまで非表示</td></tr>
+<tr><td>⑤</td><td>08 CTA</td><td>42+90</td><td>B</td><td>—</td></tr>
+<tr><td>⑥</td><td>01 HERO／02 代表／03 大切にしていること／04 歩み</td><td>734／54+80／80+42／761</td><td>B</td><td>正式な理念がないため「大切にしていること」として表示</td></tr>
+<tr><td>⑥</td><td>05 会社概要</td><td>22</td><td>A/B</td><td>画像ではなくHTMLの表</td></tr>
+<tr><td>⑥</td><td>06 KRM／07 アクセス／08 回遊</td><td>54+90／54+22+<code>api_map</code>／16+90</td><td>B</td><td>カタログの <code>api_map</code> が使えれば地図もB。使えなければCでiframe＋CSS</td></tr>
+</tbody></table></div>
+<p style="margin-top:12px">共通：<code>assets/site.css</code>（TOPデモのCSSに下層ページ用を追記）、<code>assets/site.js</code>（ヘッダー、メニュー、スクロール表示、デモの表示切り替え）。CMSに移すときは、セクションごとにクラスでスコープを付けます。</p>
+
+<h2 id="tbd">未確認一覧（公開前にご確認いただくこと）</h2>
+<div class="tw"><table><thead><tr><th>分類</th><th>内容</th><th>デモでの扱い</th></tr></thead><tbody>
+<tr><td>代表</td><td>③採用メッセージ・④考え方・⑤紹介文・⑥代表メッセージの本人承認、代表写真</td><td><span class="tag warn">確認用で点線</span> 写真枠は確認用のみ</td></tr>
+<tr><td>社員</td><td>T・N・Iさんの在籍・役職・表記・写真・転載の承認。T・Iさんの詳細インタビュー</td><td><span class="tag warn">確認用で点線</span> 写真は図柄</td></tr>
+<tr><td>現場職</td><td>個別取材（未実施）、キャリアの期間・到達基準、募集要項一式（給与形態・休日・勤務・応募資格・寮）</td><td><span class="tag warn">公開時は非表示</span></td></tr>
+<tr><td>営業職の条件</td><td>年間休日127日と過去の130日、休日出勤・免許要件、採用予定人数（3〜5名か1名か）</td><td><span class="tag warn">確認用で注記</span></td></tr>
+<tr><td>昇給・年収</td><td>「年1回・7月」と「随時昇給」の統一。年収例（500万円・750万円）の内訳</td><td><span class="tag warn">公開時は非表示</span></td></tr>
+<tr><td>選考・見学</td><td>選考フロー、見学・オンライン面談の運用</td><td>Q&amp;Aの該当2問は<span class="tag warn">確認用のみ</span></td></tr>
+<tr><td>労働環境</td><td>職種別の勤務時間・休日・早朝集合・緊急連絡、1日の時刻、福利厚生の適用条件、飲料支給・社内行事の現状</td><td><span class="tag warn">公開時は非表示</span>（1日の流れは時刻なしで表示）</td></tr>
+<tr><td>寮</td><td>現在の料金・空室・設備・入寮条件（2021年の金額は使わない）</td><td><span class="tag warn">公開時は非表示</span></td></tr>
+<tr><td>マンガ</td><td>制作の有無、取材、登場人物の承認</td><td><span class="tag warn">公開時はセクション非表示</span></td></tr>
+<tr><td>社員データ</td><td>基準日・対象範囲・総数（37人と30人の不一致）</td><td><span class="tag warn">公開時はセクション非表示</span></td></tr>
+<tr><td>会社概要</td><td>建設業許可・指定工事店・産廃許可の最新番号、従業員数、正式な経営理念の有無</td><td>該当行は<span class="tag warn">公開時は非表示</span></td></tr>
+<tr><td>アクセス</td><td>駅からのルート、来訪用の入口、駐車場、事前連絡の要否、地図の埋め込み方法</td><td>交通の行は<span class="tag warn">公開時は非表示</span></td></tr>
+<tr><td>KRM</td><td>会社情報の最新照合、敷地・資材の写真</td><td>写真は図柄で仮置き</td></tr>
+<tr><td>事業</td><td>下水道工事の写真（候補：公式実績の「桜上水五丁目付近枝線工事」）、4事業の表記、施工エリアの表現</td><td>下水道は図柄で仮置き</td></tr>
+<tr><td>リンク</td><td>上の「リンク先」の表すべて</td><td>仮のURLを入れています</td></tr>
+</tbody></table></div>
+
+<h2 id="images">使用画像一覧</h2>
+<p>すべて現行の公式サイト（kurume-k.jp）に掲載されている写真です。確認用リンクでも表示されるよう、同梱しています（幅1000px前後）。本番では、許諾を得たうえで元データをCMSに登録します。外部URLからの直接読み込みはしません。</p>
+<div class="tw"><table><thead><tr><th>ファイル</th><th>元ファイル（公式掲載ページ）</th><th>使用箇所</th><th>状態</th></tr></thead><tbody>
+<tr><td><code>hero.jpg</code></td><td>aH0H95…jpg（トップ）</td><td>①HERO</td><td><span class="tag ok">旧デモと同じ</span> 掲載許諾</td></tr>
+<tr><td><code>entrance.jpg</code></td><td>DSC09928.jpg（採用）</td><td>①ABOUT、⑥HERO</td><td>看板に「久留米興業」。隣の別社名（川島組・KRMの看板）の写り込みを確認</td></tr>
+<tr><td><code>paving-roller.jpg</code></td><td>R0011389.JPG（実績：ガス管取替後の復旧舗装）</td><td>①②の舗装カード、②HERO ほか</td><td><span class="tag warn">要確認</span> ローラーは自社名入り。工事黒板の工事会社欄は別社名</td></tr>
+<tr><td><code>water-pipe.jpg</code></td><td>R0010164.JPG（トップ）</td><td>①②の水道カード</td><td><span class="tag ok">黒板の受注者：久留米興業</span></td></tr>
+<tr><td><code>water-valve.jpg</code></td><td>R0010602.JPG（実績：配水小管布設替）</td><td>②水道・WORKS</td><td><span class="tag ok">黒板の受注者：久留米興業</span></td></tr>
+<tr><td><code>civil-road.jpg</code></td><td>R0016338.JPG（トップ）</td><td>①②の一般土木カード</td><td><span class="tag ok">黒板の施工者：久留米興業</span> 工事名は未確認なので記載なし</td></tr>
+<tr><td><code>work-kamisoshigaya.jpg</code></td><td>RIMG0274.JPG（実績：令和3年度道路維持工事 上祖師谷）</td><td>①②WORKS</td><td><span class="tag ok">黒板の施工者：久留米興業</span></td></tr>
+<tr><td><code>work-kyuden.jpg</code></td><td>R0016517.JPG（実績：給田 表層改良）</td><td>①WORKS、②工程写真</td><td>工事名は公式の表記</td></tr>
+<tr><td><code>work-chisaki.jpg</code></td><td>R0018426.JPG（実績：上祖師谷 地先道路築造）</td><td>①②WORKS、②PURPOSE</td><td><span class="tag ok">黒板の受注者：久留米興業</span></td></tr>
+<tr><td><code>process-remove.jpg</code> / <code>process-rake.jpg</code></td><td>スタッフの一日（ガス配管復旧舗装の作業例）</td><td>②工程・ガス、③④⑤</td><td>人物の写り込みあり</td></tr>
+<tr><td><code>team.jpg</code> / <code>field-crew.jpg</code> / <code>office.jpg</code></td><td>IMG-26442.JPG／DSC00035.jpg／㈰.jpg（スタッフ・採用）</td><td>②③④⑤⑥の人物・職場</td><td><span class="tag warn">要確認</span> 社員の顔が写るため肖像の利用承諾。写真が少ないため複数ページで重複使用</td></tr>
+<tr><td><code>yard.jpg</code> / <code>machine.jpg</code></td><td>IMG-26446.JPG（スタッフ）／IMG-26452.JPG（トップ）</td><td>④働く場所、⑤現場</td><td>機材名は書いていません</td></tr>
+<tr><td><code>disaster.jpg</code></td><td>DSCF5510.JPG（2024年の災害救援記事）</td><td>②COMMUNITY</td><td><span class="tag warn">要確認</span> 他団体の隊員も写るため、掲載可否と写り込み</td></tr>
+<tr><td><code>events.jpg</code></td><td>1002.jpg（採用）</td><td>④福利厚生（確認用のみ）</td><td><span class="tag warn">要確認</span> 撮影時期と掲載可否</td></tr>
+</tbody></table></div>
+<p style="margin-top:12px"><b>使っていない写真：</b>①旧デモの「01..JPG」（黒板の工事会社欄が別社名）、「P2180039.JPG」（水道の写真で、旧デモでは下水道カードに使用）。公式の「ガス管取替後の復旧舗装工事」のうち、黒板の施工者が別社名（ライクス）の1枚。</p>
+
+<h2 id="diff">TOPデモからの主な変更</h2>
+<ul>
+<li>グローバルナビを6ページ（TOP／事業内容／採用情報／労働環境／働くメンバー／会社情報）に統一。フッターも同じ6ページ＋お問い合わせ</li>
+<li><code>detail-placeholder.html</code> への仮リンクをすべて削除し、6ページ内のリンクか実在する外部URLへ置き換え</li>
+<li>HEROのボタン①の行き先を⑥会社情報に、英字補助を「KURUME KOGYO」に（仕様書どおり）</li>
+<li>BUSINESSのカード：04下水道から水道写真を外して図柄に。01・03は工事黒板で自社施工を確認できる写真に変更し、各カードから②の該当事業へ直接移動</li>
+<li>WORKS：仮の見出しを、公式の実績紹介に掲載されている工事名に変更</li>
+<li>WORK STYLE：写真をTOPのHEROと別のカットに。帯の文言を、代表発言由来の引用から④の見出しに変更（承認前の発言を引用しないため）</li>
+<li>NEWS：記事のリンクを各記事のURLに。見出しを仕様書の案に</li>
+<li>デモ表示のラベルを「確認用／公開イメージ」の切り替えに変更。写真はすべて同梱</li>
+</ul>
+
+<h2 id="qa">確認結果</h2>
+<ul>
+<li>6ページ × 幅1440／900／390px：横スクロールなし、JSエラーなし、読み込み失敗なし</li>
+<li>各ページH1は1つ。ページ内リンク（#〜）の行き先はすべて存在</li>
+<li>空リンク（<code>href="#"</code>）、仮ページへのリンクはなし</li>
+<li>スマホ幅で見つけた3点を修正済み：事業詳細の見出しが中央に寄る、緊急要請の枠の文字が細く折り返す、HERO見出しの改行位置</li>
+<li><code>prefers-reduced-motion</code> の設定時はアニメーションを止め、最初から全文を表示</li>
+<li>未検証（本番CMSで確認）：Sectionの入力欄、見出しタグの出力、CSSの適用範囲、JSの読み込み位置、地図の埋め込み、<code>faq_accordion</code> の挙動</li>
+</ul>
+</div>

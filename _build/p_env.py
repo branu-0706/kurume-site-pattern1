@@ -1,0 +1,157 @@
+from common import *
+
+P = "@R@assets/photos/"
+
+BODY = f'''
+<!-- 01 WORK STYLE HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
+<section class="page-hero" id="environment-hero" aria-labelledby="env-title" data-cms-id="734" data-implementation="B">
+  <div class="page-hero-img" style="background-image:url('{P}office.jpg');background-position:55% 40%" role="img" aria-label="事務所で仕事をする久留米興業の社員たち"></div>
+  <div class="wrap">
+    <p class="eyebrow anim-enter"><span class="line"></span>WORK ENVIRONMENT ／ 労働環境</p>
+    <h1 id="env-title" class="anim-enter" style="--delay:.1s">働く毎日を、<br>きちんと知ってほしい。</h1>
+    <p class="lead anim-enter" style="--delay:.2s">道路や水道を支える仕事は、現場の状況や季節によって大変さも変わります。久留米興業が考える働き方、営業職と現場職の違い、仕事を続けるための取り組みをご紹介します。</p>
+    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#environment-policy">働くことへの考えを見る <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#environment-roles">職種ごとの働き方 <span aria-hidden="true">↓</span></a></div>
+  </div>
+</section>
+<!--CRUMB-->
+
+<!-- 02 OUR APPROACH｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ CSS -->
+<section class="section" id="environment-policy" aria-labelledby="policy-title" data-cms-id="54,80" data-implementation="B">
+  <div class="wrap half has-optional-media reveal" style="grid-template-columns:.82fr 1fr">
+    <div class="half-media review-only"><div class="photo-slot is-portrait"><div><strong>E-02 代表写真（縦4:5）</strong>事務所・現場で働く姿。ご本人の承認後に配置</div></div></div>
+    <div class="half-copy gate" data-gate="代表インタビュー由来：本人承認待ち">
+      <p class="section-kicker">OUR APPROACH <span>働くことへの考え方</span></p>
+      <h2 class="section-title" id="policy-title">仕事に向き合う時間も、<br>自分の時間も。</h2>
+      <p>久留米興業の川島代表は、若い頃に現場の仕事を経験し、休みの少なさや長時間の働き方に悩んだ時期がありました。代表になってからは、以前のやり方をそのまま続けるのではなく、労働時間の管理や人員体制の見直しに取り組んできました。</p>
+      <p>現場の仕事は、天候や工程、緊急時の対応によって予定どおりに進まないこともあります。それでも、一人ひとりが無理を重ねる働き方を当たり前にしない。仕事に必要な集中と、それ以外の生活の両方を大切にしたいと考えています。</p>
+      <p class="quote-band">「変えられない現場の条件」と<br>「変えていける会社の仕組み」。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 HOW WE WORK｜方式B：CMS 787 Standard Content Text Two ＋ 22 Table Border Light -->
+<section class="section bg-soft" id="environment-roles" aria-labelledby="roles-title" data-cms-id="787,22" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">HOW WE WORK <span>職種ごとの働き方</span></p><h2 class="section-title" id="roles-title">同じ会社でも、<br>仕事の一日は違う。</h2><p class="section-heading-desc" style="max-width:700px">久留米興業の工事は、取引先と現場の両方が動くことで進んでいきます。仕事内容は違っても、互いの状況を知り、協力して進めることが欠かせません。</p></div>
+    <div class="card-grid is-2">
+      <article class="link-card reveal"><div class="lc-media"><img src="{P}office.jpg" alt="事務所で打ち合わせをする社員" loading="lazy"></div><div class="lc-body"><small>SALES</small><h3>営業職｜現場と取引先をつなぐ</h3><p>取引先からの工事の相談を受け、現地の状況を確認し、見積や材料・外注の手配、現場との連絡などを行います。相手の希望を聞くだけではなく、現場が無理なく作業を進められるように情報を整えることも重要な仕事です。</p><p>先輩への同行から仕事を覚え、徐々に担当できる案件を広げていきます。一方、工事の状況によっては、休日や夜間に緊急の連絡が入る場合があります。</p><a class="text-link" href="@R@recruit/index.html#opening-sales">採用情報で詳しく見る <span aria-hidden="true">↗</span></a></div></article>
+      <article class="link-card reveal" data-delay="1"><div class="lc-media"><img src="{P}field-crew.jpg" alt="現場で舗装の下地をつくる社員たち" loading="lazy"></div><div class="lc-body"><small>FIELD WORK</small><h3>現場職｜街の当たり前を、手を動かしてつくる</h3><p>道路舗装や水道関連工事などの現場で、仲間と工程を確認しながら作業を進めます。未経験であれば、まずは現場の流れ、道具、機械の扱いを知ることから。一つずつできる仕事を増やし、周囲の作業を見ながら次の工程を考える力を身につけます。</p><p>現場の朝が早いことや、夏場は屋外で暑さと向き合うことも、この仕事の現実です。そのため、安全対策や体調管理が重要になります。</p><a class="text-link" href="@R@recruit/index.html#opening-field">採用情報で詳しく見る <span aria-hidden="true">↗</span></a></div></article>
+    </div>
+    <div class="table-wrap reveal" style="margin-top:36px">
+      <table class="spec-table"><caption class="sr-only">営業職と現場職の比較</caption>
+        <thead><tr><th scope="col">項目</th><th scope="col">営業職</th><th scope="col">現場職</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">仕事内容</th><td>工事の相談、現地確認、見積、材料・外注の手配、現場との連絡</td><td>道路舗装や水道関連工事などの現場作業</td></tr>
+          <tr><th scope="row">主に関わる人</th><td>取引先、現場の社員、協力会社</td><td>班の仲間、現場の責任者</td></tr>
+          <tr><th scope="row">働く場所</th><td>事務所、取引先、工事現場</td><td>工事現場</td></tr>
+          <tr><th scope="row">身につくこと</th><td>現場と取引先をつなぐ調整、工事の専門知識</td><td>道具・機械の扱い、次の工程を考える力</td></tr>
+          <tr><th scope="row">大変な部分</th><td>工事の状況により、休日や夜間に緊急の連絡が入る場合がある</td><td>朝が早い。夏場は屋外で暑さと向き合う</td></tr>
+          <tr><th scope="row">キャリア</th><td>先輩同行から始め、案件を任される人へ</td><td>できる作業を増やし、資格や現場の役割を広げる</td></tr>
+          <tr class="gate review-only" data-gate="職種ごとに最新の募集要項と照合（公開時は非表示）"><th scope="row">勤務時間・休日</th><td>8:00〜17:00、年間休日127日以上（現行の営業求人）</td><td class="tbd">【要確認】現場職の勤務時間・休日・早朝集合の実態</td></tr>
+        </tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- 04 A DAY AT WORK｜方式B：CMS 761 Flow Cards ×2。時刻は確認後に追記するため、現時点は時刻なしの業務フロー -->
+<section class="section" id="environment-day" aria-labelledby="day-title" data-cms-id="761x2" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">A DAY AT WORK <span>1日の流れ</span></p><h2 class="section-title" id="day-title">一日には、<br>いくつもの役割がある。</h2><p class="section-heading-desc" style="max-width:700px">現場や担当案件によって予定は異なります。ここでは営業と現場、それぞれがどのような場面で仕事を進めるかを紹介します。</p></div>
+    <h3 class="label-num reveal">SALES / 営業職の場面</h3>
+    <ol class="flow reveal">
+      <li><span class="num">01</span><h3>朝の連絡・確認</h3></li>
+      <li><span class="num">02</span><h3>取引先との打合せ・現地調査</h3></li>
+      <li><span class="num">03</span><h3>材料・段取りの調整</h3></li>
+      <li><span class="num">04</span><h3>現場との情報共有</h3></li>
+      <li><span class="num">05</span><h3>書類・翌日の準備</h3></li>
+    </ol>
+    <h3 class="label-num reveal" style="margin-top:40px">FIELD WORK / 現場職の場面</h3>
+    <ol class="flow reveal" style="--navy:#04447C">
+      <li><span class="num">01</span><h3>準備・朝礼・安全確認</h3></li>
+      <li><span class="num">02</span><h3>現場作業</h3></li>
+      <li><span class="num">03</span><h3>休憩・体調確認</h3></li>
+      <li><span class="num">04</span><h3>作業・片づけ</h3></li>
+      <li><span class="num">05</span><h3>翌日の準備</h3></li>
+    </ol>
+    <p class="review-note">【要確認】具体的な時刻（集合・休憩・帰社・残業）は、各職種の社員に実態を確認してから追記します。確認できるまでは時刻なしで掲載します。</p>
+  </div>
+</section>
+
+<!-- 05 MANGA｜方式B：CMS 584 Photo Gallery／762 Square Four。素材未制作のため公開時は非表示 -->
+<section class="section bg-soft review-only" id="environment-manga" aria-labelledby="manga-title" data-cms-id="584,762" data-implementation="B（特殊なコマ表現のみC）">
+  <div class="wrap gate" data-gate="マンガ素材未制作：公開時はセクションごと非表示">
+    <div class="section-heading"><p class="section-kicker">MANGA <span>マンガで見る</span></p><h2 class="section-title" id="manga-title">未経験から始める、<br>その最初の一歩。</h2></div>
+    <div class="card-grid is-3">
+      <div class="photo-slot"><div><strong>1</strong>「土木の仕事は初めて。何をする会社だろう」応募前の不安</div></div>
+      <div class="photo-slot"><div><strong>2</strong>入社初日、初めて現場に出て工具・作業の流れを見て戸惑う</div></div>
+      <div class="photo-slot"><div><strong>3</strong>先輩から注意点を聞き、安全に関わる基本の約束を覚える</div></div>
+      <div class="photo-slot"><div><strong>4</strong>手伝える作業が一つ増え、現場での自分の役割に気づく</div></div>
+      <div class="photo-slot"><div><strong>5</strong>まだ大変さはあるが、次の工程を考えて自分から確認する</div></div>
+      <div class="photo-slot"><div><strong>6</strong>完成した道路を見て「この仕事が街の日常につながる」と感じる</div></div>
+    </div>
+    <p class="caption">作画前に、教育担当・新人社員への取材と、登場人物・内容の承認が必要です。画像には代替テキストと会話のテキスト版を用意します。</p>
+  </div>
+</section>
+
+<!-- 06 OUR WORKPLACE｜方式B：CMS 762 Square Four Images ＋ 54 Half ＋ CSS（大1枚＋小3枚） -->
+<section class="section" id="environment-place" aria-labelledby="place-title" data-cms-id="762,54" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">OUR WORKPLACE <span>働く場所・環境</span></p><h2 class="section-title" id="place-title">いつもの仕事を支える、<br>いつもの場所。</h2></div><p class="section-heading-desc">事務所、現場、移動、そして生活の場。働く場所を写真で知ると、一日のイメージが少し具体的になります。</p></div>
+    <div class="reveal" style="display:grid;grid-template-columns:1.4fr 1fr;gap:14px">
+      <figure style="margin:0;grid-row:span 2"><img src="{P}yard.jpg" alt="重機やトラックが並ぶ本社の敷地" loading="lazy" style="width:100%;height:100%;object-fit:cover;min-height:320px"><figcaption class="caption"><strong>機材・車両</strong>　工事内容に応じて使用する機材や車両。</figcaption></figure>
+      <figure style="margin:0"><img src="{P}office.jpg" alt="事務所で仕事をする社員たち" loading="lazy" style="width:100%;aspect-ratio:16/10;object-fit:cover"><figcaption class="caption"><strong>事務所</strong>　取引先とのやり取りや工事の準備を進める拠点。</figcaption></figure>
+      <figure style="margin:0"><img src="{P}field-crew.jpg" alt="現場で作業する社員たち" loading="lazy" style="width:100%;aspect-ratio:16/10;object-fit:cover"><figcaption class="caption"><strong>施工現場</strong>　仲間と協力しながら、道路や水道に関わる工事を進める場所。</figcaption></figure>
+    </div>
+    <div class="gate review-only half" data-gate="寮：最新の写真・料金・入寮条件の確認後に掲載（公開時は非表示）" style="margin-top:40px">
+      <div class="half-media"><div class="photo-slot"><div><strong>E-06 個室寮・共同施設</strong>最新の部屋・設備写真を受領後に配置</div></div></div>
+      <div class="half-copy"><h3>個室寮</h3><p>地方からの入社を検討する方の生活を支える設備です。</p><p class="tbd">【要確認】空室・対象者・所在地・料金・設備の状態・勤務地までの移動・入寮条件。2021年時点の公式案内（寮費3万円＋光熱費5千円）は現在の費用として使いません。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 BENEFITS｜方式B：CMS 42 Card Three／16 Card Four ＋ 22 Table。カードは最新の適用条件を確認してから公開 -->
+<section class="section bg-soft" id="environment-benefits" aria-labelledby="benefit-title" data-cms-id="42,22" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">BENEFITS <span>福利厚生</span></p><h2 class="section-title" id="benefit-title">安心して仕事を続けるための、<br>制度とサポート。</h2><p class="section-heading-desc" style="max-width:700px">福利厚生は、制度の名称だけでなく、誰が・どのような条件で利用できるかも大切です。働き方と生活の両面に関わる取り組みを、わかりやすくご案内します。</p></div>
+    <div class="card-grid is-3 gate review-only" data-gate="福利厚生：対象職種・最新の適用条件を確認後に公開（公開時は非表示）">
+      <div class="info-card"><small>INCOME</small><h3>収入・評価</h3><p>昇給、賞与、各種手当、退職金制度。<br><span class="tbd">営業職の現行求人は昇給年1回・賞与年2回。現場職への適用範囲を確認。</span></p></div>
+      <div class="info-card is-blue"><small>GROWTH</small><h3>成長支援</h3><p>資格取得支援。<br><span class="tbd">費用負担・対象資格・受験回数・取得後の手当を確認。</span></p></div>
+      <div class="info-card"><small>SAFETY</small><h3>日々の安心</h3><p>社会保険、健康診断、熱中症対策など。<br><span class="tbd">飲料支給（公式サイトの先輩の声に「1日2回」）の現在の運用を確認。</span></p></div>
+      <div class="info-card is-blue"><small>LIFE</small><h3>暮らしのサポート</h3><p>個室寮など。<br><span class="tbd">金額と入寮条件は確認後に記載。</span></p></div>
+      <div class="info-card"><small>COMMUNICATION</small><h3>コミュニケーション</h3><p>社員旅行、忘年会、暑気払い、ゴルフクラブなど。<br><span class="tbd">現在の開催状況と、参加が任意かを確認。</span></p></div>
+      <figure style="margin:0"><img src="{P}events.jpg" alt="ボウリング場で撮影した社員の集合写真" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">社内行事の様子（掲載可否・時期を確認）</figcaption></figure>
+    </div>
+    <div class="cta-row reveal"><a class="btn btn-dark" href="@R@recruit/index.html#recruit-openings">最新の募集要項を見る <span aria-hidden="true">↗</span></a></div>
+  </div>
+</section>
+
+<!-- 08 OUR EFFORTS｜方式B：CMS 54 Half ×3（左右交互）＋ CSS -->
+<section class="section" id="environment-action" aria-labelledby="effort-title" data-cms-id="54x3" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">OUR EFFORTS <span>自社の取り組み</span></p><h2 class="section-title" id="effort-title">仕事を続けるために、<br>少しずつ変えてきたこと。</h2><p class="section-heading-desc" style="max-width:700px">仕事の進め方を変えるのは簡単ではありません。それでも、時代や現場の状況に合わせて、できるところから見直してきました。</p></div>
+    <div class="gate" data-gate="代表インタビュー由来の取り組み：事実確認・承認待ち">
+      <article class="half reveal"><div class="half-media"><img src="{P}office.jpg" alt="事務所の様子" loading="lazy"></div><div class="half-copy"><p class="label-num">01</p><h3>働く時間を見直す</h3><p>代表の経験をきっかけに、残業時間の管理や労務ルールの見直しに取り組んできました。業務の状況によって残業が必要な時もありますが、長時間働くこと自体を良いこととはせず、仕事の進め方を考えています。</p></div></article>
+      <article class="half is-rev reveal"><div class="half-media"><img src="{P}team.jpg" alt="重機の前に並ぶ社員たち" loading="lazy"></div><div class="half-copy"><p class="label-num">02</p><h3>一人に負担を集中させない</h3><p>仕事量を単に減らすのではなく、必要な人員を確保して負担を分けるという考えで、現場の体制を見直してきました。</p></div></article>
+      <article class="half reveal"><div class="half-media"><img src="{P}process-remove.jpg" alt="安全具を着けて作業する現場" loading="lazy"></div><div class="half-copy"><p class="label-num">03</p><h3>安全と地域への配慮</h3><p>屋外での作業に必要な熱中症対策や安全への配慮に取り組み、地域との関係を大切にして事業を続けています。</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 09 CROSS-LINK & CTA｜方式B：CMS 90 Btn Text ＋ 23 Btn（カード3枚） -->
+<section class="section bg-blueish" id="environment-cta" aria-labelledby="ecta-title" data-cms-id="42,90,23" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><h2 class="section-title" id="ecta-title">制度だけでは見えない、<br>久留米興業の毎日へ。</h2><p class="section-heading-desc">実際に働く人の声や、具体的な仕事・募集条件もあわせてご覧ください。</p></div>
+    <div class="card-grid is-3">
+      <a class="link-card reveal" href="@R@people/index.html"><div class="lc-media"><img src="{P}team.jpg" alt="久留米興業の社員たち" loading="lazy"></div><div class="lc-body"><small>PEOPLE</small><h3>働くメンバーを見る</h3><span class="mini-link">働くメンバーへ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card reveal" href="@R@recruit/index.html#recruit-openings" data-delay="1"><div class="lc-media"><img src="{P}field-crew.jpg" alt="現場で作業する社員" loading="lazy"></div><div class="lc-body"><small>RECRUIT</small><h3>募集要項を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card reveal" href="@R@business/index.html" data-delay="2"><div class="lc-media"><img src="{P}paving-roller.jpg" alt="舗装を転圧するローラー" loading="lazy"></div><div class="lc-body"><small>BUSINESS</small><h3>仕事内容を見る</h3><span class="mini-link">事業内容へ <b aria-hidden="true">↗</b></span></div></a>
+    </div>
+  </div>
+</section>
+'''
+
+
+def build():
+    return page("environment", "労働環境｜株式会社久留米興業",
+                "働く毎日を、きちんと知ってほしい。営業職と現場職の働き方、1日の流れ、働く場所、会社の取り組みをご紹介します。",
+                1, BODY, crumb="労働環境")
