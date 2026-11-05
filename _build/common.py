@@ -34,6 +34,9 @@ def head(title, desc, root):
 <meta name="robots" content="noindex">
 <meta name="description" content="{desc}">
 <title>{title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="{root}assets/site.css">
 <script defer src="{root}assets/site.js"></script>
 </head>
@@ -91,6 +94,10 @@ def page(current, title, desc, depth, body, crumb=None):
     if crumb:
         # パンくずはHEROの直後に置く（HEROを最初の視覚要素にするため）
         body = body.replace("<!--CRUMB-->", breadcrumb(crumb, root))
+    marks = {"business-hero": "BUSINESS", "recruit-hero": "RECRUIT", "environment-hero": "WORK STYLE", "people-hero": "PEOPLE", "company-hero": "COMPANY"}
+    for hid, word in marks.items():
+        body = body.replace(f'class="page-hero" id="{hid}"', f'class="page-hero" id="{hid}" data-mark="{word}"')
+    body = body.replace('<div class="page-hero-img"', '<span class="lane" aria-hidden="true"></span><div class="page-hero-img"')
     out += body.replace("@R@", root) + "\n</main>\n" + footer(root)
     return out
 

@@ -17,8 +17,8 @@ BODY = f'''
 
 <!-- 02 MESSAGE FROM PRESIDENT｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ CSS -->
 <section class="section" id="company-ceo" aria-labelledby="cceo-title" data-cms-id="54,80" data-implementation="B">
-  <div class="wrap half has-optional-media reveal" style="grid-template-columns:.82fr 1fr">
-    <div class="half-media review-only"><div class="photo-slot is-portrait"><div><strong>C-02 代表の正式ポートレート</strong>採用ページとは別カット。ご本人の承認後に配置</div></div></div>
+  <div class="wrap half reveal" style="grid-template-columns:.82fr 1fr">
+    <div class="half-media is-portrait"><img src="{P}ceo.jpg" alt="代表取締役 川島 和範" loading="lazy"><p class="caption">代表取締役　川島 和範</p></div>
     <div class="half-copy gate" data-gate="公式の代表挨拶を再編集した原稿：本人承認待ち">
       <p class="section-kicker">MESSAGE FROM PRESIDENT <span>代表メッセージ</span></p>
       <h2 class="section-title" id="cceo-title">当たり前の日常を、<br>これからも支えるために。</h2>

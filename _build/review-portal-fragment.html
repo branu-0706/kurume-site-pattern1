@@ -49,6 +49,14 @@ a{color:var(--blue)}
 <p>「確認用」では、承認前の原稿にオレンジの点線と理由が付き、未確定の項目（年収例、現場職の条件、社員データ、マンガ、寮など）も【要確認】付きで表示されます。「公開イメージ」に切り替えると点線が消え、データが未確定の項目は非表示になります。承認が取れた場合の見え方の確認にお使いください。</p>
 <p style="margin:0">この切り替えはデモ専用の仕組みです。CMSには移植しません。</p></div>
 
+<h2 id="design">デザインの調整（11/5）</h2>
+<ul>
+<li>書体をNoto Sans JP（本文・見出し）とBarlow（英字・数字）に統一</li>
+<li>ロゴの道路の破線を「車線モチーフ」として、下層HEROの縦線、見出しの前の破線、セクションの区切りに使用</li>
+<li>下層HEROを高くし、ページ名の英字を透かしで配置</li>
+<li>カードに影と立体感、人物写真に青い角枠、引用帯に引用符を追加</li>
+</ul>
+
 <h2 id="anxiety">応募前の不安を解消するための追加（11/5）</h2>
 <ul>
 <li><b>③採用情報</b>：ページ内目次、「数字で見る」、「応募前の不安と実際」（8項目）、「入社してからの最初の1か月」を追加。不安への答えには、求人票・採用ブログ・対談の出典を必ず付けています。引用は原文どおりです。</li>
@@ -156,9 +164,9 @@ a{color:var(--blue)}
 
 <h2 id="tbd">未確認一覧（公開前にご確認いただくこと）</h2>
 <div class="tw"><table><thead><tr><th>分類</th><th>内容</th><th>デモでの扱い</th></tr></thead><tbody>
-<tr><td>代表</td><td>代表インタビュー（再構成版）を使った③④⑤の文章の本人承認。代表の写真。<b>いただいた写真のうち、レンガ壁を背景にした眼鏡の男性がどなたか</b>（求人票の写真3枚目）</td><td><span class="tag warn">確認用で点線</span> 写真枠は確認用のみ</td></tr>
+<tr><td>代表</td><td>代表インタビュー（再構成版）を使った③④⑤の文章の本人承認。写真は代表インタビュー資料の1枚（ポロシャツで手を組んで笑っている写真）を③④⑤⑥で使用</td><td><span class="tag warn">確認用で点線</span></td></tr>
 <tr><td>営業3名</td><td>HPでの実名表記とインタビュー要約の転載（採用ブログでは実名・写真を公開済み）。高畑さんの入社年</td><td><span class="tag warn">確認用で点線</span></td></tr>
-<tr><td>現場2名</td><td>対談原稿の掲載承認。奥居さんの写真（どの写真が奥居さんか未確認）。松野さんの写真は作業着の名前から判断</td><td><span class="tag warn">確認用で点線</span> 奥居さんは写真枠</td></tr>
+<tr><td>現場2名</td><td>対談原稿の掲載承認。写真はご指示どおり顔が見えない作業中の写真（松野さん＝班の作業風景、奥居さん＝足元の写真）</td><td><span class="tag warn">確認用で点線</span></td></tr>
 <tr><td>営業職の条件</td><td>勤務時間、年間休日（130日か127日か）、採用予定人数</td><td>勤務時間は点線付きで表示</td></tr>
 <tr><td>年収</td><td>現場職の年収モデル例と「3年で100万円以上アップ」の内訳</td><td><span class="tag warn">確認用で点線</span>（表示はする）</td></tr>
 <tr><td>営業職の1日</td><td>出社・移動・帰社の時刻</td><td>時刻なしで表示</td></tr>
@@ -191,6 +199,8 @@ a{color:var(--blue)}
 <tr><td><code>field-veteran.jpg</code></td><td>今回ご提供</td><td>⑤松野さん、①PEOPLE、④取り組み</td><td>作業着の名前から松野さんと判断</td></tr>
 <tr><td><code>field-crew-hq.jpg</code> / <code>field-sidewalk*.jpg</code> / <code>field-worker-helmet.jpg</code> / <code>excavator.jpg</code> / <code>office-*.jpg</code></td><td>今回ご提供</td><td>③④⑤の現場・事務所</td><td><span class="tag warn">要確認</span> 歩道工事の2枚は他社名入りの重機が写る</td></tr>
 <tr><td><code>portrait-unknown.jpg</code></td><td>今回ご提供（レンガ壁の男性）</td><td>未使用</td><td>どなたか確認後に使用</td></tr>
+<tr><td><code>ceo.jpg</code></td><td>代表インタビュー資料（2026-07-17）の写真</td><td>③④⑤⑥の代表欄</td><td>ご指示により使用</td></tr>
+<tr><td><code>field-team-back.jpg</code> / <code>field-boots.jpg</code> / <code>field-work-street.jpg</code></td><td>代表インタビュー資料の作業写真</td><td>⑤松野さん・奥居さん、①PEOPLE、④取り組み</td><td>顔が見えない作業中の写真</td></tr>
 <tr><td><code>events.jpg</code></td><td>1002.jpg（採用）</td><td>④福利厚生（確認用のみ）</td><td><span class="tag warn">要確認</span> 撮影時期と掲載可否</td></tr>
 </tbody></table></div>
 <p style="margin-top:12px"><b>使っていない写真：</b>①旧デモの「01..JPG」（黒板の工事会社欄が別社名）、「P2180039.JPG」（水道の写真で、旧デモでは下水道カードに使用）。公式の「ガス管取替後の復旧舗装工事」のうち、黒板の施工者が別社名（ライクス）の1枚。</p>

@@ -111,7 +111,7 @@ BODY = f'''
     <div class="people-grid">
       <a class="person-card reveal" href="@R@people/index.html#people-ceo"><div class="person-art person-art-1"><span class="person-symbol">K</span><span class="person-phototag review-only">人物写真は承認後に差替</span></div><div class="person-info"><span>PRESIDENT</span><h3>代表の歩み</h3><p>現場から経営まで。人と働くことへの考え。</p><span class="person-arrow" aria-hidden="true">↗</span></div></a>
       <a class="person-card reveal" href="@R@people/index.html#people-sales"><div class="person-photo"><img src="{P}member-t2.jpg" alt="事務所で仕事をする営業職の社員" loading="lazy"></div><div class="person-info"><span>SALES TEAM</span><h3>営業職の仕事</h3><p>異業種から転職した社員も。取引先と現場をつなぐ。</p><span class="person-arrow" aria-hidden="true">↗</span></div></a>
-      <a class="person-card reveal" href="@R@people/index.html#people-field"><div class="person-photo"><img src="{P}field-veteran.jpg" alt="現場の班長" loading="lazy"></div><div class="person-info"><span>FIELD TEAM</span><h3>現場職の仕事</h3><p>約30年続ける班長と、7〜12名の自社チームで。</p><span class="person-arrow" aria-hidden="true">↗</span></div></a>
+      <a class="person-card reveal" href="@R@people/index.html#people-field"><div class="person-photo"><img src="{P}field-team-back.jpg" alt="道路の現場で作業する現場職のチーム" loading="lazy"></div><div class="person-info"><span>FIELD TEAM</span><h3>現場職の仕事</h3><p>約30年続ける班長と、7〜12名の自社チームで。</p><span class="person-arrow" aria-hidden="true">↗</span></div></a>
     </div>
     <div class="section-footer reveal"><a class="btn btn-dark" href="@R@people/index.html">働くメンバーを見る <span aria-hidden="true">↗</span></a></div>
   </div>

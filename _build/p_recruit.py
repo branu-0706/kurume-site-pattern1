@@ -104,8 +104,8 @@ BODY = f'''
 
 <!-- 02 代表採用メッセージ｜方式B：CMS 54 Half ＋ 35 Title Sub ＋ CSS -->
 <section class="section" id="recruit-message" aria-labelledby="message-title" data-cms-id="54,35" data-implementation="B">
-  <div class="wrap half has-optional-media reveal" style="grid-template-columns:.82fr 1fr">
-    <div class="half-media review-only"><div class="photo-slot is-portrait"><div><strong>R-02 代表写真（縦4:5）</strong>川島代表ご本人の写真を確認のうえ配置<br>※公開時、写真がなければこの枠は出しません</div></div></div>
+  <div class="wrap half reveal" style="grid-template-columns:.82fr 1fr">
+    <div class="half-media is-portrait"><img src="{P}ceo.jpg" alt="代表取締役 川島 和範" loading="lazy"><p class="caption">代表取締役　川島 和範</p></div>
     <div class="half-copy gate" data-gate="代表インタビュー（2026-07-17再構成）に基づく編集原稿：本人承認待ち">
       <p class="section-kicker">MESSAGE FROM CEO <span>代表メッセージ</span></p>
       <h2 class="section-title" id="message-title">最初から、何でもできる<br>必要はありません。</h2>

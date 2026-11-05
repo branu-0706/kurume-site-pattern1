@@ -17,8 +17,8 @@ BODY = f'''
 
 <!-- 02 OUR APPROACH｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ CSS -->
 <section class="section" id="environment-policy" aria-labelledby="policy-title" data-cms-id="54,80" data-implementation="B">
-  <div class="wrap half has-optional-media reveal" style="grid-template-columns:.82fr 1fr">
-    <div class="half-media review-only"><div class="photo-slot is-portrait"><div><strong>E-02 代表写真（縦4:5）</strong>事務所・現場で働く姿。ご本人の確認後に配置</div></div></div>
+  <div class="wrap half reveal" style="grid-template-columns:.82fr 1fr">
+    <div class="half-media is-portrait"><img src="{P}ceo.jpg" alt="代表取締役 川島 和範" loading="lazy"><p class="caption">代表取締役　川島 和範</p></div>
     <div class="half-copy gate" data-gate="代表インタビュー（2026-07-17再構成）に基づく編集文：本人承認待ち">
       <p class="section-kicker">OUR APPROACH <span>働くことへの考え方</span></p>
       <h2 class="section-title" id="policy-title">仕事に向き合う時間も、<br>自分の時間も。</h2>
@@ -156,7 +156,7 @@ BODY = f'''
     <div class="gate" data-gate="代表インタビュー・求人票に基づく編集文：本人承認待ち">
       <article class="half reveal"><div class="half-media"><img src="{P}office-pc-wide.jpg" alt="事務所でパソコンに向かう社員" loading="lazy"></div><div class="half-copy"><p class="label-num">01</p><h3>残業のルールを見直す</h3><p>建設業に詳しい社会保険労務士のセミナーをきっかけに、三六協定を含めた残業のルールから見直しました。時期や仕事の状況によって残業が必要なこともありますが、必要以上に長く会社に残る働き方は減らしています。</p></div></article>
       <article class="half is-rev reveal"><div class="half-media"><img src="{P}team.jpg" alt="重機の前に並ぶ社員たち" loading="lazy"></div><div class="half-copy"><p class="label-num">02</p><h3>人を増やして、負担を分ける</h3><p>現場の作業そのものは簡単には減らせません。そこで、これまで8人で行っていた仕事を10人で行うように人を増やし、一人が無理をして「1.2」の力で動いていた状態を「1.0」に近づけてきました。</p></div></article>
-      <article class="half reveal"><div class="half-media"><img src="{P}field-veteran.jpg" alt="ヘルメットをかぶった班長" loading="lazy"></div><div class="half-copy"><p class="label-num">03</p><h3>早く終われば、早く帰る</h3><p>予定より早く作業が終わった日は、15時ごろでも無理に仕事を増やさず早上がり。雨で現場が早く切り上がった日も、日給は全額支給します。夜勤の翌日は体を休められるようにシフトを調整します。</p></div></article>
+      <article class="half reveal"><div class="half-media"><img src="{P}field-work-street.jpg" alt="重機の近くで作業する現場職" loading="lazy"></div><div class="half-copy"><p class="label-num">03</p><h3>早く終われば、早く帰る</h3><p>予定より早く作業が終わった日は、15時ごろでも無理に仕事を増やさず早上がり。雨で現場が早く切り上がった日も、日給は全額支給します。夜勤の翌日は体を休められるようにシフトを調整します。</p></div></article>
       <article class="half is-rev reveal"><div class="half-media"><img src="{P}field-worker-helmet.jpg" alt="ヘルメットと保護具を着けて作業する現場職" loading="lazy"></div><div class="half-copy"><p class="label-num">04</p><h3>安全と地域への配慮</h3><p>ヘルメット着用の徹底、喫煙場所の制限など、安全と近隣への配慮は時代とともに変わってきました。地域の行事やバザーへの協賛のほか、現場で余ったインターロッキングブロックを「ご自由にお持ちください」と会社の前に置くこともあります。</p></div></article>
     </div>
   </div>

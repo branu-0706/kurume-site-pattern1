@@ -41,7 +41,7 @@ SALES = [
 ]
 
 FIELD = [
-    member("member-matsuno", "field-veteran.jpg", "現場でヘルメットをかぶった松野さん", "FIELD / 班長・約30年", "松野さん｜現場の班長",
+    member("member-matsuno", "field-team-back.jpg", "歩道の現場で作業する班のメンバー", "FIELD / 班長・約30年", "松野さん｜現場の班長",
            "それぞれが役割を分かって、<br>一日の作業を終わらせる。",
            "入社前はガス関係の個人事業主。友人の紹介で久留米興業に入り、約30年にわたって現場を支えてきました。今は班の段取りや役割分担を担っています。",
            [("現場の進め方", "班の中で役割分担ができていて、細かく指示することはあまりないそうです。進み具合を見て、問題がありそうなら手を加えたり手伝ったりします。"),
@@ -49,14 +49,14 @@ FIELD = [
             ("正直なところ", "その日の作業はその日のうちに終わらせるのが現場の決まり。作業量が多く、休憩を取る余裕を感じにくい日もあります。人が増えれば余裕につながる、と話します。"),
             ("新人へ", "「まずは毎日来ること。最初から何でもできる必要はありません。焦らず、長く続けてもらえれば」")],
            None, gate="対談インタビュー原稿（掲載前）に基づく編集文：本人承認待ち"),
-    member("member-okui", None, "", "FIELD / 建築から土木へ・5〜6年", "奥居さん｜現場職",
+    member("member-okui", "field-boots.jpg", "スコップを持って路盤に立つ現場職の足元", "FIELD / 建築から土木へ・5〜6年", "奥居さん｜現場職",
            "見て覚えて、聞いて覚える。<br>カラーコーンを並べるところから。",
            "建築業界で躯体工事や外構工事、型枠などを経験した後、久留米興業へ。土木の現場は初めてでしたが、松野さんたち先輩と一緒に経験を重ね、5〜6年になります。",
            [("入ってみて", "「最初は皆さん見た目が怖い。でも、話すと優しい人が多い」"),
             ("現場の連携", "作業中は近隣への配慮もあって会話は少なめ。それでも分からないことは聞き、班長の動きを見ながら合わせていきます。「班長がいるといないとじゃ、全然違う」"),
             ("続けている理由", "特別な理由より、毎日現場に出て、合う人たちと仕事をしてきた積み重ね。早く帰れるようにみんなで頑張る感覚もあるそうです。"),
             ("新人へ", "「仕事なのできついこともあります。夏は暑い。でも毎日出ていれば、少しずつ流れは分かってきます」")],
-           None, gate="対談インタビュー原稿（掲載前）に基づく編集文：本人承認待ち／写真未確定", rev=True),
+           None, gate="対談インタビュー原稿（掲載前）に基づく編集文：本人承認待ち", rev=True),
 ]
 
 BODY = f'''
@@ -87,11 +87,11 @@ BODY = f'''
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">VOICES <span>社員の声</span></p><h2 class="section-title" id="voices-title">入る前の不安に、<br>働く人が答えます。</h2></div>
     <div class="voices reveal gate" data-gate="インタビュー・対談からの引用（原文どおり）。掲載承認を確認">
-      <figure class="voice is-field" style="margin:0"><p>最初は、皆さん見た目的には怖いです。でも、話してみると優しい方が多いですよね、やっぱり。</p><footer><div><b>奥居さん</b>現場職・建築から転職</div></footer></figure>
+      <figure class="voice is-field" style="margin:0"><p>最初は、皆さん見た目的には怖いです。でも、話してみると優しい方が多いですよね、やっぱり。</p><footer><img src="{P}field-boots.jpg" alt=""><div><b>奥居さん</b>現場職・建築から転職</div></footer></figure>
       <figure class="voice" style="margin:0"><p>知識は後からで大丈夫です。</p><footer><img src="{P}member-t2.jpg" alt=""><div><b>高畑さん</b>営業職・新卒入社</div></footer></figure>
       <figure class="voice" style="margin:0"><p>結局は『人と人』の関わりが、新しい依頼や円滑な現場運営に繋がります。</p><footer><img src="{P}member-n.jpg" alt=""><div><b>根岸さん</b>営業職から現場代理人</div></footer></figure>
       <figure class="voice" style="margin:0"><p>社長は意思決定が驚くほど速く、やる気があれば未経験でもチャンスをくれる人です。</p><footer><img src="{P}member-i.jpg" alt=""><div><b>今井さん</b>営業職・40歳で異業種から</div></footer></figure>
-      <figure class="voice is-field" style="margin:0"><p>まずは、毎日来ることじゃないですかね。最初から何でもできる必要はありません。</p><footer><img src="{P}field-veteran.jpg" alt=""><div><b>松野さん</b>現場の班長・約30年</div></footer></figure>
+      <figure class="voice is-field" style="margin:0"><p>まずは、毎日来ることじゃないですかね。最初から何でもできる必要はありません。</p><footer><img src="{P}field-team-back.jpg" alt=""><div><b>松野さん</b>現場の班長・約30年</div></footer></figure>
     </div>
   </div>
 </section>
@@ -99,8 +99,8 @@ BODY = f'''
 <!-- 03 PRESIDENT｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ 761（歩み）＋ CSS -->
 <section class="section" id="people-ceo" aria-labelledby="ceo-title" data-cms-id="54,80,761" data-implementation="B">
   <div class="wrap">
-    <div class="half has-optional-media reveal" style="grid-template-columns:.82fr 1fr">
-      <div class="half-media review-only"><div class="photo-slot is-portrait"><div><strong>P-02 川島代表（縦4:5）</strong>ご本人の写真を確認のうえ配置<br>※いただいた写真のうち、レンガ壁を背景にした男性の写真がどなたかご確認ください</div></div></div>
+    <div class="half reveal" style="grid-template-columns:.82fr 1fr">
+      <div class="half-media is-portrait"><img src="{P}ceo.jpg" alt="代表取締役 川島 和範" loading="lazy"><p class="caption">代表取締役　川島 和範</p></div>
       <div class="half-copy gate" data-gate="代表インタビュー（2026-07-17再構成）に基づく編集文：本人承認待ち">
         <p class="section-kicker">MESSAGE / PRESIDENT <span>代表取締役　川島 和範</span></p>
         <h2 class="section-title" id="ceo-title">自分が苦しかったからこそ、<br>働き方を変えたかった。</h2>
