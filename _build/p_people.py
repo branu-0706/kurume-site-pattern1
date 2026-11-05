@@ -42,7 +42,7 @@ SALES = [
 
 FIELD = [
     member("member-matsuno", "field-team-back.jpg", "歩道の現場で作業する班のメンバー", "FIELD / 班長・約30年", "松野さん｜現場の班長",
-           "それぞれが役割を分かって、<br>一日の作業を終わらせる。",
+           "一人ひとりが役割を理解して、<br>1日の作業を終わらせる。",
            "入社前はガス関係の個人事業主。友人の紹介で久留米興業に入り、約30年にわたって現場を支えてきました。今は班の段取りや役割分担を担っています。",
            [("現場の進め方", "班の中で役割分担ができていて、細かく指示することはあまりないそうです。進み具合を見て、問題がありそうなら手を加えたり手伝ったりします。"),
             ("変わったこと", "昔はたばこをくわえたまま作業する時代もありましたが、今はヘルメット着用を徹底し、近隣への配慮も含めて安全への意識が大きく変わりました。"),
@@ -78,20 +78,25 @@ BODY = f'''
     <div class="half-copy"><p class="section-kicker">ONE TEAM, DIFFERENT STORIES</p><h2 class="section-title" id="intro-title">同じゴールに向かう、<br>いろいろな個性。</h2>
       <p>得意なことも、仕事の覚え方も、人によって違います。久留米興業が大切にしているのは、全員を同じ型にはめることよりも、それぞれが自分の役割を果たしながら協力すること。</p>
       <p>新卒で入った若手、40歳前後で異業種から転職した営業、建築から土木へ移った現場職、30年続ける班長。違う経験を持つ人が集まっているからこそ、現場で気づくこと、取引先に伝えられること、次の仕事につなげられることがあります。</p></div>
-    <div class="half-media media-stack"><img src="{P}office-wide.jpg" alt="事務所で仕事をする社員たち" loading="lazy" style="aspect-ratio:4/5;object-fit:cover"><img src="{P}field-sidewalk2.jpg" alt="歩道の工事現場で作業する社員たち" loading="lazy" style="aspect-ratio:auto;object-fit:cover"></div>
+    <ul class="member-mix">
+      <li><b>新卒</b>土木と関係のない専攻から入社した営業</li>
+      <li><b>40歳前後</b>お茶の営業、広告代理店から転職した営業</li>
+      <li><b>建築から</b>躯体・外構の経験を経て土木の現場へ</li>
+      <li><b>約30年</b>班の段取りを担う現場の班長</li>
+    </ul>
   </div>
 </section>
 
 <!-- 社員の声｜方式B：CMS 42 Card Three ＋ CSS（スマホは横スクロール、JSなし） -->
 <section class="section bg-soft" id="people-voices" aria-labelledby="voices-title" data-cms-id="42" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">VOICES <span>社員の声</span></p><h2 class="section-title" id="voices-title">入る前の不安に、<br>働く人が答えます。</h2></div>
+    <div class="section-heading reveal"><p class="section-kicker">VOICES <span>社員の声</span></p><h2 class="section-title" id="voices-title">入社前の不安に、<br>働く社員が答えます。</h2></div>
     <div class="voices reveal gate" data-gate="インタビュー・対談からの引用（原文どおり）。掲載承認を確認">
-      <figure class="voice is-field" style="margin:0"><p>最初は、皆さん見た目的には怖いです。でも、話してみると優しい方が多いですよね、やっぱり。</p><footer><img src="{P}field-boots.jpg" alt=""><div><b>奥居さん</b>現場職・建築から転職</div></footer></figure>
-      <figure class="voice" style="margin:0"><p>知識は後からで大丈夫です。</p><footer><img src="{P}member-t2.jpg" alt=""><div><b>高畑さん</b>営業職・新卒入社</div></footer></figure>
-      <figure class="voice" style="margin:0"><p>結局は『人と人』の関わりが、新しい依頼や円滑な現場運営に繋がります。</p><footer><img src="{P}member-n.jpg" alt=""><div><b>根岸さん</b>営業職から現場代理人</div></footer></figure>
-      <figure class="voice" style="margin:0"><p>社長は意思決定が驚くほど速く、やる気があれば未経験でもチャンスをくれる人です。</p><footer><img src="{P}member-i.jpg" alt=""><div><b>今井さん</b>営業職・40歳で異業種から</div></footer></figure>
-      <figure class="voice is-field" style="margin:0"><p>まずは、毎日来ることじゃないですかね。最初から何でもできる必要はありません。</p><footer><img src="{P}field-team-back.jpg" alt=""><div><b>松野さん</b>現場の班長・約30年</div></footer></figure>
+      <figure class="voice is-field" style="margin:0"><p>最初は、皆さん見た目的には怖いです。でも、話してみると優しい方が多いですよね、やっぱり。</p><footer><div><b>奥居さん</b>現場職・建築から転職</div></footer></figure>
+      <figure class="voice" style="margin:0"><p>知識は後からで大丈夫です。</p><footer><div><b>高畑さん</b>営業職・新卒入社</div></footer></figure>
+      <figure class="voice" style="margin:0"><p>結局は『人と人』の関わりが、新しい依頼や円滑な現場運営に繋がります。</p><footer><div><b>根岸さん</b>営業職から現場代理人</div></footer></figure>
+      <figure class="voice" style="margin:0"><p>社長は意思決定が驚くほど速く、やる気があれば未経験でもチャンスをくれる人です。</p><footer><div><b>今井さん</b>営業職・40歳で異業種から</div></footer></figure>
+      <figure class="voice is-field" style="margin:0"><p>まずは、毎日来ることじゃないですかね。最初から何でもできる必要はありません。</p><footer><div><b>松野さん</b>現場の班長・約30年</div></footer></figure>
     </div>
   </div>
 </section>
@@ -121,7 +126,7 @@ BODY = f'''
     <div class="people-grid">
       <a class="person-card reveal" href="#member-takahata"><div class="person-photo"><img src="{P}member-t2.jpg" alt="高畑さん" loading="lazy"></div><div class="person-info"><span>SALES / 新卒入社</span><h3>高畑さん</h3><p>「何が分からないかも、分からない」からのスタート。</p><span class="person-arrow" aria-hidden="true">↓</span></div></a>
       <a class="person-card reveal" href="#member-negishi" data-delay="1"><div class="person-photo"><img src="{P}member-n.jpg" alt="根岸さん" loading="lazy"></div><div class="person-info"><span>SALES → SITE AGENT</span><h3>根岸さん</h3><p>お茶の営業から、道路づくりの現場へ。1級土木施工管理技士。</p><span class="person-arrow" aria-hidden="true">↓</span></div></a>
-      <a class="person-card reveal" href="#member-imai" data-delay="2"><div class="person-photo"><img src="{P}member-i-helmet.jpg" alt="今井さん" loading="lazy"></div><div class="person-info"><span>SALES / 異業種から</span><h3>今井さん</h3><p>広告代理店から、40歳で建設業界へ。</p><span class="person-arrow" aria-hidden="true">↓</span></div></a>
+      <a class="person-card reveal" href="#member-imai" data-delay="2"><div class="person-photo"><img src="{P}member-i2.jpg" alt="今井さん" loading="lazy"></div><div class="person-info"><span>SALES / 異業種から</span><h3>今井さん</h3><p>広告代理店から、40歳で建設業界へ。</p><span class="person-arrow" aria-hidden="true">↓</span></div></a>
     </div>
     <div class="members">{"".join(SALES)}</div>
   </div>
@@ -130,15 +135,9 @@ BODY = f'''
 <!-- 05 FIELD TEAM｜方式B：CMS 54 Half ＋ 584 Photo Gallery ＋ CSS -->
 <section class="section" id="people-field" aria-labelledby="field-title" data-cms-id="54,584" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">FIELD TEAM <span>現場職</span></p><h2 class="section-title" id="field-title">楽な仕事ではない。<br>けれど、仲間と一日をやり切る仕事。</h2><p class="section-heading-desc" style="max-width:720px">夏場の暑さ、夜間の作業、限られた時間の中で求められる作業量。現場の仕事は決して楽ではありません。それでも、道路は人々の生活に欠かせないもの。約30年現場を見てきた班長と、建築から土木へ移った現場職の2人に話を聞きました。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">FIELD TEAM <span>現場職</span></p><h2 class="section-title" id="field-title">楽な仕事ではない。<br>けれど、仲間と1日をやり切る仕事。</h2><p class="section-heading-desc" style="max-width:720px">夏場の暑さ、夜間の作業、限られた時間の中で求められる作業量。現場の仕事は決して楽ではありません。それでも、道路は人々の生活に欠かせないもの。約30年現場を見てきた班長と、建築から土木へ移った現場職の2人に話を聞きました。</p></div>
     <div class="members">{"".join(FIELD)}</div>
-    <div class="card-grid reveal" style="margin-top:56px">
-      <figure style="margin:0"><img src="{P}process-remove.jpg" alt="重機で古い舗装を撤去する" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">古い舗装の撤去</figcaption></figure>
-      <figure style="margin:0"><img src="{P}field-worker-helmet.jpg" alt="ヘルメットをかぶって作業する現場職" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">路盤の整地</figcaption></figure>
-      <figure style="margin:0"><img src="{P}paving-roller.jpg" alt="ローラーで舗装を転圧する" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">アスファルトの転圧</figcaption></figure>
-      <figure style="margin:0"><img src="{P}excavator.jpg" alt="本社敷地の重機" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">現場で使う機材</figcaption></figure>
-    </div>
-  </div>
+    
 </section>
 
 <!-- 06 WORKING TOGETHER｜方式B：CMS 787 Text Two ／ 761 Flow Cards ＋ CSS -->
@@ -158,7 +157,7 @@ BODY = f'''
 <!-- 07 OUR TEAM｜方式B：CMS 42 Card Three（職場の雰囲気）。人数グラフ（方式C）は基準日が揃うまで非表示 -->
 <section class="section" id="people-data" aria-labelledby="data-title" data-cms-id="42,custom" data-implementation="B／グラフのみC">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">OUR TEAM <span>職場のこと</span></p><h2 class="section-title" id="data-title">数字と言葉で見る、<br>久留米興業の人たち。</h2></div>
+    <div class="section-heading reveal"><p class="section-kicker">OUR TEAM <span>職場のこと</span></p><h2 class="section-title" id="data-title">数字と言葉で知る、<br>久留米興業の職場。</h2></div>
     <div class="card-grid is-3 reveal gate" data-gate="従業員数・雰囲気は求人票（2026-11-05）の記載より">
       <div class="info-card"><small>MEMBERS</small><h3>従業員 37名</h3><p>事務所・営業・現場・車両や警備まで、自社のメンバーで仕事を進めています。</p></div>
       <div class="info-card is-blue"><small>ATMOSPHERE</small><h3>落ち着いた職場</h3><p>作業中は黙々と。分からないことは聞けば答えてくれます。男性が多めの職場です。</p></div>
@@ -175,9 +174,9 @@ BODY = f'''
   <div class="wrap">
     <div class="section-heading reveal"><h2 class="section-title" id="pcta-title">人を知ったら、<br>次は仕事を知る。</h2><p class="section-heading-desc">社員一人ひとりの経験や考えを知ったら、どのような仕事があり、どんな環境で働くのかも見てみてください。</p></div>
     <div class="card-grid is-3">
-      <a class="link-card reveal" href="@R@business/index.html"><div class="lc-media"><img src="{P}paving-roller.jpg" alt="舗装を転圧するローラー" loading="lazy"></div><div class="lc-body"><small>BUSINESS</small><h3>事業内容を見る</h3><span class="mini-link">事業内容へ <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@work-environment/index.html" data-delay="1"><div class="lc-media"><img src="{P}office-wide.jpg" alt="事務所の様子" loading="lazy"></div><div class="lc-body"><small>WORK ENVIRONMENT</small><h3>働く環境を見る</h3><span class="mini-link">労働環境へ <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@recruit/index.html" data-delay="2"><div class="lc-media"><img src="{P}field-crew-hq.jpg" alt="現場で作業する社員" loading="lazy"></div><div class="lc-body"><small>RECRUIT</small><h3>採用情報を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@business/index.html"><div class="lc-body"><small>BUSINESS</small><h3>事業内容を見る</h3><span class="mini-link">事業内容へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@work-environment/index.html" data-delay="1"><div class="lc-body"><small>WORK ENVIRONMENT</small><h3>働く環境を見る</h3><span class="mini-link">労働環境へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@recruit/index.html" data-delay="2"><div class="lc-body"><small>RECRUIT</small><h3>採用情報を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
     </div>
     <p class="fine-note" style="margin-top:24px">営業職3名のインタビュー全文は{ext(BLOG_LIST, '採用ブログ')}でご覧いただけます。</p>
   </div>

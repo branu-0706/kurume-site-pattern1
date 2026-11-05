@@ -5,7 +5,7 @@ P = "@R@assets/photos/"
 BODY = f'''
 <!-- 01 BUSINESS HERO｜方式B：CMS 734 H1 Center ＋ CSS（背景写真・左寄せ・オーバーレイはCSSで調整） -->
 <section class="page-hero" id="business-hero" aria-labelledby="business-title" data-cms-id="734" data-implementation="B">
-  <div class="page-hero-img" style="background-image:url('{P}paving-roller.jpg');background-position:60% 55%" role="img" aria-label="久留米興業のローラーで舗装を転圧している現場"></div>
+  <div class="page-hero-img" style="background-image:url('{P}field-work-street.jpg');background-position:55% 50%" role="img" aria-label="重機とともに道路の路盤をつくる現場"></div>
   <div class="wrap">
     <p class="eyebrow anim-enter"><span class="line"></span>OUR BUSINESS ／ 事業内容</p>
     <h1 id="business-title" class="anim-enter" style="--delay:.1s">道路の上も、地面の下も。<br>街の暮らしを支える仕事。</h1>
@@ -22,7 +22,7 @@ BODY = f'''
     <div class="body">
       <p>毎日歩く道、車が走る道路、蛇口から出る水。街の便利さは、普段あまり目にすることのない工事や維持管理の積み重ねによって支えられています。</p>
       <p>久留米興業は、ガス管取替後の復旧舗装、道路の改良・維持、水道管の工事などに携わってきました。完成した工事そのものだけでなく、その場所を使う人のこれからの生活にも思いを巡らせながら、仕事を続けています。</p>
-      <img src="{P}work-chisaki.jpg" alt="舗装を終えた住宅街の生活道路" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;margin-top:12px">
+      <img src="{P}road-line.jpg" alt="舗装を終えた住宅街の道路" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;margin-top:12px">
     </div>
   </div>
 </section>
@@ -31,11 +31,11 @@ BODY = f'''
 <section class="section bg-surface" id="business-index" aria-labelledby="index-title" data-cms-id="16" data-implementation="B">
   <div class="wrap">
     <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">OUR SERVICES <span>4つの事業</span></p><h2 class="section-title" id="index-title">久留米興業の事業</h2></div><p class="section-heading-desc">道路の表面から地下の配管まで。地域の暮らしを支える4つの施工領域をご紹介します。</p></div>
-    <div class="card-grid is-sp2">
-      <a class="link-card reveal" href="#service-gas"><div class="lc-media"><img src="{P}paving-roller.jpg" alt="舗装を転圧するローラー" loading="lazy"></div><div class="lc-body"><small>01</small><h3>ガス管取替後の復旧舗装工事</h3><p>ガス管を取り替えたあとの道路を、また使える状態へ。</p><span class="mini-link">詳細へ移動 <b aria-hidden="true">↓</b></span></div></a>
-      <a class="link-card reveal" href="#service-water" data-delay="1"><div class="lc-media"><img src="{P}water-pipe.jpg" alt="配水管を布設している溝" loading="lazy"></div><div class="lc-body"><small>02</small><h3>水道工事</h3><p>配水管の新設や給水管の取替など、水の通り道を整える。</p><span class="mini-link">詳細へ移動 <b aria-hidden="true">↓</b></span></div></a>
-      <a class="link-card reveal" href="#service-civil" data-delay="2"><div class="lc-media"><img src="{P}civil-road.jpg" alt="カラー舗装で仕上げた道路" loading="lazy"></div><div class="lc-body"><small>03</small><h3>一般土木工事</h3><p>路面の改良・維持など、毎日使われる街の基盤を整える。</p><span class="mini-link">詳細へ移動 <b aria-hidden="true">↓</b></span></div></a>
-      <a class="link-card reveal" href="#service-sewer" data-delay="3"><div class="pattern-art"><span>SEWERAGE</span></div><div class="lc-body"><small>04</small><h3>下水道工事</h3><p>下水道の整備を通じて、暮らしを支える地下のインフラに携わる。</p><span class="mini-link">詳細へ移動 <b aria-hidden="true">↓</b></span></div></a>
+    <div class="card-grid is-sp2 index-cards">
+      <a class="link-card no-media reveal" href="#service-gas"><div class="lc-body"><span class="idx-num">01</span><h3>ガス管取替後の復旧舗装工事</h3><p>ガス管を取り替えたあとの道路を、また使える状態へ。</p><span class="mini-link">詳細へ移動 <b aria-hidden="true">↓</b></span></div></a>
+      <a class="link-card no-media reveal" href="#service-water" data-delay="1"><div class="lc-body"><span class="idx-num">02</span><h3>水道工事</h3><p>配水管の新設や給水管の取替など、水の通り道を整える。</p><span class="mini-link">詳細へ移動 <b aria-hidden="true">↓</b></span></div></a>
+      <a class="link-card no-media reveal" href="#service-civil" data-delay="2"><div class="lc-body"><span class="idx-num">03</span><h3>一般土木工事</h3><p>路面の改良・維持など、毎日使われる街の基盤を整える。</p><span class="mini-link">詳細へ移動 <b aria-hidden="true">↓</b></span></div></a>
+      <a class="link-card no-media reveal" href="#service-sewer" data-delay="3"><div class="lc-body"><span class="idx-num">04</span><h3>下水道工事</h3><p>下水道の整備を通じて、暮らしを支える地下のインフラに携わる。</p><span class="mini-link">詳細へ移動 <b aria-hidden="true">↓</b></span></div></a>
     </div>
   </div>
 </section>
@@ -59,7 +59,7 @@ BODY = f'''
         {ext(OFFICIAL_WORKS, '水道工事の施工事例を見る <span aria-hidden="true">↗</span>', 'text-link')}</div></div>
     </article>
     <article class="half is-service reveal" id="service-civil" style="scroll-margin-top:96px">
-      <div class="half-media"><img src="{P}civil-road.jpg" alt="カラー舗装と区画線で仕上げた道路と工事黒板" loading="lazy"></div>
+      <div class="half-media"><img src="{P}work-minamikarasuyama.jpg" alt="道路維持工事で歩道を仕上げた現場と工事黒板" loading="lazy"><p class="caption">令和3年度 道路維持工事（世田谷区南烏山）</p></div>
       <div class="half-copy"><p class="label-num">03 / CIVIL ENGINEERING</p><h3>毎日通る道を、<br>これからも使える道へ。</h3>
         <div class="svc-body"><p>通学や通勤、物流など、人と物の移動を支える道路。久留米興業は、路面の改良・維持工事をはじめとする土木工事に携わっています。</p><p>工事中には安全な作業場所を確保し、現場の状況に合わせて一つひとつ作業を進めます。利用する人にとっては普段どおりの道路。その日常を守るために、現場で技術と経験を積み重ねています。</p>
         <ul class="tags"><li>路面改良</li><li>路面維持</li><li>その他の土木工事</li></ul></div></div>
@@ -89,14 +89,7 @@ BODY = f'''
       <li><span class="num">04</span><h3>アスファルトを敷き、締め固める。</h3><p>アスファルトを敷き均し、ローラーで転圧して仕上げます。</p></li>
       <li><span class="num">05</span><h3>作業を終え、帰社する。</h3><p>その日の作業が終わったら帰社します。</p></li>
     </ol>
-    <div class="card-grid is-3 reveal" style="margin-top:22px">
-      <figure style="margin:0"><img src="{P}process-remove.jpg" alt="重機で古い舗装を撤去している" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;width:100%"><figcaption class="caption">02 古い舗装の撤去</figcaption></figure>
-      <figure style="margin:0"><img src="{P}process-rake.jpg" alt="砕石の路盤とレーキ" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;width:100%"><figcaption class="caption">03 路盤材をレーキで敷き均す</figcaption></figure>
-      <figure style="margin:0"><img src="{P}work-kyuden.jpg" alt="アスファルトで仕上げた車道" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;width:100%"><figcaption class="caption">04 アスファルトで仕上げた路面</figcaption></figure>
-    </div>
-    <p class="flow-note">現場では、班長を中心にそれぞれの担当者が役割を分担しながら作業を進めます。完成後には道路だけが残る仕事ですが、そこには多くの人の判断と協力が積み重なっています。<br><small>※舗装工事の一例です。工事によって工程や順番は異なります。</small></p>
-    <a class="text-link" href="@R@people/index.html">実際に働く人を知る <span aria-hidden="true">↗</span></a>
-  </div>
+    <figure class="process-photo reveal"><img src="{P}process-rake.jpg" alt="砕石の路盤とレーキ" loading="lazy"><figcaption class="caption">路盤材（砕石）をレーキで敷き均し、ローラーやランマーで転圧します。</figcaption></figure>
 </section>
 
 <!-- 06 TEAMWORK｜方式B：CMS 54 Half ＋ 787 Standard Content Text Two ＋ CSS -->
@@ -132,11 +125,14 @@ BODY = f'''
 <section class="section" id="business-works" aria-labelledby="works-title" data-cms-id="718" data-implementation="A/B">
   <div class="wrap">
     <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">WORKS <span>施工実績</span></p><h2 class="section-title" id="works-title">仕事の跡は、<br>街に残っていく。</h2></div><p class="section-heading-desc">道路の舗装、水道に関わる工事など、久留米興業が携わってきた施工の一部をご紹介します。写真を通して、普段目にする街の風景がどのような仕事によって支えられているのかをご覧ください。</p></div>
-    <div class="card-grid is-3">
-      <a class="link-card reveal" href="{OFFICIAL_WORKS}" target="_blank" rel="noopener noreferrer"><div class="lc-media"><img src="{P}work-chisaki.jpg" alt="舗装を終えた生活道路" loading="lazy"></div><div class="lc-body"><small>一般土木</small><h3>地先道路築造工事（世田谷区上祖師谷）</h3><span class="mini-link">施工実績を見る <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="{OFFICIAL_WORKS}" target="_blank" rel="noopener noreferrer" data-delay="1"><div class="lc-media"><img src="{P}water-valve.jpg" alt="配水管の仕切弁を据え付けた現場" loading="lazy"></div><div class="lc-body"><small>水道工事</small><h3>配水小管布設替（調布市深大寺〜三鷹市中原）</h3><span class="mini-link">施工実績を見る <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="{OFFICIAL_WORKS}" target="_blank" rel="noopener noreferrer" data-delay="2"><div class="lc-media"><img src="{P}work-kamisoshigaya.jpg" alt="歩道の舗装を終えた現場" loading="lazy"></div><div class="lc-body"><small>道路維持</small><h3>令和3年度 道路維持工事（世田谷区上祖師谷）</h3><span class="mini-link">施工実績を見る <b aria-hidden="true">↗</b></span></div></a>
-    </div>
+    <ul class="works-list reveal">
+      <li><span>道路維持</span>令和3年度 道路維持工事（世田谷区上祖師谷）</li>
+      <li><span>道路維持</span>令和3年度 道路維持工事（世田谷区南烏山）</li>
+      <li><span>一般土木</span>地先道路築造工事（世田谷区上祖師谷）</li>
+      <li><span>一般土木</span>表層改良（世田谷区給田）</li>
+      <li><span>水道工事</span>配水小管布設替（調布市深大寺〜三鷹市中原）</li>
+      <li><span>復旧舗装</span>ガス管取替後の復旧舗装工事</li>
+    </ul>
     <div class="section-footer reveal">{ext(OFFICIAL_WORKS, '施工事例をもっと見る <span aria-hidden="true">↗</span>', 'btn btn-dark')}</div>
   </div>
 </section>
@@ -146,9 +142,9 @@ BODY = f'''
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">THE PEOPLE BEHIND OUR WORK</p><h2 class="section-title" id="cross-title">街を支える仕事の先に、<br>一人ひとりの未来がある。</h2><p class="section-heading-desc" style="max-width:640px">道路や水道を支える仕事は、経験や技術を積み重ねることで、任される役割も広がっていきます。どんな人が働き、どのような環境で仕事をしているのか。久留米興業の「人」と「働き方」も、ぜひ知ってください。</p></div>
     <div class="card-grid is-3">
-      <a class="link-card reveal" href="@R@people/index.html"><div class="lc-media"><img src="{P}team.jpg" alt="久留米興業の社員たち" loading="lazy"></div><div class="lc-body"><small>PEOPLE</small><h3>働くメンバー</h3><p>どんな人たちが、日々の現場を支えているのか。</p><span class="mini-link">働くメンバーを見る <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@work-environment/index.html" data-delay="1"><div class="lc-media"><img src="{P}office.jpg" alt="事務所で仕事をする社員" loading="lazy"></div><div class="lc-body"><small>WORK ENVIRONMENT</small><h3>労働環境</h3><p>仕事も、自分の生活も。働く環境を詳しく知る。</p><span class="mini-link">労働環境を見る <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@recruit/index.html" data-delay="2"><div class="lc-media"><img src="{P}field-crew.jpg" alt="現場で作業する社員" loading="lazy"></div><div class="lc-body"><small>RECRUIT</small><h3>採用情報</h3><p>営業職・現場職の仕事と、入社後のステップを知る。</p><span class="mini-link">採用情報を見る <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@people/index.html"><div class="lc-body"><small>PEOPLE</small><h3>働くメンバー</h3><p>どんな人たちが、日々の現場を支えているのか。</p><span class="mini-link">働くメンバーを見る <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@work-environment/index.html" data-delay="1"><div class="lc-body"><small>WORK ENVIRONMENT</small><h3>労働環境</h3><p>仕事も、自分の生活も。働く環境を詳しく知る。</p><span class="mini-link">労働環境を見る <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@recruit/index.html" data-delay="2"><div class="lc-body"><small>RECRUIT</small><h3>採用情報</h3><p>営業職・現場職の仕事と、入社後のステップを知る。</p><span class="mini-link">採用情報を見る <b aria-hidden="true">↗</b></span></div></a>
     </div>
   </div>
 </section>

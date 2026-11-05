@@ -5,7 +5,7 @@ P = "@R@assets/photos/"
 BODY = f'''
 <!-- 01 WORK STYLE HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
 <section class="page-hero" id="environment-hero" aria-labelledby="env-title" data-cms-id="734" data-implementation="B">
-  <div class="page-hero-img" style="background-image:url('{P}office-wide.jpg');background-position:55% 40%" role="img" aria-label="事務所で仕事をする久留米興業の社員たち"></div>
+  <div class="page-hero-img" style="background-image:url('{P}office.jpg');background-position:55% 40%" role="img" aria-label="事務所で打ち合わせをする久留米興業の社員たち"></div>
   <div class="wrap">
     <p class="eyebrow anim-enter"><span class="line"></span>WORK ENVIRONMENT ／ 労働環境</p>
     <h1 id="env-title" class="anim-enter" style="--delay:.1s">働く毎日を、<br>きちんと知ってほしい。</h1>
@@ -18,7 +18,7 @@ BODY = f'''
 <!-- 02 OUR APPROACH｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ CSS -->
 <section class="section" id="environment-policy" aria-labelledby="policy-title" data-cms-id="54,80" data-implementation="B">
   <div class="wrap half reveal" style="grid-template-columns:.82fr 1fr">
-    <div class="half-media is-portrait"><img src="{P}ceo.jpg" alt="代表取締役 川島 和範" loading="lazy"><p class="caption">代表取締役　川島 和範</p></div>
+    <div class="half-media is-portrait"><img src="{P}ceo-desk.jpg" alt="代表取締役 川島 和範" loading="lazy"><p class="caption">代表取締役　川島 和範</p></div>
     <div class="half-copy gate" data-gate="代表インタビュー（2026-07-17再構成）に基づく編集文：本人承認待ち">
       <p class="section-kicker">OUR APPROACH <span>働くことへの考え方</span></p>
       <h2 class="section-title" id="policy-title">仕事に向き合う時間も、<br>自分の時間も。</h2>
@@ -32,22 +32,22 @@ BODY = f'''
 <!-- 03 HOW WE WORK｜方式B：CMS 787 Standard Content Text Two ＋ 22 Table Border Light -->
 <section class="section bg-soft" id="environment-roles" aria-labelledby="roles-title" data-cms-id="787,22" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">HOW WE WORK <span>職種ごとの働き方</span></p><h2 class="section-title" id="roles-title">同じ会社でも、<br>仕事の一日は違う。</h2><p class="section-heading-desc" style="max-width:700px">久留米興業の工事は、取引先と現場の両方が動くことで進んでいきます。仕事内容は違っても、互いの状況を知り、協力して進めることが欠かせません。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">HOW WE WORK <span>職種ごとの働き方</span></p><h2 class="section-title" id="roles-title">同じ会社でも、<br>職種によって1日の過ごし方は違う。</h2><p class="section-heading-desc" style="max-width:700px">久留米興業の工事は、取引先と現場の両方が動くことで進んでいきます。仕事内容は違っても、互いの状況を知り、協力して進めることが欠かせません。</p></div>
     <div class="card-grid is-2">
-      <article class="link-card reveal"><div class="lc-media"><img src="{P}office-pc.jpg" alt="事務所でパソコンに向かう社員" loading="lazy"></div><div class="lc-body"><small>SALES</small><h3>営業職｜現場と取引先をつなぐ</h3><p>取引先からの工事の相談を受け、現地の状況を確認し、見積や材料・外注の手配、現場との連絡などを行います。相手の希望を聞くだけではなく、現場が無理なく作業を進められるように情報を整えることも重要な仕事です。</p><p>先輩への同行から仕事を覚え、徐々に担当できる案件を広げていきます。休日は土日祝。休みの日に現場から電話が入ることはまれにありますが、基本的には現場の責任者が対応します。</p><a class="text-link" href="@R@recruit/index.html#opening-sales">営業職の募集要項 <span aria-hidden="true">↗</span></a></div></article>
-      <article class="link-card reveal" data-delay="1"><div class="lc-media"><img src="{P}field-crew-hq.jpg" alt="現場で舗装の下地をつくる社員たち" loading="lazy"></div><div class="lc-body"><small>FIELD WORK</small><h3>現場職｜街の当たり前を、手を動かしてつくる</h3><p>7〜12名程度の自社チームで、道路舗装や水道関連工事の現場作業を進めます。未経験であれば、まずは道具の名前、安全ルール、作業の流れを覚えることから。一つずつできる仕事を増やし、周囲の作業を見ながら次の工程を考える力を身につけます。</p><p>朝が早いこと、夏場は屋外で暑さと向き合うこと、月4回程度の夜勤があることも、この仕事の現実です。その日の作業はその日のうちに終わらせるため、忙しい日もあります。</p><a class="text-link" href="@R@recruit/index.html#opening-field">現場職の募集要項 <span aria-hidden="true">↗</span></a></div></article>
+      <article class="link-card reveal"><div class="lc-media"><img src="{P}office-pc-wide.jpg" alt="事務所でパソコンに向かう社員" loading="lazy"></div><div class="lc-body"><small>SALES</small><h3>営業職｜現場と取引先をつなぐ</h3><p>取引先からの工事の相談を受け、現地の状況を確認し、見積や材料・外注の手配、現場との連絡などを行います。相手の希望を聞くだけではなく、現場が無理なく作業を進められるように情報を整えることも重要な仕事です。</p><p>先輩への同行から仕事を覚え、徐々に担当できる案件を広げていきます。休日は土日祝。休みの日に現場から電話が入ることはまれにありますが、基本的には現場の責任者が対応します。</p><a class="text-link" href="@R@recruit/index.html#opening-sales">営業職の募集要項 <span aria-hidden="true">↗</span></a></div></article>
+      <article class="link-card reveal" data-delay="1"><div class="lc-media"><img src="{P}excavator.jpg" alt="本社の敷地に停めた社名入りの重機" loading="lazy"></div><div class="lc-body"><small>FIELD WORK</small><h3>現場職｜街の当たり前を、手を動かしてつくる</h3><p>7〜12名程度の自社チームで、道路舗装や水道関連工事の現場作業を進めます。未経験であれば、まずは道具の名前、安全ルール、作業の流れを覚えることから。一つずつできる仕事を増やし、周囲の作業を見ながら次の工程を考える力を身につけます。</p><p>朝が早いこと、夏場は屋外で暑さと向き合うこと、月4回程度の夜勤があることも、この仕事の現実です。その日の作業はその日のうちに終わらせるため、忙しい日もあります。</p><a class="text-link" href="@R@recruit/index.html#opening-field">現場職の募集要項 <span aria-hidden="true">↗</span></a></div></article>
     </div>
     <div class="table-wrap reveal" style="margin-top:36px">
       <table class="spec-table"><caption class="sr-only">営業職と現場職の比較</caption>
         <thead><tr><th scope="col">項目</th><th scope="col">営業職</th><th scope="col">現場職</th></tr></thead>
         <tbody>
-          <tr><th scope="row">仕事内容</th><td>工事の相談、現地確認、見積、材料・外注の手配、現場との連絡</td><td>道路舗装や水道工事の現場作業、資格に応じて重機・車両の運転</td></tr>
-          <tr><th scope="row">主に関わる人</th><td>取引先、現場の社員、協力会社</td><td>班長と班の仲間（7〜12名程度）</td></tr>
-          <tr><th scope="row">働く場所</th><td>事務所、取引先、工事現場</td><td>主に世田谷区周辺の工事現場（本社集合）</td></tr>
+          <tr><th scope="row">仕事内容</th><td>工事の相談、現地確認、見積、材料・外注の手配、現場との連絡</td></tr>
+          <tr><th scope="row">主に関わる人</th><td>取引先、現場の社員、協力会社</td></tr>
+          <tr><th scope="row">働く場所</th><td>事務所、取引先、工事現場</td></tr>
           <tr><th scope="row">勤務時間</th><td class="gate" data-gate="求人ボックス原稿に未記載。CAREECON求人は8:00〜17:00">8:00〜17:00</td><td>8:30〜17:30（実働7.5時間／休憩1.5時間）。早く終われば15時ごろ早上がり</td></tr>
-          <tr><th scope="row">休日</th><td>土日祝（年間休日130日）</td><td>第2土曜・日曜・祝日、GW・夏季・年末年始に各6〜9日程度の連休</td></tr>
-          <tr><th scope="row">大変な部分</th><td>まれに休日に現場から連絡が入る</td><td>朝が早い。夏場の暑さ。月4回程度の夜勤（21:00〜翌6:00）</td></tr>
-          <tr><th scope="row">身につくこと</th><td>現場と取引先をつなぐ調整、工事の専門知識、施工管理の資格</td><td>道具・機械の扱い、次の工程を考える力、免許・技能講習・施工管理の資格</td></tr>
+          <tr><th scope="row">休日</th><td>土日祝（年間休日130日）</td></tr>
+          <tr><th scope="row">大変な部分</th><td>まれに休日に現場から連絡が入る</td></tr>
+          <tr><th scope="row">身につくこと</th><td>現場と取引先をつなぐ調整、工事の専門知識、施工管理の資格</td></tr>
         </tbody></table>
     </div>
   </div>
@@ -56,18 +56,18 @@ BODY = f'''
 <!-- 大変なことと会社の対応｜方式B：CMS 22 Table Border Light ＋ 80 H2 Text -->
 <section class="section" id="environment-honest" aria-labelledby="honest-title" data-cms-id="80,22" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">HONEST TALK <span>大変なことと、会社の対応</span></p><h2 class="section-title" id="honest-title">入ってから「聞いていない」と<br>ならないように。</h2><p class="section-heading-desc" style="max-width:720px">仕事の大変な面と、それに対して会社が今していることを並べました。まだ十分にできていないことも、そのまま書いています。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">HONEST TALK <span>大変なことと、会社の対応</span></p><h2 class="section-title" id="honest-title">入社してから「聞いていなかった」と<br>ならないように。</h2><p class="section-heading-desc" style="max-width:720px">仕事の大変な面と、それに対して会社が今していることを並べました。まだ十分にできていないことも、そのまま書いています。</p></div>
     <div class="table-wrap reveal">
       <table class="spec-table honest-table"><caption class="sr-only">仕事の大変な面と会社の対応</caption>
-        <thead><tr><th scope="col">大変なこと</th><th scope="col">会社の対応・現状</th><th scope="col">出典</th></tr></thead>
+        <thead><tr><th scope="col">大変なこと</th><th scope="col">会社の対応・現状</th></tr></thead>
         <tbody>
-          <tr><th scope="row">夏の暑さの中での屋外作業（現場職）</th><td>10時と15時に小休憩をとり、会社から冷えたドリンクを支給。お昼休憩は60分。</td><td>求人票</td></tr>
-          <tr><th scope="row">月4回程度の夜勤 21:00〜翌6:00（現場職）</th><td>夜間の道路規制に合わせた工事のため。夜勤の翌日は体を休められるようにシフトを調整。</td><td>求人票</td></tr>
-          <tr><th scope="row">作業量が多く、休憩の余裕を感じにくい日がある（現場職）</th><td>8人で行っていた仕事を10人で行うように人を増やしてきた。班長も「人が増えれば余裕につながる」と話しており、人員の確保を続けている。</td><td>現場対談・代表インタビュー</td></tr>
-          <tr><th scope="row">その日の作業は、その日のうちに終わらせる（現場職）</th><td>予定より早く終わった日は、15時ごろでも無理に仕事を増やさず早上がり。日給は全額支給。</td><td>求人票</td></tr>
-          <tr><th scope="row">休日に現場から電話が入ることがある（営業職）</th><td>まれなケース。基本的には現場の責任者が対応する。</td><td>採用ブログ（高畑さん）</td></tr>
-          <tr><th scope="row">時期によっては残業が必要になる</th><td>三六協定を含めた残業のルールを見直し、必要以上に長く会社に残る働き方を減らしている。</td><td>代表インタビュー</td></tr>
-          <tr><th scope="row">教育を専任で担当する部署がない</th><td>経験のある社員が、日々の仕事の中で教える形。忙しい時期は十分に時間を取れないこともあり、教え方の仕組みを少しずつ整えている。</td><td>代表インタビュー</td></tr>
+          <tr><th scope="row">夏の暑さの中での屋外作業（現場職）</th><td>10時と15時に小休憩をとり、会社から冷えたドリンクを支給。お昼休憩は60分。</td></tr>
+          <tr><th scope="row">月4回程度の夜勤 21:00〜翌6:00（現場職）</th><td>夜間の道路規制に合わせた工事のため。夜勤の翌日は体を休められるようにシフトを調整。</td></tr>
+          <tr><th scope="row">作業量が多く、休憩の余裕を感じにくい日がある（現場職）</th><td>8人で行っていた仕事を10人で行うように人を増やしてきた。班長も「人が増えれば余裕につながる」と話しており、人員の確保を続けている。</td></tr>
+          <tr><th scope="row">その日の作業は、その日のうちに終わらせる（現場職）</th><td>予定より早く終わった日は、15時ごろでも無理に仕事を増やさず早上がり。日給は全額支給。</td></tr>
+          <tr><th scope="row">休日に現場から電話が入ることがある（営業職）</th><td>まれなケース。基本的には現場の責任者が対応する。</td></tr>
+          <tr><th scope="row">時期によっては残業が必要になる</th><td>三六協定を含めた残業のルールを見直し、必要以上に長く会社に残る働き方を減らしている。</td></tr>
+          <tr><th scope="row">教育を専任で担当する部署がない</th><td>経験のある社員が、日々の仕事の中で教える形。忙しい時期は十分に時間を取れないこともあり、教え方の仕組みを少しずつ整えている。</td></tr>
         </tbody></table>
     </div>
     <p class="review-note">代表インタビュー・現場対談の内容は、掲載承認後に確定します。</p>
@@ -77,10 +77,10 @@ BODY = f'''
 <!-- 04 A DAY AT WORK｜方式B：CMS 761 Flow Cards ×2 -->
 <section class="section" id="environment-day" aria-labelledby="day-title" data-cms-id="761x2" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">A DAY AT WORK <span>1日の流れ</span></p><h2 class="section-title" id="day-title">一日には、<br>いくつもの役割がある。</h2><p class="section-heading-desc" style="max-width:700px">現場や担当案件によって予定は異なります。現場職は求人票に掲載している1日の例、営業職は仕事の場面でご紹介します。</p></div>
-    <h3 class="label-num reveal">FIELD WORK / 現場職の1日（例）</h3>
+    <div class="section-heading reveal"><p class="section-kicker">A DAY AT WORK <span>1日の流れ</span></p><h2 class="section-title" id="day-title">1日の中でも、<br>いくつもの役割がある。</h2><p class="section-heading-desc" style="max-width:700px">現場や担当案件によって予定は異なります。現場職は1日の流れの例、営業職は仕事の場面でご紹介します。</p></div>
+    <h3 class="label-num reveal">FIELD WORK / 現場職の1日の例</h3>
     <ol class="flow reveal" style="--navy:#04447C;grid-template-columns:repeat(4,minmax(0,1fr))">
-      <li><span class="num">08:30</span><h3>本社に集合、現場へ</h3><p>チームで現場へ移動して作業開始。</p></li>
+      <li><span class="num">08:30</span><h3>本社に集合し、現場へ</h3><p>チームで現場へ移動して作業開始。</p></li>
       <li><span class="num">10:00</span><h3>小休憩</h3><p>会社から冷えたドリンクを支給。</p></li>
       <li><span class="num">12:00</span><h3>お昼休憩</h3><p>60分。お弁当を食べて休みます。</p></li>
       <li><span class="num">13:00</span><h3>午後の作業</h3><p>7〜12名の自社チームで進めます。</p></li>
@@ -120,11 +120,10 @@ BODY = f'''
 <!-- 06 OUR WORKPLACE｜方式B：CMS 762 Square Four Images ＋ 54 Half ＋ CSS -->
 <section class="section" id="environment-place" aria-labelledby="place-title" data-cms-id="762,54" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">OUR WORKPLACE <span>働く場所・環境</span></p><h2 class="section-title" id="place-title">いつもの仕事を支える、<br>いつもの場所。</h2></div><p class="section-heading-desc">事務所、現場、移動、そして生活の場。働く場所を写真で知ると、一日のイメージが少し具体的になります。</p></div>
+    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">OUR WORKPLACE <span>働く場所・環境</span></p><h2 class="section-title" id="place-title">いつもの仕事を支える、<br>いつもの場所。</h2></div><p class="section-heading-desc">事務所、現場、移動、そして生活の場。働く場所を写真で知ると、1日のイメージが少し具体的になります。</p></div>
     <div class="reveal place-grid">
-      <figure style="margin:0;grid-row:span 2"><img src="{P}yard.jpg" alt="重機やトラックが並ぶ本社の敷地" loading="lazy" style="width:100%;height:100%;object-fit:cover;min-height:320px"><figcaption class="caption"><strong>本社・機材</strong>　毎朝ここに集合し、チームで現場へ向かいます。</figcaption></figure>
-      <figure style="margin:0"><img src="{P}office-wide.jpg" alt="事務所で仕事をする社員たち" loading="lazy" style="width:100%;aspect-ratio:16/10;object-fit:cover"><figcaption class="caption"><strong>事務所</strong>　取引先とのやり取りや工事の準備を進める拠点。</figcaption></figure>
-      <figure style="margin:0"><img src="{P}field-sidewalk2.jpg" alt="歩道の工事現場で作業する社員たち" loading="lazy" style="width:100%;aspect-ratio:16/10;object-fit:cover"><figcaption class="caption"><strong>施工現場</strong>　東京都内、主に世田谷区周辺の道路や歩道。</figcaption></figure>
+      <figure style="margin:0"><img src="{P}yard.jpg" alt="重機やトラックが並ぶ本社の敷地" loading="lazy" style="width:100%;aspect-ratio:3/2;object-fit:cover"><figcaption class="caption"><strong>本社・機材</strong>　毎朝ここに集合し、チームで現場へ向かいます。</figcaption></figure>
+      <figure style="margin:0"><img src="{P}office-floor.jpg" alt="明るい事務所のフロア" loading="lazy" style="width:100%;aspect-ratio:3/2;object-fit:cover"><figcaption class="caption"><strong>事務所</strong>　取引先とのやり取りや工事の準備を進める拠点。</figcaption></figure>
     </div>
     <div class="half" style="margin-top:40px">
       <div class="half-media"><div class="photo-slot review-only"><div><strong>E-06 個室寮</strong>部屋・共用設備の最新写真を受領後に配置</div></div><div class="pattern-art gate-hide-review" style="aspect-ratio:4/3"><span>DORMITORY</span></div></div>
@@ -154,11 +153,13 @@ BODY = f'''
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">OUR EFFORTS <span>自社の取り組み</span></p><h2 class="section-title" id="effort-title">仕事を続けるために、<br>少しずつ変えてきたこと。</h2><p class="section-heading-desc" style="max-width:700px">長く続いてきたやり方を変えることには、社内から反発もありました。それでも、法令に沿い、時代に合った会社にするため、できるところから見直してきました。まだ十分にできていないこともあります。</p></div>
     <div class="gate" data-gate="代表インタビュー・求人票に基づく編集文：本人承認待ち">
-      <article class="half reveal"><div class="half-media"><img src="{P}office-pc-wide.jpg" alt="事務所でパソコンに向かう社員" loading="lazy"></div><div class="half-copy"><p class="label-num">01</p><h3>残業のルールを見直す</h3><p>建設業に詳しい社会保険労務士のセミナーをきっかけに、三六協定を含めた残業のルールから見直しました。時期や仕事の状況によって残業が必要なこともありますが、必要以上に長く会社に残る働き方は減らしています。</p></div></article>
-      <article class="half is-rev reveal"><div class="half-media"><img src="{P}team.jpg" alt="重機の前に並ぶ社員たち" loading="lazy"></div><div class="half-copy"><p class="label-num">02</p><h3>人を増やして、負担を分ける</h3><p>現場の作業そのものは簡単には減らせません。そこで、これまで8人で行っていた仕事を10人で行うように人を増やし、一人が無理をして「1.2」の力で動いていた状態を「1.0」に近づけてきました。</p></div></article>
-      <article class="half reveal"><div class="half-media"><img src="{P}field-work-street.jpg" alt="重機の近くで作業する現場職" loading="lazy"></div><div class="half-copy"><p class="label-num">03</p><h3>早く終われば、早く帰る</h3><p>予定より早く作業が終わった日は、15時ごろでも無理に仕事を増やさず早上がり。雨で現場が早く切り上がった日も、日給は全額支給します。夜勤の翌日は体を休められるようにシフトを調整します。</p></div></article>
-      <article class="half is-rev reveal"><div class="half-media"><img src="{P}field-worker-helmet.jpg" alt="ヘルメットと保護具を着けて作業する現場職" loading="lazy"></div><div class="half-copy"><p class="label-num">04</p><h3>安全と地域への配慮</h3><p>ヘルメット着用の徹底、喫煙場所の制限など、安全と近隣への配慮は時代とともに変わってきました。地域の行事やバザーへの協賛のほか、現場で余ったインターロッキングブロックを「ご自由にお持ちください」と会社の前に置くこともあります。</p></div></article>
+      <div class="card-grid is-2 effort-grid">
+      <div class="info-card reveal"><small>01</small><h3>残業のルールを見直す</h3><p>建設業に詳しい社会保険労務士のセミナーをきっかけに、三六協定を含めた残業のルールから見直しました。時期や仕事の状況によって残業が必要なこともありますが、必要以上に長く会社に残る働き方は減らしています。</p></div>
+      <div class="info-card is-blue reveal" data-delay="1"><small>02</small><h3>人を増やして、負担を分ける</h3><p>現場の作業そのものは簡単には減らせません。そこで、これまで8人で行っていた仕事を10人で行うように人を増やし、一人が無理をして「1.2」の力で動いていた状態を「1.0」に近づけてきました。</p></div>
+      <div class="info-card is-blue reveal"><small>03</small><h3>早く終われば、早く帰る</h3><p>予定より早く作業が終わった日は、15時ごろでも無理に仕事を増やさず早上がり。雨で現場が早く切り上がった日も、日給は全額支給します。夜勤の翌日は体を休められるようにシフトを調整します。</p></div>
+      <div class="info-card reveal" data-delay="1"><small>04</small><h3>安全と地域への配慮</h3><p>ヘルメット着用の徹底、喫煙場所の制限など、安全と近隣への配慮は時代とともに変わってきました。地域の行事やバザーへの協賛のほか、現場で余ったインターロッキングブロックを「ご自由にお持ちください」と会社の前に置くこともあります。</p></div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -167,9 +168,9 @@ BODY = f'''
   <div class="wrap">
     <div class="section-heading reveal"><h2 class="section-title" id="ecta-title">制度だけでは見えない、<br>久留米興業の毎日へ。</h2><p class="section-heading-desc">実際に働く人の声や、具体的な仕事・募集条件もあわせてご覧ください。</p></div>
     <div class="card-grid is-3">
-      <a class="link-card reveal" href="@R@people/index.html"><div class="lc-media"><img src="{P}member-t2.jpg" alt="営業職の社員" loading="lazy"></div><div class="lc-body"><small>PEOPLE</small><h3>働くメンバーを見る</h3><span class="mini-link">働くメンバーへ <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@recruit/index.html#recruit-openings" data-delay="1"><div class="lc-media"><img src="{P}field-crew-hq.jpg" alt="現場で作業する社員" loading="lazy"></div><div class="lc-body"><small>RECRUIT</small><h3>募集要項を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@business/index.html" data-delay="2"><div class="lc-media"><img src="{P}paving-roller.jpg" alt="舗装を転圧するローラー" loading="lazy"></div><div class="lc-body"><small>BUSINESS</small><h3>仕事内容を見る</h3><span class="mini-link">事業内容へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@people/index.html"><div class="lc-body"><small>PEOPLE</small><h3>働くメンバーを見る</h3><span class="mini-link">働くメンバーへ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@recruit/index.html#recruit-openings" data-delay="1"><div class="lc-body"><small>RECRUIT</small><h3>募集要項を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@business/index.html" data-delay="2"><div class="lc-body"><small>BUSINESS</small><h3>仕事内容を見る</h3><span class="mini-link">事業内容へ <b aria-hidden="true">↗</b></span></div></a>
     </div>
   </div>
 </section>

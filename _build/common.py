@@ -59,7 +59,7 @@ def header(current, root):
       <span class="brand-wordmark">KURUME KOGYO<span>株式会社久留米興業</span></span>
     </a>
     <nav class="desktop-nav" aria-label="メインナビゲーション">{navs}</nav>
-    <a class="header-contact" href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">お問い合わせ <span aria-hidden="true">↗</span><span class="sr-only">（公式サイトのフォームが開きます）</span></a>
+    <a class="header-contact" href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">お問い合わせ <span aria-hidden="true">↗</span><span class="sr-only">（お問い合わせフォームが別画面で開きます）</span></a>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
   <nav class="mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション" hidden>{navs}<a href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">お問い合わせ ↗</a></nav>

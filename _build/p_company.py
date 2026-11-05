@@ -5,7 +5,7 @@ P = "@R@assets/photos/"
 BODY = f'''
 <!-- 01 COMPANY HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
 <section class="page-hero" id="company-hero" aria-labelledby="company-title" data-cms-id="734" data-implementation="B">
-  <div class="page-hero-img" style="background-image:url('{P}entrance.jpg');background-position:40% 45%" role="img" aria-label="「(株)久留米興業」の看板が掲げられた本社の敷地入口"></div>
+  <div class="page-hero-img" style="background-image:url('{P}entrance-sunny.jpg');background-position:40% 55%" role="img" aria-label="「(株)久留米興業」の看板が掲げられた本社の敷地入口"></div>
   <div class="wrap">
     <p class="eyebrow anim-enter"><span class="line"></span>COMPANY / ABOUT US</p>
     <h1 id="company-title" class="anim-enter" style="--delay:.1s">この街とともに歩み、<br>次の世代へつないでいく。</h1>
@@ -18,7 +18,7 @@ BODY = f'''
 <!-- 02 MESSAGE FROM PRESIDENT｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ CSS -->
 <section class="section" id="company-ceo" aria-labelledby="cceo-title" data-cms-id="54,80" data-implementation="B">
   <div class="wrap half reveal" style="grid-template-columns:.82fr 1fr">
-    <div class="half-media is-portrait"><img src="{P}ceo.jpg" alt="代表取締役 川島 和範" loading="lazy"><p class="caption">代表取締役　川島 和範</p></div>
+    <div class="half-media is-portrait"><img src="{P}ceo-smile.jpg" alt="代表取締役 川島 和範" loading="lazy"><p class="caption">代表取締役　川島 和範</p></div>
     <div class="half-copy gate" data-gate="公式の代表挨拶を再編集した原稿：本人承認待ち">
       <p class="section-kicker">MESSAGE FROM PRESIDENT <span>代表メッセージ</span></p>
       <h2 class="section-title" id="cceo-title">当たり前の日常を、<br>これからも支えるために。</h2>
@@ -92,7 +92,7 @@ BODY = f'''
       <p>久留米興業と同じ世田谷区北烏山の敷地内には、関連会社のKRM株式会社があります。KRMでは、再生アスファルト合材や再生砕石などの販売、残土・アスファルトガラ・コンクリートガラなどの受け入れを行っています。</p>
       <p>現場で必要とされる工事と、その工事に関わる資材。二つの仕事を知ることで、道路や土木に関わる仕事の幅広さを感じられます。</p>
       <table class="spec-table gate" data-gate="KRMの会社情報：公開前に最新照合" style="font-size:12.5px;margin:6px 0 22px"><tbody><tr><th scope="row">社名</th><td>KRM株式会社（関連会社）</td></tr><tr><th scope="row">設立</th><td>2018年10月30日</td></tr><tr><th scope="row">所在地</th><td>久留米興業と同所</td></tr><tr><th scope="row">代表者</th><td>代表取締役　川島 和範</td></tr></tbody></table>
-      {ext(KRM, 'KRM株式会社の公式サイトへ <span aria-hidden="true">↗</span>', 'btn btn-dark')}</div>
+      {ext(KRM, 'KRM株式会社のサイトへ <span aria-hidden="true">↗</span>', 'btn btn-dark')}</div>
   </div>
 </section>
 
@@ -121,9 +121,9 @@ BODY = f'''
   <div class="wrap">
     <div class="section-heading reveal"><h2 class="section-title" id="clinks-title">会社を知った、その先へ。</h2><p class="section-heading-desc" style="max-width:640px">私たちが手がける仕事、そして働く人たち。久留米興業をもう少し詳しく知りたい方はこちらをご覧ください。</p></div>
     <div class="card-grid is-3">
-      <a class="link-card reveal" href="@R@business/index.html"><div class="lc-media"><img src="{P}paving-roller.jpg" alt="舗装を転圧するローラー" loading="lazy"></div><div class="lc-body"><small>BUSINESS</small><h3>事業内容を見る</h3><span class="mini-link">事業内容へ <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@people/index.html" data-delay="1"><div class="lc-media"><img src="{P}team.jpg" alt="久留米興業の社員たち" loading="lazy"></div><div class="lc-body"><small>PEOPLE</small><h3>働くメンバーを見る</h3><span class="mini-link">働くメンバーへ <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@recruit/index.html" data-delay="2"><div class="lc-media"><img src="{P}field-crew.jpg" alt="現場で作業する社員" loading="lazy"></div><div class="lc-body"><small>RECRUIT</small><h3>採用情報を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@business/index.html"><div class="lc-body"><small>BUSINESS</small><h3>事業内容を見る</h3><span class="mini-link">事業内容へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@people/index.html" data-delay="1"><div class="lc-body"><small>PEOPLE</small><h3>働くメンバーを見る</h3><span class="mini-link">働くメンバーへ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card no-media reveal" href="@R@recruit/index.html" data-delay="2"><div class="lc-body"><small>RECRUIT</small><h3>採用情報を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
     </div>
   </div>
 </section>

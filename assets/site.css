@@ -34,7 +34,7 @@
 
 /* ===== 6ページ化で追加（共通）。本番ではCMSのSectionごとにスコープを付けて移植する ===== */
 .hero-image{background-image:url('photos/hero.jpg')}
-.workstyle-visual-image{background-image:url('photos/field-crew.jpg');background-position:50% 50%}
+
 .reveal{opacity:1;transform:none}.js .reveal{opacity:0;transform:translateY(28px)}.js .reveal.is-visible{opacity:1;transform:none}
 .desktop-nav a[aria-current="page"]{color:var(--blue)}.desktop-nav a[aria-current="page"]::after{width:100%}
 .mobile-nav a[aria-current="page"]{color:var(--blue)}
@@ -290,3 +290,43 @@ body{font-family:var(--jp);font-feature-settings:"palt" 1;letter-spacing:.02em}
 .spec-table tbody tr:hover td,.spec-table tbody tr:hover th{background-color:#f9fbfd}
 @media(max-width:767px){.page-hero{min-height:500px}.page-hero .wrap{padding-block:90px 52px}.page-hero::after{font-size:64px}.page-hero .lane{right:6%}.member .half-media::after{left:-8px;bottom:-8px}.member.is-rev .half-media::after{right:-8px}.bg-soft::before,.bg-blueish::before{height:32px}}
 .hero-content,.hero-bottom,.hero-side-label{z-index:2}
+
+/* ===== 11/5 修正：写真の重複なし・コントラスト ===== */
+.workstyle-visual-image{background-image:url('photos/member-i-helmet.jpg');background-position:50% 30%;filter:none}
+/* 写真のないリンクカード */
+.link-card.no-media{border-top:3px solid var(--navy);min-height:170px}
+.link-card.no-media:nth-child(2n){border-top-color:var(--blue)}
+.link-card.no-media h3{font-size:18px}
+.link-card.no-media:hover{background:var(--navy)}.link-card.no-media:hover *{color:#fff!important}.link-card.no-media:hover .mini-link{border-top-color:rgba(255,255,255,.3)}
+.idx-num{display:block;font:700 40px/1 var(--en);color:#c3cfdc;margin-bottom:14px}
+.process-photo{margin:28px 0 0}.process-photo img{width:100%;aspect-ratio:21/8;object-fit:cover}
+.works-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;border-top:1px solid var(--border)}
+.works-list li{display:flex;gap:16px;align-items:center;padding:18px 4px;border-bottom:1px solid var(--border);font-size:14px;font-weight:700;color:var(--navy);min-width:0}
+.works-list span{flex-shrink:0;font-size:11px;font-weight:700;color:var(--blue);border:1px solid #c9d6e3;padding:4px 8px;background:#fff}
+.member-mix{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.member-mix li{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;background:#fff;padding:18px 20px;box-shadow:0 12px 30px -24px rgba(20,34,89,.45);font-size:13.5px;color:#435161;line-height:1.8}
+.member-mix b{font:700 15px/1.3 var(--en),var(--jp);color:var(--navy);border-right:1px solid var(--border)}
+.effort-grid .info-card{background:#f4f6f8}
+/* 濃い背景の上に置く白いカード：文字色を必ず濃色に戻す（コントラスト対策） */
+.navy-band .info-card,.navy-band .link-card,.navy-band .spec-table,.navy-band .anx{color:var(--ink)}
+.navy-band .info-card p,.navy-band .link-card p,.navy-band .spec-table td{color:#435161}
+.navy-band .info-card h3,.navy-band .link-card h3{color:var(--navy)}
+.navy-band .info-card small{color:var(--blue)}
+.navy-band .lead-block .body p{color:#dbe4ef}
+@media(max-width:767px){.works-list{grid-template-columns:1fr}.member-mix li{grid-template-columns:78px 1fr;padding:14px}.process-photo img{aspect-ratio:16/9}}
+/* コントラスト確保（WCAG AA：本文4.5以上、大きい文字3以上） */
+.section-kicker span{color:#56657a}
+.section-heading-desc,.lead-block .body p,.workstyle-copy>p:not(.section-kicker),.about-copy p:not(.section-kicker){color:#4d5c70}
+.breadcrumb ol,.caption,.fine-note,.fact p,.fact.is-honest small,.anx-a blockquote cite,.voice footer,.person-info p,.business-card p,.link-card p,.member-points li,.info-card p,.flow li p,.timeline p{color:#4d5c70}
+.sub-copy{color:#56657a}
+.flow li .num,.idx-num{color:#6d7f96}
+.fact.is-honest strong{color:#3d4a5c}
+.mini-link,.label-num,.link-card small,.info-card small,.fact small,.recruit-entry small,.anx-a small,.timeline .when,.section-kicker{color:#03396a}
+.section-kicker-light,.navy-band .section-kicker{color:#b6d7f0}
+.anx-q small{color:#4d5c70}
+.entry-icon{color:#7d8fa5}
+.values-section .value-item>span{color:#b3cbe6}
+.section-kicker-light span,.navy-band .section-kicker span,.values-section .section-kicker span,.recruit-section .section-kicker span,.contact-section .section-kicker span{color:#c9d6e6}
+.spec-table td{color:#2f3d52}
+.flow-note{color:#4d5c70}
+.honest-table td:last-child{width:auto;font-size:13.5px;color:#2f3d52}
