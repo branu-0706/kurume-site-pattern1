@@ -56,7 +56,7 @@ BODY = f'''
     <ol class="flow is-4 reveal" style="grid-template-columns:repeat(3,minmax(0,1fr));margin-top:36px">
       <li><span class="num">1974</span><h3>株式会社久留米興業 設立</h3><p>3月4日設立。世田谷区北烏山を拠点に事業を開始。</p></li>
       <li style="border-top-color:var(--blue)"><span class="num">2018</span><h3>関連会社 KRM株式会社 設立</h3><p>同じ敷地内に、建設資材の販売や受け入れを担う関連会社を設立。</p></li>
-      <li><span class="num">NOW</span><h3>道路・水道・土木の4事業</h3><p>ガス管取替後の復旧舗装、水道、一般土木、下水道の工事に携わる。</p></li>
+      <li><span class="num">NOW</span><h3>次の50年へ</h3><p>ガス管取替後の復旧舗装、水道、一般土木、下水道の4事業。働き方を見直しながら、次の世代へ会社をつなぐ。</p></li>
     </ol>
   </div>
 </section>
@@ -76,7 +76,8 @@ BODY = f'''
         <tr><th scope="row">事業内容</th><td>ガス管取替後の復旧舗装工事、道路改良・維持工事、水道工事、一般土木工事、下水道工事</td></tr>
         <tr class="gate review-only" data-gate="許可番号：最新の許可票を受領するまで非表示"><th scope="row">建設業許可</th><td class="tbd">【要最新照合】既存の公式表記は旧年度（特29・般29）</td></tr>
         <tr class="gate review-only" data-gate="最新の許可情報を受領するまで非表示"><th scope="row">指定工事店・産業廃棄物収集運搬</th><td class="tbd">【要最新照合】更新状況・地域・条件</td></tr>
-        <tr class="gate review-only" data-gate="従業員数：基準日を確定するまで非表示"><th scope="row">従業員数</th><td class="tbd">【要確認】採用サイト37人／行政情報30人で不一致</td></tr>
+        <tr class="gate" data-gate="求人票（2026-11-05）の記載。行政情報は30人。基準日を確認"><th scope="row">従業員数</th><td>37名</td></tr>
+        <tr class="gate" data-gate="求人票で公開済み。HPへの社名掲載の可否を確認"><th scope="row">主な取引先</th><td>世田谷区、東京都水道局、日鉄P&amp;E株式会社、株式会社NIPPO ほか</td></tr>
         <tr><th scope="row">関連会社</th><td>KRM株式会社（<a href="#company-krm">下記参照</a>）</td></tr>
       </tbody></table>
     </div>
@@ -104,7 +105,8 @@ BODY = f'''
         <table class="spec-table"><tbody>
           <tr><th scope="row">住所</th><td>〒157-0061<br>東京都世田谷区北烏山6丁目26-28</td></tr>
           <tr><th scope="row">電話</th><td><a href="tel:0333093786">03-3309-3786</a></td></tr>
-          <tr class="gate review-only" data-gate="交通・来訪入口：最新確認後に掲載"><th scope="row">交通</th><td class="tbd">【要確認】求人ページの記載は「京王線 千歳烏山駅から徒歩15分」。実際のルート、来訪用入口、駐車場の有無を確認。</td></tr>
+          <tr><th scope="row">交通</th><td>京王線「千歳烏山駅」より徒歩15分<br>自転車・バイク通勤OK（社員）</td></tr>
+          <tr class="gate review-only" data-gate="来訪用入口・駐車場：確認後に掲載"><th scope="row">来訪時</th><td class="tbd">【要確認】来訪用の入口、駐車場の有無</td></tr>
         </tbody></table>
         <p class="gate review-only" data-gate="事前連絡の要否を確認" style="font-size:13px;margin-top:16px">お越しになる際は、事前にご連絡いただけますとスムーズです。</p>
         <div class="cta-row">{ext(MAPS, 'Googleマップで見る <span aria-hidden="true">↗</span>', 'btn btn-dark')}</div>

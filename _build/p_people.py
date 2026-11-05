@@ -2,6 +2,63 @@ from common import *
 
 P = "@R@assets/photos/"
 
+
+def member(id_, photo, alt, role, name, title, lead, points, link=None, gate="", rev=False):
+    pts = "".join(f"<li><strong>{h}</strong>{t}</li>" for h, t in points)
+    lk = ext(link, 'インタビュー全文を読む <span aria-hidden="true">↗</span>', 'text-link') if link else ""
+    g = f' gate" data-gate="{gate}' if gate else ""
+    media = f'<img src="{P}{photo}" alt="{alt}" loading="lazy">' if photo else '<div class="photo-slot"><div><strong>写真待ち</strong>ご本人の写真を確認のうえ配置</div></div>'
+    return f'''<article class="half member{' is-rev' if rev else ''} reveal{g}" id="{id_}" style="scroll-margin-top:96px">
+      <div class="half-media">{media}</div>
+      <div class="half-copy"><p class="label-num">{role}</p><h3>{title}</h3><p class="member-name">{name}</p><p>{lead}</p><ul class="member-points">{pts}</ul>{lk}</div>
+    </article>'''
+
+
+SALES = [
+    member("member-takahata", "member-t.jpg", "笑顔で話す高畑さん", "SALES / 新卒入社", "高畑さん｜営業職（社内で最年少の営業）",
+           "「何が分からないかも、分からない」<br>からのスタート。",
+           "大学卒業後、最初の会社として久留米興業に入社。専攻は土木と無関係でした。面接で社長と会長に会い、「この人たちの下で頑張りたい」と感じたことが決め手です。",
+           [("最初の壁", "現場の用語もルールも分からず、質問したくても言葉が出てこない時期が一番つらかったそうです。社長や先輩が「大丈夫か？」と先に声をかけてくれたことで、立ち直れたと話します。"),
+            ("今の仕事", "最初の1〜2年は先輩に同行。今は社長の「断らない営業」という教えを大切に、自ら現場へ足を運んで知識を積み上げています。"),
+            ("働き方", "土日祝は基本的に休み。仕事帰りにジムに行くなど、自分の時間も大切にしています。")],
+           BLOG_TAKAHATA, gate="採用ブログ・求人票で公開済みの内容を要約。HP転載の承認を確認"),
+    member("member-negishi", "member-n2.jpg", "事務所で笑顔を見せる根岸さん", "SALES → SITE AGENT / 異業種から", "根岸さん｜営業職から現場代理人へ",
+           "お茶の営業から、<br>道路づくりの現場へ。",
+           "前職はお茶屋さんで約12年、営業やパッケージデザインを担当。40歳を目前に、長く安定して働ける国家資格のある仕事を求めて、未経験で土木の世界へ。入社の決め手は社長の人柄でした。",
+           [("最初の壁", "最初は用語一つとっても分からない状態。入社後は先輩が1人つき、分からないことはすぐ電話で聞けました。"),
+            ("資格", "会社がテキストを用意し、先輩が実務に即して教えてくれる中、3回目の挑戦で1級土木施工管理技士に合格しました。"),
+            ("今の仕事", "ガス工事の営業補佐から始まり、現在は世田谷区と年間契約を結んでいる道路の維持工事の現場代理人。協力会社をまとめ、苦情対応から施工の振り分けまでを担っています。"),
+            ("働き方", "土日は妻と2人の子どもと過ごす時間。バイク通勤や、社長とのゴルフでオンとオフを切り替えています。")],
+           BLOG_NEGISHI, gate="採用ブログ・求人票で公開済みの内容を要約。HP転載の承認を確認", rev=True),
+    member("member-imai", "member-i.jpg", "事務所で仕事をする今井さん", "SALES / 40歳で異業種から", "今井さん｜営業職",
+           "異業種で積んだ力を、<br>インフラの仕事に。",
+           "前職は広告代理店。労働時間が長く、40歳を越えて「この先20年も同じ働き方ができるか」と考え、建設業界へ。若手が少ない業界だからこそ、異業種からでも力を発揮できると考えました。",
+           [("最初の壁", "図面を見ても分からない状態で現場へ。職人さんに指摘されることもありましたが、机上の勉強より現場の声を聞くことに徹して、営業としての居場所をつくってきました。"),
+            ("大切にしていること", "社内や協力会社との関係づくり。指示は頭ごなしにせず、お願いの形で伝えています。"),
+            ("働き方", "営業職は土日が基本的に休みで、連休も取りやすいそうです。週4回ほどジムに通っています。"),
+            ("これから", "目標は1級土木施工管理技士の取得です。")],
+           BLOG_IMAI, gate="採用ブログ・求人票で公開済みの内容を要約。HP転載の承認を確認"),
+]
+
+FIELD = [
+    member("member-matsuno", "field-veteran.jpg", "現場でヘルメットをかぶった松野さん", "FIELD / 班長・約30年", "松野さん｜現場の班長",
+           "それぞれが役割を分かって、<br>一日の作業を終わらせる。",
+           "入社前はガス関係の個人事業主。友人の紹介で久留米興業に入り、約30年にわたって現場を支えてきました。今は班の段取りや役割分担を担っています。",
+           [("現場の進め方", "班の中で役割分担ができていて、細かく指示することはあまりないそうです。進み具合を見て、問題がありそうなら手を加えたり手伝ったりします。"),
+            ("変わったこと", "昔はたばこをくわえたまま作業する時代もありましたが、今はヘルメット着用を徹底し、近隣への配慮も含めて安全への意識が大きく変わりました。"),
+            ("正直なところ", "その日の作業はその日のうちに終わらせるのが現場の決まり。作業量が多く、休憩を取る余裕を感じにくい日もあります。人が増えれば余裕につながる、と話します。"),
+            ("新人へ", "「まずは毎日来ること。最初から何でもできる必要はありません。焦らず、長く続けてもらえれば」")],
+           None, gate="対談インタビュー原稿（掲載前）に基づく編集文：本人承認待ち"),
+    member("member-okui", None, "", "FIELD / 建築から土木へ・5〜6年", "奥居さん｜現場職",
+           "見て覚えて、聞いて覚える。<br>カラーコーンを並べるところから。",
+           "建築業界で躯体工事や外構工事、型枠などを経験した後、久留米興業へ。土木の現場は初めてでしたが、松野さんたち先輩と一緒に経験を重ね、5〜6年になります。",
+           [("入ってみて", "「最初は皆さん見た目が怖い。でも、話すと優しい人が多い」"),
+            ("現場の連携", "作業中は近隣への配慮もあって会話は少なめ。それでも分からないことは聞き、班長の動きを見ながら合わせていきます。「班長がいるといないとじゃ、全然違う」"),
+            ("続けている理由", "特別な理由より、毎日現場に出て、合う人たちと仕事をしてきた積み重ね。早く帰れるようにみんなで頑張る感覚もあるそうです。"),
+            ("新人へ", "「仕事なのできついこともあります。夏は暑い。でも毎日出ていれば、少しずつ流れは分かってきます」")],
+           None, gate="対談インタビュー原稿（掲載前）に基づく編集文：本人承認待ち／写真未確定", rev=True),
+]
+
 BODY = f'''
 <!-- 01 PEOPLE HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
 <section class="page-hero" id="people-hero" aria-labelledby="people-title" data-cms-id="734" data-implementation="B">
@@ -10,7 +67,7 @@ BODY = f'''
     <p class="eyebrow anim-enter"><span class="line"></span>OUR PEOPLE ／ 働くメンバー</p>
     <h1 id="people-title" class="anim-enter" style="--delay:.1s">同じ人はいない。<br>だから、チームは面白い。</h1>
     <p class="lead anim-enter" style="--delay:.2s">久留米興業には、現場で手を動かす人、取引先との関係をつくる人、その両方をつなぐ人がいます。経験も考え方も違う一人ひとりが、同じ街の仕事を支えています。</p>
-    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#people-ceo">代表を知る <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#people-sales">社員を知る <span aria-hidden="true">↓</span></a></div>
+    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#people-sales">営業職を知る <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#people-field">現場職を知る <span aria-hidden="true">↓</span></a></div>
   </div>
 </section>
 <!--CRUMB-->
@@ -20,66 +77,52 @@ BODY = f'''
   <div class="wrap half reveal">
     <div class="half-copy"><p class="section-kicker">ONE TEAM, DIFFERENT STORIES</p><h2 class="section-title" id="intro-title">同じゴールに向かう、<br>いろいろな個性。</h2>
       <p>得意なことも、仕事の覚え方も、人によって違います。久留米興業が大切にしているのは、全員を同じ型にはめることよりも、それぞれが自分の役割を果たしながら協力すること。</p>
-      <p>違う経験を持つ人が集まっているからこそ、現場で気づくこと、取引先に伝えられること、次の仕事につなげられることがあります。</p></div>
-    <div class="half-media media-stack"><img src="{P}office.jpg" alt="事務所で仕事をする社員たち" loading="lazy" style="aspect-ratio:4/5;object-fit:cover"><img src="{P}field-crew.jpg" alt="現場で作業する社員たち" loading="lazy" style="aspect-ratio:auto;object-fit:cover"></div>
+      <p>新卒で入った若手、40歳前後で異業種から転職した営業、建築から土木へ移った現場職、30年続ける班長。違う経験を持つ人が集まっているからこそ、現場で気づくこと、取引先に伝えられること、次の仕事につなげられることがあります。</p></div>
+    <div class="half-media media-stack"><img src="{P}office-wide.jpg" alt="事務所で仕事をする社員たち" loading="lazy" style="aspect-ratio:4/5;object-fit:cover"><img src="{P}field-sidewalk2.jpg" alt="歩道の工事現場で作業する社員たち" loading="lazy" style="aspect-ratio:auto;object-fit:cover"></div>
   </div>
 </section>
 
-<!-- 03 PRESIDENT｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ CSS -->
-<section class="section bg-soft" id="people-ceo" aria-labelledby="ceo-title" data-cms-id="54,80" data-implementation="B">
-  <div class="wrap half has-optional-media reveal" style="grid-template-columns:.82fr 1fr">
-    <div class="half-media review-only"><div class="photo-slot is-portrait"><div><strong>P-02 川島代表（縦4:5）</strong>社屋での横顔、仕事中の自然なカット。ご本人の承認後に配置</div></div></div>
-    <div class="half-copy gate" data-gate="編集文（引用ではない）：代表ご本人の承認待ち">
-      <p class="section-kicker">MESSAGE / PRESIDENT <span>代表取締役　川島 和範</span></p>
-      <h2 class="section-title" id="ceo-title">現場を知るからこそ、<br>人の働き方を考える。</h2>
-      <p style="font-weight:700;color:var(--blue)">18歳で入社し、現場から管理、そして経営へ。順調な時期ばかりではなかった経験が、現在の会社づくりへの考えにつながっています。</p>
-      <p>川島代表は、高校卒業後に久留米興業の現場で働き始めました。仕事の厳しさを感じて一度会社を離れた後、再び現場へ戻り、管理職や取引先との関係づくりを経験。40代で代表となり、会社全体の仕事と社員の働き方に向き合っています。</p>
-      <p>会社が続くためには、仕事を得るだけでなく、そこで働く人が長く力を発揮できる環境も必要です。仕事と生活のバランス、人とのつながり、社員一人ひとりの個性。そうした考えを、久留米興業のこれからにつなげようとしています。</p>
-      <p class="quote-band">最後に、ここで働いて良かったと<br>思ってもらえる会社へ。</p>
-      <div class="cta-row"><a class="text-link" href="@R@recruit/index.html#recruit-message">代表の採用メッセージを見る <span aria-hidden="true">↗</span></a><a class="text-link" href="@R@company/index.html#company-ceo">会社の考え方を見る <span aria-hidden="true">↗</span></a></div>
+<!-- 03 PRESIDENT｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ 761（歩み）＋ CSS -->
+<section class="section bg-soft" id="people-ceo" aria-labelledby="ceo-title" data-cms-id="54,80,761" data-implementation="B">
+  <div class="wrap">
+    <div class="half has-optional-media reveal" style="grid-template-columns:.82fr 1fr">
+      <div class="half-media review-only"><div class="photo-slot is-portrait"><div><strong>P-02 川島代表（縦4:5）</strong>ご本人の写真を確認のうえ配置<br>※いただいた写真のうち、レンガ壁を背景にした男性の写真がどなたかご確認ください</div></div></div>
+      <div class="half-copy gate" data-gate="代表インタビュー（2026-07-17再構成）に基づく編集文：本人承認待ち">
+        <p class="section-kicker">MESSAGE / PRESIDENT <span>代表取締役　川島 和範</span></p>
+        <h2 class="section-title" id="ceo-title">自分が苦しかったからこそ、<br>働き方を変えたかった。</h2>
+        <p>川島代表は、高校を卒業した18歳で久留米興業に入り、現場作業の見習いから始めました。身内だからと特別扱いされることはなく、一番下からのスタートでした。</p>
+        <p>当時は休みが少なく、まとまった休みがあっても体が疲れきっていた。「何のために働いているのか分からない」と感じ、24歳で一度会社を離れます。1年ほど仕事から離れた後に戻り、現場の作業員から管理職へ。35歳ごろからは取引先との会議にも出るようになり、40代で代表に就任しました。</p>
+        <p>代表になってから最初に取り組んだのは、三六協定を含めた残業のルールの見直しです。現場の作業そのものは簡単には減らせないため、これまで8人で行っていた仕事を10人で行うように人を増やし、一人ひとりの負担を軽くしてきました。「まだ十分にできていないこともある」と認めながら、変えるべきところは変え続けています。</p>
+        <p class="quote-band">最終的に、ここで働いて良かったと<br>思ってもらえる会社へ。</p>
+        <div class="cta-row"><a class="text-link" href="@R@recruit/index.html#recruit-message">代表の採用メッセージを見る <span aria-hidden="true">↗</span></a><a class="text-link" href="@R@company/index.html#company-ceo">会社の考え方を見る <span aria-hidden="true">↗</span></a></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 04 SALES TEAM｜方式B：CMS 42 Card Three ＋ 54 Half（詳細）＋ CSS。カードから同ページ内の詳細へ移動 -->
+<!-- 04 SALES TEAM｜方式B：CMS 42 Card Three ＋ 54 Half（詳細）＋ CSS -->
 <section class="section" id="people-sales" aria-labelledby="sales-title" data-cms-id="42,54" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">SALES TEAM <span>営業職</span></p><h2 class="section-title" id="sales-title">売るだけではない。<br>人と現場をつなぐ仕事。</h2><p class="section-heading-desc" style="max-width:700px">取引先の相談を受けること、現場の状況を知ること、必要な人や材料、工程をつなぐこと。久留米興業の営業職には、業界未経験から仕事を覚えてきた社員もいます。</p></div>
-    <div class="people-grid gate" data-gate="T・N・Iさん：在籍・役職・イニシャル表記・写真・転載の承認待ち（紹介文は編集文）">
-      <article class="person-card reveal"><div class="person-art person-art-1"><span class="person-symbol">T</span><span class="person-phototag review-only">P-03 写真は承認後に差替</span></div><div class="person-info"><span>SALES / Tさん</span><h3>「分からない」から、一つずつ。</h3><p>土木を学んでいなかったところから入社。現場に足を運び、先輩の仕事を見て、人との関わりを通して知識を増やしてきました。</p></div></article>
-      <a class="person-card reveal" href="#sales-n" data-delay="1"><div class="person-art person-art-2"><span class="person-symbol">N</span><span class="person-phototag review-only">P-04 写真は承認後に差替</span></div><div class="person-info"><span>SALES → SITE AGENT / Nさん</span><h3>営業経験の先に、現場を任される自分へ。</h3><p>異業種の営業から土木業界へ転身。資格の学習を重ね、現在は公共工事を担当する現場代理人として役割を広げています。</p><span class="person-arrow" aria-hidden="true">↓</span></div></a>
-      <article class="person-card reveal" data-delay="2"><div class="person-art person-art-3"><span class="person-symbol">I</span><span class="person-phototag review-only">P-05 写真は承認後に差替</span></div><div class="person-info"><span>SALES / Iさん</span><h3>異業種で積んだ力を、インフラの仕事に。</h3><p>異業種での経験を土台に、図面や現場の専門知識を学びながら、新しい役割に挑戦してきました。</p></div></article>
+    <div class="section-heading reveal"><p class="section-kicker">SALES TEAM <span>営業職</span></p><h2 class="section-title" id="sales-title">売るだけではない。<br>人と現場をつなぐ仕事。</h2><p class="section-heading-desc" style="max-width:700px">取引先の相談を受けること、現場の状況を知ること、必要な人や材料、工程をつなぐこと。久留米興業の営業職には、業界未経験から仕事を覚えてきた社員が多くいます。</p></div>
+    <div class="people-grid">
+      <a class="person-card reveal" href="#member-takahata"><div class="person-photo"><img src="{P}member-t2.jpg" alt="高畑さん" loading="lazy"></div><div class="person-info"><span>SALES / 新卒入社</span><h3>高畑さん</h3><p>「何が分からないかも、分からない」からのスタート。</p><span class="person-arrow" aria-hidden="true">↓</span></div></a>
+      <a class="person-card reveal" href="#member-negishi" data-delay="1"><div class="person-photo"><img src="{P}member-n.jpg" alt="根岸さん" loading="lazy"></div><div class="person-info"><span>SALES → SITE AGENT</span><h3>根岸さん</h3><p>お茶の営業から、道路づくりの現場へ。1級土木施工管理技士。</p><span class="person-arrow" aria-hidden="true">↓</span></div></a>
+      <a class="person-card reveal" href="#member-imai" data-delay="2"><div class="person-photo"><img src="{P}member-i-helmet.jpg" alt="今井さん" loading="lazy"></div><div class="person-info"><span>SALES / 異業種から</span><h3>今井さん</h3><p>広告代理店から、40歳で建設業界へ。</p><span class="person-arrow" aria-hidden="true">↓</span></div></a>
     </div>
-    <article class="half gate reveal" id="sales-n" style="margin-top:72px;scroll-margin-top:96px" data-gate="Nさん：本人確認のうえ掲載（編集文）">
-      <div class="half-media"><div class="person-art person-art-2" style="height:auto;aspect-ratio:4/3"><span class="person-symbol">N</span><span class="person-phototag review-only">P-04 写真は承認後に差替</span></div></div>
-      <div class="half-copy"><p class="label-num">STORY / Nさん</p><h3>営業として培った対話力と、<br>現場で身につけた知識を生かして。</h3><p>前職は土木とは別の業界で営業をしていました。将来に残る専門性を身につけたいと考え、未経験で久留米興業へ。最初は分からない言葉も多いなか、現場の人に学び、資格取得にも挑戦しました。今は公共工事の現場代理人として、協力会社との調整や近隣対応などに関わっています。営業として培った対話力と、現場で身につけた知識の両方を生かしている社員の一人です。</p></div>
-    </article>
-    <p class="review-note">【取材・承認待ち】TさんとIさんの詳細（入社理由／最初の壁／今の仕事／これから）は、既存インタビューを本人確認したうえで、Nさんと同じ形式で追加します。Nさんの資格取得の過程、Iさんの初期の苦労など、難しかった面も本人確認後に含めます。</p>
+    <div class="members">{"".join(SALES)}</div>
   </div>
 </section>
 
-<!-- 05 FIELD TEAM｜方式B：CMS 54 Half ＋ 584 Photo Gallery。個人紹介(42)は取材完了後に追加 -->
+<!-- 05 FIELD TEAM｜方式B：CMS 54 Half ＋ 584 Photo Gallery ＋ CSS -->
 <section class="section bg-soft" id="people-field" aria-labelledby="field-title" data-cms-id="54,584" data-implementation="B">
   <div class="wrap">
-    <div class="half reveal">
-      <div class="half-media"><img src="{P}field-crew.jpg" alt="舗装の下地をつくる現場職の社員たち" loading="lazy"></div>
-      <div class="half-copy"><p class="section-kicker">FIELD TEAM <span>現場職</span></p><h2 class="section-title" id="field-title">一つの現場を、<br>みんなで仕上げていく。</h2>
-        <p>舗装の敷きならしや転圧、機材の準備、周囲の安全確認。道路や水道に関わる工事は、多くの役割が重なって進んでいきます。</p>
-        <p>久留米興業の現場では、経験のある社員の仕事を見て学び、少しずつできることを増やすことが求められます。現場を支えている一人ひとりの仕事や考えを、写真とともにご紹介します。</p></div>
-    </div>
-    <div class="card-grid reveal" style="margin-top:36px">
+    <div class="section-heading reveal"><p class="section-kicker">FIELD TEAM <span>現場職</span></p><h2 class="section-title" id="field-title">楽な仕事ではない。<br>けれど、仲間と一日をやり切る仕事。</h2><p class="section-heading-desc" style="max-width:720px">夏場の暑さ、夜間の作業、限られた時間の中で求められる作業量。現場の仕事は決して楽ではありません。それでも、道路は人々の生活に欠かせないもの。約30年現場を見てきた班長と、建築から土木へ移った現場職の2人に話を聞きました。</p></div>
+    <div class="members">{"".join(FIELD)}</div>
+    <div class="card-grid reveal" style="margin-top:56px">
       <figure style="margin:0"><img src="{P}process-remove.jpg" alt="重機で古い舗装を撤去する" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">古い舗装の撤去</figcaption></figure>
-      <figure style="margin:0"><img src="{P}process-rake.jpg" alt="砕石の路盤とレーキ" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">路盤の敷き均し</figcaption></figure>
+      <figure style="margin:0"><img src="{P}field-worker-helmet.jpg" alt="ヘルメットをかぶって作業する現場職" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">路盤の整地</figcaption></figure>
       <figure style="margin:0"><img src="{P}paving-roller.jpg" alt="ローラーで舗装を転圧する" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">アスファルトの転圧</figcaption></figure>
-      <figure style="margin:0"><img src="{P}machine.jpg" alt="社名が入った重機" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">現場で使う機材</figcaption></figure>
-    </div>
-    <div class="review-only gate" data-gate="現場職の個別取材：未実施（公開時は非表示）" style="margin-top:40px">
-      <div class="card-grid is-3">
-        <div class="photo-slot"><div><strong>取材候補①</strong>入社1〜3年程度の社員<br>最初に苦労したこと</div></div>
-        <div class="photo-slot"><div><strong>取材候補②</strong>中堅の作業員<br>覚えた技術・資格</div></div>
-        <div class="photo-slot"><div><strong>取材候補③</strong>職長・責任者<br>新人へ伝えること、仕事の品質</div></div>
-      </div>
-      <p class="caption">取材質問：入社前の職種／最初の一か月に大変だったこと／初めて任された仕事／今できること／現場で言葉を交わす瞬間／仕事の誇り／誰に向いているか／改善したい点。該当する社員がいるかを確認のうえ実施します。</p>
+      <figure style="margin:0"><img src="{P}excavator.jpg" alt="本社敷地の重機" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="caption">現場で使う機材</figcaption></figure>
     </div>
   </div>
 </section>
@@ -87,7 +130,7 @@ BODY = f'''
 <!-- 06 WORKING TOGETHER｜方式B：CMS 787 Text Two ／ 761 Flow Cards ＋ CSS -->
 <section class="section" id="people-together" aria-labelledby="together-title" data-cms-id="787,761" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">WORKING TOGETHER <span>営業と現場</span></p><h2 class="section-title" id="together-title">仕事の役割が違っても、<br>目指す先は同じ。</h2><p class="section-heading-desc" style="max-width:720px">工事の相談を受け、必要な情報を整理する営業職。現場の状況を把握し、実際の施工を進める現場職。互いの仕事が分かるほど、予定や課題を共有しやすくなります。久留米興業が大切にする「人とのつながり」は、社内の仕事にも表れています。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">WORKING TOGETHER <span>営業と現場</span></p><h2 class="section-title" id="together-title">仕事の役割が違っても、<br>目指す先は同じ。</h2><p class="section-heading-desc" style="max-width:720px">工事の相談を受け、必要な情報を整理する営業職。現場の状況を把握し、実際の施工を進める現場職。週に一度の工程会議で仕事を調整し、夏の暑気払いなどで顔を合わせる機会もあります。</p></div>
     <ol class="flow is-4 reveal gate" data-gate="分担は概略：案件ごとの正式な流れと権限を確認">
       <li><span class="num">01</span><h3>相談・打合せ</h3><p>営業</p></li>
       <li><span class="num">02</span><h3>現地確認・手配</h3><p>営業＋現場</p></li>
@@ -98,23 +141,18 @@ BODY = f'''
   </div>
 </section>
 
-<!-- 07 OUR TEAM IN NUMBERS｜方式C：グラフ部分のみ独自HTML＋CSS、JSは別管理。実数・基準日が揃うまでセクション非表示 -->
-<section class="section bg-soft review-only" id="people-data" aria-labelledby="data-title" data-cms-id="custom" data-implementation="C">
-  <div class="wrap gate" data-gate="社員データ：実数・基準日・対象範囲が揃うまでセクションごと非表示">
-    <div class="section-heading"><p class="section-kicker">OUR TEAM IN NUMBERS <span>社員データ</span></p><h2 class="section-title" id="data-title">数字から見える、<br>久留米興業の人たち。</h2><p class="section-heading-desc">どのような経験や年代の人が働いているのか。社員データをまとめました。</p></div>
-    <div class="text-two">
-      <div class="info-card"><h3>年代別人数</h3><div class="bars" role="img" aria-label="年代別人数のグラフ（数値未確定）">
-        <div class="bar-row"><span>20代</span><div class="bar-track"></div><span class="tbd">—</span></div>
-        <div class="bar-row"><span>30代</span><div class="bar-track"></div><span class="tbd">—</span></div>
-        <div class="bar-row"><span>40代</span><div class="bar-track"></div><span class="tbd">—</span></div>
-        <div class="bar-row"><span>50代以上</span><div class="bar-track"></div><span class="tbd">—</span></div></div></div>
-      <div class="info-card is-blue"><h3>職種別人数</h3><div class="bars" role="img" aria-label="職種別人数のグラフ（数値未確定）">
-        <div class="bar-row"><span>営業</span><div class="bar-track"></div><span class="tbd">—</span></div>
-        <div class="bar-row"><span>現場</span><div class="bar-track"></div><span class="tbd">—</span></div>
-        <div class="bar-row"><span>事務</span><div class="bar-track"></div><span class="tbd">—</span></div>
-        <div class="bar-row"><span>その他</span><div class="bar-track"></div><span class="tbd">—</span></div></div></div>
+<!-- 07 OUR TEAM｜方式B：CMS 42 Card Three（職場の雰囲気）。人数グラフ（方式C）は基準日が揃うまで非表示 -->
+<section class="section bg-soft" id="people-data" aria-labelledby="data-title" data-cms-id="42,custom" data-implementation="B／グラフのみC">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">OUR TEAM <span>職場のこと</span></p><h2 class="section-title" id="data-title">数字と言葉で見る、<br>久留米興業の人たち。</h2></div>
+    <div class="card-grid is-3 reveal gate" data-gate="従業員数・雰囲気は求人票（2026-11-05）の記載より">
+      <div class="info-card"><small>MEMBERS</small><h3>従業員 37名</h3><p>事務所・営業・現場・車両や警備まで、自社のメンバーで仕事を進めています。</p></div>
+      <div class="info-card is-blue"><small>ATMOSPHERE</small><h3>落ち着いた職場</h3><p>作業中は黙々と。分からないことは聞けば答えてくれます。男性が多めの職場です。</p></div>
+      <div class="info-card"><small>EVALUATION</small><h3>がんばりを評価</h3><p>結果だけでなく、仕事を覚えようとする姿勢と、できるようになった仕事を見ます。</p></div>
     </div>
-    <p class="caption tbd">【要確認】基準日、対象範囲（正社員／役員／パート／協力会社を含むか）、総数、丸め方。公開されている社員数は37人（採用サイト）と30人（行政情報）で一致していません。勤続年数別・異業種入社割合は裏付けがある場合のみ追加。数値の表を併記し、カウントアップ演出は使いません。</p>
+    <div class="review-only gate" data-gate="年代・勤続・職種別の人数グラフ：基準日・対象範囲が揃うまで非表示" style="margin-top:40px">
+      <p class="caption tbd">【要確認】基準日、対象範囲（正社員／役員／パート／協力会社を含むか）。求人票の37名と行政情報の30名の違い。年代・勤続年数・職種別の人数が揃えば、数値表つきの棒グラフ（方式C）で追加します。</p>
+    </div>
   </div>
 </section>
 
@@ -124,9 +162,10 @@ BODY = f'''
     <div class="section-heading reveal"><h2 class="section-title" id="pcta-title">人を知ったら、<br>次は仕事を知る。</h2><p class="section-heading-desc">社員一人ひとりの経験や考えを知ったら、どのような仕事があり、どんな環境で働くのかも見てみてください。</p></div>
     <div class="card-grid is-3">
       <a class="link-card reveal" href="@R@business/index.html"><div class="lc-media"><img src="{P}paving-roller.jpg" alt="舗装を転圧するローラー" loading="lazy"></div><div class="lc-body"><small>BUSINESS</small><h3>事業内容を見る</h3><span class="mini-link">事業内容へ <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@work-environment/index.html" data-delay="1"><div class="lc-media"><img src="{P}office.jpg" alt="事務所の様子" loading="lazy"></div><div class="lc-body"><small>WORK ENVIRONMENT</small><h3>働く環境を見る</h3><span class="mini-link">労働環境へ <b aria-hidden="true">↗</b></span></div></a>
-      <a class="link-card reveal" href="@R@recruit/index.html" data-delay="2"><div class="lc-media"><img src="{P}field-crew.jpg" alt="現場で作業する社員" loading="lazy"></div><div class="lc-body"><small>RECRUIT</small><h3>採用情報を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card reveal" href="@R@work-environment/index.html" data-delay="1"><div class="lc-media"><img src="{P}office-wide.jpg" alt="事務所の様子" loading="lazy"></div><div class="lc-body"><small>WORK ENVIRONMENT</small><h3>働く環境を見る</h3><span class="mini-link">労働環境へ <b aria-hidden="true">↗</b></span></div></a>
+      <a class="link-card reveal" href="@R@recruit/index.html" data-delay="2"><div class="lc-media"><img src="{P}field-crew-hq.jpg" alt="現場で作業する社員" loading="lazy"></div><div class="lc-body"><small>RECRUIT</small><h3>採用情報を見る</h3><span class="mini-link">採用情報へ <b aria-hidden="true">↗</b></span></div></a>
     </div>
+    <p class="fine-note" style="margin-top:24px">営業職3名のインタビュー全文は{ext(BLOG_LIST, '採用ブログ')}でご覧いただけます。</p>
   </div>
 </section>
 '''

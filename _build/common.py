@@ -93,3 +93,9 @@ def page(current, title, desc, depth, body, crumb=None):
         body = body.replace("<!--CRUMB-->", breadcrumb(crumb, root))
     out += body.replace("@R@", root) + "\n</main>\n" + footer(root)
     return out
+
+# 採用ブログ（CAREECON）のインタビュー記事
+BLOG_NEGISHI = "https://recruit.careecon.jp/co/kurume-k/blogs/214004"
+BLOG_TAKAHATA = "https://recruit.careecon.jp/co/kurume-k/blogs/214003"
+BLOG_IMAI = "https://recruit.careecon.jp/co/kurume-k/blogs/214001"
+BLOG_LIST = "https://recruit.careecon.jp/co/kurume-k/blogs"
