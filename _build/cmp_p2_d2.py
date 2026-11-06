@@ -18,6 +18,7 @@ def fig(img, cls="", cap=True):
 def build():
     h, hi, ld, ch, bz, vo, fu, rc, pr, cl = (C[k] for k in ["hero", "history", "leader", "change", "business", "voices", "future", "recruit", "proof", "close"])
     chips = "".join(f'<li><a href="@P2@about/index.html#about-business">{t}</a></li>' for t, _ in FIELDS)
+    hero_chips = "".join(f'<li>{t}</li>' for t, _ in FIELDS)
     facts = ld["facts"]
     points = "".join(f'<article class="ha-point reveal" data-delay="{i}"><span class="ha-point-no">{i+1:02d}</span><h3>{t}</h3><p>{d}</p></article>' for i, (t, d) in enumerate(ch["points"]))
     notes = []
@@ -31,15 +32,14 @@ def build():
     exits = "".join(f'<li class="reveal" data-delay="{i}"><span class="ha-exit-sub">{sub}</span>{a(t, u, "ha-exit")}</li>' for i, (t, u, sub) in enumerate(cl["cta"]))
 
     body = f'''
-<!-- 01 HERO / 50 YEARS #top-hero｜方式C：独自HTML＋CSS（事務所の縦長写真と現場の横長写真を並べた二場面。合成しない）。CMS ID参考：734/721 -->
+<!-- 01 HERO / 50 YEARS #top-hero｜方式C：独自HTML＋CSS（事務所の縦長写真と現場の横長写真を並べた二場面。合成しない。CTAなし・画像と文字のみ）。CMS ID参考：734/721 -->
 <section class="ha-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="734,721" data-implementation="C">
   <div class="ha-wrap">
     <div class="ha-hero-copy">
       <p class="ha-hero-label">{h["label"]}</p>
       <h1 id="hero-title">{br(h["h1"])}</h1>
       <p class="ha-hero-lead">{h["lead"]}</p>
-      <ul class="ha-chips" aria-label="4つの事業">{chips}</ul>
-      <div class="ha-actions">{a(h["cta"][0][0], h["cta"][0][1], "ha-btn is-primary")}{a(h["cta"][1][0], h["cta"][1][1], "ha-btn is-secondary")}</div>
+      <ul class="ha-chips" aria-label="4つの事業">{hero_chips}</ul>
     </div>
     <div class="ha-hero-scenes">
       <figure class="ha-scene is-office"><img src="{PH}{h["office"][0]}" alt="{h["office"][1]}" width="502" height="627"><figcaption><span>SCENE 01</span>{h["office"][2]}</figcaption></figure>

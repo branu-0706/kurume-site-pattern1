@@ -59,17 +59,11 @@ FIELD = [
            None, gate="対談インタビュー原稿（掲載前）に基づく編集文：本人承認待ち", rev=True),
 ]
 
+import hero as _kv
+HERO = _kv.frame(sid='people-hero', tid='people-title', no='05', en='OUR PEOPLE', jp='働くメンバー', img='team.jpg', alt='重機の前に並ぶ久留米興業の社員たち', pos='60% 35%', word='PEOPLE', flip=True, h1='同じ人はいない。<br>だから、チームは面白い。', lead='久留米興業には、現場で手を動かす人、取引先との関係をつくる人、その両方をつなぐ人がいます。経験も考え方も違う一人ひとりが、同じ街の仕事を支えています。')
+
 BODY = f'''
-<!-- 01 PEOPLE HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
-<section class="page-hero" id="people-hero" aria-labelledby="people-title" data-cms-id="734" data-implementation="B">
-  <div class="page-hero-img" style="background-image:url('{P}team.jpg');background-position:60% 35%" role="img" aria-label="重機の前に並ぶ久留米興業の社員たち"></div>
-  <div class="wrap">
-    <p class="eyebrow anim-enter"><span class="line"></span>OUR PEOPLE ／ 働くメンバー</p>
-    <h1 id="people-title" class="anim-enter" style="--delay:.1s">同じ人はいない。<br>だから、チームは面白い。</h1>
-    <p class="lead anim-enter" style="--delay:.2s">久留米興業には、現場で手を動かす人、取引先との関係をつくる人、その両方をつなぐ人がいます。経験も考え方も違う一人ひとりが、同じ街の仕事を支えています。</p>
-    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#people-sales">営業職を知る <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#people-field">現場職を知る <span aria-hidden="true">↓</span></a></div>
-  </div>
-</section>
+{HERO}
 <!--CRUMB-->
 
 <!-- 02 ONE TEAM｜方式B：CMS 54 Half ＋ 35 Title Sub ＋ CSS -->

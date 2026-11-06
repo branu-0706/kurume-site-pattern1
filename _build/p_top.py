@@ -2,26 +2,11 @@ from common import *
 
 P = "@R@assets/photos/"
 
+import hero as _kv
+HERO = _kv.cover(sid='top', tid='hero-title', en='INFRASTRUCTURE / KURUME KOGYO', img='field-work-street.jpg', alt='重機とともに歩道の路盤をつくる施工中の現場', pos='50% 55%', side='SETAGAYA, TOKYO — SINCE 1974', h1='道路の復旧舗装から、<br>水道・土木工事まで。', lead='世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。')
+
 BODY = f'''
-<!-- 01 HERO｜方式C：独自HTML＋CSS（office.css の .biz-hero）。CMS ID参考：721/734。文字と写真を重ねず、4工種をファーストビューに表示 -->
-<section class="biz-hero" id="top" aria-labelledby="hero-title" data-cms-id="721,734" data-implementation="C">
-  <div class="biz-hero-grid">
-    <div class="biz-hero-copy">
-      <p class="biz-hero-label anim-enter">INFRASTRUCTURE / KURUME KOGYO</p>
-      <h1 id="hero-title" class="anim-enter" style="--delay:.1s">道路の復旧舗装から、<br>水道・土木工事まで。</h1>
-      <p class="biz-hero-lead anim-enter" style="--delay:.18s">世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。</p>
-      <div class="biz-hero-actions anim-enter" style="--delay:.26s"><a class="btn btn-dark" href="@R@business/index.html">事業内容を見る <span aria-hidden="true">→</span></a><a class="btn btn-outline-light" href="@R@company/index.html">会社情報を見る <span aria-hidden="true">→</span></a></div>
-      <ul class="biz-fields anim-enter" style="--delay:.32s" aria-label="対応する工事">
-        <li><a href="@R@business/index.html#service-gas"><span>01</span>ガス管取替後の復旧舗装工事<b aria-hidden="true">→</b></a></li>
-        <li><a href="@R@business/index.html#service-water"><span>02</span>水道工事<b aria-hidden="true">→</b></a></li>
-        <li><a href="@R@business/index.html#service-civil"><span>03</span>一般土木工事<b aria-hidden="true">→</b></a></li>
-        <li><a href="@R@business/index.html#service-sewer"><span>04</span>下水道工事<b aria-hidden="true">→</b></a></li>
-      </ul>
-      <p class="biz-hero-meta"><span>1974年設立</span><span>東京都世田谷区北烏山</span><span>TEL 03-3309-3786</span></p>
-    </div>
-    <figure class="biz-hero-media anim-enter" style="--delay:.12s"><img src="{P}field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="941" height="627"><figcaption>施工中の様子</figcaption></figure>
-  </div>
-</section>
+{HERO}
 
 <!-- 02 ABOUT / PROFILE｜方式B：CMS 54 Half ＋ 22 Table（会社の基本情報） -->
 <section class="section" id="about" aria-labelledby="about-title" data-cms-id="54,22" data-implementation="B">

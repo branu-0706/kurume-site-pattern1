@@ -45,7 +45,17 @@
   var PAIRS=[['text','pageBg','本文／背景',4.5],['text','surface','本文／紙面',4.5],['mutedText','surface','補助本文／紙面',4.5],['brandNavy','primary','ネイビー文字／メイン面',4.5],['brandNavy','primaryStrong','ネイビー文字／サブメイン面',4.5],['text','surfaceSoft','本文／薄い区切り面',4.5],['buttonPrimaryText','buttonPrimaryBg','主ボタン',4.5],['buttonSecondaryText','buttonSecondaryBg','副ボタン',4.5],['brandBlue','surface','ブルーの英字ラベル／紙面',4.5],['accent','surface','ライムの線／紙面（装飾）',1.5]];
 
   /* ---------- パネル ---------- */
-  var panel=null,scopeSel='all';
+  var panel=null,scopeSel='all',activeKey='primary';
+  /* カラーパレット：クリックで「当てる場所」の色に適用（--kk-* の値を変えるだけ。ロゴ画像は変わらない） */
+  var SWATCHES=[
+    ['ネイビー／ブルー',['#0F1640','#1A2259','#1E3A7A','#04447C','#1559A8','#2E6FB7','#4F86C6','#7FA8D6']],
+    ['ブルーグレー',['#2F3E4C','#43505C','#5E6E7C','#8597A6','#AFC6D6','#C9DCE8','#DCE7EF','#EAF0F4']],
+    ['グリーン／ライム',['#1E3A2B','#2D5E3E','#3F7D4E','#7DB341','#A8C63A','#B5D334','#D6E79A','#EDF3D9']],
+    ['ティール',['#163A44','#0E5A66','#2F8A84','#3FA7A0','#7CC4BF','#A9C7C9','#C6DCDD','#E0F1EF']],
+    ['ウォーム',['#3A2620','#7A3B22','#C8643C','#F08A24','#C9A247','#E3DACB','#EFEBE3','#F8F6F2']],
+    ['グレー',['#1E1E1E','#3A3A3A','#4D4D4D','#9AA0A6','#C8C8C8','#DCDCDC','#F5F7F8','#FFFFFF']]
+  ];
+  var SET_STRIP=['pageBg','primary','brandNavy','brandBlue','accent'];
   var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
   var scopeLabel=function(k){var c=ctx();if(k==='all')return '全案共通';if(k.indexOf('structure:')===0)return 'この構成だけ（構成'+(c.s==='p2'?'②':'①')+'）';return 'このデザインだけ（構成'+(c.s==='p2'?'②':'①')+'×デザイン'+({d1:'①',d2:'②',d3:'③'}[c.d]||'')+'）';};
 
@@ -54,6 +64,7 @@
     panel=document.createElement('div');panel.className='kkt';panel.id='kkt-panel';panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','false');panel.setAttribute('aria-labelledby','kkt-title');panel.hidden=true;
     document.body.appendChild(panel);
     panel.addEventListener('input',onInput);panel.addEventListener('change',onInput);panel.addEventListener('click',onClick);
+    panel.addEventListener('focusin',function(e){var r=e.target.closest&&e.target.closest('[data-row]');if(!r||r.dataset.row===activeKey)return;activeKey=r.dataset.row;[].forEach.call(panel.querySelectorAll('[data-row]'),function(x){x.classList.toggle('is-active',x.dataset.row===activeKey);});var sel=panel.querySelector('#kkt-target');if(sel)sel.value=activeKey;[].forEach.call(panel.querySelectorAll('.kkt-sw'),function(b){b.setAttribute('aria-label',b.dataset.color+' を'+(LABEL[activeKey]||activeKey)+'に適用');});});
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel&&!panel.hidden)close();});
   };
   var SRC=document.currentScript?document.currentScript.src:'';
@@ -62,7 +73,7 @@
     var st=load();var tok=resolved(st);var ov=st.scopes[scopeSel]||{};
     var presetOpts=Object.keys(T.presets).map(function(k){return '<option value="'+k+'"'+(k===st.preset?' selected':'')+'>'+esc(T.presets[k].label||k)+'</option>';}).join('');
     var scopes=scopeKeys().map(function(k){var n=st.scopes[k]?Object.keys(st.scopes[k]).length:0;return '<option value="'+k+'"'+(k===scopeSel?' selected':'')+'>'+esc(scopeLabel(k))+(n?'（'+n+'色を変更中）':'')+'</option>';}).join('');
-    var row=function(k){var v=tok[k]||'#000000';var changed=ov[k]?' is-changed':'';return '<div class="kkt-row'+changed+'"><label for="kkt-h-'+k+'">'+esc(LABEL[k]||k)+(ov[k]?'<small>変更</small>':'')+'</label><input type="color" value="'+v+'" data-k="'+k+'" aria-label="'+esc(LABEL[k])+'の色を選ぶ"><input id="kkt-h-'+k+'" class="kkt-hex" type="text" value="'+v.toUpperCase()+'" data-k="'+k+'" maxlength="7" spellcheck="false" autocomplete="off" aria-describedby="kkt-err-'+k+'"><span class="kkt-err" id="kkt-err-'+k+'" aria-live="polite"></span></div>';};
+    var row=function(k){var v=tok[k]||'#000000';var changed=(ov[k]?' is-changed':'')+(k===activeKey?' is-active':'');return '<div class="kkt-row'+changed+'" data-row="'+k+'"><label for="kkt-h-'+k+'">'+esc(LABEL[k]||k)+(ov[k]?'<small>変更</small>':'')+'</label><input type="color" value="'+v+'" data-k="'+k+'" aria-label="'+esc(LABEL[k])+'の色を選ぶ"><input id="kkt-h-'+k+'" class="kkt-hex" type="text" value="'+v.toUpperCase()+'" data-k="'+k+'" maxlength="7" spellcheck="false" autocomplete="off" aria-describedby="kkt-err-'+k+'"><span class="kkt-err" id="kkt-err-'+k+'" aria-live="polite"></span></div>';};
     var checks=PAIRS.map(function(p){var r=ratio(tok[p[0]],tok[p[1]]);var ok=r>=p[3];return '<li class="'+(ok?'ok':'ng')+'"><span class="kkt-swatch" style="background:'+tok[p[1]]+';color:'+tok[p[0]]+'">Aa</span><span>'+esc(p[2])+'</span><b>'+r.toFixed(1)+':1 '+(ok?'OK':(p[3]>=4.5?'要確認（4.5未満）':'要確認'))+'</b></li>';}).join('');
     var limeWarn=(ratio(tok.buttonPrimaryText,tok.buttonPrimaryBg)<4.5)?'<p class="kkt-warn" role="alert">主ボタンの文字と背景のコントラストが不足しています。ライムなど明るい背景にする場合は、主ボタン文字を濃い色（例：ネイビー）にしてください。</p>':'';
     panel.innerHTML=
@@ -70,6 +81,9 @@
       '<p class="kkt-note">この変更は<b>あなたのブラウザだけ</b>に保存されるプレビューです。全員の表示を変えるには、書き出したJSONを config/themes.json に反映して再デプロイします。</p>'+
       '<div class="kkt-field"><label for="kkt-preset">プリセット</label><select id="kkt-preset" data-act="preset">'+presetOpts+'</select></div>'+
       '<div class="kkt-field"><label for="kkt-scope">適用先</label><select id="kkt-scope" data-act="scope">'+scopes+'</select></div>'+
+      '<section class="kkt-sets" aria-labelledby="kkt-sets-h"><p class="kkt-sub" id="kkt-sets-h">配色セット<small>クリックで全体の配色を切り替え</small></p><div class="kkt-setgrid">'+Object.keys(T.presets).map(function(k){var t=T.presets[k].tokens;var on=k===st.preset;return '<button type="button" class="kkt-set'+(on?' is-on':'')+'" data-act="set" data-preset="'+k+'" aria-pressed="'+on+'" id="kkt-set-'+k+'"><span class="kkt-strip" aria-hidden="true">'+SET_STRIP.map(function(x){return '<i style="background:'+t[x]+'"></i>';}).join('')+'</span><span class="kkt-set-name">'+esc(String(T.presets[k].label||k).replace(/（.*）$/,''))+'</span></button>';}).join('')+'</div></section>'+
+      '<section class="kkt-pal" aria-labelledby="kkt-pal-h"><p class="kkt-sub" id="kkt-pal-h">カラーパレット<small>選んだ場所に色を当てる</small></p><div class="kkt-field"><label for="kkt-target">色を当てる場所</label><select id="kkt-target" data-act="target">'+ORDER.map(function(k){return '<option value="'+k+'"'+(k===activeKey?' selected':'')+'>'+esc(LABEL[k]||k)+'</option>';}).join('')+'</select></div>'+
+      SWATCHES.map(function(g,gi){return '<div class="kkt-swrow"><span class="kkt-swname">'+esc(g[0])+'</span><div class="kkt-swgrid" role="group" aria-label="'+esc(g[0])+'">'+g[1].map(function(c,ci){var cur=(tok[activeKey]||'').toUpperCase()===c;return '<button type="button" class="kkt-sw'+(cur?' is-cur':'')+'" id="kkt-sw-'+gi+'-'+ci+'" data-act="swatch" data-color="'+c+'" style="background:'+c+'" aria-label="'+c+' を'+esc(LABEL[activeKey]||activeKey)+'に適用" title="'+c+'"'+(cur?' aria-current="true"':'')+'></button>';}).join('')+'</div></div>';}).join('')+'</section>'+
       '<fieldset class="kkt-colors"><legend>主な色</legend>'+MAIN.map(row).join('')+'</fieldset>'+
       '<details class="kkt-more"><summary>その他の色（10色）</summary>'+ORDER.filter(function(k){return MAIN.indexOf(k)<0;}).map(row).join('')+'</details>'+
       limeWarn+
@@ -89,6 +103,7 @@
   var onInput=function(e){
     var t=e.target;
     if(t.dataset.act==='preset'&&e.type==='change'){var st=load();st.preset=t.value;save(st);apply();render();status('プリセットを「'+(T.presets[t.value].label||t.value)+'」にしました');document.getElementById('kkt-preset').focus();return;}
+    if(t.dataset.act==='target'&&e.type==='change'){activeKey=t.value;render();document.getElementById('kkt-target').focus();return;}
     if(t.dataset.act==='scope'&&e.type==='change'){scopeSel=t.value;render();document.getElementById('kkt-scope').focus();return;}
     if(!t.dataset.k)return;
     if(t.type==='color'){if(e.type==='input'||e.type==='change')setColor(t.dataset.k,t.value);return;}
@@ -106,6 +121,8 @@
   var onClick=function(e){
     var a=e.target.closest('[data-act]');if(!a)return;var act=a.dataset.act;var st=load();
     if(act==='close')close();
+    if(act==='set'){st.preset=a.dataset.preset;save(st);apply();render();var b=document.getElementById('kkt-set-'+st.preset);if(b)b.focus();var n=st.scopes[scopeSel]?Object.keys(st.scopes[scopeSel]).length:0;status('配色セット「'+(T.presets[st.preset].label||st.preset)+'」を適用しました'+(n?'（個別に変えた'+n+'色はそのまま。「この適用先を元に戻す」で解除）':''));}
+    if(act==='swatch'){setColor(activeKey,a.dataset.color);status((LABEL[activeKey]||activeKey)+'を '+a.dataset.color+' にしました');}
     if(act==='reset-scope'){delete st.scopes[scopeSel];save(st);apply();render();status(scopeLabel(scopeSel)+'の変更を元に戻しました');}
     if(act==='reset-all'){save({version:1,preset:T.defaultPreset,scopes:{}});apply();render();status('すべて初期値（'+(T.presets[T.defaultPreset].label||'')+'）に戻しました');}
     if(act==='copy'){var j=exportJson();var done=function(){status('JSONをコピーしました');};var fail=function(){var ta=panel.querySelector('#kkt-import');ta.value=j;ta.closest('details').open=true;ta.select();status('自動コピーできないため、下の欄を選択しました。コピーしてください');};try{navigator.clipboard.writeText(j).then(done,fail);}catch(err){fail();}}

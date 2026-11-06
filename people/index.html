@@ -9,10 +9,11 @@
 <title>働くメンバー｜株式会社久留米興業</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="../assets/theme.css">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/office.css">
+<link rel="stylesheet" href="../assets/hero.css">
 <script defer src="../assets/site.js"></script>
 <script src="../assets/theme/presets.js"></script>
 <script src="../assets/theme/theme.js"></script>
@@ -36,14 +37,17 @@
 </header>
 <main id="main">
 
-<!-- 01 PEOPLE HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
-<section class="page-hero" id="people-hero" data-mark="PEOPLE" aria-labelledby="people-title" data-cms-id="734" data-implementation="B">
-  <span class="lane" aria-hidden="true"></span><div class="page-hero-img" style="background-image:url('../assets/photos/team.jpg');background-position:60% 35%" role="img" aria-label="重機の前に並ぶ久留米興業の社員たち"></div>
-  <div class="wrap">
-    <p class="eyebrow anim-enter"><span class="line"></span>OUR PEOPLE ／ 働くメンバー</p>
-    <h1 id="people-title" class="anim-enter" style="--delay:.1s">同じ人はいない。<br>だから、チームは面白い。</h1>
-    <p class="lead anim-enter" style="--delay:.2s">久留米興業には、現場で手を動かす人、取引先との関係をつくる人、その両方をつなぐ人がいます。経験も考え方も違う一人ひとりが、同じ街の仕事を支えています。</p>
-    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#people-sales">営業職を知る <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#people-field">現場職を知る <span aria-hidden="true">↓</span></a></div>
+<!-- 01 HERO｜KV frame（方式B：CMS 734 H1 ＋ CSS assets/hero.css）。CTAなし・画像と文字のみ -->
+<section class="kv kv--frame is-flip" id="people-hero" aria-labelledby="people-title" data-cms-id="734" data-implementation="B">
+  <p class="kv-word" aria-hidden="true">PEOPLE</p>
+  <div class="kv-wrap">
+    <div class="kv-copy anim-enter">
+      <p class="kv-index"><span class="kv-no">05</span><span>OUR PEOPLE</span></p>
+      <p class="kv-eyebrow">働くメンバー</p>
+      <h1 id="people-title">同じ人はいない。<br>だから、チームは面白い。</h1>
+      <p class="kv-lead">久留米興業には、現場で手を動かす人、取引先との関係をつくる人、その両方をつなぐ人がいます。経験も考え方も違う一人ひとりが、同じ街の仕事を支えています。</p>
+    </div>
+    <figure class="kv-media anim-enter" style="--delay:.12s"><img src="../assets/photos/team.jpg" alt="重機の前に並ぶ久留米興業の社員たち" width="1200" height="800" style="object-position:60% 35%" fetchpriority="high"></figure>
   </div>
 </section>
 <nav class="breadcrumb" aria-label="パンくずリスト"><ol class="wrap"><li><a href="../index.html">TOP</a></li><li aria-current="page">働くメンバー</li></ol></nav>

@@ -40,18 +40,11 @@ def faq_jsonld():
     return '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": ents}, ensure_ascii=False) + "</script>"
 
 
+import hero as _kv
+HERO = _kv.strip(sid='recruit-hero', tid='recruit-title', no='03', en='RECRUIT', jp='採用情報', img='hero.jpg', alt='スコップを使って道路の工事をする現場職', pos='60% 42%', caption='道路の工事を進める現場職', dark=True, extra='<p class="kv-note">いいところだけではなく、仕事のリアルも伝えます。</p>', h1='次の50年を、<br>あなたとつくる。', lead='道路や水道を支える仕事を、この先も続けていくために。今いる社員が積み重ねてきた経験と、新しく加わる人の力をつないでいきたい。まずは、仕事の中身も、働く人も、会社の考え方も知ってください。')
+
 BODY = f'''
-<!-- 01 RECRUIT HERO #recruit-hero｜方式B：CMS 734 ＋ 721（2 CTAの重ねが不可ならC） -->
-<section class="page-hero" id="recruit-hero" aria-labelledby="recruit-title" data-cms-id="734,721" data-implementation="B" data-mark="RECRUIT">
-  <div class="page-hero-img" style="background-image:url('{P}hero.jpg');background-position:60% 45%" role="img" aria-label="スコップを使って道路の工事をする現場職"></div>
-  <div class="wrap">
-    <p class="eyebrow anim-enter"><span class="line"></span>RECRUIT / YOUR NEXT CHAPTER</p>
-    <h1 id="recruit-title" class="anim-enter" style="--delay:.1s">次の50年を、<br>あなたとつくる。</h1>
-    <p class="lead anim-enter" style="--delay:.2s">道路や水道を支える仕事を、この先も続けていくために。今いる社員が積み重ねてきた経験と、新しく加わる人の力をつないでいきたい。まずは、仕事の中身も、働く人も、会社の考え方も知ってください。</p>
-    <p class="p2-hero-note anim-enter" style="--delay:.25s">いいところだけではなく、仕事のリアルも伝えます。</p>
-    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#recruit-roles">仕事を知る <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#recruit-voices">社員の声を読む <span aria-hidden="true">↓</span></a></div>
-  </div>
-</section>
+{HERO}
 <!--CRUMB-->
 <nav class="page-nav" aria-label="このページの目次"><ul class="wrap">
   <li><a href="#recruit-roles">仕事を知る</a></li>

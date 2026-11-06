@@ -194,3 +194,21 @@
   .kc-big{font-size:48px!important}
 }
 @media(prefers-reduced-motion:reduce){.js .kc-rail.reveal,.js .kc-jog.reveal{transform:none;transition:none}}
+
+/* ── 11/06 KV改訂：CTAなし・画像と文字のみ。見出しを大きく、2面の間に「守る→変える」の継ぎ目を置く ── */
+.kc-hero-read{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:24px 72px;align-items:end;padding-bottom:56px}
+.kc-hero-label{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:0}
+.kc-hero-label::after{content:"";flex:1;height:1px;background:var(--kk-border)}
+.kc-hero h1{margin:0;word-break:auto-phrase;font-size:clamp(2.4rem,4.6vw,5.2rem);line-height:1.2}
+.kc-hero-lead{margin:0;font-size:15.5px;padding-left:22px;border-left:4px solid var(--kk-accent)}
+.kc-hero-pair{position:relative;gap:0}
+.kc-hero-pair::after{content:"→";position:absolute;left:50%;top:calc(50% - 60px);transform:translate(-50%,-50%);width:64px;height:64px;display:grid;place-items:center;background:var(--kk-accent);color:var(--kk-brand-navy);font:700 26px/1 var(--en);border:6px solid var(--kk-surface);border-radius:50%}
+.kc-hero-panel.is-keep{border-right:3px solid var(--kk-surface)}
+.kc-chips li{display:inline-block;padding:5px 10px;background:var(--kk-surface);border:1px solid var(--kk-border);font-size:12.5px;font-weight:700;color:var(--kk-brand-navy)}
+@media(max-width:767px){
+  .kc-hero-read{grid-template-columns:1fr;gap:18px;padding-bottom:36px}
+  .kc-hero h1{font-size:calc((100vw - 52px) / 11.5)}
+  .kc-hero-lead{padding-left:14px}
+  .kc-hero-pair::after{display:none}
+  .kc-hero-panel.is-keep{border-right:0;border-bottom:3px solid var(--kk-surface)}
+}

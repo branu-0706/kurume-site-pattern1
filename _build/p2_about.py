@@ -2,17 +2,11 @@ from p2common import *
 
 P = "@R@assets/photos/"
 
+import hero as _kv
+HERO = _kv.strip(sid='about-hero', tid='about-title', no='02', en='ABOUT', jp='久留米興業について', img='field-sidewalk.jpg', alt='歩道の工事を進める現場職', pos='60% 55%', caption='歩道の工事を進める現場', h1='守ってきたもの。<br>変えていくもの。', lead='1974年の設立から、道路や水道など、街の日常に関わる仕事を続けてきた久留米興業。長く続けてきたからこそ、守るものと変えるものがある。これまでの歩みと、これからの会社づくりをご紹介します。')
+
 BODY = f'''
-<!-- 01 ABOUT HERO #about-hero｜方式B：CMS 734 H1 Center ＋ CSS -->
-<section class="page-hero" id="about-hero" aria-labelledby="about-title" data-cms-id="734" data-implementation="B" data-mark="ABOUT">
-  <div class="page-hero-img" style="background-image:url('{P}field-sidewalk.jpg');background-position:60% 55%" role="img" aria-label="歩道の工事を進める現場職"></div>
-  <div class="wrap">
-    <p class="eyebrow anim-enter"><span class="line"></span>ABOUT KURUME KOGYO</p>
-    <h1 id="about-title" class="anim-enter" style="--delay:.1s">守ってきたもの。<br>変えていくもの。</h1>
-    <p class="lead anim-enter" style="--delay:.2s">1974年の設立から、道路や水道など、街の日常に関わる仕事を続けてきた久留米興業。長く続けてきたからこそ、守るものと変えるものがある。これまでの歩みと、これからの会社づくりをご紹介します。</p>
-    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#about-history">会社の歩みを見る <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#about-representative">代表の歩みを読む <span aria-hidden="true">↓</span></a></div>
-  </div>
-</section>
+{HERO}
 <!--CRUMB-->
 
 <!-- 02 HISTORY #about-history｜方式B：CMS 761 Flow Cards ＋ 54 Half -->

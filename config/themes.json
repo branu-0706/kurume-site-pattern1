@@ -74,6 +74,182 @@
         "buttonSecondaryText": "#1A2259",
         "focusRing": "#1A2259"
       }
+    },
+    "steel-teal": {
+      "label": "スチール・ティール",
+      "tokens": {
+        "pageBg": "#F4F7F7",
+        "surface": "#FFFFFF",
+        "surfaceSoft": "#E6EEEF",
+        "primary": "#C6DCDD",
+        "primaryStrong": "#A9C7C9",
+        "accent": "#3FA7A0",
+        "accentSoft": "#E0F1EF",
+        "brandNavy": "#163A44",
+        "brandBlue": "#0E5A66",
+        "text": "#1C2B30",
+        "mutedText": "#3F5157",
+        "border": "#C9D6D8",
+        "buttonPrimaryBg": "#163A44",
+        "buttonPrimaryText": "#FFFFFF",
+        "buttonSecondaryBg": "#C6DCDD",
+        "buttonSecondaryText": "#163A44",
+        "focusRing": "#163A44"
+      }
+    },
+    "forest": {
+      "label": "フォレスト・グリーン",
+      "tokens": {
+        "pageBg": "#F5F7F3",
+        "surface": "#FFFFFF",
+        "surfaceSoft": "#E8EEE4",
+        "primary": "#CFE0C8",
+        "primaryStrong": "#B4CDAA",
+        "accent": "#7DB341",
+        "accentSoft": "#EAF3DC",
+        "brandNavy": "#1E3A2B",
+        "brandBlue": "#2D5E3E",
+        "text": "#1E2A22",
+        "mutedText": "#43524A",
+        "border": "#CCD7C8",
+        "buttonPrimaryBg": "#1E3A2B",
+        "buttonPrimaryText": "#FFFFFF",
+        "buttonSecondaryBg": "#CFE0C8",
+        "buttonSecondaryText": "#1E3A2B",
+        "focusRing": "#1E3A2B"
+      }
+    },
+    "sand-beige": {
+      "label": "サンド・ベージュ",
+      "tokens": {
+        "pageBg": "#F8F6F2",
+        "surface": "#FFFFFF",
+        "surfaceSoft": "#EFEBE3",
+        "primary": "#E3DACB",
+        "primaryStrong": "#D2C6B2",
+        "accent": "#C9A247",
+        "accentSoft": "#F5EEDB",
+        "brandNavy": "#2C2A4A",
+        "brandBlue": "#4A4170",
+        "text": "#2A2622",
+        "mutedText": "#55504A",
+        "border": "#DCD4C7",
+        "buttonPrimaryBg": "#2C2A4A",
+        "buttonPrimaryText": "#FFFFFF",
+        "buttonSecondaryBg": "#E3DACB",
+        "buttonSecondaryText": "#2C2A4A",
+        "focusRing": "#2C2A4A"
+      }
+    },
+    "safety-orange": {
+      "label": "アスファルト＆セーフティ",
+      "tokens": {
+        "pageBg": "#F5F5F4",
+        "surface": "#FFFFFF",
+        "surfaceSoft": "#EBEBE9",
+        "primary": "#D9DBDD",
+        "primaryStrong": "#C3C6CA",
+        "accent": "#F08A24",
+        "accentSoft": "#FCEBDA",
+        "brandNavy": "#22252B",
+        "brandBlue": "#3B4250",
+        "text": "#1F2125",
+        "mutedText": "#4A4E55",
+        "border": "#D2D4D6",
+        "buttonPrimaryBg": "#22252B",
+        "buttonPrimaryText": "#FFFFFF",
+        "buttonSecondaryBg": "#D9DBDD",
+        "buttonSecondaryText": "#22252B",
+        "focusRing": "#22252B"
+      }
+    },
+    "charcoal-mono": {
+      "label": "チャコール・モノトーン",
+      "tokens": {
+        "pageBg": "#F6F6F6",
+        "surface": "#FFFFFF",
+        "surfaceSoft": "#ECECEC",
+        "primary": "#DCDCDC",
+        "primaryStrong": "#C8C8C8",
+        "accent": "#9AA0A6",
+        "accentSoft": "#EEEFF0",
+        "brandNavy": "#1E1E1E",
+        "brandBlue": "#3A3A3A",
+        "text": "#1E1E1E",
+        "mutedText": "#4D4D4D",
+        "border": "#D4D4D4",
+        "buttonPrimaryBg": "#1E1E1E",
+        "buttonPrimaryText": "#FFFFFF",
+        "buttonSecondaryBg": "#DCDCDC",
+        "buttonSecondaryText": "#1E1E1E",
+        "focusRing": "#1E1E1E"
+      }
+    },
+    "sky-blue": {
+      "label": "スカイ・ブルー",
+      "tokens": {
+        "pageBg": "#F4F9FC",
+        "surface": "#FFFFFF",
+        "surfaceSoft": "#E4F0F8",
+        "primary": "#C5E0F2",
+        "primaryStrong": "#A5CCE8",
+        "accent": "#2E9BD6",
+        "accentSoft": "#DDF0FA",
+        "brandNavy": "#0F2E5C",
+        "brandBlue": "#1559A8",
+        "text": "#17263A",
+        "mutedText": "#3C4D60",
+        "border": "#C8DBE8",
+        "buttonPrimaryBg": "#0F2E5C",
+        "buttonPrimaryText": "#FFFFFF",
+        "buttonSecondaryBg": "#C5E0F2",
+        "buttonSecondaryText": "#0F2E5C",
+        "focusRing": "#0F2E5C"
+      }
+    },
+    "terracotta": {
+      "label": "テラコッタ",
+      "tokens": {
+        "pageBg": "#FAF6F3",
+        "surface": "#FFFFFF",
+        "surfaceSoft": "#F2E9E3",
+        "primary": "#EAD3C6",
+        "primaryStrong": "#DDBBA8",
+        "accent": "#C8643C",
+        "accentSoft": "#F7E3D9",
+        "brandNavy": "#3A2620",
+        "brandBlue": "#7A3B22",
+        "text": "#2B211D",
+        "mutedText": "#584A44",
+        "border": "#E0D0C6",
+        "buttonPrimaryBg": "#3A2620",
+        "buttonPrimaryText": "#FFFFFF",
+        "buttonSecondaryBg": "#EAD3C6",
+        "buttonSecondaryText": "#3A2620",
+        "focusRing": "#3A2620"
+      }
+    },
+    "night-navy": {
+      "label": "ナイト・ネイビー（濃色）",
+      "tokens": {
+        "pageBg": "#EEF1F6",
+        "surface": "#FFFFFF",
+        "surfaceSoft": "#DFE5EF",
+        "primary": "#B9C6DC",
+        "primaryStrong": "#9DAFCC",
+        "accent": "#B5D334",
+        "accentSoft": "#EEF5D2",
+        "brandNavy": "#0F1640",
+        "brandBlue": "#1E3A7A",
+        "text": "#141B2E",
+        "mutedText": "#3B4560",
+        "border": "#C3CDDD",
+        "buttonPrimaryBg": "#0F1640",
+        "buttonPrimaryText": "#FFFFFF",
+        "buttonSecondaryBg": "#B9C6DC",
+        "buttonSecondaryText": "#0F1640",
+        "focusRing": "#0F1640"
+      }
     }
   },
   "notes": {

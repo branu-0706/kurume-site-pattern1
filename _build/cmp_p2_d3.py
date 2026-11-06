@@ -26,6 +26,7 @@ def head(label, ja, h2, hid, lead=None):
 def build():
     h, hi, ld, ch, bz, vo, fu, rc, pr, cl = (C[k] for k in ["hero", "history", "leader", "change", "business", "voices", "future", "recruit", "proof", "close"])
     chips = "".join(f'<li><a href="@P2@about/index.html#about-business">{t}</a></li>' for t, _ in FIELDS)
+    hero_chips = "".join(f'<li>{t}</li>' for t, _ in FIELDS)
     f = ld["facts"]
     keep_list = "".join(f'<li>{t}</li>' for t in ch["keep"])
     points = "".join(f'<li><strong>{t}</strong><span>{d}</span></li>' for t, d in ch["points"])
@@ -40,16 +41,15 @@ def build():
     exits = "".join(f'<li><span>{sub}</span>{a(t, u, "kc-exit")}</li>' for t, u, sub in cl["cta"])
 
     body = f'''
-<!-- 01 HERO / 50 YEARS #top-hero｜方式C：独自HTML＋CSS（独立した白い読み取り領域＋左右2面：守る仕事／変わる会社）。CMS ID参考：734/721 -->
+<!-- 01 HERO / 50 YEARS #top-hero｜方式C：独自HTML＋CSS（独立した白い読み取り領域＋左右2面：守る仕事／変わる会社。CTAなし・画像と文字のみ）。CMS ID参考：734/721 -->
 <section class="kc-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="734,721" data-implementation="C">
   <div class="kc-wrap kc-hero-read">
     <p class="kc-hero-label">{h["label"]}</p>
     <h1 id="hero-title">{br(h["h1"])}</h1>
     <p class="kc-hero-lead">{h["lead"]}</p>
-    <div class="kc-actions">{a(h["cta"][0][0], h["cta"][0][1], "kc-btn is-primary")}{a(h["cta"][1][0], h["cta"][1][1], "kc-btn is-secondary")}</div>
   </div>
   <div class="kc-hero-pair">
-    <figure class="kc-hero-panel is-keep"><img src="{PH}{h["site"][0]}" alt="{h["site"][1]}" width="941" height="627"><figcaption>{tag("keep")}<strong>守る仕事</strong><ul class="kc-chips" aria-label="4つの事業">{chips}</ul></figcaption></figure>
+    <figure class="kc-hero-panel is-keep"><img src="{PH}{h["site"][0]}" alt="{h["site"][1]}" width="941" height="627"><figcaption>{tag("keep")}<strong>守る仕事</strong><ul class="kc-chips" aria-label="4つの事業">{hero_chips}</ul></figcaption></figure>
     <figure class="kc-hero-panel is-change"><img src="{PH}{h["office"][0]}" alt="{h["office"][1]}" width="1046" height="698"><figcaption>{tag("change")}<strong>変わる会社</strong><span>働き方と、人を育てる仕組み</span></figcaption></figure>
   </div>
 </section>

@@ -44,17 +44,11 @@ def faq_jsonld():
     return '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": ents}, ensure_ascii=False) + "</script>"
 
 
+import hero as _kv
+HERO = _kv.frame(sid='recruit-hero', tid='recruit-title', no='03', en='RECRUIT', jp='採用情報', img='field-crew-hq.jpg', alt='路盤をつくる久留米興業の現場職', pos='55% 60%', word='RECRUIT', flip=True, h1='これからの自分に、<br>街を支える仕事を。', lead='道路や水道など、毎日の暮らしに欠かせないインフラを支える久留米興業。私たちの仕事には、現場で技術を磨く人も、取引先と現場をつなぐ人も必要です。今できることだけでなく、これから身につける力を大切にしながら、一緒に歩んでいきませんか。')
+
 BODY = f'''
-<!-- 01 RECRUIT HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
-<section class="page-hero" id="recruit-hero" aria-labelledby="recruit-title" data-cms-id="734" data-implementation="B">
-  <div class="page-hero-img" style="background-image:url('{P}field-crew-hq.jpg');background-position:55% 60%" role="img" aria-label="路盤をつくる久留米興業の現場職"></div>
-  <div class="wrap">
-    <p class="eyebrow anim-enter"><span class="line"></span>RECRUIT / JOIN OUR TEAM</p>
-    <h1 id="recruit-title" class="anim-enter" style="--delay:.1s">これからの自分に、<br>街を支える仕事を。</h1>
-    <p class="lead anim-enter" style="--delay:.2s">道路や水道など、毎日の暮らしに欠かせないインフラを支える久留米興業。私たちの仕事には、現場で技術を磨く人も、取引先と現場をつなぐ人も必要です。今できることだけでなく、これから身につける力を大切にしながら、一緒に歩んでいきませんか。</p>
-    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#recruit-career">仕事とキャリアを見る <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#recruit-openings">募集要項を見る <span aria-hidden="true">↓</span></a></div>
-  </div>
-</section>
+{HERO}
 <!--CRUMB-->
 <!-- ページ内目次｜方式B：CMS multiple_btns（ID要確認）＋ CSS（sticky）。JSなし -->
 <nav class="page-nav" aria-label="このページの目次"><ul class="wrap">

@@ -2,17 +2,11 @@ from p2common import *
 
 P = "@R@assets/photos/"
 
+import hero as _kv
+HERO = _kv.strip(sid='people-hero', tid='people-title', no='04', en='OUR PEOPLE', jp='働くスタッフ', img='office-floor.jpg', alt='現場と営業を支える社員が働く事務所', pos='50% 50%', caption='現場と営業を支える事務所', h1='違う個性が、<br>同じ仕事を支えている。', lead='入社のきっかけも、得意なことも、これまで歩んできた道も違う。そんな人たちが、道路や水道の仕事を一緒に進めています。まずは、久留米興業で働く人を知ってください。')
+
 BODY = f'''
-<!-- 01 HERO #people-hero｜方式B：CMS 734 H1 Center ＋ 721 Mainvisual（構造制約時C） -->
-<section class="section p2-people-hero" id="people-hero" aria-labelledby="people-title" data-cms-id="734,721" data-implementation="B">
-  <div class="wrap">
-    <p class="section-kicker anim-enter">OUR PEOPLE <span>働くスタッフ</span></p>
-    <h1 id="people-title" class="p2-h1 anim-enter" style="--delay:.1s">違う個性が、<br>同じ仕事を支えている。</h1>
-    <p class="p2-lead anim-enter" style="--delay:.2s">入社のきっかけも、得意なことも、これまで歩んできた道も違う。そんな人たちが、道路や水道の仕事を一緒に進めています。まずは、久留米興業で働く人を知ってください。</p>
-    <div class="cta-row anim-enter" style="--delay:.3s"><a class="btn btn-dark" href="#people-sales">営業職のメンバーへ <span aria-hidden="true">↓</span></a><a class="btn btn-outline-dark" href="#people-field">現場職のメンバーへ <span aria-hidden="true">↓</span></a></div>
-  </div>
-  <div class="wrap p2-wide anim-enter" style="--delay:.35s"><img src="{P}office-floor.jpg" alt="現場と営業を支える社員が働く事務所" width="941" height="627"></div>
-</section>
+{HERO}
 <!--CRUMB-->
 
 <!-- 02 INTRO #people-intro｜方式B：CMS 43 Title All -->

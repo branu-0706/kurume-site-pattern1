@@ -12,6 +12,7 @@ def label(no, en, ja):
 def build():
     h, ab, bz, ap, wk, ws, pp, rc, nw, ct = (C[k] for k in ["hero", "about", "business", "approach", "works", "workstyle", "people", "recruit", "news", "contact"])
     band = "".join(f'<li><a href="{href}"><span>{i+1:02d}</span>{t}</a></li>' for i, (t, d, img, alt, href) in enumerate(bz["items"]))
+    hero_band = "".join(f'<li><span>{i+1:02d}</span>{t}</li>' for i, (t, d, img, alt, href) in enumerate(bz["items"]))
     biz = "".join(
         f'<a class="ic-biz-card reveal" href="{href}">'
         + (f'<span class="ic-biz-photo ic-clip"><img src="{PH}{img}" alt="{alt}" loading="lazy"></span>' if img else '<span class="ic-biz-photo is-graphic" aria-hidden="true"><span>SEWERAGE</span><i></i><i></i><i></i></span>')
@@ -26,16 +27,15 @@ def build():
     news = "".join(f'<li><a href="{url}" target="_blank" rel="noopener noreferrer"><span class="ic-serial" aria-hidden="true">{i+1:02d}</span><span class="ic-news-meta">{cat}' + (f'<time datetime="{iso}">{date}</time>' if iso else '') + f'</span><span class="ic-news-title">{t}</span><b aria-hidden="true">↗</b><span class="sr-only">（外部サイトが開きます）</span></a></li>' for i, (iso, date, cat, t, url) in enumerate(nw["items"]))
 
     body = f'''
-<!-- 01 HERO #top-hero｜方式C：独自HTML＋CSS（全幅の施工写真＋写真を隠さない独立パネル）。CMS ID参考：721/734 -->
+<!-- 01 HERO #top-hero｜方式C：独自HTML＋CSS（全幅の施工写真＋写真を隠さない独立パネル。CTAなし・画像と文字のみ）。CMS ID参考：721/734 -->
 <section class="ic-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="721,734" data-implementation="C">
   <figure class="ic-hero-photo"><img src="{PH}{h["img"][0]}" alt="{h["img"][1]}" width="941" height="627"><figcaption>{h["caption"]}</figcaption></figure>
   <div class="ic-hero-panel">
     <p class="ic-hero-label">{h["label"]}</p>
     <h1 id="hero-title"><span>{h["h1"][0]}</span><span>{h["h1"][1]}</span></h1>
     <p class="ic-hero-lead">{h["lead"]}</p>
-    <div class="ic-actions">{a(h["cta"][0][0], h["cta"][0][1], "ic-btn is-primary")}{a(h["cta"][1][0], h["cta"][1][1], "ic-btn is-secondary")}</div>
   </div>
-  <nav class="ic-band" aria-label="対応する工事"><p>対応する工事</p><ul>{band}</ul></nav>
+  <div class="ic-band"><p>対応する工事</p><ul aria-label="対応する工事">{hero_band}</ul></div>
 </section>
 
 <!-- 02 ABOUT / PROFILE #top-about｜方式B：CMS 54 Half ＋ 22 Table（大きな1974の背景文字、右上に社屋、左下に概要） -->

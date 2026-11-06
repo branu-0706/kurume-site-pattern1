@@ -234,3 +234,24 @@ a:hover .ic-clip img,.ic-mosaic figure:hover img{transform:scale(1.03)}
   .ic-end .ic-btn,.ic-contact-actions .ic-btn{width:100%}
 }
 @media(prefers-reduced-motion:reduce){.ic-hero-photo img{animation:none}.js .ic-clip.reveal,.js .ic-steps-line.reveal,.js .ic-label.reveal .ic-line{clip-path:none;transform:none}}
+
+/* ── 11/06 KV改訂：CTAなし・画像と文字のみ。写真を高く、読み取りパネルを右に寄せ、道路の区画線を引く ── */
+.ic-hero{overflow:hidden}
+.ic-hero-photo{height:clamp(460px,68vh,700px)}
+.ic-hero-photo::after{content:"";position:absolute;top:0;bottom:0;left:clamp(32px,8vw,140px);width:8px;background:repeating-linear-gradient(180deg,var(--kk-accent) 0 44px,transparent 44px 76px)}
+.ic-hero-photo figcaption{left:max(24px,calc((100vw - 1320px) / 2));right:auto;top:auto;bottom:24px;background:var(--kk-brand-navy);color:var(--kk-surface);padding:8px 14px;font-size:12px}
+.ic-hero-panel{margin:-240px max(24px,calc((100vw - 1320px) / 2)) 0 auto;width:min(760px,calc(100% - 48px));border-top:0;border-left:10px solid var(--kk-brand-navy);padding:52px 56px 48px}
+.ic-hero-label{display:flex;align-items:center;gap:14px}
+.ic-hero-label::after{content:"";flex:1;height:1px;background:var(--kk-border)}
+.ic-hero-lead{margin:0}
+.ic-band li{display:flex;align-items:baseline;gap:10px;padding:22px 16px;font-weight:800;font-size:14.5px;color:var(--kk-brand-navy);border-left:1px solid var(--kk-primary-strong)}
+@media(max-width:767px){
+  .ic-hero-photo{height:auto}
+  .ic-hero-photo::after{left:20px;width:6px}
+  .ic-hero-photo figcaption{bottom:auto;top:14px;left:auto;right:14px}
+  .ic-hero-panel{margin:-36px 16px 0;width:auto;border-left-width:6px;padding:28px 22px 30px}
+  .ic-band li{border-left:0;border-top:1px solid var(--kk-primary-strong);padding:14px 24px}
+}
+.ic-hero h1{font-size:clamp(2.4rem,4.1vw,4.5rem);word-break:auto-phrase}
+.ic-hero-photo figcaption{left:calc(clamp(32px,8vw,140px) + 28px)}
+@media(max-width:767px){.ic-hero h1{font-size:clamp(1.9rem,8.4vw,2.6rem)}.ic-hero-photo figcaption{left:auto}}

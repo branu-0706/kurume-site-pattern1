@@ -2,17 +2,11 @@ from common import *
 
 P = "@R@assets/photos/"
 
+import hero as _kv
+HERO = _kv.frame(sid='company-hero', tid='company-title', no='06', en='COMPANY', jp='会社情報', img='entrance-sunny.jpg', alt='「(株)久留米興業」の看板が掲げられた本社の敷地入口', pos='40% 55%', word='COMPANY', h1='この街とともに歩み、<br>次の世代へつないでいく。', lead='1974年の設立以来、世田谷を拠点に道路や水道などのインフラ工事に携わってきた久留米興業。会社の歩み、仕事への考え方、そして現在の事業基盤をご紹介します。')
+
 BODY = f'''
-<!-- 01 COMPANY HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
-<section class="page-hero" id="company-hero" aria-labelledby="company-title" data-cms-id="734" data-implementation="B">
-  <div class="page-hero-img" style="background-image:url('{P}entrance-sunny.jpg');background-position:40% 55%" role="img" aria-label="「(株)久留米興業」の看板が掲げられた本社の敷地入口"></div>
-  <div class="wrap">
-    <p class="eyebrow anim-enter"><span class="line"></span>COMPANY / ABOUT US</p>
-    <h1 id="company-title" class="anim-enter" style="--delay:.1s">この街とともに歩み、<br>次の世代へつないでいく。</h1>
-    <p class="lead anim-enter" style="--delay:.2s">1974年の設立以来、世田谷を拠点に道路や水道などのインフラ工事に携わってきた久留米興業。会社の歩み、仕事への考え方、そして現在の事業基盤をご紹介します。</p>
-    <div class="hero-actions anim-enter" style="--delay:.3s"><a class="btn btn-white" href="#company-ceo">代表メッセージを読む <span aria-hidden="true">↓</span></a><a class="btn btn-outline-light" href="#company-overview">会社概要を見る <span aria-hidden="true">↓</span></a></div>
-  </div>
-</section>
+{HERO}
 <!--CRUMB-->
 
 <!-- 02 MESSAGE FROM PRESIDENT｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ CSS -->

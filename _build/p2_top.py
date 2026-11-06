@@ -2,27 +2,11 @@ from p2common import *
 
 P = "@R@assets/photos/"
 
+import hero as _kv
+HERO = _kv.chapter(sid='top-hero', tid='hero-title', img='field-work-street.jpg', alt='重機とともに歩道の路盤をつくる施工中の現場', pos='50% 55%', h1='この街とともに、50年以上。<br><span>信頼をつなぎ、次の時代へ。</span>', lead='ガス管取替後の復旧舗装工事や水道・土木工事。1974年から積み重ねた仕事と、人を大切にする会社づくり。久留米興業の歩みと、これからを紹介します。')
+
 BODY = f'''
-<!-- 01 HERO / 50 YEARS #top-hero｜方式C：独自HTML＋CSS（office.css の .story-hero）。CMS ID参考：734/721。HERO内に4つの事業を明示 -->
-<section class="story-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="734,721" data-implementation="C">
-  <div class="wrap story-hero-grid">
-    <div class="story-hero-copy">
-      <p class="story-hero-label anim-enter">1974 / TODAY / NEXT</p>
-      <h1 id="hero-title" class="anim-enter" style="--delay:.1s">この街とともに、50年以上。<br><span>信頼をつなぎ、次の時代へ。</span></h1>
-      <p class="story-hero-lead anim-enter" style="--delay:.18s">ガス管取替後の復旧舗装工事や水道・土木工事。1974年から積み重ねた仕事と、人を大切にする会社づくり。久留米興業の歩みと、これからを紹介します。</p>
-      <div class="story-hero-actions anim-enter" style="--delay:.26s"><a class="btn btn-dark" href="@P2@about/index.html">久留米興業について <span aria-hidden="true">→</span></a><a class="btn btn-outline-light" href="@P2@about/index.html#about-business">事業を知る <span aria-hidden="true">→</span></a></div>
-    </div>
-    <figure class="story-hero-media anim-enter" style="--delay:.14s"><img src="{P}field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="941" height="627"><figcaption>施工中の様子</figcaption></figure>
-  </div>
-  <div class="story-hero-fields anim-enter" style="--delay:.3s">
-    <div class="wrap"><p>4 BUSINESS FIELDS</p><ul aria-label="久留米興業の事業">
-      <li><a href="@P2@about/index.html#about-business">ガス管取替後の復旧舗装工事</a></li>
-      <li><a href="@P2@about/index.html#about-business">水道工事</a></li>
-      <li><a href="@P2@about/index.html#about-business">一般土木工事</a></li>
-      <li><a href="@P2@about/index.html#about-business">下水道工事</a></li>
-    </ul></div>
-  </div>
-</section>
+{HERO}
 
 <!-- 02 OUR STORY #top-story｜方式B：CMS 54 Half -->
 <section class="section" id="top-story" aria-labelledby="story-title" data-cms-id="54" data-implementation="B">
