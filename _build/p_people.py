@@ -77,6 +77,7 @@ BODY = f'''
     <div class="half-copy"><p class="section-kicker">ONE TEAM, DIFFERENT STORIES</p><h2 class="section-title" id="intro-title">同じゴールに向かう、<br>いろいろな個性。</h2>
       <p>得意なことも、仕事の覚え方も、人によって違います。久留米興業が大切にしているのは、全員を同じ型にはめることよりも、それぞれが自分の役割を果たしながら協力すること。</p>
       <p>新卒で入った若手、40歳前後で異業種から転職した営業、建築から土木へ移った現場職、30年続ける班長。違う経験を持つ人が集まっているからこそ、現場で気づくこと、取引先に伝えられること、次の仕事につなげられることがあります。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}office-floor-back.jpg" alt="営業や事務の社員が並んで働く事務所" loading="lazy" width="1600" height="1066"></figure>
     <ul class="member-mix">
       <li><b>新卒</b>土木と関係のない専攻から入社した営業</li>
       <li><b>40歳前後</b>お茶の営業、広告代理店から転職した営業</li>
@@ -90,6 +91,7 @@ BODY = f'''
 <section class="section bg-soft" id="people-voices" aria-labelledby="voices-title" data-cms-id="42" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">VOICES <span>社員の声</span></p><h2 class="section-title" id="voices-title">入社前の不安に、<br>働く社員が答えます。</h2></div>
+    <figure class="sec-shot reveal"><img src="{P}pickaxe.jpg" alt="土の上に置かれたつるはし" loading="lazy" width="1600" height="1066"></figure>
     <div class="voices reveal gate" data-gate="インタビュー・対談からの引用（原文どおり）。掲載承認を確認">
       <figure class="voice is-field" style="margin:0"><p>最初は、皆さん見た目的には怖いです。でも、話してみると優しい方が多いですよね、やっぱり。</p><footer><div><b>奥居さん</b>現場職・建築から転職</div></footer></figure>
       <figure class="voice" style="margin:0"><p>知識は後からで大丈夫です。</p><footer><div><b>高畑さん</b>営業職・新卒入社</div></footer></figure>
@@ -157,6 +159,7 @@ BODY = f'''
 <section class="section" id="people-data" aria-labelledby="data-title" data-cms-id="42,custom" data-implementation="B／グラフのみC">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">OUR TEAM <span>職場のこと</span></p><h2 class="section-title" id="data-title">数字と言葉で知る、<br>久留米興業の職場。</h2></div>
+    <figure class="sec-shot reveal"><img src="{P}office-wide-window.jpg" alt="窓際まで机が並ぶ事務所" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-3 reveal gate" data-gate="従業員数・雰囲気は求人票（2026-11-05）の記載より">
       <div class="info-card"><small>MEMBERS</small><h3>従業員 37名</h3><p>事務所・営業・現場・車両や警備まで、自社のメンバーで仕事を進めています。</p></div>
       <div class="info-card is-blue"><small>ATMOSPHERE</small><h3>落ち着いた職場</h3><p>作業中は黙々と。分からないことは聞けば答えてくれます。男性が多めの職場です。</p></div>

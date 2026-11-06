@@ -71,6 +71,7 @@ BODY = f'''
 <section class="section" id="recruit-facts" aria-labelledby="facts-title" data-cms-id="16" data-implementation="B">
   <div class="wrap">
     <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">FACTS <span>数字で見る久留米興業</span></p><h2 class="section-title" id="facts-title">良いことも、大変なことも、<br>数字で先にお伝えします。</h2></div><p class="section-heading-desc">条件は2026年11月時点のものです。グレーの枠は、仕事の大変な面にあたる数字です。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}yard-overhead.jpg" alt="重機と資材が並ぶ北烏山の資材置き場" loading="lazy" width="1600" height="1066"></figure>
     <div class="facts reveal">
       <div class="fact"><small>SALES / 月給</small><strong>32<span>万円〜</span></strong><p>未経験でも同じスタート。経験・資格を考慮して決定。</p></div>
       <div class="fact"><small>SALES / 年間休日</small><strong>130<span>日</span></strong><p>土日祝休み。飛び込み営業・個人ノルマなし。</p></div>
@@ -88,6 +89,7 @@ BODY = f'''
 <section class="section bg-soft" id="recruit-anxiety" aria-labelledby="anx-title" data-cms-id="42" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">BEFORE YOU APPLY <span>応募前の不安と、実際のところ</span></p><h2 class="section-title" id="anx-title">その不安、<br>社員の言葉と制度でお答えします。</h2><p class="section-heading-desc" style="max-width:720px">建設業への転職でよく聞く不安に、実際に働く社員の言葉と会社の制度でお答えします。良いことだけでなく、大変なことも隠しません。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}shovel-grip.jpg" alt="軍手でスコップの柄を握る手元" loading="lazy" width="1600" height="1066"></figure>
     <div class="anx-grid">
       <article class="anx reveal"><div class="anx-q"><small>不安 01</small><p>未経験で、本当についていける？</p></div><div class="anx-a"><small>実際は</small><h3>営業の多くは異業種から。現場は「カラーコーンを並べる」ところから始めます。</h3><p>営業職の3名は、お茶の営業、広告代理店、土木と関係のない専攻からの入社です。最初は先輩への同行から。現場職は道具の名前や安全ルール、資材準備や清掃など、取り組みやすい仕事から覚えます。</p><blockquote>例えば、カラーコーンを並べるとか、そういうところからでもいいんです。自分もそうでした。<cite>— 奥居さん（現場職・建築から転職）</cite></blockquote><a class="anx-link" href="#recruit-first">入社後の最初の1か月を見る ↓</a></div></article>
       <article class="anx reveal" data-delay="1"><div class="anx-q"><small>不安 02</small><p>職人さんや先輩が怖そう…</p></div><div class="anx-a"><small>実際は</small><h3>「見た目は怖い。でも話すと優しい人が多い」と、社員自身が話しています。</h3><p>入社したばかりの頃は、社長や先輩が先に声をかけてくれた、という声があります。現場では、分からないことは聞けば答えてもらえます。</p><blockquote>社長や先輩たちが本当によく見てくれていて、悩む前に『大丈夫か？』と声をかけてくれた。<cite>— 高畑さん（営業職・新卒入社）</cite></blockquote><a class="anx-link" href="@R@people/index.html">働くメンバーを見る ↗</a></div></article>
@@ -122,6 +124,7 @@ BODY = f'''
 <section class="section bg-soft" id="recruit-career" aria-labelledby="career-title" data-cms-id="761x2" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">CAREER PATH <span>久留米興業で歩むキャリア</span></p><h2 class="section-title" id="career-title">仕事を覚えるほど、<br>任される仕事が変わっていく。</h2><p class="section-heading-desc" style="max-width:700px">同じ「未経験」でも、スタートの仕方や成長の道筋は職種によって違います。年数は到達を約束するものではなく、仕事の習得に応じた目安です。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}crawler-track.jpg" alt="資材置き場に停めた重機のキャタピラ" loading="lazy" width="1600" height="1066"></figure>
     <div class="career-switch" aria-label="職種を選ぶ"><a href="#career-sales">営業職</a><a href="#career-field">現場職</a></div>
     <div class="career">
       <div class="career-col reveal" id="career-sales" style="scroll-margin-top:96px"><small>SALES</small><h3>営業職</h3>
@@ -148,6 +151,7 @@ BODY = f'''
 <section class="section" id="recruit-first" aria-labelledby="first-title" data-cms-id="761x2" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">YOUR FIRST MONTH <span>入社してからの最初の1か月</span></p><h2 class="section-title" id="first-title">入社してすぐに、<br>一人で任せることはありません。</h2><p class="section-heading-desc" style="max-width:700px">入社直後に何をするのか。営業職と現場職、それぞれの最初の日々をご紹介します。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}wheelbarrow-legs.jpg" alt="一輪車で土を運ぶ現場職の足元" loading="lazy" width="1600" height="1066"></figure>
     <div class="career">
       <div class="career-col reveal"><small>SALES</small><h3>営業職の最初の1か月</h3>
         <ol class="timeline">
@@ -172,6 +176,7 @@ BODY = f'''
 <section class="section bg-soft" id="recruit-income" aria-labelledby="income-title" data-cms-id="787,22" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">GROWTH &amp; INCOME <span>評価と収入</span></p><h2 class="section-title" id="income-title">年数だけではなく、<br>できるようになった仕事を見ていく。</h2><p class="section-heading-desc" style="max-width:700px">入社直後からいきなり成果を求めることはありません。仕事を覚える段階に合わせて、評価のポイントも変わっていきます。特に大切にしているのは、「現場で何か困っていないか」「次に何が必要になるのか」と周囲に目を向け、言われる前に気づいて動けることです。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}office-staff-pc.jpg" alt="パソコンに向かって作業する事務所の社員" loading="lazy" width="1600" height="1066"></figure>
     <div class="text-two reveal">
       <div class="info-card"><small>SALES</small><h3>営業職：年収500万円は、成長の先にある目標</h3><p>未経験でも月給32万円以上からスタート。ただし、入社すれば自動的に年収500万円になるわけではありません。取引先と一人で打ち合わせができる、見積を作成できる、材料や協力会社を手配できる、資格を取る。そうした仕事ができるようになるほど、評価される範囲が広がり、その先に年収500万円という目標があります。</p></div>
       <div class="info-card is-blue"><small>FIELD WORK</small><h3>現場職：資格とできる作業が、収入につながる</h3><p>未経験でも日給14,000円から。各種手当を含めて初月から月収35万円以上を目指せます。資格を取り、できる作業が増えれば資格手当や昇給に反映。未経験で入社して3年で資格を取り、年収を100万円以上上げた先輩もいます。</p></div>
@@ -204,6 +209,7 @@ BODY = f'''
 <section class="section" id="recruit-openings" aria-labelledby="open-title" data-cms-id="54x2,22" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">OPEN POSITIONS <span>募集要項</span></p><h2 class="section-title" id="open-title">あなたが関わりたい仕事は、<br>どちらですか。</h2><p class="section-heading-desc" style="max-width:700px">取引先と現場をつなぐ営業職と、施工を担う現場職。それぞれの仕事内容と勤務条件です。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}boom-sky.jpg" alt="社名の入った重機のアーム" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-2">
       <article class="link-card reveal" style="background:#f4f6f8" id="opening-sales">
         <div class="lc-body"><small>SALES</small><h3>営業職（法人営業）</h3><p>道路舗装や水道工事が予定どおり進むように、取引先・現場社員・協力会社をつなぐ仕事です。新規開拓の飛び込み営業や個人ノルマはありません。取引先から工事の相談を受け、現場を確認し、見積を作成し、必要な人・材料・日程を整えます。</p>
@@ -256,6 +262,7 @@ BODY = f'''
 <section class="section" id="recruit-faq" aria-labelledby="faq-title" data-cms-id="faq_accordion" data-implementation="B候補/C">
   <div class="wrap" style="max-width:880px">
     <div class="section-heading reveal"><p class="section-kicker">Q&amp;A <span>よくある質問</span></p><h2 class="section-title" id="faq-title">応募前に、気になること。</h2></div>
+    <figure class="sec-shot reveal"><img src="{P}excavator-rear-name.jpg" alt="社名の入った重機の後部" loading="lazy" width="1600" height="1066"></figure>
     <div class="reveal">{faq_html()}</div>
   </div>
 </section>

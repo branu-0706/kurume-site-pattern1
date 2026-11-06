@@ -296,3 +296,8 @@ body{background:var(--kk-page-bg);color:var(--kk-text)}
 }
 @media(max-width:767px){.fv-copy{width:calc(100% - 38px)}}
 .section-title,.p2-h1{word-break:auto-phrase}
+
+/* 11/06 写真追加（構成①）：文字の多いセクションに横長の写真を1枚 */
+.sec-shot{margin:36px 0 0;overflow:hidden;background:var(--kk-primary)}
+.sec-shot img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;display:block}
+@media(max-width:767px){.sec-shot{margin:26px -19px 0}.sec-shot img{aspect-ratio:4/3}}

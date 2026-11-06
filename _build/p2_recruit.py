@@ -277,6 +277,7 @@ BODY = f'''
 <section class="section bg-soft" id="recruit-faq" aria-labelledby="faq-title" data-cms-id="43,787" data-implementation="B/C">
   <div class="wrap" style="max-width:880px">
     <div class="section-heading reveal"><p class="section-kicker">FREQUENTLY ASKED QUESTIONS <span>よくある質問</span></p><h2 class="section-title" id="faq-title">入社を考える前に、<br>知っておいてほしいこと。</h2></div>
+    <figure class="sec-shot reveal"><img src="{P}wire-ropes.jpg" alt="資材置き場のワイヤーロープとドラム缶" loading="lazy" width="1600" height="1066"></figure>
     {faq_html()}
   </div>
 </section>

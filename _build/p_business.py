@@ -124,6 +124,7 @@ BODY = f'''
 <section class="section" id="business-works" aria-labelledby="works-title" data-cms-id="718" data-implementation="A/B">
   <div class="wrap">
     <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">WORKS <span>施工実績</span></p><h2 class="section-title" id="works-title">仕事の跡は、<br>街に残っていく。</h2></div><p class="section-heading-desc">道路の舗装、水道に関わる工事など、久留米興業が携わってきた施工の一部をご紹介します。写真を通して、普段目にする街の風景がどのような仕事によって支えられているのかをご覧ください。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}road-breakup-track.jpg" alt="重機の足元に積まれた、はがしたアスファルト" loading="lazy" width="1600" height="1066"></figure>
     <ul class="works-list reveal">
       <li><span>道路維持</span>令和3年度 道路維持工事（世田谷区上祖師谷）</li>
       <li><span>道路維持</span>令和3年度 道路維持工事（世田谷区南烏山）</li>
@@ -140,6 +141,7 @@ BODY = f'''
 <section class="section bg-blueish" id="business-people" aria-labelledby="cross-title" data-cms-id="42,90" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">THE PEOPLE BEHIND OUR WORK</p><h2 class="section-title" id="cross-title">街を支える仕事の先に、<br>一人ひとりの未来がある。</h2><p class="section-heading-desc" style="max-width:640px">道路や水道を支える仕事は、経験や技術を積み重ねることで、任される役割も広がっていきます。どんな人が働き、どのような環境で仕事をしているのか。久留米興業の「人」と「働き方」も、ぜひ知ってください。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}compactor-shovel.jpg" alt="締固め機とスコップで路盤を整える二人の現場職" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-3">
       <a class="link-card no-media reveal" href="@R@people/index.html"><div class="lc-body"><small>PEOPLE</small><h3>働くメンバー</h3><p>どんな人たちが、日々の現場を支えているのか。</p><span class="mini-link">働くメンバーを見る <b aria-hidden="true">↗</b></span></div></a>
       <a class="link-card no-media reveal" href="@R@work-environment/index.html" data-delay="1"><div class="lc-body"><small>WORK ENVIRONMENT</small><h3>労働環境</h3><p>仕事も、自分の生活も。働く環境を詳しく知る。</p><span class="mini-link">労働環境を見る <b aria-hidden="true">↗</b></span></div></a>
@@ -153,6 +155,7 @@ BODY = f'''
 <section class="section bg-soft" id="business-clients" aria-labelledby="clients-title" data-cms-id="22,90" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">FOR CLIENTS <span>発注をご検討の方へ</span></p><h2 class="section-title" id="clients-title">対応する工事の一覧</h2><p class="section-heading-desc" style="max-width:760px">主な事業領域と内容をまとめました。工事の場所・時期・規模など、個別のご相談は下記の窓口へお問い合わせください。</p></div>
+    <figure class="sec-shot reveal"><img src="{P}office-team-wide.jpg" alt="社員が机を並べて働く事務所の全景" loading="lazy" width="1600" height="1066"></figure>
     <div class="table-wrap reveal"><table class="b2b-table"><caption class="sr-only">久留米興業が対応する主な工事</caption><thead><tr><th scope="col">工種</th><th scope="col">主な内容</th><th scope="col">詳しい説明</th></tr></thead><tbody>
       <tr><th scope="row">ガス管取替後の復旧舗装工事</th><td>ガス管の取替後に行う道路の舗装復旧工事。</td><td><a href="#service-gas">復旧舗装の説明へ</a></td></tr>
       <tr><th scope="row">水道工事</th><td>水道管の布設・布設替など、給水インフラに関わる工事。</td><td><a href="#service-water">水道工事の説明へ</a></td></tr>
