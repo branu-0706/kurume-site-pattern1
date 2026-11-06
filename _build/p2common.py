@@ -1,7 +1,7 @@
 # パターン②（ビジョン共感）× デザイン①（コーポレート）の共通パーツ。
 # パターン①の site.css / site.js をそのまま使い、差分は assets/p2.css（[data-structure="p2"] にスコープ）に置く。
 # @R@ はサイトのルート（リポジトリ直下）までの相対パス、@P2@ はパターン②TOPまでの相対パスに置換する。
-from common import (OFFICIAL_CONTACT, OFFICIAL_NEWS, OFFICIAL_WORKS, OFFICIAL_RECRUIT, SALES_JOB, KRM, DISASTER, MAPS,
+from common import (demo_tags, OFFICIAL_CONTACT, OFFICIAL_NEWS, OFFICIAL_WORKS, OFFICIAL_RECRUIT, SALES_JOB, KRM, DISASTER, MAPS,
                     BLOG_NEGISHI, BLOG_TAKAHATA, BLOG_IMAI, BLOG_LIST, ext)
 
 P2_PAGES = [
@@ -15,9 +15,8 @@ P2_PAGES = [
 
 
 def switcher_tags(root):
-    """比較切替（デモ専用・独立部品）。CMS移植時はこの2行を削除するだけで外せる。"""
-    return (f'<link rel="stylesheet" href="{root}assets/compare/switcher.css">\n'
-            f'<script defer src="{root}assets/compare/switcher.js"></script>\n')
+    """デモ専用の部品（配色の試し変更・比較切替）。CMS移植時は削除する。"""
+    return demo_tags(root)
 
 
 def p2_head(title, desc, root, page):
@@ -33,8 +32,10 @@ def p2_head(title, desc, root, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="{root}assets/theme.css">
 <link rel="stylesheet" href="{root}assets/site.css">
 <link rel="stylesheet" href="{root}assets/p2.css">
+<link rel="stylesheet" href="{root}assets/office.css">
 <script defer src="{root}assets/site.js"></script>
 {switcher_tags(root)}</head>
 <body>
@@ -56,7 +57,7 @@ def p2_header(current, p2root):
       <span class="brand-wordmark">KURUME KOGYO<span>株式会社久留米興業</span></span>
     </a>
     <nav class="desktop-nav" aria-label="メインナビゲーション">{navs}</nav>
-    <a class="header-contact" href="{p2root}recruit/index.html#recruit-offerings">募集要項 <span aria-hidden="true">→</span></a>
+    <a class="header-contact" href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">お問い合わせ <span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
   <nav class="mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション" hidden>{navs}<a href="{p2root}recruit/index.html#recruit-offerings">募集要項を見る</a><a href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">お問い合わせ ↗</a></nav>

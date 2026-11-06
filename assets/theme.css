@@ -1,0 +1,27 @@
+/* 自動生成ファイル：直接編集しないでください。正本は config/themes.json（既定：office-blue-gray）。
+   全16画面の色は、この --kk-* 変数だけを参照します（ロゴ画像の色は変更しません）。 */
+:root{
+  --kk-page-bg:#F5F7F8;
+  --kk-surface:#FFFFFF;
+  --kk-surface-soft:#EAF0F4;
+  --kk-primary:#C9DCE8;
+  --kk-primary-strong:#AFC6D6;
+  --kk-accent:#A8C63A;
+  --kk-accent-soft:#EDF3D9;
+  --kk-brand-navy:#1A2259;
+  --kk-brand-blue:#04447C;
+  --kk-text:#1F2A33;
+  --kk-muted-text:#43505C;
+  --kk-border:#CCD6DD;
+  --kk-button-primary-bg:#1A2259;
+  --kk-button-primary-text:#FFFFFF;
+  --kk-button-secondary-bg:#C9DCE8;
+  --kk-button-secondary-text:#1A2259;
+  --kk-focus-ring:#1A2259;
+  /* 派生色：正本の色から計算（個別のHEXを持たない） */
+  --kk-navy-08:color-mix(in srgb,var(--kk-brand-navy) 8%,transparent);
+  --kk-navy-16:color-mix(in srgb,var(--kk-brand-navy) 16%,transparent);
+  --kk-navy-shadow:color-mix(in srgb,var(--kk-brand-navy) 22%,transparent);
+  --kk-primary-soft:color-mix(in srgb,var(--kk-primary) 45%,var(--kk-surface));
+  --kk-photo-shade:color-mix(in srgb,var(--kk-text) 55%,transparent);
+}

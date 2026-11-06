@@ -99,12 +99,14 @@ BODY = f'''
   <div class="wrap">
     <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">WHAT WE DO <span>事業内容</span></p><h2 class="section-title" id="biz-title">暮らしが止まらないように、<br>今日も現場が動く。</h2></div><p class="section-heading-desc">道路を通れること、水が届くこと。いつもの日常を支えるために、久留米興業は舗装や水道などの工事に取り組んでいます。工事を支えるのは、現場の技術と、準備や段取りをする人たちの連携です。</p></div>
     <div class="business-grid">
-      <div class="business-card reveal"><div class="business-image"><img src="{P}work-minamikarasuyama.jpg" alt="舗装を仕上げた道路と工事黒板" loading="lazy"><span>01</span></div><div class="business-card-body"><h3>ガス管取替後の<br>復旧舗装</h3><p>ガス管の工事後、道路を舗装し直して街の交通を支える。</p></div></div>
-      <div class="business-card reveal" data-delay="1"><div class="business-image"><img src="{P}road-line.jpg" alt="白線が引かれた整備後の道路" loading="lazy"><span>02</span></div><div class="business-card-body"><h3>路面改良・<br>維持</h3><p>道路の状態を整え、安全に使える環境を守る。</p></div></div>
-      <div class="business-card reveal" data-delay="2"><div class="business-image"><img src="{P}water-valve.jpg" alt="掘削した地中に設置された水道の設備" loading="lazy"><span>03</span></div><div class="business-card-body"><h3>水道管の布設・<br>布設替</h3><p>水道管工事を通じて、日々の暮らしの基盤を支える。</p></div></div>
-      <div class="business-card reveal" data-delay="3"><div class="business-image"><div class="pattern-art" style="height:100%;aspect-ratio:auto"><span>OTHER SUPPORT</span></div><span>04</span></div><div class="business-card-body"><h3>自治体からの<br>緊急要請への対応</h3><p>雪かきや土嚢作成など、必要とされる場面にも対応する。</p></div></div>
+      <div class="business-card reveal"><div class="business-image"><img src="{P}work-minamikarasuyama.jpg" alt="舗装を仕上げた道路と工事黒板" loading="lazy"><span>01</span></div><div class="business-card-body"><h3>ガス管取替後の<br>復旧舗装工事</h3><p>ガス管の工事後、道路を舗装し直して街の交通を支える。</p></div></div>
+      <div class="business-card reveal" data-delay="1"><div class="business-image"><img src="{P}water-valve.jpg" alt="掘削した地中に設置された水道の設備" loading="lazy"><span>02</span></div><div class="business-card-body"><h3>水道工事</h3><p>水道管の布設・布設替など、日々の暮らしの基盤を支える。</p></div></div>
+      <div class="business-card reveal" data-delay="2"><div class="business-image"><img src="{P}road-line.jpg" alt="白線が引かれた整備後の道路" loading="lazy"><span>03</span></div><div class="business-card-body"><h3>一般土木工事</h3><p>道路の改良・維持など、安全に使える環境を守る。</p></div></div>
+      <div class="business-card reveal" data-delay="3"><div class="business-image"><div class="pattern-art" style="height:100%;aspect-ratio:auto"><span>SEWERAGE</span></div><span>04</span></div><div class="business-card-body"><h3>下水道工事</h3><p>下水道の整備など、生活環境を支える工事。</p></div></div>
     </div>
+    <p class="p2-honest reveal">このほか、自治体からの要請に応じた雪かきや土嚢作成など、地域で必要とされる対応にも取り組んでいます。</p>
     <div class="p2-column reveal"><p class="p2-column-label">工事を支える連携</p><p>工事の前には、依頼内容の確認や見積、必要な人・材料・日程の調整があります。現場では安全を確かめながら、それぞれの担当が作業を進めます。営業と現場、どちらか一方だけでは完成しない仕事です。</p><a class="text-link" href="@P2@recruit/index.html#recruit-roles">営業・現場それぞれの役割を知る <span aria-hidden="true">→</span></a></div>
+    <div class="cta-row reveal" style="display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:28px">{ext(OFFICIAL_CONTACT, "工事・事業のお問い合わせフォーム <span aria-hidden=\"true\">↗</span>", "btn btn-dark")}<a class="text-link" href="@P2@company/index.html#company-contact">会社情報・連絡先 <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 

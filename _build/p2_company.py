@@ -112,6 +112,17 @@ BODY = f'''
   </div>
 </section>
 
+<!-- 07B CONTACT #company-contact｜方式B：CMS 90 Btn Text ＋ 23 Btn（法人向けの正式な連絡先。フォームは新設しない） -->
+<section class="section bg-soft" id="company-contact" aria-labelledby="ccontact-title" data-cms-id="90,23" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">CONTACT <span>お問い合わせ窓口</span></p><h2 class="section-title" id="ccontact-title">工事・事業に関するお問い合わせ</h2></div>
+    <div class="contact-split reveal">
+      <div><small>FOR CLIENTS</small><h3>法人・取引先の方</h3><dl><dt>電話</dt><dd><a href="tel:0333093786">03-3309-3786</a></dd><dt>所在地</dt><dd>〒157-0061 東京都世田谷区北烏山6丁目26-28</dd></dl><div class="cta-row">{ext(OFFICIAL_CONTACT, 'お問い合わせフォーム <span aria-hidden="true">↗</span>', 'btn btn-dark')}<a class="text-link" href="@P2@about/index.html#about-business">4つの事業を見る <span aria-hidden="true">→</span></a></div></div>
+      <div><small>CAREERS</small><h3>採用をご検討の方</h3><p>仕事内容、仕事のリアル、待遇・募集条件をまとめています。</p><a class="btn btn-outline-light" href="@P2@recruit/index.html">採用情報を見る <span aria-hidden="true">→</span></a></div>
+    </div>
+  </div>
+</section>
+
 <!-- 08 LINKS #company-links｜方式B：CMS 90 Btn Text ＋ 23 Btn -->
 <section class="section bg-soft" id="company-links" aria-labelledby="links-title" data-cms-id="90,23" data-implementation="B">
   <div class="wrap">

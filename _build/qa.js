@@ -17,7 +17,7 @@ const PAGES=Object.values(SITES).flat();
 const SITE_OF=Object.fromEntries(Object.entries(SITES).flatMap(([k,ps])=>ps.map(p=>[p,k])));
 // 同じ元写真のトリミング違い（別ファイルでも同じ写真として扱う）
 const ALIAS={'ceo.jpg':'ceo-wide.jpg','field-sidewalk2.jpg':'field-team-back.jpg','office-pc-wide.jpg':'office-pc.jpg'};
-const WIDTHS=(process.env.QA_WIDTHS||'1440,1024,390,360,320').split(',').map(Number);
+const WIDTHS=(process.env.QA_WIDTHS||'1440,1024,768,390,320').split(',').map(Number);
 const fs=require('fs'),path=require('path');
 const ROOT=process.env.QA_ROOT||process.cwd();
 const BANNED=['求人票','出典','採用ブログより','公式サイト','掲載表記','インタビューより','ヒアリング','CAREECON求人','求人ボックス'];
@@ -29,7 +29,7 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
       const pg=await ctx.newPage();const errs=[];
       pg.on('pageerror',e=>errs.push(e.message));
       pg.on('requestfailed',r=>{if(!/fonts\.(googleapis|gstatic)/.test(r.url()))errs.push('読み込み失敗 '+r.url())});
-      await pg.goto(BASE+p,{waitUntil:'networkidle'});
+      await pg.goto(BASE+p+(process.env.QA_QUERY||''),{waitUntil:'networkidle'});
       // 公開イメージで確認（確認用の注記は対象外）
       await pg.evaluate(()=>{document.documentElement.classList.remove('mode-review');document.documentElement.classList.add('mode-public');document.querySelectorAll('.reveal').forEach(n=>n.classList.add('is-visible'));document.querySelectorAll('img').forEach(i=>i.loading='eager')});
       await pg.evaluate(async()=>{await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))});
@@ -40,11 +40,12 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
         document.querySelectorAll('img').forEach(i=>{if(vis(i)){const m=(i.currentSrc||i.src).match(/photos\/([\w-]+\.jpg)/);if(m)photos.push(m[1])}});
         document.querySelectorAll('*').forEach(e=>{const bg=getComputedStyle(e).backgroundImage;const m=bg&&bg.match(/photos\/([\w-]+\.jpg)/);if(m&&vis(e))photos.push(m[1])});
         // コントラスト
-        const lum=c=>{const v=c.match(/[\d.]+/g).map(Number);const f=x=>{x/=255;return x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4)};return [.2126*f(v[0])+.7152*f(v[1])+.0722*f(v[2]),v[3]===undefined?1:v[3]]};
-        const bgOf=e=>{for(let n=e;n;n=n.parentElement){const s=getComputedStyle(n);if(s.backgroundImage&&s.backgroundImage!=='none'&&!/gradient/.test(s.backgroundImage))return null;const c=s.backgroundColor;const a=c.match(/[\d.]+/g);if(a&&(a[3]===undefined||+a[3]>0.85))return c;if(/gradient/.test(s.backgroundImage)){const m=s.backgroundImage.match(/rgba?\([^)]*\)/);if(m)return m[0]}}return 'rgb(255,255,255)'};
+        const norm=c=>{const m=c.match(/^color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)/);return m?`rgba(${m[1]*255},${m[2]*255},${m[3]*255},${m[4]===undefined?1:m[4]})`:c};
+        const lum=c0=>{const c=norm(c0);const v=c.match(/[\d.]+/g).map(Number);const f=x=>{x/=255;return x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4)};return [.2126*f(v[0])+.7152*f(v[1])+.0722*f(v[2]),v[3]===undefined?1:v[3]]};
+        const bgOf=e=>{for(let n=e;n;n=n.parentElement){const s=getComputedStyle(n);if(s.backgroundImage&&s.backgroundImage!=='none'&&!/gradient/.test(s.backgroundImage))return null;const c=norm(s.backgroundColor);const a=c.match(/[\d.]+/g);if(a&&(a[3]===undefined||+a[3]>0.85))return c;if(/gradient/.test(s.backgroundImage)){const m=s.backgroundImage.match(/rgba?\([^)]*\)/);if(m)return m[0]}}return 'rgb(255,255,255)'};
         const low=[];
         if(deep)document.querySelectorAll('body *').forEach(e=>{
-          if(!vis(e)||e.closest('.cmp-switcher,[aria-hidden="true"],.mode-bar,.page-hero,.hero,.photo-slot,.business-image,.about-media,.work-media,.person-art,.person-photo,.lc-media,.pattern-art'))return;
+          if(!vis(e)||e.closest('.sr-only,.kkt,.cmp-switcher,[aria-hidden="true"],.mode-bar,.page-hero,.hero,.photo-slot,.business-image,.about-media,.work-media,.person-art,.person-photo,.lc-media,.pattern-art'))return;
           const t=[...e.childNodes].filter(n=>n.nodeType===3&&n.textContent.trim()).map(n=>n.textContent.trim()).join('');
           if(!t)return;
           const s=getComputedStyle(e);const bg=bgOf(e);if(!bg)return;

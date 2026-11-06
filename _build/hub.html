@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <!-- 構成パターン × デザインパターンを1画面で切り替える比較ページ（デモ専用・CMSには移植しない）。
      左の一覧は通常のリンクなので、このページは16画面への入口（上層ページ）も兼ねる。 -->
+<link rel="stylesheet" href="../assets/theme.css">
+<script src="../assets/theme/presets.js"></script>
+<script src="../assets/theme/theme.js"></script>
 <style>
 :root{--navy:#1A2259;--blue:#04447C;--ink:#18253b;--muted:#4d5c70;--line:#d6dfe9;--soft:#f3f5f8;--side:300px}
 *,*::before,*::after{box-sizing:border-box}
@@ -45,7 +48,10 @@ select:disabled{background:var(--soft);color:#5b6878}
 .hint[hidden]{display:none}
 .tools{display:flex;gap:8px;flex-wrap:wrap;padding:12px 20px 16px;border-bottom:1px solid var(--line)}
 .tools a{flex:1;display:flex;align-items:center;justify-content:center;min-height:40px;padding:0 10px;font-size:12px;font-weight:700;border:1px solid var(--navy);color:var(--navy);text-decoration:none;white-space:nowrap}
-.tools a:hover{background:var(--navy);color:#fff}
+.tools a:hover,.themebtn:hover{background:var(--navy);color:#fff}
+.themebtn{flex:1 1 100%;min-height:40px;border:1px solid var(--navy);background:#fff;color:var(--navy);font:700 12px/1 inherit;font-family:inherit;cursor:pointer}
+.kkt{left:calc(var(--side) + 12px);right:auto;bottom:12px}
+@media(max-width:900px){.kkt{left:12px}}
 
 /* 一覧（16画面へのリンク） */
 .list{padding:14px 20px 28px}
@@ -94,9 +100,9 @@ select:disabled{background:var(--soft);color:#5b6878}
       <label><input type="radio" name="s" value="p2"><span>② ビジョン共感</span></label>
     </div></fieldset>
     <fieldset><legend>デザインパターン</legend><div class="seg is-3">
-      <label><input type="radio" name="d" value="d1"><span>①<small>コーポレート</small></span></label>
-      <label><input type="radio" name="d" value="d2"><span>②<small>シンプル</small></span></label>
-      <label><input type="radio" name="d" value="d3"><span>③<small>表現重視</small></span></label>
+      <label><input type="radio" name="d" value="d1"><span>①<small data-dl="d1">基準</small></span></label>
+      <label><input type="radio" name="d" value="d2"><span>②<small data-dl="d2">オフィシャル</small></span></label>
+      <label><input type="radio" name="d" value="d3"><span>③<small data-dl="d3">表現重視</small></span></label>
     </div></fieldset>
     <div><label for="page" style="display:block;font-size:11.5px;font-weight:800;color:var(--blue);margin-bottom:6px">ページ</label>
       <select id="page" name="page"></select>
@@ -111,7 +117,7 @@ select:disabled{background:var(--soft);color:#5b6878}
       <label><input type="radio" name="m" value="public"><span>公開イメージ</span></label>
     </div></fieldset>
   </form>
-  <div class="tools"><a id="open" href="../index.html" target="_blank" rel="noopener">新しいタブで開く ↗</a><a class="listtoggle" href="#all" id="listtoggle" aria-expanded="false" aria-controls="all">16画面の一覧</a></div>
+  <div class="tools"><button type="button" id="theme" class="themebtn" aria-controls="kkt-panel">配色を調整</button><a id="open" href="../index.html" target="_blank" rel="noopener">新しいタブで開く ↗</a><a class="listtoggle" href="#all" id="listtoggle" aria-expanded="false" aria-controls="all">16画面の一覧</a></div>
   <nav class="list" id="all" aria-label="16画面の一覧">
     <h2>16画面の一覧</h2>
     <div class="group"><h3>構成① × デザイン① <small>6ページ</small></h3><ul>
@@ -129,10 +135,10 @@ select:disabled{background:var(--soft);color:#5b6878}
       <li><a href="../pattern2/future/index.html" data-key="p2-d1-future">久留米興業の未来</a></li>
       <li><a href="../pattern2/company/index.html" data-key="p2-d1-company">会社情報</a></li></ul></div>
     <div class="group"><h3>デザイン②・③（TOPのみ） <small>4画面</small></h3><ul>
-      <li><a href="pattern1/design-a/index.html" data-key="p1-d2-top">構成① × デザイン② シンプル</a></li>
+      <li><a href="pattern1/design-a/index.html" data-key="p1-d2-top">構成① × デザイン② オフィシャル</a></li>
       <li><a href="pattern1/design-b/index.html" data-key="p1-d3-top">構成① × デザイン③ 表現重視</a></li>
-      <li><a href="pattern2/design-a/index.html" data-key="p2-d2-top">構成② × デザイン② シンプル</a></li>
-      <li><a href="pattern2/design-b/index.html" data-key="p2-d3-top">構成② × デザイン③ 表現重視</a></li></ul></div>
+      <li><a href="pattern2/design-a/index.html" data-key="p2-d2-top">構成② × デザイン② 独自性重視</a></li>
+      <li><a href="pattern2/design-b/index.html" data-key="p2-d3-top">構成② × デザイン③ ユニーク表現</a></li></ul></div>
     <p class="notes">構成①と②は下層ページの作りが違うため、構成を切り替えると同じ構成のTOPを表示します。このページのURL（# 以降）は表示中の組み合わせを表すので、そのまま共有できます。</p>
   </nav>
 </aside>
@@ -169,6 +175,9 @@ select:disabled{background:var(--soft);color:#5b6878}
     sel.disabled=st.d!=='d1';hint.hidden=st.d==='d1';
     view.classList.toggle('is-sp',st.w==='sp');view.classList.toggle('is-tab',st.w==='tab');
     const u=urlOf();const full=new URL(u,ROOT).href;
+    document.documentElement.setAttribute('data-structure',st.s);document.documentElement.setAttribute('data-design',st.d);
+    const DL={p1:{d1:'基準（会社理解）',d2:'オフィシャル',d3:'表現重視'},p2:{d1:'基準（ビジョン共感）',d2:'独自性重視',d3:'ユニーク表現'}};
+    document.querySelectorAll('[data-dl]').forEach(x=>{x.textContent=DL[st.s][x.dataset.dl];});
     now.textContent=S[st.s]+' × '+D[st.d]+'｜'+(st.d==='d1'?labelOf():'TOP');
     pathEl.textContent='/'+u.replace(/index\.html$/,'');
     open.href=full;
@@ -203,6 +212,10 @@ select:disabled{background:var(--soft);color:#5b6878}
       applyMode();sync();
     }catch(e){}
   });
+  const tb=document.getElementById('theme');
+  tb.addEventListener('click',()=>{if(!window.KKTheme)return;window.KKTheme.isOpen()?window.KKTheme.close():window.KKTheme.open(tb);});
+  /* 配色を変えたら表示中のページにも即時反映（同じ保存領域を読み直す） */
+  window.addEventListener('kk-theme-change',()=>{try{frame.contentWindow.KKTheme&&frame.contentWindow.KKTheme.apply();}catch(e){}});
   const lt=document.getElementById('listtoggle'),list=document.getElementById('all');
   lt.addEventListener('click',e=>{e.preventDefault();const o=!list.classList.contains('is-open');list.classList.toggle('is-open',o);lt.setAttribute('aria-expanded',String(o));});
   window.addEventListener('hashchange',()=>{if(parseHash())show();});

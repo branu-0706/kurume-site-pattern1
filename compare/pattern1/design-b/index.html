@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1A2259">
 <meta name="robots" content="noindex">
-<meta name="description" content="パターン①（会社理解重視）×デザイン③（現場の迫力・表現重視）の比較用TOP。">
-<title>株式会社久留米興業｜街を支える仕事を、働く人の未来につなげる。（比較用TOP：パターン①×デザイン③）</title>
+<meta name="description" content="構成①（会社理解）×デザイン③ INFRASTRUCTURE CANVAS（表現重視）の比較用TOP。">
+<title>株式会社久留米興業｜道路の復旧舗装から、水道・土木工事まで。（比較用TOP：構成①×デザイン③ 表現重視）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="../../../assets/theme.css">
 <link rel="stylesheet" href="../../../assets/compare/base.css">
 <link rel="stylesheet" href="../../../assets/compare/p1-d3.css">
 <script defer src="../../../assets/site.js"></script>
+<script src="../../../assets/theme/presets.js"></script>
+<script src="../../../assets/theme/theme.js"></script>
 <link rel="stylesheet" href="../../../assets/compare/switcher.css">
 <script defer src="../../../assets/compare/switcher.js"></script>
 </head>
@@ -23,121 +26,125 @@
   <div class="c-header-inner">
     <a class="c-brand" href="index.html" aria-label="久留米興業 トップへ"><img src="../../../assets/kurume-logo.png" alt="久留米興業 ロゴ" width="64" height="40"><span>KURUME KOGYO<small>株式会社久留米興業</small></span></a>
     <nav class="c-nav" aria-label="メインナビゲーション"><a href="index.html" aria-current="page">TOP</a><a href="../../../business/index.html">事業内容</a><a href="../../../recruit/index.html">採用情報</a><a href="../../../work-environment/index.html">労働環境</a><a href="../../../people/index.html">働くメンバー</a><a href="../../../company/index.html">会社情報</a></nav>
-    <a class="c-header-cta" href="../../../recruit/index.html">採用情報</a>
+    <a class="c-header-cta" href="https://www.kurume-k.jp/contact" target="_blank" rel="noopener noreferrer">お問い合わせ ↗<span class="sr-only">（外部サイトが開きます）</span></a>
     <button class="c-menu" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
-  <nav class="c-mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="index.html" aria-current="page">TOP</a><a href="../../../business/index.html">事業内容</a><a href="../../../recruit/index.html">採用情報</a><a href="../../../work-environment/index.html">労働環境</a><a href="../../../people/index.html">働くメンバー</a><a href="../../../company/index.html">会社情報</a><a href="../../../recruit/index.html">採用情報</a></nav>
+  <nav class="c-mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション" hidden><a href="index.html" aria-current="page">TOP</a><a href="../../../business/index.html">事業内容</a><a href="../../../recruit/index.html">採用情報</a><a href="../../../work-environment/index.html">労働環境</a><a href="../../../people/index.html">働くメンバー</a><a href="../../../company/index.html">会社情報</a><a href="https://www.kurume-k.jp/contact">お問い合わせ</a></nav>
 </header>
 <main id="main">
 
-<!-- 01 HERO #top-hero｜方式C：独自HTML＋CSS（写真が主役の全幅HERO、左上に巨大H1）。CMS ID参考：721/734 -->
-<section class="d3-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="721,734" data-implementation="C">
-  <img class="d3-hero-img" src="../../../assets/photos/field-work-street.jpg" alt="歩道の舗装工事を進める現場職と重機" width="941" height="627">
-  <div class="d3-hero-shade" aria-hidden="true"></div>
-  <div class="c-wrap d3-hero-inner">
-    <p class="d3-hero-label">KURUME KOGYO <span>SINCE 1974</span></p>
-    <h1 id="hero-title"><span>街を支える仕事を、</span><span>働く人の未来につなげる。</span></h1>
-    <p class="d3-hero-lead">道路や水道など、暮らしに欠かせないインフラを支えてきた久留米興業。積み重ねてきた技術と人とのつながりを大切に、街と働く人のこれからをつくっていきます。</p>
-    <div class="d3-actions"><a class="d3-btn is-white" href="../../../company/index.html">久留米興業について <span aria-hidden="true">→</span></a><a class="d3-btn is-line" href="../../../recruit/index.html">採用情報を見る <span aria-hidden="true">→</span></a></div>
+<!-- 01 HERO #top-hero｜方式C：独自HTML＋CSS（全幅の施工写真＋写真を隠さない独立パネル）。CMS ID参考：721/734 -->
+<section class="ic-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="721,734" data-implementation="C">
+  <figure class="ic-hero-photo"><img src="../../../assets/photos/field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="941" height="627"><figcaption>施工中の様子</figcaption></figure>
+  <div class="ic-hero-panel">
+    <p class="ic-hero-label">INFRASTRUCTURE / KURUME KOGYO</p>
+    <h1 id="hero-title"><span>道路の復旧舗装から、</span><span>水道・土木工事まで。</span></h1>
+    <p class="ic-hero-lead">世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。</p>
+    <div class="ic-actions"><a class="ic-btn is-primary" href="../../../business/index.html">事業内容を見る <span aria-hidden="true">→</span></a><a class="ic-btn is-secondary" href="../../../company/index.html">会社情報を見る <span aria-hidden="true">→</span></a></div>
   </div>
-  <p class="d3-hero-deco" aria-hidden="true">INFRASTRUCTURE / PEOPLE</p>
+  <nav class="ic-band" aria-label="対応する工事"><p>対応する工事</p><ul><li><a href="../../../business/index.html#service-gas"><span>01</span>ガス管取替後の復旧舗装工事</a></li><li><a href="../../../business/index.html#service-water"><span>02</span>水道工事</a></li><li><a href="../../../business/index.html#service-civil"><span>03</span>一般土木工事</a></li><li><a href="../../../business/index.html#service-sewer"><span>04</span>下水道工事</a></li></ul></nav>
 </section>
 
-<!-- 02 ABOUT #top-about｜方式B：CMS 54 Half ＋ CSS（1974と社屋写真・白いプレートの段差配置） -->
-<section class="d3-section d3-about" id="top-about" aria-labelledby="about-title" data-cms-id="54" data-implementation="B">
-  <div class="c-wrap">
-    <div class="reveal d3-head"><span class="d3-line" aria-hidden="true"></span><p><span class="d3-no">02</span>ABOUT US<span class="d3-ja">久留米興業について</span></p></div>
-    <div class="d3-about-grid">
-      <p class="d3-year" aria-hidden="true">1974</p>
-      <div class="d3-about-photo d3-clip reveal"><img src="../../../assets/photos/entrance.jpg" alt="「(株)久留米興業」の看板が掲げられた本社の敷地入口" loading="lazy"></div>
-      <div class="d3-plate reveal"><h2 id="about-title">街と、人と。<br>積み重ねてきた50年以上。</h2><p>株式会社久留米興業は、1974年の設立以来、道路や水道など、暮らしに欠かせないインフラ工事に取り組んできました。</p><p>私たちが大切にしてきたのは、工事を完成させることだけではありません。その先にいる人とのつながりを大切にしながら、一つひとつの仕事に向き合ってきました。</p><a class="d3-text-link" href="../../../company/index.html">久留米興業を知る <span aria-hidden="true">→</span></a></div>
+<!-- 02 ABOUT / PROFILE #top-about｜方式B：CMS 54 Half ＋ 22 Table（大きな1974の背景文字、右上に社屋、左下に概要） -->
+<section class="ic-section ic-about" id="top-about" aria-labelledby="about-title" data-cms-id="54,22" data-implementation="B">
+  <p class="ic-year" aria-hidden="true">1974</p>
+  <div class="ic-wrap ic-about-grid">
+    <figure class="ic-about-photo ic-clip reveal"><img src="../../../assets/photos/entrance.jpg" alt="「(株)久留米興業」の看板が掲げられた本社の敷地入口" loading="lazy"><figcaption>現在の本社</figcaption></figure>
+    <div class="ic-about-copy">
+      <p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">02</span>SINCE 1974<span class="ic-ja">会社概要</span></p>
+      <h2 id="about-title">1974年から、<br>現場と地域に向き合う。</h2>
+      <p>久留米興業は1974年設立。道路や水道に関わる工事を通じ、地域の暮らしを支えてきました。現在の会社の姿と、取り組んできた事業を知っていただけるページです。</p>
+      <dl class="ic-facts"><div><dt>設立</dt><dd>1974年3月4日</dd></div><div><dt>所在地</dt><dd>東京都世田谷区北烏山6丁目26-28</dd></div><div><dt>主な事業</dt><dd>復旧舗装・水道・一般土木・下水道</dd></div><div><dt>関連会社</dt><dd>KRM株式会社</dd></div></dl>
+      <a class="ic-link" href="../../../company/index.html#company-overview">会社の概要を見る <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- 03 BUSINESS #top-business｜方式B：CMS 16 Card Four ＋ scoped CSS（大番号と写真帯が交互に並ぶ） -->
-<section class="d3-section d3-business" id="top-business" aria-labelledby="biz-title" data-cms-id="16" data-implementation="B">
-  <div class="c-wrap">
-    <div class="reveal d3-head"><span class="d3-line" aria-hidden="true"></span><p><span class="d3-no">03</span>BUSINESS<span class="d3-ja">事業内容</span></p></div>
-    <div class="d3-title-row"><h2 id="biz-title">何気なく通る道にも、<br>私たちの仕事がある。</h2><p>毎日の「当たり前」を支えるために。道路・水道をはじめ、街のさまざまな場所で私たちの仕事が続いています。</p></div>
-    <div class="d3-biz"><a class="d3-biz-row reveal" href="../../../business/index.html#service-gas"><span class="d3-biz-no">01</span><div class="d3-biz-text"><h3>ガス管取替後の復旧舗装工事</h3><p>ガス管を取り替えたあとの道路を、また使える状態へ。</p><span class="d3-arrow">詳しく見る <b aria-hidden="true">→</b></span></div><div class="d3-biz-photo d3-clip reveal"><img src="../../../assets/photos/paving-roller.jpg" alt="ローラーで舗装を転圧している現場" loading="lazy"></div></a><a class="d3-biz-row is-rev reveal" href="../../../business/index.html#service-water"><span class="d3-biz-no">02</span><div class="d3-biz-text"><h3>水道工事</h3><p>配水管の新設や給水管の取替など、水の通り道を整える。</p><span class="d3-arrow">詳しく見る <b aria-hidden="true">→</b></span></div><div class="d3-biz-photo d3-clip reveal"><img src="../../../assets/photos/water-pipe.jpg" alt="掘削した溝に配水管を布設している現場" loading="lazy"></div></a><a class="d3-biz-row reveal" href="../../../business/index.html#service-civil"><span class="d3-biz-no">03</span><div class="d3-biz-text"><h3>一般土木工事</h3><p>路面の改良・維持など、毎日使われる街の基盤を整える。</p><span class="d3-arrow">詳しく見る <b aria-hidden="true">→</b></span></div><div class="d3-biz-photo d3-clip reveal"><img src="../../../assets/photos/civil-road.jpg" alt="カラー舗装で仕上げた道路" loading="lazy"></div></a><a class="d3-biz-row is-rev reveal" href="../../../business/index.html#service-sewer"><span class="d3-biz-no">04</span><div class="d3-biz-text"><h3>下水道工事</h3><p>下水道の整備を通じて、暮らしを支える地下のインフラに携わる。</p><span class="d3-arrow">詳しく見る <b aria-hidden="true">→</b></span></div><div class="d3-biz-photo is-text" aria-hidden="true"><span>SEWERAGE</span></div></a></div>
-    <div class="d3-end"><a class="d3-btn is-navy" href="../../../business/index.html">事業内容を詳しく見る <span aria-hidden="true">→</span></a></div>
+<!-- 03 BUSINESS #top-business｜方式B：CMS 16 Card Four（2×2の大判写真＋大きな工種名。写真のない工種は図柄） -->
+<section class="ic-section ic-business" id="top-business" aria-labelledby="biz-title" data-cms-id="16" data-implementation="B">
+  <div class="ic-wrap">
+    <div class="ic-title-row"><p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">03</span>OUR WORK<span class="ic-ja">事業内容</span></p><h2 id="biz-title">対応する工事を、明確に。</h2><p>ガス管取替後の道路復旧から、水道・土木・下水道工事まで。主な事業領域を整理しました。発注内容に近い分野から詳しい情報をご覧ください。</p></div>
+    <div class="ic-biz"><a class="ic-biz-card reveal" href="../../../business/index.html#service-gas"><span class="ic-biz-photo ic-clip"><img src="../../../assets/photos/paving-roller.jpg" alt="ローラーで舗装を転圧している現場" loading="lazy"></span><span class="ic-biz-body"><span class="ic-biz-no">01</span><strong>ガス管取替後の復旧舗装工事</strong><span>ガス管の取替後に行う道路の舗装復旧工事。</span><b aria-hidden="true">→</b></span></a><a class="ic-biz-card reveal" href="../../../business/index.html#service-water"><span class="ic-biz-photo ic-clip"><img src="../../../assets/photos/water-pipe.jpg" alt="掘削した溝に配水管を布設している現場" loading="lazy"></span><span class="ic-biz-body"><span class="ic-biz-no">02</span><strong>水道工事</strong><span>水道管の布設・布設替など、給水インフラに関わる工事。</span><b aria-hidden="true">→</b></span></a><a class="ic-biz-card reveal" href="../../../business/index.html#service-civil"><span class="ic-biz-photo ic-clip"><img src="../../../assets/photos/civil-road.jpg" alt="カラー舗装で仕上げた道路" loading="lazy"></span><span class="ic-biz-body"><span class="ic-biz-no">03</span><strong>一般土木工事</strong><span>道路の改良・維持など、公共空間の基盤に関わる土木工事。</span><b aria-hidden="true">→</b></span></a><a class="ic-biz-card reveal" href="../../../business/index.html#service-sewer"><span class="ic-biz-photo is-graphic" aria-hidden="true"><span>SEWERAGE</span><i></i><i></i><i></i></span><span class="ic-biz-body"><span class="ic-biz-no">04</span><strong>下水道工事</strong><span>下水道の整備など、生活環境を支える工事。</span><b aria-hidden="true">→</b></span></a></div>
+    <div class="ic-end"><a class="ic-btn is-primary" href="../../../business/index.html">施工領域を詳しく見る <span aria-hidden="true">→</span></a></div>
+    <p class="review-note">下水道工事は、工種と一致する写真が届くまで写真なしの図柄で表示しています。</p>
   </div>
 </section>
 
-<!-- 04 VALUES #top-values｜方式B：CMS 80 H2 Text ＋ 54 Half（紺の大面積、左端にブルーの進行ライン） -->
-<section class="d3-values" id="top-values" aria-labelledby="values-title" data-cms-id="80,54" data-implementation="B">
-  <div class="c-wrap d3-values-grid">
-    <div class="d3-values-copy reveal">
-      <div class="reveal d3-head is-light"><span class="d3-line" aria-hidden="true"></span><p><span class="d3-no">04</span>OUR VALUES<span class="d3-ja">大切にしていること</span></p></div>
-      <h2 id="values-title">仕事をつなぐのは、<br>いつだって人だ。</h2>
-      <p>どんな仕事にも、その先に人がいる。取引先、地域の方々、そしてともに働く仲間。久留米興業は、その一つひとつのつながりを大切にしています。</p>
-      <ul class="d3-values-list"><li><span>01</span><div><strong>人とのつながり</strong><p>頼り、頼られる関係を、仕事の土台に。</p></div></li><li><span>02</span><div><strong>街の暮らしへの責任</strong><p>目に見える仕事も、見えない仕事も、丁寧に。</p></div></li><li><span>03</span><div><strong>働く人とつくる未来</strong><p>一人ひとりが、次の一歩を踏み出せる会社へ。</p></div></li></ul>
-      <a class="d3-text-link is-light" href="../../../company/index.html#company-values">大切にしていることを読む <span aria-hidden="true">→</span></a>
+<!-- 04 OUR APPROACH #top-process｜方式B：CMS 54 Half ＋ 80 H2 Text（横の細い線に沿った3段階＋写真の境に淡い面） -->
+<section class="ic-section ic-approach" id="top-process" aria-labelledby="approach-title" data-cms-id="54,80" data-implementation="B">
+  <div class="ic-wrap">
+    <div class="ic-title-row"><p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">04</span>COORDINATION<span class="ic-ja">仕事の進め方</span></p><h2 id="approach-title">施工の先にある、<br>信頼まで。</h2><p>工事は、取引先・現場・協力会社・地域の方々との連携によって進みます。担当する仕事の内容だけでなく、現場を円滑に進めるための関係づくりも大切にしています。</p></div>
+    <ol class="ic-steps"><span class="ic-steps-line reveal" aria-hidden="true"></span><li class="reveal" data-delay="0"><span class="ic-step-dot" aria-hidden="true"></span><small>CLIENT</small><h3>取引先・発注者</h3><p>工事の内容や場所、時期などのご相談を受けて、仕事が始まります。</p></li><li class="reveal" data-delay="1"><span class="ic-step-dot" aria-hidden="true"></span><small>COORDINATION</small><h3>営業・調整</h3><p>現地の確認、見積、人や材料・日程の段取りを整え、現場とつなぎます。</p></li><li class="reveal" data-delay="2"><span class="ic-step-dot" aria-hidden="true"></span><small>CONSTRUCTION</small><h3>現場・施工</h3><p>安全を確かめながら班で役割を分け、近隣にも配慮して施工を進めます。</p></li></ol>
+    <p class="ic-note">仕事の進め方を説明するための図です。工事ごとの詳しい流れは事業内容のページでご案内しています。</p>
+    <div class="ic-approach-photo"><span class="ic-approach-plate" aria-hidden="true"></span><figure class="ic-clip reveal"><img src="../../../assets/photos/field-crew-hq.jpg" alt="歩道の路盤をつくる施工中のチーム" loading="lazy"></figure></div>
+    <div class="ic-end"><a class="ic-btn is-primary" href="../../../business/index.html#business-process">仕事内容を知る <span aria-hidden="true">→</span></a><a class="ic-link" href="../../../company/index.html#company-values">会社の考え方を見る <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- 05 WORKS / PHOTO #top-works｜方式A/B：CMS 584 Photo Gallery（全幅：施工全景1枚＝7、細部2枚＝5） -->
+<section class="ic-works" id="top-works" aria-labelledby="works-title" data-cms-id="584,718" data-implementation="A/B">
+  <div class="ic-wrap ic-title-row"><p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">05</span>PROJECT SCENES<span class="ic-ja">施工の様子</span></p><h2 id="works-title">現場を、写真で確かめる。</h2><p>施工内容を検討する際には、言葉だけでなく実際の現場の様子も大切な判断材料です。久留米興業の仕事を、確認できた写真とともにご紹介します。</p></div>
+  <div class="ic-mosaic">
+    <figure class="is-main ic-clip reveal"><img src="../../../assets/photos/work-kamisoshigaya.jpg" alt="歩道の舗装を終えた現場と工事黒板" loading="lazy"><figcaption>令和3年度 道路維持工事（世田谷区上祖師谷）</figcaption></figure>
+    <figure class="ic-clip reveal"><img src="../../../assets/photos/work-kyuden.jpg" alt="舗装を仕上げた車道" loading="lazy"><figcaption>世田谷区給田（表層改良）</figcaption></figure>
+    <figure class="ic-clip reveal"><img src="../../../assets/photos/work-chisaki.jpg" alt="新しく舗装した生活道路と工事黒板" loading="lazy"><figcaption>世田谷区上祖師谷（地先道路築造工事）</figcaption></figure>
+  </div>
+  <div class="ic-wrap ic-end"><a class="ic-btn is-primary" href="../../../business/index.html">対応工事を詳しく見る <span aria-hidden="true">→</span></a><a class="ic-link" href="https://www.kurume-k.jp/achievement" target="_blank" rel="noopener noreferrer">施工実績を見る <span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a></div>
+</section>
+
+<!-- 06 WORK STYLE #top-workstyle｜方式B：CMS 54 Half ＋ 787（淡青の帯に事務所全景、右に縦長の現場写真、3つの大きな言葉） -->
+<section class="ic-section ic-workstyle" id="top-workstyle" aria-labelledby="ws-title" data-cms-id="54,787" data-implementation="B">
+  <div class="ic-wrap ic-ws-grid">
+    <div class="ic-ws-copy">
+      <p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">06</span>OUR TEAMWORK<span class="ic-ja">働き方</span></p>
+      <h2 id="ws-title">施工を支えるのは、<br>人と段取り。</h2>
+      <p>現場で施工する人、取引先と現場をつなぐ人。それぞれの役割や働き方を紹介しています。仕事の進め方を知ることは、会社を理解することにもつながります。</p>
+      <ul class="ic-words"><li><strong>組織</strong><span>事務所と現場で役割を分ける</span></li><li><strong>段取り</strong><span>人・材料・日程を整える</span></li><li><strong>施工</strong><span>班で安全に仕上げる</span></li></ul>
+      <a class="ic-link" href="../../../work-environment/index.html">労働環境を見る <span aria-hidden="true">→</span></a>
     </div>
-    <div class="d3-values-photo d3-clip reveal"><img src="../../../assets/photos/office.jpg" alt="事務所で打ち合わせをする社員たち" loading="lazy"></div>
+    <figure class="ic-ws-office ic-clip reveal"><img src="../../../assets/photos/office.jpg" alt="社員がデスクで仕事をする事務所の様子" loading="lazy"><figcaption>事務所</figcaption></figure>
+    <figure class="ic-ws-field ic-clip reveal"><img src="../../../assets/photos/field-worker-helmet.jpg" alt="ヘルメットをかぶって作業する社員" loading="lazy"><figcaption>現場</figcaption></figure>
   </div>
 </section>
 
-<!-- 05 WORKS #top-works｜方式A/B：CMS 718 Portfolio（大1＋小2のモザイク） -->
-<section class="d3-section" id="top-works" aria-labelledby="works-title" data-cms-id="718" data-implementation="A/B">
-  <div class="c-wrap">
-    <div class="reveal d3-head"><span class="d3-line" aria-hidden="true"></span><p><span class="d3-no">05</span>WORKS<span class="d3-ja">施工の様子</span></p></div>
-    <div class="d3-title-row"><h2 id="works-title">一つひとつの現場が、<br>街のこれからをつくる。</h2><p>道路や水道に関わる工事は、地域の暮らしのすぐそばにあります。写真から、実際の仕事の姿をご覧ください。</p></div>
-    <div class="d3-mosaic reveal">
-      <figure class="is-main"><img src="../../../assets/photos/work-kamisoshigaya.jpg" alt="歩道の舗装を終えた現場と工事黒板" loading="lazy"></figure>
-      <figure><img src="../../../assets/photos/work-kyuden.jpg" alt="舗装を仕上げた車道" loading="lazy"></figure>
-      <figure><img src="../../../assets/photos/work-chisaki.jpg" alt="新しく舗装した生活道路と工事黒板" loading="lazy"></figure>
+<!-- 07 PEOPLE #top-people｜方式B：CMS 54 Half ＋ 42（余白のある横長の写真1枚、写真の外に3列の案内） -->
+<section class="ic-section ic-people" id="top-people" aria-labelledby="people-title" data-cms-id="54,42" data-implementation="B">
+  <div class="ic-wrap">
+    <div class="ic-title-row"><p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">07</span>OUR MEMBERS<span class="ic-ja">働くメンバー</span></p><h2 id="people-title">現場と事務所、<br>役割は違っても。</h2><p>工事は一人では完成しません。営業、現場、管理を担う人たちのそれぞれの視点から、久留米興業で働く実像をご紹介します。</p></div>
+    <figure class="ic-people-photo ic-clip reveal"><img src="../../../assets/photos/office-wide.jpg" alt="複数の社員がデスクで仕事をする事務所" loading="lazy"></figure>
+    <ul class="ic-people-links"><li><a href="../../../people/index.html#people-ceo"><small>PRESIDENT</small><strong>代表</strong><span>現場から経営まで、代表の歩み</span><b aria-hidden="true">→</b></a></li><li><a href="../../../people/index.html#people-sales"><small>SALES</small><strong>営業職</strong><span>取引先と現場をつなぐ社員の経験</span><b aria-hidden="true">→</b></a></li><li><a href="../../../people/index.html#people-field"><small>FIELD</small><strong>現場職</strong><span>班で施工を進める現場の仕事</span><b aria-hidden="true">→</b></a></li></ul>
+    <div class="ic-end"><a class="ic-btn is-primary" href="../../../people/index.html">働くメンバーを知る <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- 08 RECRUIT #top-recruit｜方式B：CMS 787 ＋ 42（下部に大きめの2職種入口） -->
+<section class="ic-section ic-recruit" id="top-recruit" aria-labelledby="recruit-title" data-cms-id="787,42" data-implementation="B">
+  <div class="ic-wrap">
+    <div class="ic-title-row"><p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">08</span>CAREERS<span class="ic-ja">採用情報</span></p><h2 id="recruit-title">次のインフラを支える仲間へ。</h2><p>営業職と現場職、それぞれの仕事には異なる専門性があります。入社後の流れ、評価、働く環境、募集条件は採用情報ページで詳しく紹介しています。</p></div>
+    <div class="ic-roles"><a class="ic-role reveal" href="../../../recruit/index.html#career-sales"><span class="ic-role-photo ic-clip"><img src="../../../assets/photos/office-pc.jpg" alt="事務所でパソコンに向かう社員" loading="lazy"></span><span class="ic-role-body"><small>SALES</small><strong>営業職</strong><span>取引先と現場をつなぐ、見積・調整・手配の仕事。</span><b aria-hidden="true">→</b></span></a><a class="ic-role reveal" href="../../../recruit/index.html#career-field"><span class="ic-role-photo ic-clip"><img src="../../../assets/photos/field-team-back.jpg" alt="歩道の工事でそれぞれの持ち場で作業する社員" loading="lazy"></span><span class="ic-role-body"><small>FIELD WORK</small><strong>現場職</strong><span>道路やインフラ工事の現場で、チームとともに施工する仕事。</span><b aria-hidden="true">→</b></span></a></div>
+    <div class="ic-end"><a class="ic-btn is-secondary" href="../../../recruit/index.html">採用情報・募集条件を見る <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- 09 INFORMATION #top-news｜方式A：CMS 101 Blog Standard（大きな通番と少数のテキストリンク） -->
+<section class="ic-section ic-news" id="top-news" aria-labelledby="news-title" data-cms-id="101,43" data-implementation="A">
+  <div class="ic-wrap ic-news-grid">
+    <div><p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">09</span>JOURNAL<span class="ic-ja">取り組み</span></p><h2 id="news-title">久留米興業の取り組みを知る。</h2><p>仕事の取り組みや社員へのインタビューなど、会社の実際の姿を伝える記事をご案内します。</p><a class="ic-link" href="https://recruit.careecon.jp/co/kurume-k/blogs" target="_blank" rel="noopener noreferrer">公開記事一覧を見る <span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a></div>
+    <ol class="ic-news-list"><li><a href="https://www.kurume-k.jp/452874803881/6" target="_blank" rel="noopener noreferrer"><span class="ic-serial" aria-hidden="true">01</span><span class="ic-news-meta">お知らせ<time datetime="2024-03-08">2024.03.08</time></span><span class="ic-news-title">令和6年度能登半島地震に伴う災害救援隊について</span><b aria-hidden="true">↗</b><span class="sr-only">（外部サイトが開きます）</span></a></li><li><a href="https://recruit.careecon.jp/co/kurume-k/blogs/214004" target="_blank" rel="noopener noreferrer"><span class="ic-serial" aria-hidden="true">02</span><span class="ic-news-meta">社員インタビュー</span><span class="ic-news-title">営業職・根岸さん：異業種から現場代理人へ</span><b aria-hidden="true">↗</b><span class="sr-only">（外部サイトが開きます）</span></a></li><li><a href="https://recruit.careecon.jp/co/kurume-k/blogs/214003" target="_blank" rel="noopener noreferrer"><span class="ic-serial" aria-hidden="true">03</span><span class="ic-news-meta">社員インタビュー</span><span class="ic-news-title">営業職・高畑さん：新卒・未経験から営業へ</span><b aria-hidden="true">↗</b><span class="sr-only">（外部サイトが開きます）</span></a></li><li><a href="https://recruit.careecon.jp/co/kurume-k/blogs/214001" target="_blank" rel="noopener noreferrer"><span class="ic-serial" aria-hidden="true">04</span><span class="ic-news-meta">社員インタビュー</span><span class="ic-news-title">営業職・今井さん：広告業界から土木の調整役へ</span><b aria-hidden="true">↗</b><span class="sr-only">（外部サイトが開きます）</span></a></li></ol>
+  </div>
+</section>
+
+<!-- 10 CONTACT / NEXT #top-contact｜方式B：CMS 23/90/43（写真の外側に白い台形のパネル：法人の方／求職者の方） -->
+<section class="ic-contact" id="top-contact" aria-labelledby="contact-title" data-cms-id="23,90,43" data-implementation="B">
+  <figure class="ic-contact-photo"><img src="../../../assets/photos/machine.jpg" alt="「久留米興業」の社名が入った重機" loading="lazy"></figure>
+  <div class="ic-contact-panel reveal">
+    <p class="ic-label reveal"><span class="ic-line" aria-hidden="true"></span><span class="ic-no">10</span>GET IN TOUCH<span class="ic-ja">お問い合わせ</span></p>
+    <h2 id="contact-title">工事のご相談から、<br>会社のことまで。</h2>
+    <p>事業内容や会社概要をご覧いただき、工事に関するお問い合わせは正式な窓口へ。久留米興業で働くことに関心のある方には、採用情報もご案内しています。</p>
+    <div class="ic-contact-cols">
+      <div class="is-client"><h3>法人・取引先の方</h3><dl><div><dt>電話</dt><dd>03-3309-3786</dd></div><div><dt>所在地</dt><dd>〒157-0061 東京都世田谷区北烏山6丁目26-28</dd></div></dl><div class="ic-contact-actions"><a class="ic-btn is-primary" href="https://www.kurume-k.jp/contact" target="_blank" rel="noopener noreferrer">お問い合わせフォーム <span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a><a class="ic-link" href="../../../company/index.html">会社情報を見る <span aria-hidden="true">→</span></a></div></div>
+      <div class="is-career"><h3>採用をご検討の方</h3><p>仕事内容、入社後の流れ、待遇・募集条件をまとめています。</p><a class="ic-btn is-secondary" href="../../../recruit/index.html">採用情報を見る <span aria-hidden="true">→</span></a></div>
     </div>
-    <div class="d3-end"><a class="d3-btn is-navy" href="https://www.kurume-k.jp/achievement" target="_blank" rel="noopener noreferrer">施工実績を見る <span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a><a class="d3-text-link" href="../../../business/index.html">工事内容を知る <span aria-hidden="true">→</span></a></div>
-  </div>
-</section>
-
-<!-- 06 WORK STYLE #top-workstyle｜方式B：CMS 54 Half（左に現場写真、右に紺パネル） -->
-<section class="d3-workstyle" id="top-workstyle" aria-labelledby="ws-title" data-cms-id="54" data-implementation="B">
-  <div class="d3-ws-photo d3-clip reveal"><img src="../../../assets/photos/field-worker-helmet.jpg" alt="ヘルメットをかぶり作業する現場職" loading="lazy"></div>
-  <div class="d3-ws-panel reveal">
-    <div class="reveal d3-head is-light"><span class="d3-line" aria-hidden="true"></span><p><span class="d3-no">06</span>WORK STYLE<span class="d3-ja">労働環境</span></p></div>
-    <h2 id="ws-title">長く働ける会社は、<br>変わり続ける会社だ。</h2>
-    <p>現場で働いてきた代表自身の経験があるからこそ、働き方にも目を向けてきました。</p><p>仕事への責任と、自分らしい暮らし。そのどちらも大切にできる会社を目指して、少しずつ変化を続けています。</p>
-    <dl class="d3-ws-roles"><div><dt>営業職</dt><dd>取引先と現場の間に立ち、見積や段取りを整える。工事の状況によっては、夜間や休日に連絡が入ることもある。</dd></div><div><dt>現場職</dt><dd>班で役割を分けて施工を進める。夏の暑さや夜間作業など、体力的な負担もある。</dd></div></dl>
-    <a class="d3-btn is-white" href="../../../work-environment/index.html">働く環境を知る <span aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<!-- 07 PEOPLE #top-people｜方式B：CMS 42 Card Three（段差カード＋大きな背景文字） -->
-<section class="d3-section d3-people-sec" id="top-people" aria-labelledby="people-title" data-cms-id="42" data-implementation="B">
-  <p class="d3-bgword" aria-hidden="true">PEOPLE</p>
-  <div class="c-wrap">
-    <div class="reveal d3-head"><span class="d3-line" aria-hidden="true"></span><p><span class="d3-no">07</span>PEOPLE<span class="d3-ja">働くメンバー</span></p></div>
-    <div class="d3-title-row"><h2 id="people-title">同じ人はいない。<br>だから、チームは面白い。</h2><p>現場、営業、会社を支えるさまざまな人たち。それぞれの経験と個性が、久留米興業の仕事をつくっています。</p></div>
-    <div class="d3-people"><a class="d3-person reveal" href="../../../people/index.html#people-ceo" data-delay="0"><div class="d3-person-img d3-clip reveal"><img src="../../../assets/photos/ceo-portrait.jpg" alt="代表取締役 川島 和範" loading="lazy"></div><div class="d3-person-body"><small>PRESIDENT</small><h3>代表</h3><p>現場の経験を、会社づくりへ。</p><span class="d3-arrow"><b aria-hidden="true">→</b></span></div></a><a class="d3-person reveal" href="../../../people/index.html#people-sales" data-delay="1"><div class="d3-person-img d3-clip reveal"><img src="../../../assets/photos/member-t3.jpg" alt="事務所で仕事をする営業職の社員" loading="lazy"></div><div class="d3-person-body"><small>SALES</small><h3>営業職</h3><p>取引先と施工現場をつなぐ。</p><span class="d3-arrow"><b aria-hidden="true">→</b></span></div></a><a class="d3-person reveal" href="../../../people/index.html#people-field" data-delay="2"><div class="d3-person-img d3-clip reveal"><img src="../../../assets/photos/field-crew-hq.jpg" alt="歩道の路盤をつくる現場職のチーム" loading="lazy"></div><div class="d3-person-body"><small>FIELD WORK</small><h3>現場職</h3><p>仲間とともに、目の前の仕事を形にする。</p><span class="d3-arrow"><b aria-hidden="true">→</b></span></div></a></div>
-    <div class="d3-end"><a class="d3-btn is-navy" href="../../../people/index.html">働くメンバーを見る <span aria-hidden="true">→</span></a></div>
-  </div>
-</section>
-
-<!-- 08 RECRUIT #top-recruit｜方式B：CMS 787 Two Text ＋ 90（左右に分けた写真パネル） -->
-<section class="d3-recruit" id="top-recruit" aria-labelledby="recruit-title" data-cms-id="787,90" data-implementation="B">
-  <div class="c-wrap d3-recruit-head"><div class="reveal d3-head is-light"><span class="d3-line" aria-hidden="true"></span><p><span class="d3-no">08</span>RECRUIT<span class="d3-ja">採用情報</span></p></div><h2 id="recruit-title">今できることより、<br>これからできることを。</h2><p>最初から何でもできなくていい。学び、考え、自分の仕事を少しずつ広げていく。久留米興業で、あなたの次の一歩を。</p></div>
-  <div class="d3-roles"><a class="d3-role" href="../../../recruit/index.html#recruit-career"><img src="../../../assets/photos/member-i.jpg" alt="事務所で仕事をする営業職の社員" loading="lazy"><div class="d3-role-band"><small>SALES</small><h3>営業職</h3><p>取引先への対応、見積、現場の段取りをつなぐ。</p><span class="d3-role-cta">営業職を知る <b aria-hidden="true">→</b></span></div></a><a class="d3-role" href="../../../recruit/index.html#career-field"><img src="../../../assets/photos/field-sidewalk.jpg" alt="歩道の工事現場で作業する現場職" loading="lazy"><div class="d3-role-band"><small>FIELD WORK</small><h3>現場職</h3><p>工事現場で経験を重ね、チームで施工を進める。</p><span class="d3-role-cta">現場職を知る <b aria-hidden="true">→</b></span></div></a></div>
-  <div class="c-wrap d3-end is-light"><a class="d3-btn is-white" href="../../../recruit/index.html#recruit-openings">募集要項を見る <span aria-hidden="true">→</span></a></div>
-</section>
-
-<!-- 09 NEWS #top-news｜方式A：CMS 101 Blog Standard（紺の見出しバー＋実在記事） -->
-<section class="d3-section" id="top-news" aria-labelledby="news-title" data-cms-id="101" data-implementation="A">
-  <div class="c-wrap">
-    <div class="d3-newsbar"><h2 id="news-title">NEWS<span>久留米興業の日々を、<br>もっと身近に。</span></h2><a class="d3-text-link is-light" href="https://www.kurume-k.jp/news" target="_blank" rel="noopener noreferrer">お知らせ一覧へ <span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a></div>
-    <ul class="d3-news"><li><a href="https://www.kurume-k.jp/452874803881/6" target="_blank" rel="noopener noreferrer"><time datetime="2024-03-08">2024.03.08</time><span>令和6年度能登半島地震に伴う災害救援隊について</span><b aria-hidden="true">↗</b><span class="sr-only">（外部サイトが開きます）</span></a></li><li><a href="https://www.kurume-k.jp/452874803881/belrfza5rwefayabmajbx6d6kkhafj" target="_blank" rel="noopener noreferrer"><time datetime="2021-11-25">2021.11.25</time><span>ホームページをリニューアルしました。</span><b aria-hidden="true">↗</b><span class="sr-only">（外部サイトが開きます）</span></a></li></ul>
-  </div>
-</section>
-
-<!-- 10 LEARN MORE #top-contact｜方式B：CMS 90 Btn Text ＋ 23 Btn（フル幅ネイビーの締め） -->
-<section class="d3-close" id="top-contact" aria-labelledby="close-title" data-cms-id="90,23" data-implementation="B">
-  <div class="c-wrap">
-    <h2 id="close-title">久留米興業を、もっと知る。</h2>
-    <p>事業のこと、採用のこと。知りたいことに合わせてお進みください。</p>
-    <div class="d3-close-actions"><a class="d3-btn is-white" href="../../../business/index.html">事業内容を見る <span aria-hidden="true">→</span></a><a class="d3-btn is-line" href="../../../recruit/index.html">採用情報を見る <span aria-hidden="true">→</span></a></div>
-    <a class="d3-sublink" href="https://www.kurume-k.jp/contact" target="_blank" rel="noopener noreferrer">工事・事業に関するお問い合わせ（公式フォーム） <span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a>
   </div>
 </section>
 
@@ -147,7 +154,7 @@
     <div class="c-footer-brand"><img src="../../../assets/kurume-logo.png" alt="久留米興業 ロゴ" width="64" height="40"><div><strong>株式会社久留米興業</strong><p>〒157-0061 東京都世田谷区北烏山6丁目26-28<br>TEL 03-3309-3786</p></div></div>
     <nav class="c-footer-links" aria-label="フッターナビゲーション"><a href="index.html">TOP</a><a href="../../../business/index.html">事業内容</a><a href="../../../recruit/index.html">採用情報</a><a href="../../../work-environment/index.html">労働環境</a><a href="../../../people/index.html">働くメンバー</a><a href="../../../company/index.html">会社情報</a><a href="https://www.kurume-k.jp/contact" target="_blank" rel="noopener noreferrer">お問い合わせ ↗<span class="sr-only">（外部サイトが開きます）</span></a></nav>
   </div>
-  <div class="c-wrap c-footer-bottom"><span>© KURUME KOGYO CO., LTD.</span><span>DESIGN DEMO / PATTERN 01 · DESIGN 03</span><a href="#main">BACK TO TOP ↑</a></div>
+  <div class="c-wrap c-footer-bottom"><span>© KURUME KOGYO CO., LTD.</span><span>DESIGN DEMO / PATTERN 01 · DESIGN 03 INFRASTRUCTURE CANVAS</span><a href="#main">BACK TO TOP ↑</a></div>
 </footer>
 <div class="mode-bar" role="group" aria-label="デモの表示切替"><span class="mb-label">DESIGN DEMO</span><button type="button" data-mode="review" aria-pressed="true">確認用</button><button type="button" data-mode="public" aria-pressed="false">公開イメージ</button></div>
 </body>

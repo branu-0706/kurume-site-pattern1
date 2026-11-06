@@ -1,0 +1,38 @@
+/* 「配色を調整」パネル（デモ専用・theme.js が読み込む）。サイトの配色を変えても読めるよう、パネル自体は固定色。 */
+.kkt{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(68px + env(safe-area-inset-bottom,0px));z-index:120;width:min(380px,calc(100vw - 24px));max-height:calc(100vh - 100px);overflow:auto;background:#fff;border:1px solid #1A2259;box-shadow:0 18px 40px -16px rgba(10,20,60,.5);padding:16px 16px 18px;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:#18253b;font-size:12.5px;line-height:1.6}
+.kkt[hidden]{display:none}
+.kkt-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.kkt-head p{margin:0;font-weight:800;font-size:14px;color:#1A2259}
+.kkt-x{width:36px;height:36px;border:1px solid #c9d3df;background:#fff;color:#1A2259;font-size:18px;line-height:1;cursor:pointer}
+.kkt-note{margin:6px 0 10px;font-size:11.5px;color:#3b4a5e;background:#f2f5f8;padding:8px 10px}
+.kkt-field{display:grid;gap:4px;margin-bottom:10px}
+.kkt-field label,.kkt-colors legend,.kkt-check > p{font-size:11px;font-weight:800;color:#04447C;letter-spacing:.04em;margin:0;padding:0}
+.kkt select,.kkt textarea{width:100%;border:1px solid #c9d3df;background:#fff;font:inherit;color:#18253b}
+.kkt select{min-height:38px;font-weight:700;padding:0 8px}
+.kkt textarea{font:11px/1.4 ui-monospace,Menlo,Consolas,monospace;padding:6px;margin:4px 0}
+.kkt-colors{border:0;margin:0;padding:0}
+.kkt-row{display:grid;grid-template-columns:1fr 34px 90px;gap:6px;align-items:center;padding:5px 0;border-bottom:1px solid #eef1f5}
+.kkt-row label{font-weight:700;font-size:12px;min-width:0}
+.kkt-row label small{margin-left:6px;font-size:10px;font-weight:700;border:1px solid #1A2259;color:#1A2259;padding:0 4px}
+.kkt-row input[type=color]{width:34px;height:30px;padding:0;border:1px solid #c9d3df;background:#fff;cursor:pointer}
+.kkt-hex{width:90px;min-height:30px;border:1px solid #c9d3df;font:12px/1 ui-monospace,Menlo,Consolas,monospace;padding:0 6px;color:#18253b;background:#fff}
+.kkt-hex[aria-invalid=true]{border-color:#b3261e;outline:2px solid #b3261e}
+.kkt-err{grid-column:1/-1;color:#b3261e;font-size:11px;font-weight:700}
+.kkt-more{margin-top:6px}
+.kkt-more summary{cursor:pointer;font-weight:700;font-size:12px;color:#04447C;padding:6px 0}
+.kkt-more button{min-height:34px;border:1px solid #1A2259;background:#fff;color:#1A2259;font:700 11.5px/1 inherit;font-family:inherit;padding:0 10px;cursor:pointer}
+.kkt-warn{margin:10px 0 0;padding:8px 10px;border:1px solid #b3261e;background:#fdf1f0;color:#7a1b14;font-size:11.5px;font-weight:700}
+.kkt-check{margin-top:10px}
+.kkt-check ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px}
+.kkt-check li{display:grid;grid-template-columns:34px 1fr auto;gap:8px;align-items:center;font-size:11.5px}
+.kkt-check b{font-size:11px;white-space:nowrap}
+.kkt-check li.ng b{color:#b3261e}
+.kkt-check li.ok b{color:#1d5b2c}
+.kkt-swatch{display:grid;place-items:center;width:34px;height:24px;font-weight:800;font-size:11px;border:1px solid #d6dfe9}
+.kkt-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}
+.kkt-actions button{min-height:38px;border:1px solid #1A2259;background:#fff;color:#1A2259;font:700 11.5px/1.3 inherit;font-family:inherit;cursor:pointer;padding:4px 6px}
+.kkt-actions button:hover,.kkt-more button:hover{background:#1A2259;color:#fff}
+.kkt-status{margin:8px 0 0;font-size:11.5px;color:#1d5b2c;min-height:1em}
+.kkt :focus-visible{outline:3px solid #2f7fd0;outline-offset:2px}
+.kkt .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media print{.kkt{display:none!important}}

@@ -7,6 +7,7 @@ from p2common import P2_PAGES, switcher_tags
 
 ROOT = "../../../"
 DESIGN_NAME = {"d2": "DESIGN 02", "d3": "DESIGN 03"}
+VARIANT = {("p1", "d2"): "OFFICIAL STANDARD", ("p1", "d3"): "INFRASTRUCTURE CANVAS", ("p2", "d2"): "HUMAN ATLAS", ("p2", "d3"): "KEEP / CHANGE"}
 
 
 def nav_items(structure):
@@ -31,6 +32,7 @@ def head(structure, design, title, desc):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="{ROOT}assets/theme.css">
 <link rel="stylesheet" href="{ROOT}assets/compare/base.css">
 <link rel="stylesheet" href="{ROOT}assets/compare/{structure}-{design}.css">
 <script defer src="{ROOT}assets/site.js"></script>
@@ -48,7 +50,7 @@ def header(structure, cta_label, cta_href):
   <div class="c-header-inner">
     <a class="c-brand" href="index.html" aria-label="久留米興業 トップへ"><img src="{ROOT}assets/kurume-logo.png" alt="久留米興業 ロゴ" width="64" height="40"><span>KURUME KOGYO<small>株式会社久留米興業</small></span></a>
     <nav class="c-nav" aria-label="メインナビゲーション">{navs}</nav>
-    <a class="c-header-cta" href="{cta_href}">{cta_label}</a>
+    <a class="c-header-cta" href="{cta_href}"{' target="_blank" rel="noopener noreferrer"' if cta_href.startswith('http') else ''}>{cta_label}{' ↗<span class="sr-only">（外部サイトが開きます）</span>' if cta_href.startswith('http') else ''}</a>
     <button class="c-menu" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
   <nav class="c-mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション" hidden>{navs}<a href="{cta_href}">{cta_label}</a></nav>
@@ -58,7 +60,7 @@ def header(structure, cta_label, cta_href):
 
 def footer(structure, design):
     links = "".join(f'<a href="{h}">{l}</a>' for l, h in nav_items(structure))
-    label = f"DESIGN DEMO / PATTERN 0{structure[1]} · {DESIGN_NAME[design]}"
+    label = f"DESIGN DEMO / PATTERN 0{structure[1]} · {DESIGN_NAME[design]} {VARIANT[(structure, design)]}"
     return f'''<footer class="c-footer">
   <div class="c-wrap c-footer-top">
     <div class="c-footer-brand"><img src="{ROOT}assets/kurume-logo.png" alt="久留米興業 ロゴ" width="64" height="40"><div><strong>株式会社久留米興業</strong><p>〒157-0061 東京都世田谷区北烏山6丁目26-28<br>TEL 03-3309-3786</p></div></div>

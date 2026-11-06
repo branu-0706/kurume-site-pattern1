@@ -33,3 +33,10 @@
 - デザインごとのCSSは `assets/compare/*.css` と `assets/p2.css` に分け、`[data-structure][data-design]` にスコープする。単なる色違いにせず、レイアウト・写真配置・文字組み・動きを変える。
 - 比較切替は `assets/compare/switcher.js / switcher.css` の独立部品。CMS移植時は読み込み2行を消すだけで外せる状態を保つ。
 - 同じ構成パターンのデザイン②・③は `_build/cmp_copy.py` の同じ文章・写真・リンクを使う。
+
+## 6. 配色（2026-11-06〜 オフィス由来のブルーグレー）
+- 色の正本は `config/themes.json`。ビルドで `assets/theme.css`（`--kk-*` 変数）と `assets/theme/presets.js` を生成する。CSSに新しいHEXを直接書かない（デザインごとのCSSは `--kk-*` だけを使う）。
+- 大きな面はブルーグレー／白、ロゴの紺は見出し・細線・主ボタン、ライムは点・短い線・小さな強調だけ。濃紺の全面背景や、ライム地に白文字は使わない。
+- ロゴ画像の色は変えない。写真の上に文字を重ねるHEROは使わない（文字は独立した面に置く）。
+- デモの「配色を調整」は閲覧者のブラウザ内だけ（localStorage「kurume-demo-theme-v1」）。全員の既定色を変えるときは、書き出したJSONを `config/themes.json` に反映して再ビルド・再デプロイする。
+- 品質チェックは既定色に加え `QA_QUERY="?palette=office-neutral"` などで3プリセットとも確認する。

@@ -5,7 +5,9 @@ import p2_top, p2_about, p2_recruit, p2_people, p2_future, p2_company
 import cmp_p1_d2, cmp_p1_d3, cmp_p2_d2, cmp_p2_d3
 from common import PAGES
 from p2common import P2_PAGES
+import theme_build
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+theme_build.build(OUT)  # config/themes.json → assets/theme.css・assets/theme/presets.js
 
 
 def write(path, html, key):
@@ -28,9 +30,8 @@ for key, _, path in P2_PAGES:
 
 # 比較用TOP（デザイン②・③）
 write("compare/pattern1/design-a/index.html", cmp_p1_d2.build(), "p1-d2")
-write("compare/pattern1/design-b/index.html", cmp_p1_d3.build(), "p1-d3")
-write("compare/pattern2/design-a/index.html", cmp_p2_d2.build(), "p2-d2")
-write("compare/pattern2/design-b/index.html", cmp_p2_d3.build(), "p2-d3")
+for _path, _mod, _key in [("compare/pattern1/design-b/index.html", cmp_p1_d3, "p1-d3"), ("compare/pattern2/design-a/index.html", cmp_p2_d2, "p2-d2"), ("compare/pattern2/design-b/index.html", cmp_p2_d3, "p2-d3")]:
+    write(_path, _mod.build(), _key)
 
 # 1画面で切り替える比較ページ（16画面への入口）
 write("compare/index.html", open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "hub.html")).read(), "hub")

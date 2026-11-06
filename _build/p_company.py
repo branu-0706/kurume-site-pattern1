@@ -117,6 +117,17 @@ BODY = f'''
 </section>
 
 <!-- 08 LINKS｜方式B：CMS 16 Card Four ＋ 90 Btn Text -->
+<!-- お問い合わせ窓口｜方式B：CMS 90 Btn Text ＋ 23 Btn（法人向けの正式な連絡先。フォームは新設しない） -->
+<section class="section" id="company-contact" aria-labelledby="ccontact-title" data-cms-id="90,23" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">CONTACT <span>お問い合わせ窓口</span></p><h2 class="section-title" id="ccontact-title">工事・事業に関するお問い合わせ</h2></div>
+    <div class="contact-split reveal">
+      <div><small>FOR CLIENTS</small><h3>法人・取引先の方</h3><dl><dt>電話</dt><dd><a href="tel:0333093786">03-3309-3786</a></dd><dt>所在地</dt><dd>〒157-0061 東京都世田谷区北烏山6丁目26-28</dd></dl><div class="cta-row">{ext(OFFICIAL_CONTACT, 'お問い合わせフォーム <span aria-hidden="true">↗</span>', 'btn btn-dark')}<a class="text-link" href="@R@business/index.html#business-clients">対応する工事の一覧 <span aria-hidden="true">→</span></a></div></div>
+      <div><small>CAREERS</small><h3>採用をご検討の方</h3><p>仕事内容、入社後の流れ、待遇・募集条件をまとめています。</p><a class="btn btn-outline-light" href="@R@recruit/index.html">採用情報を見る <span aria-hidden="true">→</span></a></div>
+    </div>
+  </div>
+</section>
+
 <section class="section bg-blueish" id="company-links" aria-labelledby="clinks-title" data-cms-id="16,90" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><h2 class="section-title" id="clinks-title">会社を知った、その先へ。</h2><p class="section-heading-desc" style="max-width:640px">私たちが手がける仕事、そして働く人たち。久留米興業をもう少し詳しく知りたい方はこちらをご覧ください。</p></div>

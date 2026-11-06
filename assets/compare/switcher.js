@@ -21,8 +21,10 @@
     'p2-d2':'compare/pattern2/design-a/index.html',
     'p2-d3':'compare/pattern2/design-b/index.html'
   };
-  const S_LABEL={p1:'構成① 会社理解重視',p2:'構成② ビジョン共感'};
-  const D_LABEL={d1:'デザイン① コーポレート',d2:'デザイン② シンプル',d3:'デザイン③ 表現重視'};
+  const S_LABEL={p1:'構成① 会社理解',p2:'構成② ビジョン共感'};
+  /* デザインの名前は構成ごとに違う（2026-11-06 改訂） */
+  const D_NAMES={p1:{d1:'基準（会社理解）',d2:'オフィシャル',d3:'表現重視'},p2:{d1:'基準（ビジョン共感）',d2:'独自性重視',d3:'ユニーク表現'}};
+  const DL=(s,d)=>'デザイン'+({d1:'①',d2:'②',d3:'③'}[d])+' '+D_NAMES[s][d];
   const S_SHORT={p1:'構成①',p2:'構成②'};
   const D_SHORT={d1:'デザイン①',d2:'デザイン②',d3:'デザイン③'};
 
@@ -43,16 +45,17 @@
   const box=document.createElement('div');
   box.className='cmp-switcher';
   box.innerHTML=
+    (window.KKTheme?'<button type="button" class="cmp-theme" aria-controls="kkt-panel">配色を調整</button>':'')+
     '<button type="button" class="cmp-toggle" aria-expanded="false" aria-controls="cmp-panel">'+
       '<span class="cmp-toggle-title">比較</span><span class="cmp-toggle-now">'+S_SHORT[cur.s]+' × '+D_SHORT[cur.d]+'</span></button>'+
     '<div class="cmp-panel" id="cmp-panel" role="dialog" aria-modal="false" aria-labelledby="cmp-title" hidden>'+
       '<div class="cmp-head"><p id="cmp-title">表示するパターンを選ぶ</p><button type="button" class="cmp-close" aria-label="閉じる">×</button></div>'+
-      '<p class="cmp-now">現在：'+S_LABEL[cur.s]+' × '+D_LABEL[cur.d]+(cur.page==='top'?'（TOP）':'（下層ページ）')+'</p>'+
+      '<p class="cmp-now">現在：'+S_LABEL[cur.s]+' × '+DL(cur.s,cur.d)+(cur.page==='top'?'（TOP）':'（下層ページ）')+'</p>'+
       '<fieldset class="cmp-group"><legend>構成パターン</legend>'+
         ['p1','p2'].map(s=>'<label><input type="radio" name="cmp-s" value="'+s+'"'+(s===cur.s?' checked':'')+'><span>'+S_LABEL[s]+'</span></label>').join('')+
       '</fieldset>'+
       '<fieldset class="cmp-group"><legend>デザインパターン</legend>'+
-        ['d1','d2','d3'].map(d=>'<label><input type="radio" name="cmp-d" value="'+d+'"'+(d===cur.d?' checked':'')+'><span>'+D_LABEL[d]+(d==='d1'?'':'<small>TOPのみ</small>')+'</span></label>').join('')+
+        ['d1','d2','d3'].map(d=>'<label><input type="radio" name="cmp-d" value="'+d+'"'+(d===cur.d?' checked':'')+'><span class="cmp-dname" data-d="'+d+'">'+DL(cur.s,d)+'</span>'+(d==='d1'?'':'<small>TOPのみ</small>')+'</label>').join('')+
       '</fieldset>'+
       '<p class="cmp-note" aria-live="polite"></p>'+
       '<a class="cmp-go" href="#">表示する</a>'+
@@ -69,6 +72,7 @@
   const selected=()=>({s:box.querySelector('input[name="cmp-s"]:checked').value,d:box.querySelector('input[name="cmp-d"]:checked').value});
   const update=()=>{
     const {s,d}=selected();
+    box.querySelectorAll('.cmp-dname').forEach(n=>{n.textContent=DL(s,n.dataset.d);});
     const t=target(s,d);
     go.href=t.href;
     const same=(s===cur.s&&d===cur.d);
@@ -79,12 +83,15 @@
   const open=()=>{panel.hidden=false;btn.setAttribute('aria-expanded','true');update();(box.querySelector('input:checked')||close).focus();};
   const shut=(focus)=>{panel.hidden=true;btn.setAttribute('aria-expanded','false');if(focus)btn.focus();};
 
-  btn.addEventListener('click',()=>panel.hidden?open():shut(false));
+  btn.addEventListener('click',()=>{if(window.KKTheme&&window.KKTheme.isOpen())window.KKTheme.close();panel.hidden?open():shut(false);});
+  const tb=box.querySelector('.cmp-theme');
+  if(tb)tb.addEventListener('click',()=>{shut(false);window.KKTheme.isOpen()?window.KKTheme.close():window.KKTheme.open(tb);});
   close.addEventListener('click',()=>shut(true));
   box.addEventListener('change',update);
   go.addEventListener('click',e=>{if(go.getAttribute('aria-disabled')==='true'){e.preventDefault();shut(true);}});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)shut(true);});
   document.addEventListener('click',e=>{if(!panel.hidden&&!box.contains(e.target))shut(false);});
+  if(location.hash==='#theme'&&window.KKTheme)window.KKTheme.open(tb);
 
   /* URLの #compare で、比較パネルを開いた状態で表示できる（共有・確認用） */
   if(location.hash==='#compare') open();

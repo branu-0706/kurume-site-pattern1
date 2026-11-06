@@ -38,9 +38,9 @@ BODY = f'''
     </div>
     <div class="card-grid p2-line-cards" style="margin-top:40px">
       <article class="info-card reveal"><small>01</small><h3>復旧舗装</h3><p>ガス管取替工事の後に、道路を使える状態へ整える。</p></article>
-      <article class="info-card reveal" data-delay="1"><small>02</small><h3>路面改良・維持</h3><p>安全な通行を支えるため道路を整える。</p></article>
-      <article class="info-card reveal" data-delay="2"><small>03</small><h3>水道工事</h3><p>給水・配水のための設備に関わる。</p></article>
-      <article class="info-card reveal" data-delay="3"><small>04</small><h3>地域への緊急対応</h3><p>自治体からの要請に応じた除雪や土嚢作成など。</p></article>
+      <article class="info-card reveal" data-delay="1"><small>02</small><h3>水道工事</h3><p>水道管の布設・布設替など、供給の基盤に関わる。</p></article>
+      <article class="info-card reveal" data-delay="2"><small>03</small><h3>一般土木工事</h3><p>道路の維持・改良など、地域の土木工事。</p></article>
+      <article class="info-card reveal" data-delay="3"><small>04</small><h3>下水道工事</h3><p>下水道整備など、生活の基盤に関わる。</p></article>
     </div>
     <div class="cta-row reveal"><a class="text-link" href="@P2@about/index.html#about-business">事業と会社の歩みを見る <span aria-hidden="true">→</span></a></div>
   </div>

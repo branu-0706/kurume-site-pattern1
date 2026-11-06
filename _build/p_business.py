@@ -5,7 +5,7 @@ P = "@R@assets/photos/"
 BODY = f'''
 <!-- 01 BUSINESS HERO｜方式B：CMS 734 H1 Center ＋ CSS（背景写真・左寄せ・オーバーレイはCSSで調整） -->
 <section class="page-hero" id="business-hero" aria-labelledby="business-title" data-cms-id="734" data-implementation="B">
-  <div class="page-hero-img" style="background-image:url('{P}field-work-street.jpg');background-position:55% 50%" role="img" aria-label="重機とともに道路の路盤をつくる現場"></div>
+  <div class="page-hero-img" style="background-image:url('{P}hero.jpg');background-position:60% 45%" role="img" aria-label="道路の工事でスコップを使って作業する現場職"></div>
   <div class="wrap">
     <p class="eyebrow anim-enter"><span class="line"></span>OUR BUSINESS ／ 事業内容</p>
     <h1 id="business-title" class="anim-enter" style="--delay:.1s">道路の上も、地面の下も。<br>街の暮らしを支える仕事。</h1>
@@ -150,7 +150,31 @@ BODY = f'''
 </section>
 
 <!-- 10 CONTACT CTA｜方式B：CMS 90 Btn Text ＋ 23 Btn -->
-<section class="contact-section" id="business-contact" aria-labelledby="bcontact-title" data-cms-id="90,23" data-implementation="B"><div class="wrap contact-layout reveal"><div><p class="section-kicker section-kicker-light">CONTACT</p><h2 id="bcontact-title">久留米興業の仕事について、もっと知る。</h2><p>事業の内容や施工実績について、詳しくは各ページをご覧いただけます。工事・事業に関するお問い合わせはこちらから。</p></div><div class="contact-links"><a href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">事業に関するお問い合わせ（公式フォーム） <span aria-hidden="true">↗</span></a><a href="{OFFICIAL_WORKS}" target="_blank" rel="noopener noreferrer">施工事例を見る <span aria-hidden="true">↗</span></a></div></div></section>
+<!-- 発注をご検討の方へ｜方式B：CMS 22 Table Border Light ＋ 90 Btn Text（法人向けの整理。未確認の対応範囲・資格・実績数は載せない） -->
+<section class="section bg-soft" id="business-clients" aria-labelledby="clients-title" data-cms-id="22,90" data-implementation="B">
+  <div class="wrap">
+    <div class="section-heading reveal"><p class="section-kicker">FOR CLIENTS <span>発注をご検討の方へ</span></p><h2 class="section-title" id="clients-title">対応する工事の一覧</h2><p class="section-heading-desc" style="max-width:760px">主な事業領域と内容をまとめました。工事の場所・時期・規模など、個別のご相談は下記の窓口へお問い合わせください。</p></div>
+    <div class="table-wrap reveal"><table class="b2b-table"><caption class="sr-only">久留米興業が対応する主な工事</caption><thead><tr><th scope="col">工種</th><th scope="col">主な内容</th><th scope="col">詳しい説明</th></tr></thead><tbody>
+      <tr><th scope="row">ガス管取替後の復旧舗装工事</th><td>ガス管の取替後に行う道路の舗装復旧工事。</td><td><a href="#service-gas">復旧舗装の説明へ</a></td></tr>
+      <tr><th scope="row">水道工事</th><td>水道管の布設・布設替など、給水インフラに関わる工事。</td><td><a href="#service-water">水道工事の説明へ</a></td></tr>
+      <tr><th scope="row">一般土木工事</th><td>道路の改良・維持など、公共空間の基盤に関わる土木工事。</td><td><a href="#service-civil">一般土木工事の説明へ</a></td></tr>
+      <tr><th scope="row">下水道工事</th><td>下水道の整備など、生活環境を支える工事。</td><td><a href="#service-sewer">下水道工事の説明へ</a></td></tr>
+    </tbody></table></div>
+    <p class="review-note">対応エリア、建設業許可の番号、保有資格、対応できる工事規模は、正式な資料で確認してからこの表に追加します（推測では載せていません）。</p>
+  </div>
+</section>
+
+<!-- お問い合わせ｜方式B：CMS 90 Btn Text ＋ 23 Btn（フォームは新設せず、公式サイトの窓口へ） -->
+<section class="contact-section" id="business-contact" aria-labelledby="bcontact-title" data-cms-id="90,23" data-implementation="B">
+  <div class="wrap reveal">
+    <p class="section-kicker">GET IN TOUCH <span>お問い合わせ</span></p>
+    <h2 id="bcontact-title" class="section-title">工事のご相談・お問い合わせ</h2>
+    <div class="contact-split" style="margin-top:28px">
+      <div><small>FOR CLIENTS</small><h3>法人・取引先の方</h3><dl><dt>電話</dt><dd><a href="tel:0333093786">03-3309-3786</a></dd><dt>所在地</dt><dd>〒157-0061 東京都世田谷区北烏山6丁目26-28</dd></dl><div class="cta-row">{ext(OFFICIAL_CONTACT, 'お問い合わせフォーム <span aria-hidden="true">↗</span>', 'btn btn-dark')}{ext(OFFICIAL_WORKS, '施工実績を見る <span aria-hidden="true">↗</span>', 'text-link')}</div></div>
+      <div><small>MORE</small><h3>会社のこと・働く人のこと</h3><p>会社概要、代表のメッセージ、働くメンバーの紹介もご覧いただけます。</p><div class="cta-row"><a class="btn btn-outline-light" href="@R@company/index.html">会社情報を見る <span aria-hidden="true">→</span></a><a class="text-link" href="@R@people/index.html">働くメンバー <span aria-hidden="true">→</span></a></div></div>
+    </div>
+  </div>
+</section>
 '''
 
 

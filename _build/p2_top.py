@@ -3,20 +3,25 @@ from p2common import *
 P = "@R@assets/photos/"
 
 BODY = f'''
-<!-- 01 HERO #top-hero｜方式C：独自HTML＋CSS（パターン①のHERO骨格を流用）、JSは別管理。CMS ID参考：734/721 -->
-<section class="hero p2-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="734,721" data-implementation="C">
-  <div class="hero-image" role="img" aria-label="歩道の舗装工事を進める久留米興業の現場"></div>
-  <div class="hero-veil"></div>
-  <div class="wrap hero-content">
-    <p class="eyebrow hero-eyebrow anim-enter"><span class="line"></span> KURUME KOGYO / SINCE 1974</p>
-    <h1 id="hero-title" class="anim-enter" style="--delay:.12s">この街とともに、50年以上。<br><em>働き方も、未来も、<br class="mobile-break">変えていく。</em></h1>
-    <p class="hero-lead anim-enter" style="--delay:.22s">道路を直し、水道を支える。その仕事をこれからも続けていくために、働く人のことも考え続ける。久留米興業が守ってきたものと、変えようとしていることをご紹介します。</p>
-    <div class="hero-actions anim-enter" style="--delay:.32s">
-      <a class="btn btn-white" href="@P2@about/index.html#about-history">久留米興業の歩みを知る <span aria-hidden="true">→</span></a>
-      <a class="btn btn-outline-light" href="@P2@recruit/index.html">この会社で働く <span aria-hidden="true">→</span></a>
+<!-- 01 HERO / 50 YEARS #top-hero｜方式C：独自HTML＋CSS（office.css の .story-hero）。CMS ID参考：734/721。HERO内に4つの事業を明示 -->
+<section class="story-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="734,721" data-implementation="C">
+  <div class="wrap story-hero-grid">
+    <div class="story-hero-copy">
+      <p class="story-hero-label anim-enter">1974 / TODAY / NEXT</p>
+      <h1 id="hero-title" class="anim-enter" style="--delay:.1s">この街とともに、50年以上。<br><span>信頼をつなぎ、次の時代へ。</span></h1>
+      <p class="story-hero-lead anim-enter" style="--delay:.18s">ガス管取替後の復旧舗装工事や水道・土木工事。1974年から積み重ねた仕事と、人を大切にする会社づくり。久留米興業の歩みと、これからを紹介します。</p>
+      <div class="story-hero-actions anim-enter" style="--delay:.26s"><a class="btn btn-dark" href="@P2@about/index.html">久留米興業について <span aria-hidden="true">→</span></a><a class="btn btn-outline-light" href="@P2@about/index.html#about-business">事業を知る <span aria-hidden="true">→</span></a></div>
     </div>
+    <figure class="story-hero-media anim-enter" style="--delay:.14s"><img src="{P}field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="941" height="627"><figcaption>施工中の様子</figcaption></figure>
   </div>
-  <div class="hero-bottom wrap"><span class="hero-bottom-left">道を直す。働き方も、変えていく。</span><a class="scroll-link" href="#top-story">SCROLL <span></span></a></div>
+  <div class="story-hero-fields anim-enter" style="--delay:.3s">
+    <div class="wrap"><p>4 BUSINESS FIELDS</p><ul aria-label="久留米興業の事業">
+      <li><a href="@P2@about/index.html#about-business">ガス管取替後の復旧舗装工事</a></li>
+      <li><a href="@P2@about/index.html#about-business">水道工事</a></li>
+      <li><a href="@P2@about/index.html#about-business">一般土木工事</a></li>
+      <li><a href="@P2@about/index.html#about-business">下水道工事</a></li>
+    </ul></div>
+  </div>
 </section>
 
 <!-- 02 OUR STORY #top-story｜方式B：CMS 54 Half -->
@@ -63,14 +68,15 @@ BODY = f'''
 <!-- 05 OUR BUSINESS #top-work｜方式B：CMS 16 Card Four ＋ CSS -->
 <section class="section business-section" id="top-work" aria-labelledby="work-title" data-cms-id="16" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">OUR BUSINESS <span>事業</span></p><h2 class="section-title" id="work-title">目立たない仕事が、<br>街の毎日を支えている。</h2></div><p class="section-heading-desc">道が通れること、水が届くこと。特別な出来事ではない日常を支えるために、現場で人が動き、工事が進みます。</p></div>
+    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">OUR BUSINESS <span>事業</span></p><h2 class="section-title" id="work-title">社会に必要な工事を、<br>毎日の現場で。</h2></div><p class="section-heading-desc">道路を元の状態に戻し、地域の水道・下水道や土木の仕事に携わる。仕事の形は異なっても、その先には利用する人の生活があります。</p></div>
     <div class="business-grid">
-      <a class="business-card reveal" href="@P2@about/index.html#about-business"><div class="business-image"><img src="{P}paving-roller.jpg" alt="ローラーで舗装を転圧している現場" loading="lazy"><span>01</span></div><div class="business-card-body"><h3>ガス管取替後の<br>復旧舗装工事</h3><p>工事が終わった道路を元のように整え、毎日の通行を支える。</p></div></a>
-      <a class="business-card reveal" href="@P2@about/index.html#about-business" data-delay="1"><div class="business-image"><img src="{P}civil-road.jpg" alt="カラー舗装で仕上げた道路" loading="lazy"><span>02</span></div><div class="business-card-body"><h3>路面改良・<br>維持工事</h3><p>傷みや変化が生じた道路を維持・改良し、安全な通行を支える。</p></div></a>
-      <a class="business-card reveal" href="@P2@about/index.html#about-business" data-delay="2"><div class="business-image"><img src="{P}water-pipe.jpg" alt="掘削した溝に水道管を布設している現場" loading="lazy"><span>03</span></div><div class="business-card-body"><h3>水道管布設・<br>布設替工事</h3><p>暮らしに欠かせない水道インフラを整える。</p></div></a>
-      <a class="business-card reveal is-text" href="@P2@about/index.html#about-business" data-delay="3"><div class="business-image"><div class="pattern-art" style="height:100%;aspect-ratio:auto"><span>OTHER SUPPORT</span></div><span>04</span></div><div class="business-card-body"><h3>自治体の<br>緊急要請への対応</h3><p>雪かきや土嚢作成など、地域で必要とされる対応にも取り組む。</p></div></a>
+      <a class="business-card reveal" href="@P2@about/index.html#about-business"><div class="business-image"><img src="{P}paving-roller.jpg" alt="ローラーで舗装を転圧している現場" loading="lazy"><span>01</span></div><div class="business-card-body"><h3>ガス管取替後の<br>復旧舗装工事</h3><p>ガス管取替後の道路を舗装復旧する工事。</p></div></a>
+      <a class="business-card reveal" href="@P2@about/index.html#about-business" data-delay="1"><div class="business-image"><img src="{P}water-pipe.jpg" alt="掘削した溝に水道管を布設している現場" loading="lazy"><span>02</span></div><div class="business-card-body"><h3>水道工事</h3><p>水道管の布設・布設替など、供給基盤に関わる工事。</p></div></a>
+      <a class="business-card reveal" href="@P2@about/index.html#about-business" data-delay="2"><div class="business-image"><img src="{P}civil-road.jpg" alt="カラー舗装で仕上げた道路" loading="lazy"><span>03</span></div><div class="business-card-body"><h3>一般土木工事</h3><p>道路の維持・改良など、地域の土木工事。</p></div></a>
+      <a class="business-card reveal" href="@P2@about/index.html#about-business" data-delay="3"><div class="business-image"><div class="pattern-art" style="height:100%;aspect-ratio:auto"><span>SEWERAGE</span></div><span>04</span></div><div class="business-card-body"><h3>下水道工事</h3><p>下水道整備など、生活基盤に関わる工事。</p></div></a>
     </div>
-    <p class="review-note">04は恒常的な主力事業と区別して「その他の対応」として表示しています。緊急対応の写真が届くまでは写真なしの図柄です。</p>
+    <p class="p2-honest reveal">このほか、自治体からの要請に応じた雪かきや土嚢作成などにも対応しています。</p>
+    <p class="review-note">事業名は構成①と同じ正式な4分類にそろえました。下水道工事と確認できる写真が届くまでは、写真ではない図柄で表示しています。</p>
     <div class="section-footer reveal"><a class="btn btn-dark" href="@P2@about/index.html#about-business">久留米興業の仕事を知る <span aria-hidden="true">→</span></a></div>
   </div>
 </section>

@@ -1,155 +1,230 @@
-/* パターン② × デザイン②｜PERSONAL DOCUMENTARY
-   生成りの白 #F8F8F6、ネイビー文字、ブルーの極細罫線。本文幅940〜1080px、リード650〜760px、セクション上下104〜144px。
-   H2 clamp(2rem,3.8vw,4.5rem)、リード17〜19px/行間1.9。動きは初回のopacity 0.3秒のみ（文字送り・パララックスなし）。
-   すべて [data-structure="p2"][data-design="d2"] にスコープ。 */
-[data-structure="p2"][data-design="d2"]{--paper:#F8F8F6;--tone:#efefeb;--rule:#9fb6cf;--text:#2b3646;--reveal-dur:.3s}
-[data-structure="p2"][data-design="d2"] body{background:var(--paper);color:var(--text)}
-[data-structure="p2"][data-design="d2"] .c-header{background:var(--paper);border-bottom:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .c-header-cta{background:transparent;color:var(--navy);border:1px solid var(--navy)}
-[data-structure="p2"][data-design="d2"] .c-nav a{font-weight:500}
+/* 構成② × デザイン②｜HUMAN ATLAS（人物の視点で読む独自エディトリアル）
+   最大1160pxの誌面グリッド。写真は1:1／4:5／16:9を自然な比率で組み合わせ、カードの枠ではなく写真と余白で区切る。
+   H1 clamp(2.2rem,4.1vw,4.65rem)／H2 clamp(1.9rem,3.4vw,3.5rem)。本文の行長は22〜34字。章見出しを反復。
+   動き：写真とキャプションの段階表示 0.3〜0.5秒のみ。色はすべて --kk-*。このファイルにHEXを書かない。 */
+[data-structure="p2"][data-design="d2"]{--wrap:1160px;--reveal-dur:.45s}
+[data-structure="p2"][data-design="d2"] body{background:var(--kk-surface)}
+[data-structure="p2"][data-design="d2"] .c-header{border-bottom:1px solid var(--kk-primary-strong)}
 
-[data-structure="p2"][data-design="d2"] .d2p-wrap{max-width:calc(1080px + 48px);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-[data-structure="p2"][data-design="d2"] .d2p-narrow{max-width:720px}
-[data-structure="p2"][data-design="d2"] .d2p-section{padding:136px 0;border-top:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-section.is-tone{background:var(--tone)}
-[data-structure="p2"][data-design="d2"] h2{font-size:clamp(2rem,3.8vw,4.5rem);font-weight:700;line-height:1.35;letter-spacing:.01em;color:var(--navy);margin:0 0 28px}
-[data-structure="p2"][data-design="d2"] .d2p-label{display:flex;align-items:center;gap:14px;margin:0 0 22px;font-size:12px;font-weight:700;color:#4d5c70}
-[data-structure="p2"][data-design="d2"] .d2p-label span{font-family:var(--en);font-size:11px;letter-spacing:.2em;color:var(--blue);padding-right:14px;border-right:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] main p{font-size:17.5px;line-height:1.95;color:var(--text);margin:0 0 18px}
-[data-structure="p2"][data-design="d2"] figure{margin:0}
-[data-structure="p2"][data-design="d2"] figcaption{font-size:12.5px;color:#4d5c70;margin-top:12px;letter-spacing:.04em}
-[data-structure="p2"][data-design="d2"] .d2p-link{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);font-size:15px;padding:6px 0;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:6px;text-decoration-thickness:1px;transition:text-decoration-color .3s,color .3s}
-[data-structure="p2"][data-design="d2"] .d2p-link:hover{text-decoration-color:var(--blue);color:var(--blue)}
-[data-structure="p2"][data-design="d2"] .d2p-stack{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-top:20px}
-[data-structure="p2"][data-design="d2"] .d2p-btn{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 30px;background:var(--navy);color:#fff;font-weight:700;font-size:15px;letter-spacing:.04em;transition:background .3s}
-[data-structure="p2"][data-design="d2"] .d2p-btn:hover{background:var(--blue)}
-[data-structure="p2"][data-design="d2"] .d2p-center{display:flex;justify-content:center;margin-top:48px}
-[data-structure="p2"][data-design="d2"] .d2p-more{font-size:13px;font-weight:700;color:var(--blue)}
-[data-structure="p2"][data-design="d2"] .d2p-fade{animation:d2p-fade .3s ease both}
-@keyframes d2p-fade{from{opacity:0}to{opacity:1}}
+.ha-wrap{max-width:calc(1160px + 48px);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.ha-section{padding:128px 0}
+.ha-section.is-soft{background:var(--kk-surface-soft)}
+[data-design="d2"] .ha-section h2{font-size:clamp(1.9rem,3.4vw,3.5rem);line-height:1.35;font-weight:700;color:var(--kk-brand-navy);margin:0 0 24px;letter-spacing:.01em}
+[data-design="d2"] .ha-section p{font-size:16.5px;line-height:2;color:var(--kk-text);margin:0 0 18px}
+.ha-chapter{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 22px!important;font-size:12px!important;line-height:1.4!important}
+.ha-ch-no{font:700 11px/1 var(--en);letter-spacing:.2em;color:var(--kk-brand-navy);padding:5px 8px;background:var(--kk-accent-soft);border-left:3px solid var(--kk-accent)}
+.ha-ch-en{font:600 12px/1 var(--en);letter-spacing:.18em;color:var(--kk-muted-text)}
+.ha-ch-ja{font-weight:700;color:var(--kk-text)}
+.ha-fig{margin:0}
+.ha-fig img{width:100%;display:block;object-fit:cover}
+.ha-fig figcaption{font-size:12.5px;color:var(--kk-muted-text);margin-top:10px;padding-left:10px;border-left:1px solid var(--kk-primary-strong)}
+.ha-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;font-weight:700;font-size:14.5px;letter-spacing:.03em;border:1.5px solid transparent;transition:box-shadow .3s}
+.ha-btn.is-primary{background:var(--kk-button-primary-bg);color:var(--kk-button-primary-text)}
+.ha-btn.is-secondary{background:var(--kk-button-secondary-bg);color:var(--kk-button-secondary-text);border-color:var(--kk-brand-navy)}
+.ha-btn:hover{box-shadow:inset 0 -3px 0 var(--kk-accent)}
+.ha-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--kk-brand-navy);text-decoration:underline;text-decoration-color:var(--kk-primary-strong);text-underline-offset:6px;text-decoration-thickness:2px;padding:6px 0}
+.ha-link:hover{text-decoration-color:var(--kk-accent)}
+.ha-actions{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-top:28px}
+.ha-center{text-align:center;margin-top:28px}
+.ha-center-head{max-width:760px;margin:0 auto 56px;text-align:center}
+.ha-center-head .ha-chapter{justify-content:center}
+.ha-split-head{display:grid;grid-template-columns:6fr 5fr;gap:8px 64px;align-items:end;margin-bottom:56px}
+.ha-split-head .ha-chapter{grid-column:1 / -1}
+.ha-split-head h2{margin:0!important}
+.ha-split-head p{margin:0!important;max-width:34em}
+.ha-more{font-size:13px;font-weight:700;color:var(--kk-brand-navy)}
+/* 段階表示：写真→キャプション */
+.js .ha-fig.reveal{opacity:1}
+.js .ha-fig.reveal img{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease}
+.js .ha-fig.reveal figcaption{opacity:0;transition:opacity .3s ease .25s}
+.js .ha-fig.reveal.is-visible img,.js .ha-fig.reveal.is-visible figcaption{opacity:1;transform:none}
 
-/* 01 HERO：白地の左に大H1、右に枠なしの写真（縦長に大きく） */
-[data-structure="p2"][data-design="d2"] .d2p-hero{padding:96px 0 120px}
-[data-structure="p2"][data-design="d2"] .d2p-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:end;max-width:calc(1200px + 48px)}
-[data-structure="p2"][data-design="d2"] .d2p-hero-label{font-family:var(--en);font-size:11px;letter-spacing:.24em;color:var(--blue);font-weight:700;margin:0 0 30px}
-[data-structure="p2"][data-design="d2"] .d2p-hero h1{font-size:clamp(1.9rem,3vw,3.3rem);line-height:1.4;font-weight:700;color:var(--navy);letter-spacing:.01em;margin:0 0 32px}
-[data-structure="p2"][data-design="d2"] .d2p-lead{font-size:18px;line-height:1.95;max-width:34em}
-[data-structure="p2"][data-design="d2"] .d2p-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:34px}
-[data-structure="p2"][data-design="d2"] .d2p-hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:62% 50%}
+/* 01 HERO：二場面（事務所の縦長小・現場の横長大） */
+.ha-hero{padding:72px 0 112px;background:linear-gradient(180deg,var(--kk-surface) 0 62%,var(--kk-surface-soft) 62% 100%)}
+.ha-hero-copy{max-width:820px;margin:0 auto 56px;text-align:center}
+.ha-hero-label{font:700 12px/1 var(--en);letter-spacing:.3em;color:var(--kk-brand-navy);margin:0 0 24px}
+.ha-hero h1{font-size:clamp(2.2rem,4.1vw,4.65rem);line-height:1.35;font-weight:700;color:var(--kk-brand-navy);margin:0 0 24px;letter-spacing:.01em}
+.ha-hero-lead{font-size:17px;line-height:2;color:var(--kk-text);margin:0 auto 22px;max-width:36em}
+.ha-chips{list-style:none;margin:0 0 28px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.ha-chips a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--kk-primary-strong);background:var(--kk-surface);font-size:13.5px;font-weight:700;color:var(--kk-brand-navy)}
+.ha-chips a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--kk-accent)}
+.ha-chips a:hover{background:var(--kk-primary)}
+.ha-hero .ha-actions{justify-content:center}
+.ha-hero-scenes{display:grid;grid-template-columns:3fr 8fr;gap:28px;align-items:end}
+.ha-scene{margin:0;animation:ha-in .5s ease both}
+.ha-scene.is-office{margin-bottom:64px}
+.ha-scene.is-office img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:40% 50%}
+.ha-scene.is-site{animation-delay:.12s}
+.ha-scene.is-site img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.ha-scene figcaption{display:flex;gap:10px;align-items:baseline;font-size:13px;font-weight:700;color:var(--kk-text);margin-top:12px}
+.ha-scene figcaption span{font:700 11px/1 var(--en);letter-spacing:.2em;color:var(--kk-muted-text)}
+@keyframes ha-in{from{opacity:0}to{opacity:1}}
 
-/* 02 STORY：1974 — TODAY の細い線 */
-[data-structure="p2"][data-design="d2"] .d2p-since{display:flex;align-items:center;gap:18px;margin:0 0 48px;font-family:var(--en);font-weight:600;font-size:14px;letter-spacing:.2em;color:var(--blue)}
-[data-structure="p2"][data-design="d2"] .d2p-since i{flex:1;max-width:420px;height:1px;background:var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-landscape{margin-top:64px}
-[data-structure="p2"][data-design="d2"] .d2p-landscape img{width:100%;aspect-ratio:2/1;object-fit:cover;object-position:50% 40%}
+/* 02 HISTORY：社屋を余白に独立配置＋1974の目次 */
+.ha-history{display:grid;grid-template-columns:5fr 6fr;grid-template-rows:auto auto;gap:24px 72px;align-items:start}
+.ha-history-copy{grid-row:1 / span 2}
+.ha-history .is-isolated{grid-column:2}
+.ha-history .is-isolated img{aspect-ratio:4/3}
+.ha-history .is-small{grid-column:2;width:52%;justify-self:end;margin-top:-48px;position:relative}
+.ha-history .is-small img{aspect-ratio:1;border:8px solid var(--kk-surface)}
+.ha-index{list-style:none;margin:28px 0 22px;padding:0;border-top:1px solid var(--kk-primary-strong)}
+.ha-index li{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--kk-border)}
+.ha-index b{font:700 30px/1 var(--en);color:var(--kk-brand-navy)}
+.ha-index li:not(:first-child) b{font-family:var(--jp);font-size:17px}
+.ha-index span{font-size:15px;color:var(--kk-text)}
 
-/* 03 LEADER：写真を左55%に大きく */
-[data-structure="p2"][data-design="d2"] .d2p-leader{display:grid;grid-template-columns:55% 1fr;gap:64px;align-items:center;max-width:calc(1240px + 48px);margin-inline:auto;padding-right:max(24px,env(safe-area-inset-right,0px))}
-[data-structure="p2"][data-design="d2"] .d2p-leader-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
-[data-structure="p2"][data-design="d2"] .d2p-leader-photo figcaption{padding-left:max(24px,env(safe-area-inset-left,0px))}
-[data-structure="p2"][data-design="d2"] .d2p-leader-copy{max-width:520px;min-width:0}
-[data-structure="p2"][data-design="d2"] .d2p-leader h2{font-size:clamp(1.9rem,3vw,3.2rem)}
-[data-structure="p2"][data-design="d2"] .d2p-bio{list-style:none;margin:28px 0 22px;padding:0;border-top:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-bio li{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px}
-[data-structure="p2"][data-design="d2"] .d2p-bio b{color:var(--blue);font-weight:700}
+/* 03 LEADER：代表写真を中央、左右に事実だけの経歴 */
+.ha-leader{display:grid;grid-template-columns:1fr minmax(0,420px) 1fr;grid-template-rows:auto auto auto;gap:24px 48px;align-items:center}
+.ha-leader .is-portrait{grid-column:2;grid-row:1 / span 2}
+.ha-leader .is-portrait img{aspect-ratio:4/5;object-position:50% 25%}
+.ha-fact{display:grid;gap:4px;text-align:right;padding-right:20px;border-right:2px solid var(--kk-brand-navy)}
+.ha-fact b{font:700 40px/1 var(--en),var(--jp);color:var(--kk-brand-navy)}
+.ha-fact span{font-size:15px;font-weight:700;color:var(--kk-text)}
+.ha-fact.is-left{grid-column:1;grid-row:1}
+.ha-fact.is-left2{grid-column:1;grid-row:2;align-self:start}
+.ha-fact.is-right{grid-column:3;grid-row:1 / span 2;text-align:left;padding:0 0 0 20px;border-right:0;border-left:2px solid var(--kk-accent)}
+.ha-fact.is-right b{font-size:28px;font-family:var(--jp)}
+.ha-leader-text{grid-column:1 / -1;max-width:760px;margin:16px auto 0!important;text-align:center}
 
-/* 04 CHANGE：細線で区切った縦の章 */
-[data-structure="p2"][data-design="d2"] .d2p-chapters{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--navy)}
-[data-structure="p2"][data-design="d2"] .d2p-chapters li{padding:28px 32px 8px 0;min-width:0}
-[data-structure="p2"][data-design="d2"] .d2p-chapters li + li{padding-left:32px;border-left:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-ch{font-family:var(--en);font-size:11px;letter-spacing:.2em;color:var(--blue);font-weight:700}
-[data-structure="p2"][data-design="d2"] .d2p-chapters h3{font-size:21px;color:var(--navy);margin:10px 0 12px;line-height:1.5}
-[data-structure="p2"][data-design="d2"] .d2p-chapters p{font-size:16px}
-[data-structure="p2"][data-design="d2"] .d2p-note{max-width:720px;margin:40px 0 0;padding-top:22px;border-top:1px solid var(--rule);font-size:16px;color:var(--navy)}
+/* 04 CHANGE：写真の対応＋3つの小記事 */
+.ha-change{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:start}
+.ha-change-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+.ha-change-photos .is-square img{aspect-ratio:1}
+.ha-change-photos .is-wide{grid-column:1 / -1}
+.ha-change-photos .is-wide img{aspect-ratio:16/9}
+.ha-change-photos .is-square{grid-column:1 / span 1}
+.ha-points{display:grid;gap:0;border-top:1px solid var(--kk-primary-strong)}
+.ha-point{display:grid;grid-template-columns:64px 1fr;gap:4px 18px;padding:24px 0;border-bottom:1px solid var(--kk-border)}
+.ha-point-no{grid-row:1 / span 2;font:700 34px/1 var(--en);color:var(--kk-muted-text)}
+.ha-point h3{margin:0;font-size:20px;color:var(--kk-brand-navy)}
+.ha-point p{margin:0!important;font-size:15.5px!important}
+.ha-honest{margin:36px 0 12px!important;padding:16px 20px;background:var(--kk-surface-soft);border-left:3px solid var(--kk-brand-navy);max-width:760px}
 
-/* 05 BUSINESS：写真1枚＋4行の目次 */
-[data-structure="p2"][data-design="d2"] .d2p-work{display:grid;grid-template-columns:.85fr 1fr;gap:64px;align-items:start}
-[data-structure="p2"][data-design="d2"] .d2p-work-photo img{width:100%;aspect-ratio:3/4;object-fit:cover}
-[data-structure="p2"][data-design="d2"] .d2p-work h2{font-size:clamp(1.9rem,3vw,3.2rem)}
-[data-structure="p2"][data-design="d2"] .d2p-index{list-style:none;margin:28px 0 22px;padding:0;border-top:1px solid var(--navy)}
-[data-structure="p2"][data-design="d2"] .d2p-index li{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-index li > span{font-family:var(--en);color:var(--blue);font-weight:600}
-[data-structure="p2"][data-design="d2"] .d2p-index strong{color:var(--navy);font-size:16.5px}
-[data-structure="p2"][data-design="d2"] .d2p-index p{font-size:15px;margin:4px 0 0}
+/* 05 BUSINESS：工種の観察ノート（正式名を大きく） */
+.ha-notes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px 28px}
+.ha-note{min-width:0}
+.ha-note.is-1{grid-column:1 / span 7}
+.ha-note.is-2{grid-column:9 / span 4;margin-top:96px}
+.ha-note.is-3{grid-column:2 / span 4}
+.ha-note.is-4{grid-column:7 / span 6;align-self:end}
+.ha-note-media{display:block;margin-bottom:16px}
+.ha-note-media img{width:100%;object-fit:cover}
+.ha-note.is-1 img{aspect-ratio:16/9}.ha-note.is-2 img{aspect-ratio:4/5}.ha-note.is-3 img{aspect-ratio:1}
+.ha-note-blank{display:grid;place-items:center;aspect-ratio:16/7;background:repeating-linear-gradient(0deg,var(--kk-primary) 0 22px,var(--kk-primary-strong) 22px 24px);color:var(--kk-brand-navy);font:700 13px/1 var(--en);letter-spacing:.3em}
+.ha-note-tag{font:700 11px/1 var(--en);letter-spacing:.2em;color:var(--kk-muted-text)}
+.ha-note h3{font-size:clamp(20px,1.9vw,25px);line-height:1.45;color:var(--kk-brand-navy);margin:6px 0 8px;font-weight:800}
+.ha-note p{margin:0!important;font-size:15px!important}
+.ha-row{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:center;margin-top:72px}
+.ha-row .is-life img{aspect-ratio:21/9}
 
-/* 06 VOICES：営業3名は縦長写真、現場2名は言葉で対置 */
-[data-structure="p2"][data-design="d2"] .d2p-people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:56px;align-items:start}
-[data-structure="p2"][data-design="d2"] .d2p-person{display:grid;gap:4px;min-width:0}
-[data-structure="p2"][data-design="d2"] .d2p-person:nth-child(2){margin-top:48px}
-[data-structure="p2"][data-design="d2"] .d2p-person img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%;margin-bottom:14px}
-[data-structure="p2"][data-design="d2"] .d2p-person small{font-size:12px;color:var(--blue);font-weight:700}
-[data-structure="p2"][data-design="d2"] .d2p-person strong{font-size:19px;color:var(--navy)}
-[data-structure="p2"][data-design="d2"] .d2p-person p{font-size:15px;margin:4px 0 6px}
-[data-structure="p2"][data-design="d2"] .d2p-fields{display:grid;grid-template-columns:150px 1fr 1fr;gap:0 40px;margin-top:72px;padding-top:28px;border-top:1px solid var(--navy)}
-[data-structure="p2"][data-design="d2"] .d2p-fields-label{font-weight:700;color:var(--navy);font-size:15px;margin:0}
-[data-structure="p2"][data-design="d2"] .d2p-field{min-width:0}
-[data-structure="p2"][data-design="d2"] .d2p-field small{display:block;font-size:12px;color:var(--blue);font-weight:700}
-[data-structure="p2"][data-design="d2"] .d2p-field strong{display:block;font-size:22px;color:var(--navy);margin:2px 0 8px}
-[data-structure="p2"][data-design="d2"] .d2p-field p{font-size:15.5px}
+/* 06 VOICES：大きさの違う人物誌面＋対談の文章ブロック */
+.ha-people{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px;align-items:start}
+.ha-person{display:grid;gap:4px;min-width:0}
+.ha-person.is-1{grid-column:1 / span 5}
+.ha-person.is-2{grid-column:7 / span 3;margin-top:120px}
+.ha-person.is-3{grid-column:10 / span 3;margin-top:24px}
+.ha-person-photo{display:block;overflow:hidden;margin-bottom:12px}
+.ha-person-photo img{width:100%;object-fit:cover;object-position:50% 25%;transition:transform .4s ease}
+.ha-person.is-1 img{aspect-ratio:4/5}.ha-person.is-2 img,.ha-person.is-3 img{aspect-ratio:1}
+.ha-person:hover img{transform:scale(1.02)}
+.ha-person-role{font-size:12px;font-weight:700;color:var(--kk-muted-text)}
+.ha-person strong{font-size:24px;color:var(--kk-brand-navy)}
+.ha-person.is-1 strong{font-size:30px}
+.ha-person-text{font-size:15px;line-height:1.85;color:var(--kk-text)}
+.ha-talk{margin-top:72px;padding:48px 56px;background:var(--kk-primary);display:grid;grid-template-columns:200px 1fr;gap:24px 48px}
+.ha-talk-title{margin:0!important;font-size:22px!important;font-weight:800;color:var(--kk-brand-navy)!important;line-height:1.5!important}
+.ha-talk-body{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.ha-talk-body strong{display:block;font-size:22px;color:var(--kk-brand-navy);margin:2px 0 6px}
+.ha-talk-role{font-size:12px;font-weight:700;color:var(--kk-text)}
+.ha-talk-body p{margin:0!important;font-size:15.5px!important}
+.ha-talk-note{grid-column:2;margin:0!important;font-size:12.5px!important;color:var(--kk-text)!important}
 
-/* 07 NEXT：小さな写真と説明（ネイビー面を使わない） */
-[data-structure="p2"][data-design="d2"] .d2p-next{display:grid;grid-template-columns:1.2fr .8fr;gap:72px;align-items:end}
-[data-structure="p2"][data-design="d2"] .d2p-next-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+/* 07 FUTURE：縦書きの見出し＋上に現場・下に事務所 */
+.ha-future{display:grid;grid-template-columns:auto 1fr;gap:72px;align-items:start}
+.ha-vertical{writing-mode:vertical-rl;font-size:clamp(1.9rem,3vw,3rem)!important;line-height:1.6!important;letter-spacing:.12em;margin:0!important;max-height:560px;position:sticky;top:110px}
+.ha-future-lead{max-width:36em}
+.ha-future .is-wide img{aspect-ratio:16/8}
+.ha-future-pair{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:40px 0}
+.ha-future-pair h3{font-size:22px;color:var(--kk-brand-navy);margin:8px 0 8px}
+.ha-future-pair p{margin:0!important;font-size:15.5px!important}
+.ha-tag{display:inline-block;font-size:12px;font-weight:800;padding:3px 10px;border:1.5px solid var(--kk-brand-navy);color:var(--kk-brand-navy)}
+.ha-tag.is-change{border-color:var(--kk-accent);background:var(--kk-accent-soft)}
+.ha-future .is-office{width:62%;margin:0 0 32px auto}
+.ha-future .is-office img{aspect-ratio:3/2}
 
-/* 08 RECRUIT：文字中心の2列 */
-[data-structure="p2"][data-design="d2"] .d2p-roles{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:48px;border-top:1px solid var(--navy)}
-[data-structure="p2"][data-design="d2"] .d2p-role{padding:30px 40px 30px 0;min-width:0}
-[data-structure="p2"][data-design="d2"] .d2p-role + .d2p-role{padding-left:40px;border-left:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-role small{font-family:var(--en);font-size:11px;letter-spacing:.2em;color:var(--blue);font-weight:700}
-[data-structure="p2"][data-design="d2"] .d2p-role h3{font-size:22px;color:var(--navy);margin:8px 0 10px}
+/* 08 RECRUIT：仕事内容を先に */
+.ha-roles{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--kk-primary-strong)}
+.ha-role{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:32px 32px 32px 0;border-bottom:1px solid var(--kk-border)}
+.ha-role + .ha-role{padding-left:32px;border-left:1px solid var(--kk-border)}
+.ha-role-photo img{width:140px;aspect-ratio:1;object-fit:cover}
+.ha-role-en{font:700 11px/1 var(--en);letter-spacing:.2em;color:var(--kk-muted-text)}
+.ha-role h3{font-size:22px;color:var(--kk-brand-navy);margin:6px 0 8px}
+.ha-role p{font-size:15px!important;margin:0 0 6px!important}
 
-/* 09 PROOF：横長の紙面 */
-[data-structure="p2"][data-design="d2"] .d2p-proof{display:grid;grid-template-columns:1fr 1fr .9fr;gap:28px;margin-top:48px;align-items:stretch}
-[data-structure="p2"][data-design="d2"] .d2p-proof img{width:100%;aspect-ratio:4/3;object-fit:cover}
-[data-structure="p2"][data-design="d2"] .d2p-article{display:flex;flex-direction:column;gap:6px;padding:24px 0;border-top:1px solid var(--navy);border-bottom:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-article time{font-family:var(--en);color:var(--blue);font-weight:600}
-[data-structure="p2"][data-design="d2"] .d2p-article small{font-size:12px;color:#4d5c70;font-weight:700}
-[data-structure="p2"][data-design="d2"] .d2p-article strong{font-size:17px;line-height:1.7;color:var(--navy);flex:1}
+/* 09 PROOF：続きを読むリスト＋写真 */
+.ha-proof{display:grid;grid-template-columns:6fr 5fr;gap:64px;align-items:start}
+.ha-reads{list-style:none;margin:24px 0 0;padding:0;border-top:1px solid var(--kk-brand-navy)}
+.ha-reads a{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--kk-border)}
+.ha-read-cat{font-size:12px;font-weight:700;color:var(--kk-muted-text)}
+.ha-read-title{font-size:15.5px;font-weight:700;color:var(--kk-text)}
+.ha-read-go{font-size:12.5px;font-weight:700;color:var(--kk-brand-navy);white-space:nowrap}
+.ha-reads a:hover .ha-read-title{text-decoration:underline;text-decoration-color:var(--kk-accent);text-underline-offset:5px}
+.ha-proof-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+.ha-proof-photos .is-portrait-sm img{aspect-ratio:4/5}
+.ha-proof-photos .is-square{margin-bottom:48px}
+.ha-proof-photos .is-square img{aspect-ratio:1}
 
-/* 10 CLOSE：幅760pxの静かな白 */
-[data-structure="p2"][data-design="d2"] .d2p-close{background:#fff;border-top:1px solid var(--navy);padding:120px max(24px,env(safe-area-inset-right,0px)) 128px max(24px,env(safe-area-inset-left,0px))}
-[data-structure="p2"][data-design="d2"] .d2p-close-inner{max-width:760px;margin-inline:auto}
-[data-structure="p2"][data-design="d2"] .d2p-close h2{font-size:clamp(1.8rem,3vw,2.8rem)}
-[data-structure="p2"][data-design="d2"] .d2p-close-links{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--navy)}
-[data-structure="p2"][data-design="d2"] .d2p-close-links li{border-bottom:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-close-links li + li{border-left:1px solid var(--rule)}
-[data-structure="p2"][data-design="d2"] .d2p-close-links a{display:flex;justify-content:space-between;gap:10px;padding:22px 18px;font-weight:700;color:var(--navy);font-size:15px;transition:background .3s}
-[data-structure="p2"][data-design="d2"] .d2p-close-links a:hover{background:var(--paper)}
+/* 10 CLOSE：3つの出口を平等に */
+.ha-close{background:var(--kk-surface)}
+.ha-exits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.ha-exits li{display:grid;gap:10px;padding:28px;border:1px solid var(--kk-primary-strong);background:var(--kk-surface)}
+.ha-exit-sub{font-size:12.5px;font-weight:700;color:var(--kk-muted-text)}
+.ha-exit{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--kk-brand-navy)}
+.ha-exits li:hover{background:var(--kk-surface-soft);box-shadow:inset 0 -3px 0 var(--kk-accent)}
 
 @media(max-width:1100px){
-  [data-structure="p2"][data-design="d2"] .d2p-hero-grid{gap:40px}
-  [data-structure="p2"][data-design="d2"] .d2p-leader{gap:40px}
-  [data-structure="p2"][data-design="d2"] .d2p-fields{grid-template-columns:1fr 1fr}
-  [data-structure="p2"][data-design="d2"] .d2p-fields-label{grid-column:1 / -1;margin-bottom:16px}
+  .ha-split-head,.ha-proof,.ha-change{grid-template-columns:1fr;gap:20px}
+  .ha-leader{grid-template-columns:1fr minmax(0,360px) 1fr;gap:20px 28px}
+  .ha-talk{grid-template-columns:1fr}
+  .ha-talk-note{grid-column:1}
+  .ha-roles{grid-template-columns:1fr}
+  .ha-role + .ha-role{padding-left:0;border-left:0}
 }
 @media(max-width:767px){
-  [data-structure="p2"][data-design="d2"] .d2p-section{padding:80px 0}
-  [data-structure="p2"][data-design="d2"] main p{font-size:16px}
-  [data-structure="p2"][data-design="d2"] .d2p-hero{padding:48px 0 72px}
-  [data-structure="p2"][data-design="d2"] .d2p-hero-grid,[data-structure="p2"][data-design="d2"] .d2p-work,[data-structure="p2"][data-design="d2"] .d2p-next{grid-template-columns:1fr;gap:36px}
-  [data-structure="p2"][data-design="d2"] .d2p-hero-photo img{aspect-ratio:4/3}
-  [data-structure="p2"][data-design="d2"] .d2p-lead{font-size:16.5px}
-  [data-structure="p2"][data-design="d2"] .d2p-landscape img{aspect-ratio:4/3}
-  [data-structure="p2"][data-design="d2"] .d2p-leader{grid-template-columns:1fr;padding-left:max(24px,env(safe-area-inset-left,0px))}
-  [data-structure="p2"][data-design="d2"] .d2p-leader-photo figcaption{padding-left:0}
-  [data-structure="p2"][data-design="d2"] .d2p-chapters{grid-template-columns:1fr}
-  [data-structure="p2"][data-design="d2"] .d2p-chapters li,[data-structure="p2"][data-design="d2"] .d2p-chapters li + li{padding:22px 0 4px;border-left:0;border-bottom:1px solid var(--rule)}
-  [data-structure="p2"][data-design="d2"] .d2p-work-photo img{aspect-ratio:4/3}
-  [data-structure="p2"][data-design="d2"] .d2p-people{grid-template-columns:1fr;gap:44px}
-  [data-structure="p2"][data-design="d2"] .d2p-person:nth-child(2){margin-top:0}
-  [data-structure="p2"][data-design="d2"] .d2p-person img{aspect-ratio:4/3}
-  [data-structure="p2"][data-design="d2"] .d2p-fields{grid-template-columns:1fr;gap:24px}
-  [data-structure="p2"][data-design="d2"] .d2p-roles{grid-template-columns:1fr}
-  [data-structure="p2"][data-design="d2"] .d2p-role,[data-structure="p2"][data-design="d2"] .d2p-role + .d2p-role{padding:24px 0;border-left:0;border-bottom:1px solid var(--rule)}
-  [data-structure="p2"][data-design="d2"] .d2p-proof{grid-template-columns:1fr}
-  [data-structure="p2"][data-design="d2"] .d2p-close{padding-block:80px}
-  [data-structure="p2"][data-design="d2"] .d2p-close-links{grid-template-columns:1fr}
-  [data-structure="p2"][data-design="d2"] .d2p-close-links li + li{border-left:0}
-  [data-structure="p2"][data-design="d2"] .d2p-btn{width:100%;justify-content:center}
+  .ha-section{padding:72px 0}
+  .ha-hero{padding:44px 0 64px}
+  .ha-hero-copy{text-align:left}
+  .ha-chips,.ha-hero .ha-actions{justify-content:flex-start}
+  .ha-hero h1{font-size:calc((100vw - 52px) / 12.6)}
+  .ha-actions .ha-btn{width:100%}
+  [data-design="d2"] .ha-section h2{font-size:clamp(1.45rem,6.2vw,1.9rem)}
+  .ha-hero-scenes{grid-template-columns:1fr}
+  .ha-scene.is-office{margin:0;width:60%}
+  .ha-history{grid-template-columns:1fr}
+  .ha-history-copy,.ha-history .is-isolated,.ha-history .is-small{grid-column:1;grid-row:auto}
+  .ha-history .is-small{width:60%;margin-top:-40px}
+  .ha-index li{grid-template-columns:90px 1fr}
+  .ha-leader{grid-template-columns:1fr}
+  .ha-leader .is-portrait,.ha-fact.is-left,.ha-fact.is-left2,.ha-fact.is-right{grid-column:1;grid-row:auto}
+  .ha-fact,.ha-fact.is-right{text-align:left;padding:0 0 0 16px;border-right:0;border-left:2px solid var(--kk-brand-navy)}
+  .ha-leader-text{text-align:left}
+  .ha-notes,.ha-people{grid-template-columns:1fr;gap:36px}
+  .ha-note.is-1,.ha-note.is-2,.ha-note.is-3,.ha-note.is-4,.ha-person.is-1,.ha-person.is-2,.ha-person.is-3{grid-column:1;margin-top:0}
+  .ha-note img,.ha-person img{aspect-ratio:4/3!important}
+  .ha-row{grid-template-columns:1fr;gap:20px}
+  .ha-row .is-life img{aspect-ratio:4/3}
+  .ha-talk{padding:28px 22px}
+  .ha-talk-body{grid-template-columns:1fr}
+  .ha-future{grid-template-columns:1fr;gap:20px}
+  .ha-vertical{writing-mode:horizontal-tb;position:static;max-height:none;letter-spacing:.02em;font-size:clamp(1.45rem,6.2vw,1.9rem)!important;order:1}
+  .ha-future-main{order:2}
+  .ha-future-pair{grid-template-columns:1fr}
+  .ha-future .is-office{width:100%}
+  .ha-role{grid-template-columns:96px 1fr;gap:16px;padding:24px 0}
+  .ha-role-photo img{width:96px}
+  .ha-reads a{grid-template-columns:1fr;gap:4px}
+  .ha-proof-photos{grid-template-columns:1fr}
+  .ha-proof-photos .is-square{margin:0}
+  .ha-exits{grid-template-columns:1fr}
 }
-
-[data-structure="p2"][data-design="d2"] .d2p-next h2{font-size:clamp(1.9rem,3vw,3.2rem)}
-@media(max-width:767px){
-  [data-structure="p2"][data-design="d2"] .d2p-hero h1{font-size:calc((100vw - 52px) / 13.2)}
-  [data-structure="p2"][data-design="d2"] h2,[data-structure="p2"][data-design="d2"] .d2p-leader h2,[data-structure="p2"][data-design="d2"] .d2p-work h2,[data-structure="p2"][data-design="d2"] .d2p-next h2{font-size:clamp(1.4rem,6vw,1.9rem)}
-}
+@media(prefers-reduced-motion:reduce){.ha-scene{animation:none}.js .ha-fig.reveal img,.js .ha-fig.reveal figcaption{opacity:1;transform:none;transition:none}}

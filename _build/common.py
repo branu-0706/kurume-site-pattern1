@@ -24,6 +24,14 @@ def ext(url, text, cls=""):
     return f'<a{c} href="{url}" target="_blank" rel="noopener noreferrer">{text}<span class="sr-only">（外部サイトが開きます）</span></a>'
 
 
+def demo_tags(root):
+    """デモ専用の部品（配色の試し変更・構成×デザインの比較切替）。CMS移植時はこの4行を削除する。"""
+    return (f'<script src="{root}assets/theme/presets.js"></script>\n'
+            f'<script src="{root}assets/theme/theme.js"></script>\n'
+            f'<link rel="stylesheet" href="{root}assets/compare/switcher.css">\n'
+            f'<script defer src="{root}assets/compare/switcher.js"></script>\n')
+
+
 def head(title, desc, root, current="top"):
     return f'''<!doctype html>
 <html lang="ja" class="mode-review" data-structure="p1" data-design="d1" data-page="{current}">
@@ -37,11 +45,11 @@ def head(title, desc, root, current="top"):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="{root}assets/theme.css">
 <link rel="stylesheet" href="{root}assets/site.css">
+<link rel="stylesheet" href="{root}assets/office.css">
 <script defer src="{root}assets/site.js"></script>
-<link rel="stylesheet" href="{root}assets/compare/switcher.css">
-<script defer src="{root}assets/compare/switcher.js"></script>
-</head>
+{demo_tags(root)}</head>
 <body>
 <!-- デザインデモ（パターン① × デザイン①）。CMS移植前の静的プロトタイプであり、本番公開物ではありません。 -->
 <a class="skip-link" href="#main">本文へ移動</a>
