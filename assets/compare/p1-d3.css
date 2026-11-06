@@ -235,10 +235,9 @@ a:hover .ic-clip img,.ic-mosaic figure:hover img{transform:scale(1.03)}
 }
 @media(prefers-reduced-motion:reduce){.ic-hero-photo img{animation:none}.js .ic-clip.reveal,.js .ic-steps-line.reveal,.js .ic-label.reveal .ic-line{clip-path:none;transform:none}}
 
-/* ファーストビュー（734＋721）：見出しを大きく、写真を高く全幅に */
-.fv-h1.is-ic{background:var(--kk-primary);padding:84px 0 60px}
-.fv-h1.is-ic h1{font-size:clamp(2.4rem,4.8vw,4.6rem);line-height:1.25;font-weight:900}
-.fv-h1.is-ic .fv-fields li{border-left-color:var(--kk-primary-strong)}
-.fv-mv.is-ic .fv-slide{height:clamp(380px,68vh,720px)}
-@media(max-width:767px){.fv-h1.is-ic{padding:44px 0 32px}.fv-h1.is-ic h1{font-size:clamp(1.8rem,8vw,2.4rem)}}
-@media(max-width:767px){.fv-mv.is-ic .fv-slide{height:min(75vw,360px)}}
+/* メインビジュアル（721）：文字を左下に置き、見出しを大きく、写真を高く */
+.fv-mv.is-ic .fv-slide{min-height:clamp(600px,calc(100svh - 80px),860px);align-items:flex-end}
+.fv-mv.is-ic .fv-slide::after{background:linear-gradient(0deg,color-mix(in srgb,var(--kk-brand-navy) 92%,transparent) 0%,color-mix(in srgb,var(--kk-brand-navy) 82%,transparent) 48%,color-mix(in srgb,var(--kk-brand-navy) 30%,transparent) 78%,color-mix(in srgb,var(--kk-brand-navy) 8%,transparent) 100%)}
+.fv-mv.is-ic .fv-copy>*{max-width:880px}
+.fv-mv.is-ic .fv-copy h1{font-size:clamp(2.4rem,4.8vw,4.6rem);line-height:1.25;font-weight:900}
+@media(max-width:767px){.fv-mv.is-ic .fv-copy h1{font-size:clamp(1.8rem,8vw,2.4rem)}}

@@ -33,7 +33,7 @@ def build():
     exits = "".join(f'<li class="reveal" data-delay="{i}"><span class="ha-exit-sub">{sub}</span>{a(t, u, "ha-exit")}</li>' for i, (t, u, sub) in enumerate(cl["cta"]))
 
     body = f'''
-{top_hero("top-hero", "hero-title", h["label"], br(h["h1"]), h["lead"], PH + h["site"][0], h["site"][1], cls="is-ha")}
+{top_hero("top-hero", "hero-title", h["label"], br(h["h1"]), h["lead"], PH + h["site"][0], h["site"][1], cls="is-ha is-center")}
 
 <!-- 02 ORIGIN / HISTORY #top-history｜方式B：CMS 54 Half（社屋写真を余白に独立配置、1974を目次として） -->
 <section class="ha-section" id="top-history" aria-labelledby="history-title" data-cms-id="54" data-implementation="B">

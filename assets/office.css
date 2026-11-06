@@ -259,28 +259,39 @@ body{background:var(--kk-page-bg);color:var(--kk-text)}
 .contact-section :is(p,span,small,li,dd){color:var(--kk-text)!important}
 .contact-section :is(.section-kicker,.section-kicker *){color:var(--kk-brand-navy)!important}
 
-/* ── ファーストビュー（TOP）：CMS 734 H1 Center ＋ 721 Mainvisual Responsive Slider。CTAなし・画像と文字のみ。
-   CSSで変えるのは余白・文字サイズ・揃え・写真の高さだけ（セクションの構造は変えない） ── */
-.fv-h1{background:var(--kk-surface-soft);padding:72px 0 52px;text-align:center}
-.fv-h1 .fv-inner{width:min(calc(100% - 80px),var(--content));margin:auto}
-.fv-label{display:inline-flex;align-items:center;gap:14px;margin:0 0 22px;font:600 12px/1.4 var(--en);letter-spacing:.2em;color:var(--kk-brand-blue)}
-.fv-label::before,.fv-label::after{content:"";width:28px;height:3px;background:var(--kk-accent)}
-.fv-h1 h1{word-break:auto-phrase;text-wrap:balance;margin:0 0 22px;font-size:clamp(30px,3.6vw,52px);line-height:1.45;font-weight:800;letter-spacing:.04em;color:var(--kk-brand-navy)}
-.fv-h1 h1 span{color:var(--kk-brand-blue)}
-.fv-lead{max-width:40em;margin:0 auto;font-size:14px;line-height:2.05;color:var(--kk-text)}
-.fv-fields{list-style:none;margin:26px auto 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 0}
-.fv-fields li{padding:0 18px;font-size:13px;font-weight:700;color:var(--kk-brand-navy);border-left:1px solid var(--kk-border)}
-.fv-fields li:first-child{border-left:0}
-.fv-mv{background:var(--kk-surface-soft)}
-.fv-slide{height:clamp(320px,52vh,560px);overflow:hidden}
-.fv-slide img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
-.fv-h1.is-p2,.fv-mv.is-p2{background:var(--kk-page-bg)}
+/* ── メインビジュアル（TOP）：CMS 721 Mainvisual Responsive Slider（写真1枚＋キャッチコピー）。CTAなし。
+   文字は写真の上に置き、下にネイビーの暗幕を敷いてコントラスト4.5:1以上を保つ。
+   CSSで変えるのは文字位置・余白・文字サイズ・写真の高さ・暗幕の濃さだけ（セクションの構造は変えない） ── */
+.fv-mv{position:relative;background:var(--kk-page-bg)}
+.fv-slide{position:relative;isolation:isolate;min-height:clamp(560px,calc(100svh - 86px),820px);display:flex;align-items:center;overflow:hidden;background-color:var(--kk-brand-navy)}
+.fv-slide>img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 55%;z-index:-2}
+.fv-slide::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,color-mix(in srgb,var(--kk-brand-navy) 90%,transparent) 0%,color-mix(in srgb,var(--kk-brand-navy) 82%,transparent) 50%,color-mix(in srgb,var(--kk-brand-navy) 40%,transparent) 75%,color-mix(in srgb,var(--kk-brand-navy) 10%,transparent) 100%)}
+.fv-copy{width:min(calc(100% - 80px),var(--content));margin-inline:auto;padding-block:72px;color:var(--kk-surface)}
+.fv-copy>*{max-width:620px}
+.fv-label{display:inline-flex;align-items:center;gap:14px;margin:0 0 22px;font:600 12px/1.4 var(--en);letter-spacing:.2em;color:var(--kk-surface)}
+.fv-label::before{content:"";width:32px;height:3px;background:var(--kk-accent)}
+.fv-copy h1{word-break:auto-phrase;text-wrap:balance;margin:0 0 22px;font-size:clamp(32px,4vw,58px);line-height:1.42;font-weight:800;letter-spacing:.04em;color:var(--kk-surface)}
+.fv-copy h1 span{color:inherit}
+.fv-lead{margin:0;font-size:14px;line-height:2.05;color:var(--kk-surface)}
+.fv-fields{list-style:none;margin:28px 0 0;padding:16px 0 0;border-top:1px solid color-mix(in srgb,var(--kk-surface) 35%,transparent);display:flex;flex-wrap:wrap;gap:8px 0}
+.fv-fields li{padding:0 16px;font-size:13px;font-weight:700;color:var(--kk-surface);border-left:1px solid color-mix(in srgb,var(--kk-surface) 40%,transparent)}
+.fv-fields li:first-child{padding-left:0;border-left:0}
+/* 中央揃え型：暗幕を全面に均一に敷く */
+.fv-mv.is-center .fv-slide::after{background:color-mix(in srgb,var(--kk-brand-navy) 76%,transparent)}
+.fv-mv.is-center .fv-copy{text-align:center}
+.fv-mv.is-center .fv-copy>*{max-width:760px;margin-inline:auto}
+.fv-mv.is-center .fv-fields{justify-content:center}
 @media(max-width:767px){
-  .fv-h1{padding:44px 0 32px}
-  .fv-h1 .fv-inner{width:calc(100% - 38px)}
-  .fv-h1 h1{font-size:clamp(24px,6.6vw,30px)}
-  .fv-lead{font-size:13px;text-align:left}
-  .fv-fields{justify-content:flex-start;gap:6px 0}
-  .fv-fields li{padding:0 12px 0 0;margin-right:12px;font-size:12px}
-  .fv-slide{height:min(56vw,300px);min-height:220px}
+  .fv-slide{min-height:min(150vw,640px);align-items:flex-end}
+  .fv-slide::after,.fv-mv.is-center .fv-slide::after{background:linear-gradient(180deg,color-mix(in srgb,var(--kk-brand-navy) 30%,transparent) 0%,color-mix(in srgb,var(--kk-brand-navy) 82%,transparent) 32%,color-mix(in srgb,var(--kk-brand-navy) 90%,transparent) 100%)}
+  .fv-copy{padding-block:150px 36px}
+  .fv-copy h1{font-size:clamp(25px,7vw,32px);margin-bottom:16px}
+  .fv-lead{font-size:13px}
+  .fv-mv.is-center .fv-copy{text-align:left}
+  .fv-mv.is-center .fv-fields{justify-content:flex-start}
+  .fv-fields{margin-top:20px;padding-top:12px;gap:6px 0}
+  .fv-fields{gap:6px 16px}
+  .fv-fields li{display:inline-flex;align-items:center;gap:6px;padding:0;border-left:0;font-size:12px}
+  .fv-fields li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--kk-accent)}
 }
+@media(max-width:767px){.fv-copy{width:calc(100% - 38px)}}

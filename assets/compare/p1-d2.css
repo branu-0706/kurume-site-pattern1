@@ -180,10 +180,6 @@
   [data-structure="p1"][data-design="d2"] .os-end .os-btn{flex:1 1 100%}
 }
 
-/* ファーストビュー（734＋721）：左揃え・写真は本文幅に収める */
-.fv-h1.is-os{text-align:left;padding-bottom:40px}
-.fv-h1.is-os .fv-lead{margin:0}
-.fv-h1.is-os .fv-fields{justify-content:flex-start;margin-left:0;border-top:2px solid var(--kk-brand-navy);border-bottom:1px solid var(--kk-border);padding:14px 0}
-.fv-h1.is-os .fv-fields li:first-child{padding-left:0}
-.fv-mv.is-os .fv-slide{max-width:var(--wrap);margin-inline:auto;height:clamp(300px,48vh,520px)}
-@media(max-width:767px){.fv-mv.is-os .fv-slide{margin-inline:0}}
+/* メインビジュアル（721）：左揃え、写真の高さを控えめに */
+.fv-mv.is-os .fv-slide{min-height:clamp(520px,72vh,720px)}
+.fv-mv.is-os .fv-fields{border-top:2px solid var(--kk-accent)}

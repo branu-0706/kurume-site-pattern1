@@ -195,10 +195,8 @@
 }
 @media(prefers-reduced-motion:reduce){.js .kc-rail.reveal,.js .kc-jog.reveal{transform:none;transition:none}}
 
-/* ファーストビュー（734＋721）：左揃え、リードの左にライムの線、写真は全幅 */
-.fv-h1.is-kc{text-align:left}
-.fv-h1.is-kc h1{font-size:clamp(2.4rem,4.6vw,4.8rem);line-height:1.22}
-.fv-h1.is-kc .fv-lead{margin:0;padding-left:20px;border-left:4px solid var(--kk-accent)}
-.fv-h1.is-kc .fv-fields{justify-content:flex-start;margin-left:0}
-.fv-h1.is-kc .fv-fields li:first-child{padding-left:0}
-@media(max-width:767px){.fv-h1.is-kc h1{font-size:clamp(1.6rem,7vw,2.1rem)}.fv-h1.is-kc .fv-lead{padding-left:14px}}
+/* メインビジュアル（721）：左揃え、リードの左にライムの線 */
+.fv-mv.is-kc .fv-copy h1{font-size:clamp(2.3rem,4.4vw,4.4rem);line-height:1.25}
+.fv-mv.is-kc .fv-lead{padding-left:18px;border-left:4px solid var(--kk-accent)}
+@media(max-width:767px){.fv-mv.is-kc .fv-copy h1{font-size:clamp(1.6rem,7vw,2.1rem)}.fv-mv.is-kc .fv-lead{padding-left:12px}}
+.fv-mv.is-kc .fv-copy>*{max-width:860px}
