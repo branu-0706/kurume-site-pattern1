@@ -9,11 +9,10 @@
 <title>会社情報｜株式会社久留米興業</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="../assets/theme.css">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/office.css">
-<link rel="stylesheet" href="../assets/hero.css">
 <script defer src="../assets/site.js"></script>
 <script src="../assets/theme/presets.js"></script>
 <script src="../assets/theme/theme.js"></script>
@@ -37,17 +36,13 @@
 </header>
 <main id="main">
 
-<!-- 01 HERO｜KV frame（方式B：CMS 734 H1 ＋ CSS assets/hero.css）。CTAなし・画像と文字のみ -->
-<section class="kv kv--frame" id="company-hero" aria-labelledby="company-title" data-cms-id="734" data-implementation="B">
-  <p class="kv-word" aria-hidden="true">COMPANY</p>
-  <div class="kv-wrap">
-    <div class="kv-copy anim-enter">
-      <p class="kv-index"><span class="kv-no">06</span><span>COMPANY</span></p>
-      <p class="kv-eyebrow">会社情報</p>
-      <h1 id="company-title">この街とともに歩み、<br>次の世代へつないでいく。</h1>
-      <p class="kv-lead">1974年の設立以来、世田谷を拠点に道路や水道などのインフラ工事に携わってきた久留米興業。会社の歩み、仕事への考え方、そして現在の事業基盤をご紹介します。</p>
-    </div>
-    <figure class="kv-media anim-enter" style="--delay:.12s"><img src="../assets/photos/entrance-sunny.jpg" alt="「(株)久留米興業」の看板が掲げられた本社の敷地入口" width="1200" height="800" style="object-position:40% 55%" fetchpriority="high"></figure>
+<!-- 01 COMPANY HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
+<section class="page-hero" id="company-hero" data-mark="COMPANY" aria-labelledby="company-title" data-cms-id="734" data-implementation="B">
+  <span class="lane" aria-hidden="true"></span><div class="page-hero-img" style="background-image:url('../assets/photos/entrance-sunny.jpg');background-position:40% 55%" role="img" aria-label="「(株)久留米興業」の看板が掲げられた本社の敷地入口"></div>
+  <div class="wrap">
+    <p class="eyebrow anim-enter"><span class="line"></span>COMPANY / ABOUT US</p>
+    <h1 id="company-title" class="anim-enter" style="--delay:.1s">この街とともに歩み、<br>次の世代へつないでいく。</h1>
+    <p class="lead anim-enter" style="--delay:.2s">1974年の設立以来、世田谷を拠点に道路や水道などのインフラ工事に携わってきた久留米興業。会社の歩み、仕事への考え方、そして現在の事業基盤をご紹介します。</p>
   </div>
 </section>
 <nav class="breadcrumb" aria-label="パンくずリスト"><ol class="wrap"><li><a href="../index.html">TOP</a></li><li aria-current="page">会社情報</li></ol></nav>

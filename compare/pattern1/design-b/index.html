@@ -33,15 +33,17 @@
 </header>
 <main id="main">
 
-<!-- 01 HERO #top-hero｜方式C：独自HTML＋CSS（全幅の施工写真＋写真を隠さない独立パネル。CTAなし・画像と文字のみ）。CMS ID参考：721/734 -->
-<section class="ic-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="721,734" data-implementation="C">
-  <figure class="ic-hero-photo"><img src="../../../assets/photos/field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="941" height="627"><figcaption>施工中の様子</figcaption></figure>
-  <div class="ic-hero-panel">
-    <p class="ic-hero-label">INFRASTRUCTURE / KURUME KOGYO</p>
-    <h1 id="hero-title"><span>道路の復旧舗装から、</span><span>水道・土木工事まで。</span></h1>
-    <p class="ic-hero-lead">世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。</p>
+<!-- 01 HERO｜方式B：CMS 734 H1 Center（文字）＋ 721 Mainvisual Responsive Slider（写真1枚・自動切替なし）＋ CSS（余白・文字サイズ・揃え・写真の高さのみ）。CTAなし・画像と文字のみ。写真に文字を重ねない -->
+<section class="fv-h1 is-ic" id="top-hero" aria-labelledby="hero-title" data-cms-id="734" data-implementation="B">
+  <div class="fv-inner">
+    <p class="fv-label">INFRASTRUCTURE / KURUME KOGYO</p>
+    <h1 id="hero-title">道路の復旧舗装から、<br>水道・土木工事まで。</h1>
+    <p class="fv-lead">世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。</p>
+    <ul class="fv-fields" aria-label="対応する工事"><li>ガス管取替後の復旧舗装工事</li><li>水道工事</li><li>一般土木工事</li><li>下水道工事</li></ul>
   </div>
-  <div class="ic-band"><p>対応する工事</p><ul aria-label="対応する工事"><li><span>01</span>ガス管取替後の復旧舗装工事</li><li><span>02</span>水道工事</li><li><span>03</span>一般土木工事</li><li><span>04</span>下水道工事</li></ul></div>
+</section>
+<section class="fv-mv is-ic" aria-label="施工の様子" data-cms-id="721" data-implementation="B">
+  <div class="fv-slide"><img src="../../../assets/photos/field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="941" height="627" fetchpriority="high"></div>
 </section>
 
 <!-- 02 ABOUT / PROFILE #top-about｜方式B：CMS 54 Half ＋ 22 Table（大きな1974の背景文字、右上に社屋、左下に概要） -->

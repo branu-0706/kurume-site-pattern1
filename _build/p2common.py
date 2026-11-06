@@ -31,12 +31,11 @@ def p2_head(title, desc, root, page):
 <title>{title}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="{root}assets/theme.css">
 <link rel="stylesheet" href="{root}assets/site.css">
 <link rel="stylesheet" href="{root}assets/p2.css">
 <link rel="stylesheet" href="{root}assets/office.css">
-<link rel="stylesheet" href="{root}assets/hero.css">
 <script defer src="{root}assets/site.js"></script>
 {switcher_tags(root)}</head>
 <body>

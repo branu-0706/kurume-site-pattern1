@@ -9,12 +9,11 @@
 <title>採用情報｜株式会社久留米興業</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="../../assets/theme.css">
 <link rel="stylesheet" href="../../assets/site.css">
 <link rel="stylesheet" href="../../assets/p2.css">
 <link rel="stylesheet" href="../../assets/office.css">
-<link rel="stylesheet" href="../../assets/hero.css">
 <script defer src="../../assets/site.js"></script>
 <script src="../../assets/theme/presets.js"></script>
 <script src="../../assets/theme/theme.js"></script>
@@ -38,14 +37,15 @@
 </header>
 <main id="main">
 
-<!-- 01 HERO｜KV strip（方式B：CMS 734,721 H1 ＋ CSS assets/hero.css）。CTAなし・画像と文字のみ -->
-<section class="kv kv--strip is-dark" id="recruit-hero" aria-labelledby="recruit-title" data-cms-id="734,721" data-implementation="B">
-  <div class="kv-wrap kv-head anim-enter">
-    <p class="kv-index"><span class="kv-no">03</span><span>RECRUIT</span><span class="kv-rule" aria-hidden="true"></span><span>採用情報</span></p>
-    <h1 id="recruit-title">次の50年を、<br>あなたとつくる。</h1>
-    <div class="kv-aside"><p class="kv-lead">道路や水道を支える仕事を、この先も続けていくために。今いる社員が積み重ねてきた経験と、新しく加わる人の力をつないでいきたい。まずは、仕事の中身も、働く人も、会社の考え方も知ってください。</p><p class="kv-note">いいところだけではなく、仕事のリアルも伝えます。</p></div>
+<!-- 01 RECRUIT HERO #recruit-hero｜方式B：CMS 734 ＋ 721（2 CTAの重ねが不可ならC） -->
+<section class="page-hero" id="recruit-hero" aria-labelledby="recruit-title" data-cms-id="734,721" data-implementation="B" data-mark="RECRUIT">
+  <span class="lane" aria-hidden="true"></span><div class="page-hero-img" style="background-image:url('../../assets/photos/hero.jpg');background-position:60% 45%" role="img" aria-label="スコップを使って道路の工事をする現場職"></div>
+  <div class="wrap">
+    <p class="eyebrow anim-enter"><span class="line"></span>RECRUIT / YOUR NEXT CHAPTER</p>
+    <h1 id="recruit-title" class="anim-enter" style="--delay:.1s">次の50年を、<br>あなたとつくる。</h1>
+    <p class="lead anim-enter" style="--delay:.2s">道路や水道を支える仕事を、この先も続けていくために。今いる社員が積み重ねてきた経験と、新しく加わる人の力をつないでいきたい。まずは、仕事の中身も、働く人も、会社の考え方も知ってください。</p>
+    <p class="p2-hero-note anim-enter" style="--delay:.25s">いいところだけではなく、仕事のリアルも伝えます。</p>
   </div>
-  <figure class="kv-media anim-enter" style="--delay:.14s"><img src="../../assets/photos/hero.jpg" alt="スコップを使って道路の工事をする現場職" width="1600" height="700" style="object-position:60% 42%" fetchpriority="high"><figcaption>道路の工事を進める現場職</figcaption></figure>
 </section>
 <nav class="breadcrumb" aria-label="パンくずリスト"><ol class="wrap"><li><a href="../index.html">TOP</a></li><li aria-current="page">採用情報</li></ol></nav>
 

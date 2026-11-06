@@ -9,11 +9,10 @@
 <title>事業内容｜株式会社久留米興業</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
 <link rel="stylesheet" href="../assets/theme.css">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="stylesheet" href="../assets/office.css">
-<link rel="stylesheet" href="../assets/hero.css">
 <script defer src="../assets/site.js"></script>
 <script src="../assets/theme/presets.js"></script>
 <script src="../assets/theme/theme.js"></script>
@@ -37,17 +36,13 @@
 </header>
 <main id="main">
 
-<!-- 01 HERO｜KV frame（方式B：CMS 734 H1 ＋ CSS assets/hero.css）。CTAなし・画像と文字のみ -->
-<section class="kv kv--frame" id="business-hero" aria-labelledby="business-title" data-cms-id="734" data-implementation="B">
-  <p class="kv-word" aria-hidden="true">BUSINESS</p>
-  <div class="kv-wrap">
-    <div class="kv-copy anim-enter">
-      <p class="kv-index"><span class="kv-no">02</span><span>OUR BUSINESS</span></p>
-      <p class="kv-eyebrow">事業内容</p>
-      <h1 id="business-title">道路の上も、地面の下も。<br>街の暮らしを支える仕事。</h1>
-      <p class="kv-lead">久留米興業が携わるのは、道路の舗装や水道工事をはじめとした、日々の生活に欠かせないインフラの整備。普段は意識されにくい仕事だからこそ、一つひとつの現場に責任を持って向き合います。</p>
-    </div>
-    <figure class="kv-media anim-enter" style="--delay:.12s"><img src="../assets/photos/hero.jpg" alt="道路の工事でスコップを使って作業する現場職" width="1200" height="800" style="object-position:60% 45%" fetchpriority="high"></figure>
+<!-- 01 BUSINESS HERO｜方式B：CMS 734 H1 Center ＋ CSS（背景写真・左寄せ・オーバーレイはCSSで調整） -->
+<section class="page-hero" id="business-hero" data-mark="BUSINESS" aria-labelledby="business-title" data-cms-id="734" data-implementation="B">
+  <span class="lane" aria-hidden="true"></span><div class="page-hero-img" style="background-image:url('../assets/photos/hero.jpg');background-position:60% 45%" role="img" aria-label="道路の工事でスコップを使って作業する現場職"></div>
+  <div class="wrap">
+    <p class="eyebrow anim-enter"><span class="line"></span>OUR BUSINESS ／ 事業内容</p>
+    <h1 id="business-title" class="anim-enter" style="--delay:.1s">道路の上も、地面の下も。<br>街の暮らしを支える仕事。</h1>
+    <p class="lead anim-enter" style="--delay:.2s">久留米興業が携わるのは、道路の舗装や水道工事をはじめとした、日々の生活に欠かせないインフラの整備。普段は意識されにくい仕事だからこそ、一つひとつの現場に責任を持って向き合います。</p>
   </div>
 </section>
 <nav class="breadcrumb" aria-label="パンくずリスト"><ol class="wrap"><li><a href="../index.html">TOP</a></li><li aria-current="page">事業内容</li></ol></nav>

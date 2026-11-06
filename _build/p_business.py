@@ -2,11 +2,16 @@ from common import *
 
 P = "@R@assets/photos/"
 
-import hero as _kv
-HERO = _kv.frame(sid='business-hero', tid='business-title', no='02', en='OUR BUSINESS', jp='事業内容', img='hero.jpg', alt='道路の工事でスコップを使って作業する現場職', pos='60% 45%', word='BUSINESS', h1='道路の上も、地面の下も。<br>街の暮らしを支える仕事。', lead='久留米興業が携わるのは、道路の舗装や水道工事をはじめとした、日々の生活に欠かせないインフラの整備。普段は意識されにくい仕事だからこそ、一つひとつの現場に責任を持って向き合います。')
-
 BODY = f'''
-{HERO}
+<!-- 01 BUSINESS HERO｜方式B：CMS 734 H1 Center ＋ CSS（背景写真・左寄せ・オーバーレイはCSSで調整） -->
+<section class="page-hero" id="business-hero" aria-labelledby="business-title" data-cms-id="734" data-implementation="B">
+  <div class="page-hero-img" style="background-image:url('{P}hero.jpg');background-position:60% 45%" role="img" aria-label="道路の工事でスコップを使って作業する現場職"></div>
+  <div class="wrap">
+    <p class="eyebrow anim-enter"><span class="line"></span>OUR BUSINESS ／ 事業内容</p>
+    <h1 id="business-title" class="anim-enter" style="--delay:.1s">道路の上も、地面の下も。<br>街の暮らしを支える仕事。</h1>
+    <p class="lead anim-enter" style="--delay:.2s">久留米興業が携わるのは、道路の舗装や水道工事をはじめとした、日々の生活に欠かせないインフラの整備。普段は意識されにくい仕事だからこそ、一つひとつの現場に責任を持って向き合います。</p>
+  </div>
+</section>
 <!--CRUMB-->
 
 <!-- 02 PURPOSE｜方式B：CMS 80 H2 Text ＋ CSS -->

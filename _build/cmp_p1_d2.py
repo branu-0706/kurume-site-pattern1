@@ -5,6 +5,8 @@ from cmp_common import page
 from cmp_copy import P1 as C, PH, TEL, ADDRESS, br, a
 
 
+from cms_hero import top_hero
+
 def head(no, label, ja, h2, hid):
     return (f'<header class="os-head"><p class="os-label"><span class="os-no">{no:02d}</span><span>{label}</span><span class="os-ja">{ja}</span></p>'
             f'<h2 id="{hid}">{br(h2)}</h2></header>')
@@ -13,7 +15,6 @@ def head(no, label, ja, h2, hid):
 def build():
     h, ab, bz, ap, wk, ws, pp, rc, nw, ct = (C[k] for k in ["hero", "about", "business", "approach", "works", "workstyle", "people", "recruit", "news", "contact"])
     fields = "".join(f'<li><a href="{href}"><span>{i+1:02d}</span>{t}</a></li>' for i, (t, d, img, alt, href) in enumerate(bz["items"]))
-    hero_fields = "".join(f'<li><span>{i+1:02d}</span>{t}</li>' for i, (t, d, img, alt, href) in enumerate(bz["items"]))
     rows = "".join(
         f'<tr><td class="os-cell-no">{i+1:02d}</td><th scope="row"><a href="{href}">{t}</a></th><td>{d}</td>'
         + (f'<td class="os-cell-img"><img src="{PH}{img}" alt="{alt}" loading="lazy"></td>' if img else '<td class="os-cell-img"><span class="os-noimg">写真準備中</span></td>')
@@ -26,19 +27,7 @@ def build():
     news = "".join(f'<li><a href="{url}" target="_blank" rel="noopener noreferrer">' + (f'<time datetime="{iso}">{date}</time>' if iso else '<span class="os-nodate" aria-hidden="true"></span>') + f'<span class="os-cat">{cat}</span><span class="os-title">{t}</span><span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a></li>' for iso, date, cat, t, url in nw["items"])
 
     body = f'''
-<!-- 01 HERO #top-hero｜方式B/C：CMS 721/734。左45%に会社と工種、右55%に施工写真。写真に文字を重ねない。CTAなし・画像と文字のみ -->
-<section class="os-hero" id="top-hero" aria-labelledby="hero-title" data-cms-id="721,734" data-implementation="B/C">
-  <div class="c-wrap os-grid">
-    <div class="os-hero-copy os-fade">
-      <p class="os-hero-label">{h["label"]}</p>
-      <h1 id="hero-title">{br(h["h1"])}</h1>
-      <p class="os-lead">{h["lead"]}</p>
-      <dl class="os-hero-facts"><div><dt>設立</dt><dd>1974年</dd></div><div><dt>本社</dt><dd>東京都世田谷区</dd></div><div><dt>対応工事</dt><dd>4分類</dd></div></dl>
-    </div>
-    <figure class="os-hero-photo os-fade"><img src="{PH}{h["img"][0]}" alt="{h["img"][1]}" width="941" height="627"><figcaption>{h["caption"]}</figcaption></figure>
-  </div>
-  <div class="c-wrap"><div class="os-fields"><p>対応工事</p><ul aria-label="対応する工事（4分類）">{hero_fields}</ul></div></div>
-</section>
+{top_hero("top-hero", "hero-title", h["label"], br(h["h1"]), h["lead"], PH + h["img"][0], h["img"][1], cls="is-os")}
 
 <!-- 02 ABOUT / PROFILE #top-about｜方式B：CMS 54 Half ＋ 43 Title All ＋ 22 Table -->
 <section class="os-section" id="top-about" aria-labelledby="about-title" data-cms-id="54,43,22" data-implementation="B">

@@ -83,6 +83,18 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
     }
     await ctx.close();
   }
+  /* ファーストビュー：CMS標準セクション（734 H1 Center／721 Mainvisual）を使い、独自HTML（方式C）にしない。CTA・リンクを置かない */
+  for(const p of PAGES.filter(x=>x!=='compare/index.html')){
+    const html=fs.readFileSync(path.join(ROOT,p),'utf8');
+    const secs=html.match(/<section\b[^>]*>[\s\S]*?<\/section>/g)||[];
+    const fv=secs.find(s=>/<h1\b/.test(s));
+    if(!fv){problems.push(`[${p}] ファーストビュー: H1のあるセクションが見つからない`);continue;}
+    const open=fv.match(/<section\b[^>]*>/)[0];
+    const ids=(open.match(/data-cms-id="([^"]*)"/)||[,''])[1];
+    if(!/\b(734|721)\b/.test(ids))problems.push(`[${p}] ファーストビュー: CMSセクション734／721を使っていない（data-cms-id="${ids}"）`);
+    if(/data-implementation="[^"]*C/.test(open))problems.push(`[${p}] ファーストビュー: 独自HTML（方式C）になっている`);
+    if(/<(a|button)\b/.test(fv))problems.push(`[${p}] ファーストビュー: ボタン・リンクが入っている`);
+  }
   Object.entries(photoUse).forEach(([site,m])=>Object.entries(m).forEach(([f,ps])=>{if(ps.size>1)problems.push(`写真の使い回し（${site}）: ${f} → ${[...ps].join(', ')}`)}));
   await b.close();
   console.log(problems.length?problems.join('\n'):'OK：問題は見つかりませんでした');

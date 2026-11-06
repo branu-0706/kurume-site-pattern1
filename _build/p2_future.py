@@ -2,11 +2,16 @@ from p2common import *
 
 P = "@R@assets/photos/"
 
-import hero as _kv
-HERO = _kv.strip(sid='future-hero', tid='future-title', no='05', en='THE NEXT 50 YEARS', jp='久留米興業の未来', img='field-crew-hq.jpg', alt='歩道の路盤をつくる現場職のチーム', pos='50% 60%', caption='歩道の路盤をつくる現場職のチーム', dark=True, h1='次の50年も、<br>道を直す人がいる会社であるために。', lead='この街に道路があり、水道があり、暮らしが続く限り、それらを支える仕事は必要です。久留米興業が次の世代につないでいきたいものを、お伝えします。')
-
 BODY = f'''
-{HERO}
+<!-- 01 HERO #future-hero｜方式B：CMS 734 ＋ 721 ＋ CSS（上部白地にタイトル、下に大判写真とネイビーの細い帯） -->
+<section class="section p2-people-hero p2-future-hero" id="future-hero" aria-labelledby="future-title" data-cms-id="734,721" data-implementation="B">
+  <div class="wrap">
+    <p class="section-kicker anim-enter">THE NEXT 50 YEARS <span>久留米興業の未来</span></p>
+    <h1 id="future-title" class="p2-h1 anim-enter" style="--delay:.1s">次の50年も、<br>道を直す人がいる会社であるために。</h1>
+    <p class="p2-lead anim-enter" style="--delay:.2s">この街に道路があり、水道があり、暮らしが続く限り、それらを支える仕事は必要です。久留米興業が次の世代につないでいきたいものを、お伝えします。</p>
+  </div>
+  <div class="wrap p2-wide is-band anim-enter" style="--delay:.35s"><img src="{P}field-crew-hq.jpg" alt="歩道の路盤をつくる現場職のチーム" width="927" height="618"></div>
+</section>
 <!--CRUMB-->
 
 <!-- 02 VISION #future-vision｜方式B：CMS 54 Half ＋ 43 Title All -->

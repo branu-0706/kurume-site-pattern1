@@ -258,3 +258,29 @@ body{background:var(--kk-page-bg);color:var(--kk-text)}
 /* 強いブルーグレー面の上は、補助本文の色ではなく本文色を使う（全プリセットで4.5:1以上） */
 .contact-section :is(p,span,small,li,dd){color:var(--kk-text)!important}
 .contact-section :is(.section-kicker,.section-kicker *){color:var(--kk-brand-navy)!important}
+
+/* ── ファーストビュー（TOP）：CMS 734 H1 Center ＋ 721 Mainvisual Responsive Slider。CTAなし・画像と文字のみ。
+   CSSで変えるのは余白・文字サイズ・揃え・写真の高さだけ（セクションの構造は変えない） ── */
+.fv-h1{background:var(--kk-surface-soft);padding:72px 0 52px;text-align:center}
+.fv-h1 .fv-inner{width:min(calc(100% - 80px),var(--content));margin:auto}
+.fv-label{display:inline-flex;align-items:center;gap:14px;margin:0 0 22px;font:600 12px/1.4 var(--en);letter-spacing:.2em;color:var(--kk-brand-blue)}
+.fv-label::before,.fv-label::after{content:"";width:28px;height:3px;background:var(--kk-accent)}
+.fv-h1 h1{word-break:auto-phrase;text-wrap:balance;margin:0 0 22px;font-size:clamp(30px,3.6vw,52px);line-height:1.45;font-weight:800;letter-spacing:.04em;color:var(--kk-brand-navy)}
+.fv-h1 h1 span{color:var(--kk-brand-blue)}
+.fv-lead{max-width:40em;margin:0 auto;font-size:14px;line-height:2.05;color:var(--kk-text)}
+.fv-fields{list-style:none;margin:26px auto 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 0}
+.fv-fields li{padding:0 18px;font-size:13px;font-weight:700;color:var(--kk-brand-navy);border-left:1px solid var(--kk-border)}
+.fv-fields li:first-child{border-left:0}
+.fv-mv{background:var(--kk-surface-soft)}
+.fv-slide{height:clamp(320px,52vh,560px);overflow:hidden}
+.fv-slide img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.fv-h1.is-p2,.fv-mv.is-p2{background:var(--kk-page-bg)}
+@media(max-width:767px){
+  .fv-h1{padding:44px 0 32px}
+  .fv-h1 .fv-inner{width:calc(100% - 38px)}
+  .fv-h1 h1{font-size:clamp(24px,6.6vw,30px)}
+  .fv-lead{font-size:13px;text-align:left}
+  .fv-fields{justify-content:flex-start;gap:6px 0}
+  .fv-fields li{padding:0 12px 0 0;margin-right:12px;font-size:12px}
+  .fv-slide{height:min(56vw,300px);min-height:220px}
+}

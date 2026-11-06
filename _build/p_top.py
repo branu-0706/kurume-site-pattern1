@@ -2,8 +2,8 @@ from common import *
 
 P = "@R@assets/photos/"
 
-import hero as _kv
-HERO = _kv.cover(sid='top', tid='hero-title', en='INFRASTRUCTURE / KURUME KOGYO', img='field-work-street.jpg', alt='重機とともに歩道の路盤をつくる施工中の現場', pos='50% 55%', side='SETAGAYA, TOKYO — SINCE 1974', h1='道路の復旧舗装から、<br>水道・土木工事まで。', lead='世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。')
+from cms_hero import top_hero
+HERO = top_hero('top', 'hero-title', 'INFRASTRUCTURE / KURUME KOGYO', '道路の復旧舗装から、<br>水道・土木工事まで。', '世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。', P + 'field-work-street.jpg', '重機とともに歩道の路盤をつくる施工中の現場', cls='is-p1')
 
 BODY = f'''
 {HERO}

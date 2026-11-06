@@ -229,30 +229,9 @@
 }
 @media(prefers-reduced-motion:reduce){.ha-scene{animation:none}.js .ha-fig.reveal img,.js .ha-fig.reveal figcaption{opacity:1;transform:none;transition:none}}
 
-/* ── 11/06 KV改訂：CTAなし・画像と文字のみ。中央揃えをやめ、見出しを左、読み物を右に置く誌面構成 ── */
-.ha-hero{position:relative;overflow:hidden}
-.ha-hero::before{content:"50";position:absolute;right:-.04em;top:-.12em;font:700 clamp(220px,30vw,460px)/1 var(--en);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px var(--kk-navy-16);pointer-events:none}
-.ha-hero-copy{position:relative;max-width:none;margin:0 0 64px;text-align:left;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px 72px;align-items:end}
-.ha-hero-label{grid-column:1/-1;display:flex;align-items:center;gap:16px;margin:0}
-.ha-hero-label::before{content:"";width:44px;height:3px;background:var(--kk-accent)}
-.ha-hero h1{margin:0;font-size:clamp(2.3rem,4.4vw,5rem);line-height:1.28}
-.ha-hero-lead{margin:0 0 18px;font-size:15.5px;max-width:none}
-.ha-hero-copy .ha-chips{grid-column:2;justify-content:flex-start;margin:0;gap:4px 18px;padding-top:16px;border-top:1px solid var(--kk-border)}
-.ha-hero-copy .ha-hero-lead{grid-column:2;grid-row:2}
-.ha-hero-copy h1{grid-row:2 / span 2;align-self:end}
-.ha-chips li{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--kk-brand-navy)}
-.ha-chips li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--kk-accent)}
-.ha-scene img{box-shadow:0 30px 60px -40px var(--kk-navy-shadow)}
-@media(max-width:900px){
-  .ha-hero-copy{grid-template-columns:1fr;gap:20px}
-  .ha-hero-copy .ha-chips,.ha-hero-copy .ha-hero-lead,.ha-hero-copy h1{grid-column:1;grid-row:auto}
-  .ha-hero::before{font-size:200px;top:auto;bottom:-.1em}
-}
-.ha-hero-copy{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.ha-hero-copy h1{grid-column:1/-1;grid-row:2;word-break:auto-phrase}
-.ha-hero-copy .ha-hero-lead{grid-column:1;grid-row:3;margin:0}
-.ha-hero-copy .ha-chips{grid-column:2;grid-row:3;align-self:start;margin-top:6px}
-@media(max-width:900px){
-  .ha-hero-copy{grid-template-columns:1fr;gap:20px}
-  .ha-hero-copy h1,.ha-hero-copy .ha-hero-lead,.ha-hero-copy .ha-chips{grid-column:1;grid-row:auto}
-}
+/* ファーストビュー（734＋721）：中央揃えの大見出し、写真は本文幅 */
+.fv-h1.is-ha{padding:88px 0 56px}
+.fv-h1.is-ha h1{font-size:clamp(2.2rem,4.2vw,4.4rem);font-weight:700;line-height:1.35}
+.fv-mv.is-ha{background:linear-gradient(180deg,var(--kk-surface) 0 60%,var(--kk-surface-soft) 60%);padding-bottom:64px}
+.fv-mv.is-ha .fv-slide{max-width:var(--wrap);margin-inline:auto}
+@media(max-width:767px){.fv-h1.is-ha{padding:44px 0 28px}.fv-mv.is-ha{padding-bottom:32px}}

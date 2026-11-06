@@ -2,11 +2,18 @@ from p2common import *
 
 P = "@R@assets/photos/"
 
-import hero as _kv
-HERO = _kv.strip(sid='company-hero', tid='company-title', no='06', en='COMPANY', jp='会社情報', img='entrance.jpg', alt='「(株)久留米興業」の看板が掲げられた本社の敷地入口', pos='45% 55%', caption='東京都世田谷区北烏山の本社', h1='人とのつながりを大切に、<br>街の当たり前を支えていく。', lead='1974年の設立以来、道路や水道など暮らしに欠かせない工事を担ってきました。久留米興業の歩みと、会社としての考え方をお伝えします。')
-
 BODY = f'''
-{HERO}
+<!-- 01 HERO #company-hero｜方式B：CMS 734 ＋ 721（白基調・社屋写真が主役） -->
+<section class="section p2-company-hero" id="company-hero" aria-labelledby="company-title" data-cms-id="734,721" data-implementation="B">
+  <div class="wrap half" style="grid-template-columns:1fr 1.1fr">
+    <div class="half-copy">
+      <p class="section-kicker anim-enter">COMPANY <span>会社情報</span></p>
+      <h1 id="company-title" class="p2-h1 anim-enter" style="--delay:.1s">人とのつながりを大切に、<br>街の当たり前を支えていく。</h1>
+      <p class="p2-lead anim-enter" style="--delay:.2s">1974年の設立以来、道路や水道など暮らしに欠かせない工事を担ってきました。久留米興業の歩みと、会社としての考え方をお伝えします。</p>
+    </div>
+    <div class="half-media anim-enter" style="--delay:.25s"><img src="{P}entrance.jpg" alt="「(株)久留米興業」の看板が掲げられた本社の敷地入口" width="1046" height="698"></div>
+  </div>
+</section>
 <!--CRUMB-->
 
 <!-- 02 MESSAGE #company-message｜方式B：CMS 54 Half ＋ 43。取引先・地域・社員に向けた会社としての言葉 -->

@@ -2,11 +2,16 @@ from common import *
 
 P = "@R@assets/photos/"
 
-import hero as _kv
-HERO = _kv.frame(sid='environment-hero', tid='env-title', no='04', en='WORK ENVIRONMENT', jp='労働環境', img='office.jpg', alt='事務所で打ち合わせをする久留米興業の社員たち', pos='55% 40%', word='WORKSTYLE', h1='働く毎日を、<br>きちんと知ってほしい。', lead='道路や水道を支える仕事は、現場の状況や季節によって大変さも変わります。久留米興業が考える働き方、営業職と現場職の違い、仕事を続けるための取り組みをご紹介します。')
-
 BODY = f'''
-{HERO}
+<!-- 01 WORK STYLE HERO｜方式B：CMS 734 H1 Center ＋ CSS -->
+<section class="page-hero" id="environment-hero" aria-labelledby="env-title" data-cms-id="734" data-implementation="B">
+  <div class="page-hero-img" style="background-image:url('{P}office.jpg');background-position:55% 40%" role="img" aria-label="事務所で打ち合わせをする久留米興業の社員たち"></div>
+  <div class="wrap">
+    <p class="eyebrow anim-enter"><span class="line"></span>WORK ENVIRONMENT ／ 労働環境</p>
+    <h1 id="env-title" class="anim-enter" style="--delay:.1s">働く毎日を、<br>きちんと知ってほしい。</h1>
+    <p class="lead anim-enter" style="--delay:.2s">道路や水道を支える仕事は、現場の状況や季節によって大変さも変わります。久留米興業が考える働き方、営業職と現場職の違い、仕事を続けるための取り組みをご紹介します。</p>
+  </div>
+</section>
 <!--CRUMB-->
 
 <!-- 02 OUR APPROACH｜方式B：CMS 54 Half ＋ 80 H2 Text ＋ CSS -->

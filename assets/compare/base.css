@@ -63,3 +63,26 @@ html.mode-review .review-note{display:block}
 .js .reveal.is-visible{opacity:1}
 @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1!important;transition:none!important}*,*::before,*::after{animation:none!important;transition:none!important}}
 @media print{.js .reveal{opacity:1!important}.mode-bar,.cmp-switcher{display:none!important}}
+
+/* ── ファーストビュー（TOP）：CMS 734 H1 Center ＋ 721 Mainvisual Responsive Slider。CTAなし・画像と文字のみ。
+   各デザインのCSSで変えるのは余白・文字サイズ・揃え・写真の高さだけ ── */
+.fv-h1{background:var(--kk-surface);padding:72px 0 52px;text-align:center}
+.fv-h1 .fv-inner{width:100%;max-width:calc(var(--wrap) + 48px);margin-inline:auto;padding-inline:max(24px,env(safe-area-inset-left,0px)) max(24px,env(safe-area-inset-right,0px))}
+.fv-label{display:inline-flex;align-items:center;gap:14px;margin:0 0 22px;font:700 12px/1.4 var(--en);letter-spacing:.22em;color:var(--kk-brand-navy)}
+.fv-label::before{content:"";width:28px;height:3px;background:var(--kk-accent)}
+.fv-h1 h1{word-break:auto-phrase;text-wrap:balance;margin:0 0 22px;font-size:clamp(2rem,3.8vw,3.4rem);line-height:1.4;font-weight:800;color:var(--kk-brand-navy)}
+.fv-lead{max-width:40em;margin:0 auto;font-size:16px;line-height:2;color:var(--kk-text)}
+.fv-fields{list-style:none;margin:26px auto 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 0}
+.fv-fields li{padding:0 18px;font-size:14px;font-weight:700;color:var(--kk-brand-navy);border-left:1px solid var(--kk-border)}
+.fv-fields li:first-child{border-left:0}
+.fv-mv{background:var(--kk-surface)}
+.fv-slide{height:clamp(320px,56vh,600px);overflow:hidden}
+.fv-slide img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+@media(max-width:767px){
+  .fv-h1{padding:40px 0 28px}
+  .fv-h1 h1{font-size:clamp(1.55rem,6.8vw,2rem)}
+  .fv-lead{font-size:14px;text-align:left}
+  .fv-fields{justify-content:flex-start;gap:6px 0}
+  .fv-fields li{padding:0 12px 0 0;margin-right:12px;font-size:12.5px}
+  .fv-slide{height:min(60vw,320px);min-height:220px}
+}
