@@ -38,7 +38,8 @@ BODY = f'''
 <!-- 04 CHANGES IN PRACTICE #top-change｜方式B：CMS 42 Card Three ＋ CSS（淡いネイビー背景・装飾数字） -->
 <section class="section p2-tint" id="top-change" aria-labelledby="change-title" data-cms-id="42" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">CHANGES IN PRACTICE <span>働き方の見直し</span></p><h2 class="section-title" id="change-title">守るために、<br>変えるという選択。</h2></div><p class="section-heading-desc">昔からのやり方を続けるだけでは、働く人も仕事も守り続けられない。久留米興業では、現場の経験を持つ代表が、働き方の見直しに向き合ってきました。</p></div>
+    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">CHANGES IN PRACTICE <span>働き方の見直し</span></p><h2 class="section-title" id="change-title">守るために、<br>変えるという選択。</h2></div><p class="section-heading-desc">昔のやり方のままでは、働く人も仕事も守れない。現場を知る代表が、働き方の見直しに向き合ってきました。</p></div>
+    <figure class="p2-shot reveal"><img src="{P}office-aisle.jpg" alt="資料を確認しながら仕事を進める事務所の社員" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-3 p2-num-cards">
       <article class="info-card reveal"><span class="p2-bignum" aria-hidden="true">01</span><h3>勤務時間を見直す</h3><p>定時を意識し、残業時間を管理することから働き方を見直してきました。</p></article>
       <article class="info-card is-blue reveal" data-delay="1"><span class="p2-bignum" aria-hidden="true">02</span><h3>現場の負担を分け合う</h3><p>一人だけに無理を集中させず、人員の配置にも目を向けています。</p></article>

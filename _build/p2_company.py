@@ -38,8 +38,9 @@ BODY = f'''
   <div class="wrap">
     <div class="lead-block reveal">
       <div><p class="section-kicker">OUR PRINCIPLES <span>大切にしていること</span></p><h2 class="section-title" id="phil-title">仕事も、会社も、<br>人とのつながりから。</h2></div>
-      <div class="body"><p>現場では、一人ひとりの役割と、周囲との連携が必要です。取引先や協力会社、地域の方々との関係も、その仕事を支えています。久留米興業は、互いの立場を理解し、一つひとつの仕事を誠実に進める姿勢を大切にしてきました。</p></div>
+      <div class="body"><p>互いの立場を理解し、一つひとつの仕事を誠実に進める。その姿勢を大切にしてきました。</p></div>
     </div>
+    <figure class="p2-shot reveal"><img src="{P}pickaxe.jpg" alt="土の上に置かれたつるはし" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-3 p2-line-cards gate" data-gate="編集上の案：正式な経営理念があれば原文を優先" style="margin-top:40px">
       <article class="info-card reveal"><small>01</small><h3>人とのつながり</h3><p>仕事を任せてくださる方、現場を支える方、地域で暮らす方。多くの人との関係を大切にして仕事を進めます。</p></article>
       <article class="info-card reveal" data-delay="1"><small>02</small><h3>目の前の仕事に責任を持つ</h3><p>現場の安全や段取りに目を向け、職種が違っても必要な情報をつなぎ、確かな施工を積み重ねます。</p></article>
@@ -53,8 +54,9 @@ BODY = f'''
   <div class="wrap">
     <div class="lead-block reveal">
       <div><p class="section-kicker">HISTORY <span>会社の歩み</span></p><h2 class="section-title" id="ch-title">1974年から、<br>この街で仕事を続けてきた。</h2></div>
-      <div class="body"><p>久留米興業は、1974年3月4日に設立されました。道路舗装や水道、公共インフラの工事を通して、地域の暮らしに関わる仕事を続けています。今も必要とされる工事を担いながら、次の世代へ何を残していくかを考えています。</p></div>
+      <div class="body"><p>1974年3月4日の設立以来、道路舗装や水道など、地域の暮らしに関わる工事を続けています。</p></div>
     </div>
+    <figure class="p2-shot reveal"><img src="{P}wheelbarrow-close.jpg" alt="土を積んだ一輪車とカラーコーン" loading="lazy" width="1600" height="1066"></figure>
     <ol class="p2-timeline is-compact reveal">
       <li><span class="when">1974.03</span><div><h3>株式会社久留米興業 設立</h3><p>3月4日設立。</p></div></li>
       <li class="is-sub"><span class="when">2018.10</span><div><h3>関連会社 KRM株式会社 設立</h3><p>10月30日設立。久留米興業とは別の会社です。</p></div></li>
@@ -88,8 +90,9 @@ BODY = f'''
   <div class="wrap">
     <div class="lead-block reveal">
       <div><p class="section-kicker">GROUP COMPANY <span>関連会社</span></p><h2 class="section-title" id="group-title">工事の現場を、<br>資材の面からも支える。</h2></div>
-      <div class="body"><p>久留米興業の関連会社であるKRM株式会社は、世田谷区北烏山に拠点を置き、道路工事に用いるアスファルト合材や再生砕石などの販売、残土やアスファルトガラなどの受け入れを行っています。道路を整える仕事と、それに必要な資材を扱う仕事。それぞれの役割から、地域の建設・舗装の現場を支えています。</p></div>
+      <div class="body"><p>関連会社のKRM株式会社は、同じ北烏山の敷地で、道路工事に使う資材の販売と、工事で出る残土やアスファルトガラなどの受け入れを行っています。</p></div>
     </div>
+    <figure class="p2-shot reveal"><img src="{P}yard-krm-loaders.jpg" alt="KRMのホイールローダーと重機が並ぶ敷地" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-3" style="margin-top:36px">
       <div class="info-card reveal"><small>COMPANY</small><h3>KRM株式会社</h3><p>〒157-0061 東京都世田谷区北烏山6丁目26-28（久留米興業 敷地内）<br>設立：2018年10月30日<br>代表取締役：川島 和範</p></div>
       <div class="info-card is-blue reveal" data-delay="1"><small>取り扱い例</small><h3>道路工事の資材</h3><p>再生密粒アスファルト合材、再生砕石、改良土、川砂</p></div>

@@ -295,3 +295,4 @@ body{background:var(--kk-page-bg);color:var(--kk-text)}
   .fv-fields li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--kk-accent)}
 }
 @media(max-width:767px){.fv-copy{width:calc(100% - 38px)}}
+.section-title,.p2-h1{word-break:auto-phrase}

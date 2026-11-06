@@ -82,9 +82,10 @@ BODY = f'''
       <div class="half-copy">
         <p class="section-kicker">COLLABORATION <span>役割のつながり</span></p>
         <h2 class="section-title" id="collab-title">一つの工事を、<br>ひとりでは進められない。</h2>
-        <p>工事には、取引先の相談を受けて現場の状況を確認する人、必要な人員や材料・日程を調整する人、現場で安全に作業を進める人、書類や連絡を支える人が関わります。担当する仕事は違っても、同じ工事の完成を目指して情報をつないでいく。その連携が、久留米興業の仕事の基盤です。</p>
+        <p>相談を受ける人、段取りを組む人、現場で施工する人、書類や連絡を支える人。担当は違っても、同じ工事の完成に向けて情報をつないでいます。</p>
       </div>
     </div>
+    <figure class="p2-shot reveal"><img src="{P}office-floor-back.jpg" alt="営業や事務の社員が並んで働く事務所" loading="lazy" width="1600" height="1066"></figure>
     <div class="p2-relation reveal" role="list">
       <div class="p2-relation-core" aria-hidden="true">工事</div>
       <div class="p2-relation-item" role="listitem"><small>01</small><h3>取引先・依頼内容</h3><p>工事の相談、工期・場所の条件</p></div>
@@ -100,9 +101,10 @@ BODY = f'''
 <section class="section bg-soft" id="people-real" aria-labelledby="real-title" data-cms-id="787,43" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">REALITY <span>仕事の実際</span></p><h2 class="section-title" id="real-title">働く姿を、<br>きれいな言葉だけにしない。</h2></div>
+    <figure class="p2-shot reveal"><img src="{P}worker-back-towel.jpg" alt="タオルを巻いたヘルメット姿で作業する現場職の後ろ姿" loading="lazy" width="1600" height="1066"></figure>
     <div class="text-two p2-duo reveal">
-      <article class="p2-duo-card"><small>営業の現実</small><p>現場で起こることを知るには、机の上だけでは足りません。先輩との同行、現地調査、取引先・現場社員との対話を通じて、日々の段取りを覚えていきます。実際の社員は、何が分からないのかも分からなかった時期や、現場の人との関わり方に悩んだ経験も語っています。</p></article>
-      <article class="p2-duo-card gate" data-gate="休憩の取得状況と会社の改善策を確認してから確定"><small>現場の現実</small><p>毎日決められた作業を終える責任があり、暑さ・夜間作業などの負担もあります。休憩に余裕を感じられない日があるという声も出ています。慣れないうちは、班長や先輩の動きを見て聞きながら覚えていきます。会社は今後も働く人の負担を見直していく必要があります。</p></article>
+      <article class="p2-duo-card"><small>営業の現実</small><p>先輩との同行や現地調査、取引先・現場社員との対話を通じて段取りを覚えます。最初は何が分からないのかも分からなかった、と話す社員もいます。</p></article>
+      <article class="p2-duo-card gate" data-gate="休憩の取得状況と会社の改善策を確認してから確定"><small>現場の現実</small><p>暑さや夜間作業などの負担があり、休憩に余裕を感じられない日があるという声もあります。慣れないうちは、班長や先輩に聞きながら覚えていきます。</p></article>
     </div>
     <p class="fine-note">働き方や負担は、職種、担当業務、現場の状況によって異なります。実際の勤務条件は募集要項をご確認ください。</p>
     <div class="cta-row reveal"><a class="btn btn-dark" href="@P2@recruit/index.html#recruit-roles">営業・現場それぞれの仕事内容 <span aria-hidden="true">→</span></a><a class="text-link" href="@P2@recruit/index.html#recruit-reality">働き方と条件を見る <span aria-hidden="true">→</span></a></div>

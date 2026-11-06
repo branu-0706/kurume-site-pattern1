@@ -241,3 +241,9 @@
 @media(max-width:767px){[data-structure="p2"] .hero h1{font-size:calc((100vw - 52px) / 13.2)}}
 [data-structure="p2"] .half-media img{height:auto;aspect-ratio:4/3;object-fit:cover}
 [data-structure="p2"] .half-media.is-portrait img{aspect-ratio:4/5}
+
+/* 11/06 写真追加：文字の多いセクションに横長の写真を1枚（同じ写真はサイト内で1回だけ） */
+[data-structure="p2"] .p2-shot{margin:40px 0 0;overflow:hidden;background:var(--kk-primary)}
+[data-structure="p2"] .p2-shot img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;display:block}
+[data-structure="p2"] .navy-band .p2-shot{margin-top:36px}
+@media(max-width:767px){[data-structure="p2"] .p2-shot{margin:28px -19px 0}[data-structure="p2"] .p2-shot img{aspect-ratio:4/3}}

@@ -16,7 +16,7 @@ const SITES={
 const PAGES=Object.values(SITES).flat();
 const SITE_OF=Object.fromEntries(Object.entries(SITES).flatMap(([k,ps])=>ps.map(p=>[p,k])));
 // 同じ元写真のトリミング違い（別ファイルでも同じ写真として扱う）
-const ALIAS={'ceo.jpg':'ceo-wide.jpg','field-sidewalk2.jpg':'field-team-back.jpg','office-pc-wide.jpg':'office-pc.jpg'};
+const ALIAS={'office-staff-closeup-03.jpg':'member-i.jpg','ceo.jpg':'ceo-wide.jpg','field-sidewalk2.jpg':'field-team-back.jpg','office-pc-wide.jpg':'office-pc.jpg'};
 const WIDTHS=(process.env.QA_WIDTHS||'1440,1024,768,390,320').split(',').map(Number);
 const fs=require('fs'),path=require('path');
 const ROOT=process.env.QA_ROOT||process.cwd();

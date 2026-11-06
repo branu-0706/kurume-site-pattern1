@@ -69,7 +69,7 @@ BODY = f'''
     <div class="lead-block reveal">
       <div><p class="section-kicker">MESSAGE FROM THE REPRESENTATIVE <span>代表から</span></p><h2 class="section-title" id="msg-title">最初から、<br>何でもできなくていい。</h2><p class="p2-sub">大切なのは、自分で考え、周りと関わりながら進んでいくこと。</p></div>
       <div class="body">
-        <p class="gate-hide-review">現場から管理・経営まで経験してきた川島代表。未経験者に最初から完成した姿を求めるのではなく、考えて行動する姿勢や、周りと協力して仕事を覚える過程を大切にしています。会社としても、働く人の負担や教育のあり方を見直し続ける考えです。</p>
+        <p class="gate-hide-review">現場から経営まで経験してきた川島代表が大切にしているのは、考えて行動する姿勢と、周りと協力して仕事を覚える過程です。</p>
         <div class="review-only gate" data-gate="代表一人称の草稿：本人承認後に、上の三人称の紹介文と差し替え">
           <p>私は18歳で久留米興業に入り、現場の見習いから仕事を始めました。若い頃は働き方に悩み、一度会社を離れた経験もあります。その後、現場や管理の仕事を重ね、経営する立場になってから、会社を続けていくことと、働く人を大切にすることを両方考えるようになりました。</p>
           <p>久留米興業の仕事は、道路や水道など、暮らしの当たり前を支えることです。必要な仕事だからこそ、次の人へ技術や経験を渡しながら続けていかなければなりません。</p>
@@ -80,6 +80,7 @@ BODY = f'''
         <a class="text-link" href="@P2@about/index.html#about-representative">川島代表の歩みを読む <span aria-hidden="true">→</span></a>
       </div>
     </div>
+    <figure class="p2-shot reveal"><img src="{P}office-team-wide.jpg" alt="社員が机を並べて働く事務所の全景" loading="lazy" width="1600" height="1066"></figure>
     <p class="review-note">代表の写真は、同じ写真を別ページで使い回さないため、このセクションでは載せていません（代表の写真はTOP・会社について・働くスタッフ・会社情報で、それぞれ別の写真を使用）。</p>
   </div>
 </section>
@@ -149,7 +150,8 @@ BODY = f'''
 <!-- 06 WORK REALITY #recruit-reality｜方式B：CMS 787 Text Two ＋ 42 Card Three ＋ 22 Table -->
 <section class="section" id="recruit-reality" aria-labelledby="reality-title" data-cms-id="787,42,22" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">THE REALITY OF WORK <span>仕事のリアル</span></p><h2 class="section-title" id="reality-title">大変なことも、<br>知ったうえで選んでほしい。</h2><p class="section-heading-desc" style="max-width:760px">久留米興業は働き方を見直してきました。しかし、道路工事の現場や取引先との仕事には、今も忙しさや責任があります。働く時間の考え方だけでなく、職種ごとに異なる実態を伝えます。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">THE REALITY OF WORK <span>仕事のリアル</span></p><h2 class="section-title" id="reality-title">大変なことも、<br>知ったうえで選んでほしい。</h2><p class="section-heading-desc" style="max-width:760px">働き方は見直してきましたが、今も忙しさや責任はあります。職種ごとの実態をお伝えします。</p></div>
+    <figure class="p2-shot reveal"><img src="{P}wheelbarrow-legs.jpg" alt="一輪車で土を運ぶ現場職の足元" loading="lazy" width="1600" height="1066"></figure>
     <dl class="p2-reality reveal">
       <div><dt><small>営業職</small>時間外の連絡</dt><dd>工事の状況によって、夜間や休日に連絡が必要になることがあります。</dd></div>
       <div><dt><small>現場職</small>早い開始と暑さ</dt><dd>現場の開始が早いことや、夏場の暑さなど、体力的な負担があります。</dd></div>
@@ -164,7 +166,8 @@ BODY = f'''
 <!-- 07 BENEFITS #recruit-benefits｜方式B：CMS 42 Card Three ＋ 22 Table Border Light -->
 <section class="section bg-soft" id="recruit-benefits" aria-labelledby="benefit-title" data-cms-id="42,22" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">BENEFITS &amp; WORK LIFE <span>制度と暮らし</span></p><h2 class="section-title" id="benefit-title">仕事の時間だけでなく、<br>その先の暮らしも。</h2></div><p class="section-heading-desc">資格取得の支援や住居に関する制度など、長く働くうえで気になることがあります。どんな制度があり、誰が利用できるのか。募集条件と合わせて、具体的にご案内します。</p></div>
+    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">BENEFITS &amp; WORK LIFE <span>制度と暮らし</span></p><h2 class="section-title" id="benefit-title">仕事の時間だけでなく、<br>その先の暮らしも。</h2></div><p class="section-heading-desc">資格取得や住まいなど、長く働くための制度をご案内します。</p></div>
+    <figure class="p2-shot reveal"><img src="{P}office-desk-row.jpg" alt="書類棚と複合機が並ぶ事務所" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-3">
       <article class="info-card reveal"><small>資格取得支援</small><h3>現場や仕事に必要な資格の取得を支援</h3><p>現場職は資格取得の費用を会社が全額負担します。営業職では、入社後に1級土木施工管理技士を取得した社員もいます。</p><a class="mini-link" href="#recruit-offerings">対象職種を見る <b aria-hidden="true">↓</b></a></article>
       <article class="info-card reveal" data-delay="1"><small>休日・休暇</small><h3>職種ごとに休日の考え方が違います</h3><p>営業職は土日祝休み。現場職は第2土曜・日曜・祝日に加えて、GW・夏季・年末年始に連休があります。</p><a class="mini-link" href="#recruit-offerings">募集要項で確認する <b aria-hidden="true">↓</b></a></article>
@@ -179,7 +182,8 @@ BODY = f'''
 <!-- 08 EMPLOYEE VOICES #recruit-voices｜方式B：CMS 42 Card Three（営業）＋ 787 Text Two（現場）。人物写真は働くスタッフのページで掲載 -->
 <section class="section" id="recruit-voices" aria-labelledby="rvoice-title" data-cms-id="42,787" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">REAL EMPLOYEE STORIES <span>社員の声</span></p><h2 class="section-title" id="rvoice-title">「この会社なら働けるか」を、<br>社員の話から考える。</h2></div><p class="section-heading-desc">入社した理由、覚えるまでに大変だったこと、続けてきた理由。同じ会社でも答えは一人ひとり違います。久留米興業で働く人たちの経験をご紹介します。</p></div>
+    <div class="section-heading section-heading-split reveal"><div><p class="section-kicker">REAL EMPLOYEE STORIES <span>社員の声</span></p><h2 class="section-title" id="rvoice-title">「この会社なら働けるか」を、<br>社員の話から考える。</h2></div><p class="section-heading-desc">入社した理由も、大変だったことも、一人ひとり違います。</p></div>
+    <figure class="p2-shot reveal"><img src="{P}asphalt-rubble.jpg" alt="はがしたアスファルトの塊" loading="lazy" width="1600" height="1066"></figure>
     <p class="p2-group-label reveal">営業職</p>
     <div class="card-grid is-3">
       <a class="link-card no-media reveal" href="{BLOG_NEGISHI}" target="_blank" rel="noopener noreferrer"><div class="lc-body"><small>根岸さん｜お茶の営業から、道路工事の現場代理人へ</small><h3>知らない業界に飛び込み、工事を動かす立場へ。</h3><p>お茶の営業から転職し、最初は工事の知識も分からなかった根岸さん。仕事を通じて現場を学び、1級土木施工管理技士を取得。今では公共工事の現場代理人として、協力会社との調整などを担っています。</p><span class="mini-link">インタビュー全文を読む <b aria-hidden="true">↗</b></span></div><span class="sr-only">（外部サイトが開きます）</span></a>
@@ -187,7 +191,7 @@ BODY = f'''
       <a class="link-card no-media reveal" href="{BLOG_IMAI}" target="_blank" rel="noopener noreferrer" data-delay="2"><div class="lc-body"><small>今井さん｜広告業界から、土木の調整役へ</small><h3>知識がないからこそ、現場に足を運んだ。</h3><p>広告業界から転職し、工事の知識がなく戸惑った今井さん。現場の職人から厳しい指摘を受けたこともありましたが、足を運んで話を聞き、段取りや情報共有の方法を学んできました。</p><span class="mini-link">インタビュー全文を読む <b aria-hidden="true">↗</b></span></div><span class="sr-only">（外部サイトが開きます）</span></a>
     </div>
     <p class="p2-group-label reveal">現場職</p>
-    <p class="p2-duo-lead reveal">現場は楽な仕事ではありません。夏の暑さや限られた作業時間もあります。それでも、役割を分け、分からないことは聞きながら、毎日の仕事を積み重ねている人がいます。</p>
+    <p class="p2-duo-lead reveal">楽な仕事ではありません。それでも、役割を分け、聞きながら、毎日の仕事を積み重ねている人がいます。</p>
     <div class="text-two p2-duo reveal gate" data-gate="対談の要約：本人の掲載承認待ち">
       <article class="p2-duo-card"><small>松野さん｜班長・現場を支えてきたベテラン</small><h3>言葉が多くなくても、班の動きを見ている。</h3><p>班長として役割分担を考え、現場全体の進み具合を見ながら作業を進める松野さん。新人には最初から全部を求めず、現場に出て少しずつ覚えてほしいと話しています。</p></article>
       <article class="p2-duo-card"><small>奥居さん｜建築から土木へ、現場で学んできた</small><h3>まず見て、聞いて、できる仕事を増やしてきた。</h3><p>建築工事の経験を経て久留米興業の土木現場へ。班長の仕事を見ながら覚え、分からないことは聞き、仲間と1日の仕事を終わらせてきた経験を話しています。</p></article>
@@ -199,7 +203,8 @@ BODY = f'''
 <!-- 09 CAREER #recruit-career｜方式B：CMS 761 Flow Cards ×2 ＋ 54 Half -->
 <section class="section bg-soft" id="recruit-career" aria-labelledby="career-title" data-cms-id="761,54" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">CAREER &amp; GROWTH <span>キャリア</span></p><h2 class="section-title" id="career-title">同じスタートでなくても、<br>成長の道はつくっていける。</h2><p class="section-heading-desc" style="max-width:760px">久留米興業では、最初から大きな仕事を任せるのではなく、経験に応じてできる仕事を増やしていく考えです。営業職と現場職、それぞれに必要な知識や役割は違います。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">CAREER &amp; GROWTH <span>キャリア</span></p><h2 class="section-title" id="career-title">同じスタートでなくても、<br>成長の道はつくっていける。</h2><p class="section-heading-desc" style="max-width:760px">経験に応じて、できる仕事を少しずつ増やしていきます。</p></div>
+    <figure class="p2-shot reveal"><img src="{P}yard-machines.jpg" alt="資材置き場に並ぶ重機と運搬車" loading="lazy" width="1600" height="1066"></figure>
     <div class="p2-career reveal">
       <div class="p2-career-col"><h3>営業職</h3><ol>
         <li><b>最初</b><p>先輩への同行、現場と取引先の理解。</p><small>評価：覚える姿勢、勤務態度、報告・連絡・相談</small></li>
@@ -221,7 +226,8 @@ BODY = f'''
 <!-- 11 OPEN POSITIONS #recruit-offerings｜方式B：CMS 22 Table Border Light ×2 ＋ 23 Btn。職種ごとに別表 -->
 <section class="section" id="recruit-offerings" aria-labelledby="open-title" data-cms-id="22,23" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">OPEN POSITIONS <span>募集要項</span></p><h2 class="section-title" id="open-title">働く条件を、曖昧にしない。</h2><p class="section-heading-desc" style="max-width:760px">仕事内容や会社の考え方に興味を持っていただいたら、勤務条件も必ずご確認ください。営業職・現場職ごとに、給与、休日、勤務地、必要資格をまとめています。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">OPEN POSITIONS <span>募集要項</span></p><h2 class="section-title" id="open-title">働く条件を、曖昧にしない。</h2><p class="section-heading-desc" style="max-width:760px">職種ごとの給与・休日・勤務地・必要資格です。</p></div>
+    <figure class="p2-shot reveal"><img src="{P}asphalt-rubble-track.jpg" alt="重機のキャタピラとアスファルトガラ" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-2">
       <article class="link-card no-media reveal p2-offer" id="offer-sales">
         <div class="lc-body"><small>SALES</small><h3>営業職（法人営業）</h3>
