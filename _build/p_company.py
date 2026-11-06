@@ -92,7 +92,7 @@ BODY = f'''
     <div class="half-media"><div class="photo-slot review-only"><div><strong>C-04 KRMの敷地・資材・プラント</strong>社名が確認できる横長写真を受領後に配置</div></div><div class="pattern-art gate-hide-review" style="aspect-ratio:4/3"><span>KRM CO., LTD.</span></div></div>
     <figure class="sec-shot reveal"><img src="{P}material-shed.jpg" alt="砂や再生砕石を保管する資材置き場の上屋" loading="lazy" width="1600" height="1066"></figure>
     <div class="half-copy"><p class="section-kicker">GROUP / AFFILIATED COMPANY <span>関連会社</span></p><h2 class="section-title" id="krm-title">街の工事を、<br>資材の面からも支える。</h2>
-      <p>久留米興業と同じ世田谷区北烏山の敷地内には、関連会社のKRM株式会社があります。KRMでは、再生アスファルト合材や再生砕石などの販売、残土・アスファルトガラ・コンクリートガラなどの受け入れを行っています。</p>
+      <p>同じ敷地内の関連会社KRM株式会社では、再生アスファルト合材や再生砕石の販売と、残土やガラの受け入れを行っています。</p>
       <p>現場で必要とされる工事と、その工事に関わる資材。二つの仕事を知ることで、道路や土木に関わる仕事の幅広さを感じられます。</p>
       <table class="spec-table gate" data-gate="KRMの会社情報：公開前に最新照合" style="font-size:12.5px;margin:6px 0 22px"><tbody><tr><th scope="row">社名</th><td>KRM株式会社（関連会社）</td></tr><tr><th scope="row">設立</th><td>2018年10月30日</td></tr><tr><th scope="row">所在地</th><td>久留米興業と同所</td></tr><tr><th scope="row">代表者</th><td>代表取締役　川島 和範</td></tr></tbody></table>
       {ext(KRM, 'KRM株式会社のサイトへ <span aria-hidden="true">↗</span>', 'btn btn-dark')}</div>

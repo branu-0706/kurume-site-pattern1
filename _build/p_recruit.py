@@ -91,12 +91,12 @@ BODY = f'''
     <div class="section-heading reveal"><p class="section-kicker">BEFORE YOU APPLY <span>応募前の不安と、実際のところ</span></p><h2 class="section-title" id="anx-title">その不安、<br>社員の言葉と制度でお答えします。</h2><p class="section-heading-desc" style="max-width:720px">建設業への転職でよく聞く不安に、実際に働く社員の言葉と会社の制度でお答えします。良いことだけでなく、大変なことも隠しません。</p></div>
     <figure class="sec-shot reveal"><img src="{P}shovel-grip.jpg" alt="軍手でスコップの柄を握る手元" loading="lazy" width="1600" height="1066"></figure>
     <div class="anx-grid">
-      <article class="anx reveal"><div class="anx-q"><small>不安 01</small><p>未経験で、本当についていける？</p></div><div class="anx-a"><small>実際は</small><h3>営業の多くは異業種から。現場は「カラーコーンを並べる」ところから始めます。</h3><p>営業職の3名は、お茶の営業、広告代理店、土木と関係のない専攻からの入社です。最初は先輩への同行から。現場職は道具の名前や安全ルール、資材準備や清掃など、取り組みやすい仕事から覚えます。</p><blockquote>例えば、カラーコーンを並べるとか、そういうところからでもいいんです。自分もそうでした。<cite>— 奥居さん（現場職・建築から転職）</cite></blockquote><a class="anx-link" href="#recruit-first">入社後の最初の1か月を見る ↓</a></div></article>
+      <article class="anx reveal"><div class="anx-q"><small>不安 01</small><p>未経験で、本当についていける？</p></div><div class="anx-a"><small>実際は</small><h3>営業の多くは異業種から。現場は「カラーコーンを並べる」ところから始めます。</h3><p>営業職の3名は、いずれも土木と関係のない経歴から入社。最初は先輩への同行から始めます。現場職も、道具の名前や安全ルールなど身近な仕事から覚えます。</p><blockquote>例えば、カラーコーンを並べるとか、そういうところからでもいいんです。自分もそうでした。<cite>— 奥居さん（現場職・建築から転職）</cite></blockquote><a class="anx-link" href="#recruit-first">入社後の最初の1か月を見る ↓</a></div></article>
       <article class="anx reveal" data-delay="1"><div class="anx-q"><small>不安 02</small><p>職人さんや先輩が怖そう…</p></div><div class="anx-a"><small>実際は</small><h3>「見た目は怖い。でも話すと優しい人が多い」と、社員自身が話しています。</h3><p>入社したばかりの頃は、社長や先輩が先に声をかけてくれた、という声があります。現場では、分からないことは聞けば答えてもらえます。</p><blockquote>社長や先輩たちが本当によく見てくれていて、悩む前に『大丈夫か？』と声をかけてくれた。<cite>— 高畑さん（営業職・新卒入社）</cite></blockquote><a class="anx-link" href="@R@people/index.html">働くメンバーを見る ↗</a></div></article>
-      <article class="anx reveal"><div class="anx-q"><small>不安 03</small><p>建設業は休みが少ないのでは？</p></div><div class="anx-a"><small>実際は</small><h3>営業職は土日祝休み・年間休日130日。現場職は第2土曜・日曜・祝日と長期休暇。</h3><p>現場職はGW・夏季・年末年始に、それぞれ6〜9日程度の連休があります。営業の社員は、仕事帰りにジムへ通うなど自分の時間も大切にしています。代表自身、休みの少なさから一度会社を離れた経験があり、働き方の見直しを進めてきました。</p><a class="anx-link" href="@R@work-environment/index.html#environment-roles">職種ごとの休日を見る ↗</a></div></article>
+      <article class="anx reveal"><div class="anx-q"><small>不安 03</small><p>建設業は休みが少ないのでは？</p></div><div class="anx-a"><small>実際は</small><h3>営業職は土日祝休み・年間休日130日。現場職は第2土曜・日曜・祝日と長期休暇。</h3><p>現場職はGW・夏季・年末年始に6〜9日程度の連休。代表自身の経験から、働き方の見直しを進めてきました。</p><a class="anx-link" href="@R@work-environment/index.html#environment-roles">職種ごとの休日を見る ↗</a></div></article>
       <article class="anx reveal" data-delay="1"><div class="anx-q"><small>不安 04</small><p>転職で、給料が下がらない？</p></div><div class="anx-a"><small>実際は</small><h3>営業職は月給32万円以上、現場職は日給14,000円から。雨の日も早上がりの日も日給は全額です。</h3><p>現場職は各種手当を含めて、初月から月収35万円以上を目指せます。営業職の年収500万円は「入社すれば自動的に」ではなく、任される仕事が増えた先の目標です。</p><a class="anx-link" href="#recruit-income">評価と収入を見る ↓</a></div></article>
-      <article class="anx reveal"><div class="anx-q"><small>不安 05</small><p>営業はノルマに追われる？</p></div><div class="anx-a"><small>実際は</small><h3>新規開拓の飛び込み営業や、個人ノルマはありません。</h3><p>既存の取引先から工事の相談を受け、現場を確認し、見積や段取りを整えるのが中心です。評価するのは売上だけでなく、約束や期限を守ること、正確な書類、取引先や現場と協力して仕事を進めることです。</p><blockquote>やる気さえあれば、どんなバックグラウンドの人でも必ず活躍できる世界ですよ。<cite>— 根岸さん（営業職から現場代理人・異業種から転職）</cite></blockquote></div></article>
-      <article class="anx is-honest reveal" data-delay="1"><div class="anx-q"><small>不安 06</small><p>現場は体力的にきつい？</p></div><div class="anx-a"><small>正直に言うと</small><h3>楽な仕事ではありません。だから、負担を分ける仕組みを整えています。</h3><p>夏の暑さ、月4回程度の夜勤、その日の作業をその日のうちに終わらせる厳しさがあります。作業量が多く、休憩の余裕を感じにくい日もあると班長も話しています。会社としては、人を増やして一人あたりの負担を減らし、早く終わった日は早く帰れるようにしています。</p><blockquote>最初から何でもできる必要はありません。……焦ってやらないで、長く続けてもらえればいいんじゃないですか。<cite>— 松野さん（現場の班長・約30年）</cite></blockquote><a class="anx-link" href="@R@work-environment/index.html#environment-honest">大変なことと会社の対応を見る ↗</a></div></article>
+      <article class="anx reveal"><div class="anx-q"><small>不安 05</small><p>営業はノルマに追われる？</p></div><div class="anx-a"><small>実際は</small><h3>新規開拓の飛び込み営業や、個人ノルマはありません。</h3><p>既存の取引先からの相談を受け、現場確認・見積・段取りを整えるのが中心。売上だけでなく、約束や期限を守ることも評価します。</p><blockquote>やる気さえあれば、どんなバックグラウンドの人でも必ず活躍できる世界ですよ。<cite>— 根岸さん（営業職から現場代理人・異業種から転職）</cite></blockquote></div></article>
+      <article class="anx is-honest reveal" data-delay="1"><div class="anx-q"><small>不安 06</small><p>現場は体力的にきつい？</p></div><div class="anx-a"><small>正直に言うと</small><h3>楽な仕事ではありません。だから、負担を分ける仕組みを整えています。</h3><p>夏の暑さや月4回程度の夜勤があり、休憩の余裕を感じにくい日もあります。人を増やして負担を減らし、早く終わった日は早く帰れるようにしています。</p><blockquote>最初から何でもできる必要はありません。……焦ってやらないで、長く続けてもらえればいいんじゃないですか。<cite>— 松野さん（現場の班長・約30年）</cite></blockquote><a class="anx-link" href="@R@work-environment/index.html#environment-honest">大変なことと会社の対応を見る ↗</a></div></article>
       <article class="anx reveal"><div class="anx-q"><small>不安 07</small><p>資格がないと難しい？</p></div><div class="anx-a"><small>実際は</small><h3>入社時に必要なのは普通自動車免許（AT限定可）だけ。資格は入社後に取れます。</h3><p>現場職は、免許や施工管理技士などの取得費用を会社が全額負担します。営業職でも、会社がテキストを用意し、先輩が実務に即して教える中で、1級土木施工管理技士を取った社員がいます。</p></div></article>
       <article class="anx reveal" data-delay="1"><div class="anx-q"><small>不安 08</small><p>いきなり面接は緊張する</p></div><div class="anx-a"><small>実際は</small><h3>履歴書不要のカジュアル面談や、15分からの電話面談ができます。</h3><p>「仕事内容をもっと詳しく知ってから判断したい」という方のための場です。会社のこと、取引の実績、将来の年収モデルをお話しします。遠方の方には、鍵付きの個室寮もあります。</p><a class="anx-link" href="#recruit-flow">選考の流れを見る ↓</a></div></article>
     </div>
@@ -175,11 +175,11 @@ BODY = f'''
 <!-- 04 GROWTH & INCOME｜方式B：CMS 787 Text Two ＋ 22 Table -->
 <section class="section bg-soft" id="recruit-income" aria-labelledby="income-title" data-cms-id="787,22" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">GROWTH &amp; INCOME <span>評価と収入</span></p><h2 class="section-title" id="income-title">年数だけではなく、<br>できるようになった仕事を見ていく。</h2><p class="section-heading-desc" style="max-width:700px">入社直後からいきなり成果を求めることはありません。仕事を覚える段階に合わせて、評価のポイントも変わっていきます。特に大切にしているのは、「現場で何か困っていないか」「次に何が必要になるのか」と周囲に目を向け、言われる前に気づいて動けることです。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">GROWTH &amp; INCOME <span>評価と収入</span></p><h2 class="section-title" id="income-title">年数だけではなく、<br>できるようになった仕事を見ていく。</h2><p class="section-heading-desc" style="max-width:700px">入社直後から成果は求めません。大切にしているのは、周囲に目を向け、言われる前に気づいて動けることです。</p></div>
     <figure class="sec-shot reveal"><img src="{P}office-staff-pc.jpg" alt="パソコンに向かって作業する事務所の社員" loading="lazy" width="1600" height="1066"></figure>
     <div class="text-two reveal">
-      <div class="info-card"><small>SALES</small><h3>営業職：年収500万円は、成長の先にある目標</h3><p>未経験でも月給32万円以上からスタート。ただし、入社すれば自動的に年収500万円になるわけではありません。取引先と一人で打ち合わせができる、見積を作成できる、材料や協力会社を手配できる、資格を取る。そうした仕事ができるようになるほど、評価される範囲が広がり、その先に年収500万円という目標があります。</p></div>
-      <div class="info-card is-blue"><small>FIELD WORK</small><h3>現場職：資格とできる作業が、収入につながる</h3><p>未経験でも日給14,000円から。各種手当を含めて初月から月収35万円以上を目指せます。資格を取り、できる作業が増えれば資格手当や昇給に反映。未経験で入社して3年で資格を取り、年収を100万円以上上げた先輩もいます。</p></div>
+      <div class="info-card"><small>SALES</small><h3>営業職：年収500万円は、成長の先にある目標</h3><p>未経験でも月給32万円以上からスタート。打ち合わせ・見積・手配・資格など、できる仕事が増えるほど評価が広がり、その先に年収500万円という目標があります。</p></div>
+      <div class="info-card is-blue"><small>FIELD WORK</small><h3>現場職：資格とできる作業が、収入につながる</h3><p>未経験でも日給14,000円から。手当を含めて初月から月収35万円以上を目指せます。資格を取れば手当や昇給に反映されます。</p></div>
     </div>
     <div class="table-wrap reveal gate" data-gate="求人票（2026-11-05）記載のモデル例。内訳の確認推奨" style="margin-top:40px">
       <table class="spec-table"><caption class="caption" style="caption-side:top;text-align:left;margin-bottom:8px">現場職の年収モデル例（経験・資格・担当により異なります）</caption>
@@ -212,7 +212,7 @@ BODY = f'''
     <figure class="sec-shot reveal"><img src="{P}boom-sky.jpg" alt="社名の入った重機のアーム" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-2">
       <article class="link-card reveal" style="background:#f4f6f8" id="opening-sales">
-        <div class="lc-body"><small>SALES</small><h3>営業職（法人営業）</h3><p>道路舗装や水道工事が予定どおり進むように、取引先・現場社員・協力会社をつなぐ仕事です。新規開拓の飛び込み営業や個人ノルマはありません。取引先から工事の相談を受け、現場を確認し、見積を作成し、必要な人・材料・日程を整えます。</p>
+        <div class="lc-body"><small>SALES</small><h3>営業職（法人営業）</h3><p>取引先・現場社員・協力会社をつなぎ、工事を予定どおり進める仕事です。飛び込み営業や個人ノルマはありません。</p>
           <table class="spec-table" style="font-size:12.5px;margin-bottom:18px"><tbody>
             <tr><th scope="row">雇用形態</th><td>正社員</td></tr>
             <tr><th scope="row">勤務地</th><td>東京都世田谷区北烏山6-26-28<br>京王線「千歳烏山駅」徒歩15分／自転車・バイク通勤OK</td></tr>
@@ -226,7 +226,7 @@ BODY = f'''
           {ext(SALES_JOB, '営業職に応募する <span aria-hidden="true">↗</span>', 'btn btn-dark')}</div>
       </article>
       <article class="link-card reveal" style="background:#f4f6f8" id="opening-field" data-delay="1">
-        <div class="lc-body"><small>FIELD WORK</small><h3>現場職（建設作業員・土木作業員）</h3><p>東京都内、主に世田谷区周辺の道路舗装工事・水道工事の現場作業です。道具・資材の準備、カラーコーンや規制材の設置、古い舗装の撤去、路盤の整地、アスファルト舗装や転圧の補助、安全確認や誘導など。資格や習熟度に応じて重機・車両の運転も担当します。</p>
+        <div class="lc-body"><small>FIELD WORK</small><h3>現場職（建設作業員・土木作業員）</h3><p>主に世田谷区周辺の道路舗装・水道工事の現場作業です。準備や舗装の撤去、整地、舗装の補助などから始め、資格に応じて重機の運転も担当します。</p>
           <table class="spec-table" style="font-size:12.5px;margin-bottom:18px"><tbody>
             <tr><th scope="row">雇用形態</th><td>正社員</td></tr>
             <tr><th scope="row">勤務地</th><td>本社集合（東京都世田谷区北烏山6-26-28）後、各現場へ</td></tr>

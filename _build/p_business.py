@@ -140,7 +140,7 @@ BODY = f'''
 <!-- 09 PEOPLE / CROSS-LINK｜方式B：CMS 42 Card Three ＋ 90 Btn Text -->
 <section class="section bg-blueish" id="business-people" aria-labelledby="cross-title" data-cms-id="42,90" data-implementation="B">
   <div class="wrap">
-    <div class="section-heading reveal"><p class="section-kicker">THE PEOPLE BEHIND OUR WORK</p><h2 class="section-title" id="cross-title">街を支える仕事の先に、<br>一人ひとりの未来がある。</h2><p class="section-heading-desc" style="max-width:640px">道路や水道を支える仕事は、経験や技術を積み重ねることで、任される役割も広がっていきます。どんな人が働き、どのような環境で仕事をしているのか。久留米興業の「人」と「働き方」も、ぜひ知ってください。</p></div>
+    <div class="section-heading reveal"><p class="section-kicker">THE PEOPLE BEHIND OUR WORK</p><h2 class="section-title" id="cross-title">街を支える仕事の先に、<br>一人ひとりの未来がある。</h2><p class="section-heading-desc" style="max-width:640px">経験を積むほど、任される役割は広がります。久留米興業の「人」と「働き方」もご覧ください。</p></div>
     <figure class="sec-shot reveal"><img src="{P}compactor-shovel.jpg" alt="締固め機とスコップで路盤を整える二人の現場職" loading="lazy" width="1600" height="1066"></figure>
     <div class="card-grid is-3">
       <a class="link-card no-media reveal" href="@R@people/index.html"><div class="lc-body"><small>PEOPLE</small><h3>働くメンバー</h3><p>どんな人たちが、日々の現場を支えているのか。</p><span class="mini-link">働くメンバーを見る <b aria-hidden="true">↗</b></span></div></a>
