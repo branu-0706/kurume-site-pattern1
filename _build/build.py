@@ -35,3 +35,6 @@ for _path, _mod, _key in [("compare/pattern1/design-b/index.html", cmp_p1_d3, "p
 
 # 1画面で切り替える比較ページ（16画面への入口）
 write("compare/index.html", open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "hub.html")).read(), "hub")
+
+import p3_build
+p3_build.build(OUT)
