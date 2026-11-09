@@ -51,3 +51,4 @@ a{color:inherit}
 .ft p{margin:0}
 @media(max-width:960px){.hd nav{display:none}.hd .ct{margin-left:auto}.biz{grid-template-columns:1fr 1fr}.p3-half,.p3-contact .wrap{grid-template-columns:1fr}.p3-half.is-rev>img{order:0}}
 @media(max-width:767px){:root{--hh:68px}.wrap{width:calc(100% - 40px)}.hd .wm{display:none}.sec{padding:72px 0}.biz{gap:16px}.biz-item h3{font-size:15px}.p3-half{gap:28px}}
+html.in-hub .p3-bar{display:none}

@@ -64,7 +64,10 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
         const ids=new Set([...document.querySelectorAll('[id]')].map(e=>e.id));
         const badA=[...document.querySelectorAll('a[href^="#"]')].map(a=>a.getAttribute('href').slice(1)).filter(h=>h&&!ids.has(h));
         const links=[...document.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')).filter(h=>!/^(https?:|mailto:|tel:|#)/.test(h));
-        return {photos,low:[...new Set(low)],banned,overflow:sw>cw,broken,badA,links,h1:document.querySelectorAll('h1').length};
+        // 下層ページの見出し：写真を横に置く型で、文字が写真に食い込んでいないか
+        const overlap=[];document.querySelectorAll('.page-hero').forEach(h=>{const im=h.querySelector('.page-hero-img');if(!im||getComputedStyle(im).position!=='absolute')return;const ir=im.getBoundingClientRect(),hr=h.getBoundingClientRect();if(ir.left-hr.left<100)return;
+          h.querySelectorAll('.wrap>*').forEach(e=>{const er=e.getBoundingClientRect();if(er.width&&er.right>ir.left+2)overlap.push((e.textContent||'').trim().slice(0,16))})});
+        return {photos,low:[...new Set(low)],banned,overflow:sw>cw,broken,badA,links,overlap,h1:document.querySelectorAll('h1').length};
       },{BANNED,deep});
       if(w===1440){
         const seen={};r.photos.map(f=>ALIAS[f]||f).forEach(f=>{seen[f]=(seen[f]||0)+1;});
@@ -80,6 +83,7 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
       if(r.overflow)problems.push(`${pre} 横スクロールあり`);
       if(r.broken.length)problems.push(`${pre} 画像切れ: ${r.broken.join(' ')}`);
       if(r.badA.length)problems.push(`${pre} ページ内リンク切れ: ${r.badA.join(' ')}`);
+      if(r.overlap.length)problems.push(`${pre} 見出しの文字が写真に重なる: ${r.overlap.join(' / ')}`);
       if(r.h1!==1)problems.push(`${pre} H1が${r.h1}個`);
       errs.forEach(e=>problems.push(`${pre} ${e}`));
       await pg.close();

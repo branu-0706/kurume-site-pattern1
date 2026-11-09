@@ -31,7 +31,7 @@ html[data-pattern="p3"] .section-title,html[data-pattern="p3"] .page-hero h1{fon
 [data-design="p3-c"] .page-hero{background:var(--site-yellow);color:#1A2259;min-height:520px}
 [data-design="p3-c"] .page-hero-img{inset:0 0 0 46%}
 [data-design="p3-c"] .page-hero .lane{display:none}
-[data-design="p3-c"] .page-hero .wrap>*{max-width:min(520px,42vw)}
+[data-design="p3-c"] .page-hero .wrap>*,[data-design="p3-c"] .page-hero p.lead{max-width:min(480px,calc(46vw - 96px))}
 [data-design="p3-c"] .page-hero h1{font-size:clamp(28px,3vw,44px);color:#1A2259}
 [data-design="p3-c"] .page-hero :is(.eyebrow,.eyebrow *,.lead,p){color:#1A2259!important}
 [data-design="p3-c"] .page-hero .eyebrow .line{background:#1A2259}
@@ -52,7 +52,13 @@ html[data-pattern="p3"] .section-title,html[data-pattern="p3"] .page-hero h1{fon
   [data-design="p3-b"] .page-hero-img{width:calc(100% - 38px);height:62vw}
   [data-design="p3-c"] .page-hero{flex-direction:column;min-height:0}
   [data-design="p3-c"] .page-hero-img{position:relative;inset:auto;order:-1;width:100%;height:62vw}
-  [data-design="p3-c"] .page-hero .wrap>*{max-width:none}
+  [data-design="p3-c"] .page-hero .wrap>*,[data-design="p3-c"] .page-hero p.lead{max-width:none}
   [data-design="p3-c"] .sec-shot img,[data-design="p3-c"] .half-media img{box-shadow:8px 8px 0 var(--site-yellow)}
 }
 [data-pattern="p3"] main>section{overflow-x:clip}
+/* 第3パターンの切替バー（下層ページでも同じ見た目）。比較ページの中で開いた時は、左の操作と重なるので出さない */
+.p3-bar{background:var(--kk-text);color:var(--kk-surface);font-size:12px;padding:8px 0}
+.p3-bar .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.p3-bar a{color:var(--kk-surface)}
+.p3-bar a[aria-current]{font-weight:800;text-decoration:none;border-bottom:2px solid var(--kk-accent)}
+html.in-hub .p3-bar{display:none}
