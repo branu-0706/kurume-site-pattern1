@@ -153,3 +153,7 @@ main :is(a,figure,.half-media,.business-card,.link-card,.work-card,.person-card,
 .page-hero:hover .page-hero-img{filter:none}
 @media (hover:none){main img:not([src*="logo"]):not([src*="map"]),.page-hero-img{filter:grayscale(1) contrast(1.08) brightness(1.04)}}
 .page-hero:hover .page-hero-img,.fv-ink .fv-pics img:hover{filter:none!important}
+
+/* メインビジュアル（TOPの721・下層のヒーロー）は基本カラー（2026-11-09）。白黒は本文の写真だけ */
+.fv-ink .fv-pics img,.page-hero .page-hero-img,.page-hero-img,[data-structure="p2"] .p2-people-hero .p2-wide img,[data-structure="p2"] .p2-company-hero .half-media img{filter:none!important}
+.fv-ink .fv-pics::after,.page-hero .page-hero-img::after{background:transparent}

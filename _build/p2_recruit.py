@@ -43,7 +43,7 @@ def faq_jsonld():
 BODY = f'''
 <!-- 01 RECRUIT HERO #recruit-hero｜方式B：CMS 734 ＋ 721（2 CTAの重ねが不可ならC） -->
 <section class="page-hero" id="recruit-hero" aria-labelledby="recruit-title" data-cms-id="734,721" data-implementation="B" data-mark="RECRUIT">
-  <div class="page-hero-img" style="background-image:url('{P}hero.jpg');background-position:60% 45%" role="img" aria-label="スコップを使って道路の工事をする現場職"></div>
+  <div class="page-hero-img" style="background-image:url('{P}wheelbarrow-legs.jpg');background-position:50% 55%" role="img" aria-label="一輪車で土を運ぶ現場職の足元"></div>
   <div class="wrap">
     <p class="eyebrow anim-enter"><span class="line"></span>RECRUIT / YOUR NEXT CHAPTER</p>
     <h1 id="recruit-title" class="anim-enter" style="--delay:.1s">次の50年を、<br>あなたとつくる。</h1>
@@ -141,7 +141,7 @@ BODY = f'''
 <section class="section" id="recruit-reality" aria-labelledby="reality-title" data-cms-id="787,42,22" data-implementation="B">
   <div class="wrap">
     <div class="section-heading reveal"><p class="section-kicker">THE REALITY OF WORK <span>仕事のリアル</span></p><h2 class="section-title" id="reality-title">大変なことも、<br>知ったうえで選んでほしい。</h2><p class="section-heading-desc" style="max-width:760px">働き方は見直してきましたが、今も忙しさや責任はあります。職種ごとの実態をお伝えします。</p></div>
-    <figure class="p2-shot reveal"><img src="{P}wheelbarrow-legs.jpg" alt="一輪車で土を運ぶ現場職の足元" loading="lazy" width="1600" height="1066"></figure>
+    <figure class="p2-shot reveal"><img src="{P}hero.jpg" alt="スコップを使って道路の工事をする現場職" loading="lazy" width="1600" height="1066"></figure>
     <dl class="p2-reality reveal">
       <div><dt><small>営業職</small>時間外の連絡</dt><dd>工事の状況によって、夜間や休日に連絡が必要になることがあります。</dd></div>
       <div><dt><small>現場職</small>早い開始と暑さ</dt><dd>現場の開始が早いことや、夏場の暑さなど、体力的な負担があります。</dd></div>
