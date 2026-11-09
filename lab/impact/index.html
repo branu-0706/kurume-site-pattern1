@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ファーストビュー インパクト検証</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Barlow+Condensed:wght@600;700&family=Noto+Sans+JP:wght@500;700;800;900&display=swap">
+<link rel="stylesheet" href="../../assets/theme.css">
+<style>
+/* 検証用ページ：本番には読み込まない。各案とも「721 Mainvisual（写真1枚）＋キャッチ」の構成で、違いはCSSだけ。 */
+:root{--en:"Barlow",Arial,sans-serif;--cond:"Barlow Condensed","Barlow",Arial,sans-serif;--jp:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--jp);color:var(--kk-text);background:var(--kk-page-bg);font-feature-settings:"palt" 1;line-height:1.7}
+img{display:block;max-width:100%}
+.wrap{width:min(calc(100% - 48px),1180px);margin-inline:auto}
+
+/* 検証ページの案内 */
+.lab-intro{padding:40px 0 28px;background:var(--kk-surface);border-bottom:1px solid var(--kk-border)}
+.lab-intro h1{margin:0 0 10px;font-size:24px;color:var(--kk-brand-navy)}
+.lab-intro p{margin:0 0 6px;font-size:14px;max-width:62em}
+.lab-toc{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.lab-toc a{display:inline-block;padding:6px 12px;border:1px solid var(--kk-brand-navy);color:var(--kk-brand-navy);font-size:13px;font-weight:700;text-decoration:none}
+.lab-toc a:hover{background:var(--kk-brand-navy);color:var(--kk-surface)}
+.lab-note{background:var(--kk-surface);border-top:4px solid var(--kk-accent);padding:22px 0 26px}
+.lab-note .wrap{display:grid;grid-template-columns:200px 1fr;gap:8px 32px}
+.lab-note h2{margin:0;font-size:20px;color:var(--kk-brand-navy);line-height:1.4}
+.lab-note h2 small{display:block;font:700 12px/1.6 var(--en);letter-spacing:.2em;color:var(--kk-brand-blue)}
+.lab-note dl{margin:0;display:grid;grid-template-columns:7em 1fr;gap:4px 14px;font-size:13.5px}
+.lab-note dt{font-weight:700;color:var(--kk-brand-navy)}
+.lab-note dd{margin:0}
+
+/* 擬似ヘッダー（実寸の高さで確認するため） */
+.mock-header{height:76px;background:var(--kk-surface);border-bottom:1px solid var(--kk-border);display:flex;align-items:center}
+.mock-header .wrap{display:flex;align-items:center;gap:24px}
+.mock-header img{width:64px;height:40px;object-fit:contain}
+.mock-header nav{margin-left:auto;display:flex;gap:20px;font-size:12px;font-weight:700}
+.mock-header b{background:var(--kk-brand-navy);color:var(--kk-surface);font-size:11px;padding:12px 16px}
+@media(max-width:860px){.mock-header nav{display:none}.mock-header b{margin-left:auto}}
+
+/* 共通：721 Mainvisual 1枚 */
+.mv{position:relative;overflow:hidden;isolation:isolate;height:calc(100svh - 76px);min-height:560px;max-height:860px;background:var(--kk-brand-navy)}
+.mv>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.mv h2{margin:0;font-weight:900;letter-spacing:.04em;line-height:1.3;word-break:auto-phrase;text-wrap:balance}
+.mv .sub{margin:0;font-weight:700}
+
+/* A 帯：写真はそのまま。紺の帯にキャッチ */
+.mv-a>img{object-position:50% 40%}
+.mv-a .band{position:absolute;left:0;bottom:64px;background:var(--kk-brand-navy);color:var(--kk-surface);padding:34px 56px 34px max(24px,calc((100vw - 1180px)/2));max-width:min(860px,92vw)}
+.mv-a .band::before{content:"";position:absolute;left:0;top:0;width:100%;height:6px;background:var(--kk-accent)}
+.mv-a h2{font-size:clamp(30px,4.4vw,64px)}
+.mv-a .sub{margin-top:14px;font-size:clamp(13px,1.2vw,16px);color:var(--kk-surface)}
+
+/* B 区画線：ライムの太帯（路面標示の発想）に紺の文字。破線で道路を表す */
+.mv-b>img{object-position:50% 55%}
+.mv-b .lane{position:absolute;left:0;right:0;bottom:12%;background:var(--kk-accent);color:var(--kk-brand-navy);padding:28px 0 30px}
+.mv-b .lane::before,.mv-b .lane::after{content:"";position:absolute;left:0;right:0;height:8px;background:repeating-linear-gradient(90deg,var(--kk-surface) 0 72px,transparent 72px 120px)}
+.mv-b .lane::before{top:-22px}.mv-b .lane::after{bottom:-22px}
+.mv-b h2{font-size:clamp(28px,4.2vw,62px)}
+.mv-b .sub{font-size:clamp(13px,1.2vw,16px);margin-top:8px}
+
+/* C 巨大文字：写真の下に紺の面。キャッチを画面幅いっぱいの大きさで */
+.mv-c{display:grid;grid-template-rows:1fr auto;background:var(--kk-brand-navy)}
+.mv-c>img{position:static;grid-row:1;height:100%;min-height:0;object-position:50% 12%}
+.mv-c .base{grid-row:2;color:var(--kk-surface);padding:26px 0 30px;border-top:6px solid var(--kk-accent)}
+.mv-c h2{font-size:clamp(34px,7.2vw,112px);line-height:1.12;letter-spacing:.02em}
+.mv-c .sub{margin-top:12px;font-size:clamp(13px,1.2vw,16px);display:flex;flex-wrap:wrap;gap:6px 22px}
+.mv-c .sub span::before{content:"";display:inline-block;width:8px;height:8px;margin-right:8px;background:var(--kk-accent);vertical-align:middle}
+
+/* D 縦書き：手書き看板に呼応する縦組みのキャッチ（構成②向け） */
+.mv-d{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);background:var(--kk-page-bg)}
+.mv-d>img{position:static;grid-column:2;height:100%;object-position:50% 30%}
+.mv-d .tate{grid-column:1;grid-row:1;display:flex;justify-content:center;align-items:center;gap:clamp(18px,3vw,44px);padding:40px 24px;color:var(--kk-brand-navy)}
+.mv-d h2{writing-mode:vertical-rl;font-size:clamp(34px,4.6vw,72px);line-height:1.5;letter-spacing:.14em;text-wrap:initial}
+.mv-d .sub{writing-mode:vertical-rl;font-size:15px;letter-spacing:.24em;color:var(--kk-text);padding-top:3em;border-right:3px solid var(--kk-accent);padding-right:12px}
+.mv-d .year{position:absolute;left:24px;bottom:20px;font:700 clamp(56px,8vw,128px)/.8 var(--cond);color:transparent;-webkit-text-stroke:1.5px var(--kk-brand-navy);opacity:.5}
+
+/* E 数字：1974を大きく。紺の面に年号とキャッチ、写真は右側に大きく */
+.mv-e>img{object-position:50% 50%}
+.mv-e .panel{position:absolute;left:0;top:0;bottom:0;width:min(46%,620px);background:var(--kk-brand-navy);color:var(--kk-surface);display:flex;flex-direction:column;justify-content:center;padding:40px 48px 40px max(24px,calc((100vw - 1180px)/2))}
+.mv-e .num{font:700 clamp(96px,13vw,200px)/.82 var(--cond);letter-spacing:-.01em;color:var(--kk-accent)}
+.mv-e .num small{display:block;margin-top:14px;font:600 13px/1.4 var(--en);letter-spacing:.3em;color:var(--kk-surface)}
+.mv-e h2{margin-top:30px;font-size:clamp(26px,3vw,46px)}
+.mv-e .sub{margin-top:12px;font-size:14px}
+
+@media(max-width:767px){
+  .lab-note .wrap{grid-template-columns:1fr}
+  .mv{height:auto;min-height:0;max-height:none}
+  .mv-a{min-height:620px}.mv-a .band{bottom:24px;padding:24px 20px;max-width:none;right:16px}
+  .mv-b{min-height:600px}.mv-b .lane{padding:20px 0 22px}
+  .mv-c>img{height:56vw;min-height:260px}
+  .mv-d{grid-template-columns:1fr}.mv-d>img{grid-column:1;grid-row:1;height:70vw}.mv-d .tate{grid-row:2;padding:32px 16px 40px}.mv-d .year{display:none}
+  .mv-e{display:flex;flex-direction:column}.mv-e>img{position:static;height:60vw}.mv-e .panel{position:static;width:auto;padding:28px 20px 32px}.mv-e h2{margin-top:20px}
+}
+</style>
+</head>
+<body>
+<header class="lab-intro"><div class="wrap">
+  <h1>ファーストビュー インパクト検証（テスト用・非公開）</h1>
+  <p>参考サイトの「インパクトの出し方」を、久留米興業の素材（社名入りの重機、街の中の資材置き場、手書きの看板、道路）に置き換えた5案です。</p>
+  <p>どの案も <b>CMS 721 Mainvisual（写真1枚・CTAなし）</b> にキャッチを載せる構成で、違いはCSSだけです。キャッチは検証用の仮の文言です。</p>
+  <ul class="lab-toc"><li><a href="#a">A 帯</a></li><li><a href="#b">B 区画線</a></li><li><a href="#c">C 巨大文字</a></li><li><a href="#d">D 縦書き</a></li><li><a href="#e">E 数字</a></li></ul>
+</div></header>
+
+<section class="lab-note" id="a"><div class="wrap"><h2><small>PATTERN A</small>帯</h2><dl><dt>インパクト源</dt><dd>写真を暗くせず、そのままの色で画面いっぱいに。文字は紺の帯にまとめ、写真を隠さない。</dd><dt>写真</dt><dd>社名入りの重機のアーム（空）</dd><dt>向き</dt><dd>構成①（法人・会社理解）</dd></dl></div></section>
+<div class="mock-header"><div class="wrap"><img src="../../assets/kurume-logo.png" alt=""><nav><span>会社について</span><span>事業内容</span><span>採用情報</span><span>会社情報</span></nav><b>お問い合わせ</b></div></div>
+<section class="mv mv-a" data-cms-id="721"><img src="../../assets/photos/boom-sky.jpg" alt="社名の入った重機のアーム">
+  <div class="band"><h2>この街の道を、<br>次の50年へ。</h2><p class="sub">世田谷で1974年から。復旧舗装・水道・土木・下水道工事。</p></div>
+</section>
+
+<section class="lab-note" id="b"><div class="wrap"><h2><small>PATTERN B</small>区画線</h2><dl><dt>インパクト源</dt><dd>ライムを「路面標示」の帯として大きく使う。白い破線で道路を表し、紺の太い文字を載せる。</dd><dt>写真</dt><dd>住宅街の中の資材置き場（見下ろし）</dd><dt>向き</dt><dd>構成①・②どちらも</dd></dl></div></section>
+<div class="mock-header"><div class="wrap"><img src="../../assets/kurume-logo.png" alt=""><nav><span>会社について</span><span>事業内容</span><span>採用情報</span><span>会社情報</span></nav><b>お問い合わせ</b></div></div>
+<section class="mv mv-b" data-cms-id="721"><img src="../../assets/photos/yard-overhead.jpg" alt="重機と資材が並ぶ北烏山の資材置き場">
+  <div class="lane"><div class="wrap"><h2>毎日通る道の、その下まで。</h2><p class="sub">道路の復旧舗装から、水道・土木・下水道工事まで。</p></div></div>
+</section>
+
+<section class="lab-note" id="c"><div class="wrap"><h2><small>PATTERN C</small>巨大文字</h2><dl><dt>インパクト源</dt><dd>キャッチを画面幅いっぱいの大きさに。写真と文字を上下に分け、どちらも隠さない。</dd><dt>写真</dt><dd>社名入りの重機の後ろ姿</dd><dt>向き</dt><dd>構成①（法人・会社理解）</dd></dl></div></section>
+<div class="mock-header"><div class="wrap"><img src="../../assets/kurume-logo.png" alt=""><nav><span>会社について</span><span>事業内容</span><span>採用情報</span><span>会社情報</span></nav><b>お問い合わせ</b></div></div>
+<section class="mv mv-c" data-cms-id="721"><img src="../../assets/photos/excavator-rear-name.jpg" alt="社名の入った重機の後部">
+  <div class="base"><div class="wrap"><h2>道路の上も、地面の下も。</h2><p class="sub"><span>ガス管取替後の復旧舗装工事</span><span>水道工事</span><span>一般土木工事</span><span>下水道工事</span></p></div></div>
+</section>
+
+<section class="lab-note" id="d"><div class="wrap"><h2><small>PATTERN D</small>縦書き</h2><dl><dt>インパクト源</dt><dd>社屋の手書きの縦看板に呼応して、キャッチも縦組みに。年月の重みと「守ってきたもの」を見せる。</dd><dt>写真</dt><dd>手書きの縦看板「東京都上下水道指定工事店」</dd><dt>向き</dt><dd>構成②（ビジョン）</dd></dl></div></section>
+<div class="mock-header"><div class="wrap"><img src="../../assets/kurume-logo.png" alt=""><nav><span>久留米興業について</span><span>採用情報</span><span>未来</span><span>会社情報</span></nav><b>お問い合わせ</b></div></div>
+<section class="mv mv-d" data-cms-id="721"><img src="../../assets/photos/sign-vertical.jpg" alt="社屋に掲げられた手書きの縦看板">
+  <div class="tate"><h2>守るために、<br>変えていく。</h2><p class="sub">一九七四年から、この街で。</p></div><span class="year" aria-hidden="true">1974</span>
+</section>
+
+<section class="lab-note" id="e"><div class="wrap"><h2><small>PATTERN E</small>数字</h2><dl><dt>インパクト源</dt><dd>「1974」を画面でいちばん大きな要素に。紺の面とライムの数字で、歴史を一瞬で伝える。</dd><dt>写真</dt><dd>社名入りの重機と資材置き場</dd><dt>向き</dt><dd>構成②（ビジョン）／構成①でも可</dd></dl></div></section>
+<div class="mock-header"><div class="wrap"><img src="../../assets/kurume-logo.png" alt=""><nav><span>久留米興業について</span><span>採用情報</span><span>未来</span><span>会社情報</span></nav><b>お問い合わせ</b></div></div>
+<section class="mv mv-e" data-cms-id="721"><img src="../../assets/photos/excavator-boom-name.jpg" alt="社名の入った重機と資材置き場">
+  <div class="panel"><p class="num">1974<small>SINCE / SETAGAYA, TOKYO</small></p><h2>この街とともに、<br>50年以上。</h2><p class="sub">信頼をつなぎ、次の時代へ。</p></div>
+</section>
+</body>
+</html>
