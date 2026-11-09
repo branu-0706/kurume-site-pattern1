@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>TOPテスト 構成②</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="../../assets/theme.css">
+<link rel="stylesheet" href="../top.css">
+</head>
+<body>
+<div class="lab-bar"><div class="wrap"><b>TOPテスト（非公開）</b><a href="../top-p1/" >構成① 会社理解重視</a><a href="../top-p2/" aria-current="page">構成② ビジョン共感</a><a href="../../pattern2/index.html">現在の版と比べる</a><span>主役は現場・オフィスの写真。仕掛けは使わず、写真と見出しのスケールでインパクトを出す版です。</span></div></div>
+<header class="hd"><div class="wrap"><img src="../../assets/kurume-logo.png" alt="久留米興業 ロゴ"><p class="wm">KURUME KOGYO<span>株式会社久留米興業</span></p><nav><span>TOP</span><span>久留米興業について</span><span>採用情報</span><span>働くスタッフ</span><span>未来</span><span>会社情報</span></nav><span class="ct">お問い合わせ</span></div></header>
+<main>
+
+<!-- 01 MAIN VISUAL｜CMS 721（スライド2枚：現場→オフィス）＋工事4分類（テキスト） -->
+<section class="mv" aria-labelledby="h1" data-cms-id="721">
+  <div class="slide is-on"><img src="../../assets/photos/field-crew-hq.jpg" alt="歩道の路盤をつくる現場職のチーム" style="object-position:50% 55%"></div>
+  <div class="slide"><img src="../../assets/photos/office-team-wide.jpg" alt="社員が机を並べて働く事務所" style="object-position:50% 45%"></div>
+  <div class="mv-dots" role="group" aria-label="写真の切り替え"></div>
+  <div class="mv-copy"><div class="wrap"><p class="mv-label">1974 / TODAY / NEXT</p><h1 id="h1">この街とともに、50年以上。<br>信頼をつなぎ、次の時代へ。</h1><p class="mv-lead">現場で道路と水道を守る仕事と、人を大切にする会社づくり。</p></div></div>
+  <p class="mv-tag">SETAGAYA, TOKYO — SINCE 1974</p>
+</section>
+<div class="mv-fields"><div class="wrap"><p>OUR WORKS</p><ul aria-label="対応する工事"><li><span>01</span>ガス管取替後の復旧舗装工事</li><li><span>02</span>水道工事</li><li><span>03</span>一般土木工事</li><li><span>04</span>下水道工事</li></ul></div></div>
+
+<!-- 02 KEEP / CHANGE｜CMS 54 Half ×2 -->
+<section class="sec"><div class="wrap">
+  <div class="head"><div><p class="kicker">KEEP / CHANGE <span>守ること、変えること</span></p><h2 class="h2">守るために、<br>変えるという選択。</h2></div><p>現場の仕事は、昔も今も街に欠かせない。だからこそ、働き方は今の時代に合わせて見直してきました。</p></div>
+  <div class="pair">
+    <figure><img src="../../assets/photos/worker-back-towel.jpg" alt="ヘルメット姿で作業する現場職の後ろ姿" style="object-position:50% 35%"><figcaption><small>KEEP</small><h3>一つひとつの現場に、<br>責任を持つ。</h3><p>道路を元の状態に戻し、街の暮らしを支える仕事を続けていきます。</p></figcaption></figure>
+    <figure><img src="../../assets/photos/office-aisle.jpg" alt="資料を確認しながら仕事を進める事務所の社員"><figcaption><small>CHANGE</small><h3>一人に負担を<br>集中させない。</h3><p>勤務時間や人員配置を見直し、続けられる働き方を整えています。</p></figcaption></figure>
+  </div>
+</div></section>
+
+<!-- 03 PLACE｜CMS 54 Half（全幅写真＋短い言葉） -->
+<section class="wide"><img src="../../assets/photos/yard-gate.jpg" alt="「(株)久留米興業」の看板を掲げた資材置き場の入口" style="object-position:50% 40%">
+  <div class="cap"><p class="kicker">SINCE 1974 <span>北烏山</span></p><h2 class="h2">この場所から、<br>街の仕事に出ていく。</h2></div>
+</section>
+</main>
+<footer class="ft"><div class="wrap">株式会社久留米興業　東京都世田谷区北烏山6丁目26-28</div></footer>
+<script>
+(function(){var s=[].slice.call(document.querySelectorAll('.mv .slide'));if(s.length<2)return;var d=document.querySelector('.mv-dots');var i=0,t;
+function go(n){s[i].classList.remove('is-on');d.children[i].setAttribute('aria-current','false');i=n;s[i].classList.add('is-on');d.children[i].setAttribute('aria-current','true');}
+s.forEach(function(_,n){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(n+1)+'枚目の写真');b.setAttribute('aria-current',n?'false':'true');b.onclick=function(){go(n);clearInterval(t);};d.appendChild(b);});
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches)t=setInterval(function(){go((i+1)%s.length)},6000);})();
+</script>
+</body></html>
