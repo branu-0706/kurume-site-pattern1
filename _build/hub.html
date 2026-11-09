@@ -88,12 +88,22 @@ select:disabled{background:var(--soft);color:#5b6878}
   .view.is-sp{padding:0}.view.is-sp iframe{box-shadow:none;max-height:none}
   .widths{display:none}
 }
+/* 操作パネルの出し入れ（2026-11-09）。閉じると表示を全幅に。状態はこのブラウザに記憶 */
+.sidetoggle{display:inline-flex;align-items:center;gap:8px;flex:none;height:32px;padding:0 12px;border:1px solid var(--navy);background:#fff;color:var(--navy);font:700 12px/1 inherit;font-family:inherit;border-radius:4px;cursor:pointer}
+.sidetoggle:hover{background:var(--navy);color:#fff}
+.sidetoggle:focus-visible{outline:3px solid #A8C63A;outline-offset:2px}
+.sidetoggle .ic{display:inline-block;width:14px;height:10px;border-top:2px solid currentColor;border-bottom:2px solid currentColor;position:relative}
+.sidetoggle .ic::after{content:"";position:absolute;left:0;right:0;top:2px;border-top:2px solid currentColor}
+body{transition:grid-template-columns .25s ease}
+body.side-closed{grid-template-columns:1fr}
+body.side-closed .side{display:none}
+@media(prefers-reduced-motion:reduce){body{transition:none}}
 .tools .listtoggle{display:none}
 @media(max-width:900px){.tools .listtoggle{display:flex}}
 </style>
 </head>
 <body>
-<aside class="side" aria-label="比較の操作">
+<aside class="side" id="side" aria-label="比較の操作">
   <div class="brand"><img src="../assets/kurume-logo.png" alt="久留米興業 ロゴ" width="46" height="29"><div><h1>久留米興業 サイト比較</h1><p>STRUCTURE × DESIGN</p></div></div>
   <form class="controls" id="controls" onsubmit="return false">
     <fieldset><legend>パターン</legend><div class="seg is-3">
@@ -178,7 +188,7 @@ select:disabled{background:var(--soft);color:#5b6878}
   </nav>
 </aside>
 <main class="stage">
-  <div class="bar" aria-live="polite"><strong id="now">パターン① × デザイン①｜TOP</strong><span class="path" id="path"></span></div>
+  <div class="bar"><button type="button" class="sidetoggle" id="sidetoggle" aria-controls="side" aria-expanded="true"><span class="ic" aria-hidden="true"></span><span class="lb">操作パネルを閉じる</span></button><strong id="now" aria-live="polite">パターン① × デザイン①｜TOP</strong><span class="path" id="path"></span></div>
   <div class="view" id="view"><iframe id="frame" title="選択中のページ" src="about:blank"></iframe></div>
 </main>
 <script>
@@ -253,6 +263,12 @@ select:disabled{background:var(--soft);color:#5b6878}
   const tb=document.getElementById('theme');
   tb.addEventListener('click',()=>{if(!window.KKTheme)return;window.KKTheme.isOpen()?window.KKTheme.close():window.KKTheme.open(tb);});
   /* 配色を変えたら表示中のページにも即時反映（同じ保存領域を読み直す） */
+  // 操作パネルの出し入れ
+  const SKEY='kk-hub-side',stg=document.getElementById('sidetoggle');
+  const setSide=open=>{document.body.classList.toggle('side-closed',!open);stg.setAttribute('aria-expanded',String(open));stg.querySelector('.lb').textContent=open?'操作パネルを閉じる':'操作パネルを開く';try{localStorage.setItem(SKEY,open?'open':'closed')}catch(e){}};
+  let sideOpen=true;try{sideOpen=localStorage.getItem(SKEY)!=='closed'}catch(e){}
+  setSide(sideOpen);
+  stg.addEventListener('click',()=>setSide(document.body.classList.contains('side-closed')));
   window.addEventListener('kk-theme-change',()=>{try{frame.contentWindow.KKTheme&&frame.contentWindow.KKTheme.apply();}catch(e){}});
   const lt=document.getElementById('listtoggle'),list=document.getElementById('all');
   lt.addEventListener('click',e=>{e.preventDefault();const o=!list.classList.contains('is-open');list.classList.toggle('is-open',o);lt.setAttribute('aria-expanded',String(o));});
