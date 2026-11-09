@@ -48,6 +48,9 @@ def head(title, desc, root, current="top"):
 <link rel="stylesheet" href="{root}assets/theme.css">
 <link rel="stylesheet" href="{root}assets/site.css">
 <link rel="stylesheet" href="{root}assets/office.css">
+<link rel="stylesheet" href="{root}assets/fonts/yuji-syuku.css">
+<link rel="stylesheet" href="{root}assets/fonts/marker.css">
+<link rel="stylesheet" href="{root}assets/ink.css">
 <script defer src="{root}assets/site.js"></script>
 {demo_tags(root)}</head>
 <body>

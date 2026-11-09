@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="assets/theme.css">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/office.css">
+<link rel="stylesheet" href="assets/fonts/yuji-syuku.css">
+<link rel="stylesheet" href="assets/fonts/marker.css">
+<link rel="stylesheet" href="assets/ink.css">
 <script defer src="assets/site.js"></script>
 <script src="assets/theme/presets.js"></script>
 <script src="assets/theme/theme.js"></script>
@@ -36,15 +39,17 @@
 </header>
 <main id="main">
 
-<!-- 01 MAIN VISUAL｜方式B：CMS 721 Mainvisual Responsive Slider（写真1枚＋キャッチコピー・自動切替なし。H1はページで1つ）＋ CSS（文字位置・余白・文字サイズ・写真の高さ・暗幕の濃さのみ）。CTAなし -->
-<section class="fv-mv is-p1" id="top" aria-labelledby="hero-title" data-cms-id="721" data-implementation="B">
+<!-- 01 MAIN VISUAL｜方式B：CMS 721 Mainvisual Responsive Slider（写真・筆跡・手書き文字を1枚の画像に仕上げて登録。H1はテキストで別に持つ）＋ CSS（assets/ink.css）。CTAなし。人物の顔が主役にならない写真を使う -->
+<section class="fv-mv fv-ink is-p1" id="top" aria-labelledby="hero-title" data-cms-id="721" data-implementation="B">
   <div class="fv-slide">
-    <img src="assets/photos/field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="941" height="627" fetchpriority="high">
-    <div class="fv-copy">
+    <div class="fv-pics"><img src="assets/photos/field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="1600" height="1066" fetchpriority="high"></div>
+    <span class="ink-deco ink-lime fv-d1" aria-hidden="true"></span>
+    <p class="fv-en" aria-hidden="true">Since 1974</p>
+    <ul class="fv-fields" aria-label="対応する工事"><li>ガス管取替後の復旧舗装工事</li><li>水道工事</li><li>一般土木工事</li><li>下水道工事</li></ul>
+    <div class="fv-copy ink ink-navy">
       <p class="fv-label">INFRASTRUCTURE / KURUME KOGYO</p>
-      <h1 id="hero-title">道路の復旧舗装から、<br>水道・土木工事まで。</h1>
-      <p class="fv-lead">世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。</p>
-      <ul class="fv-fields" aria-label="対応する工事"><li>ガス管取替後の復旧舗装工事</li><li>水道工事</li><li>一般土木工事</li><li>下水道工事</li></ul>
+      <h1 id="hero-title"><span class="ln">道路の復旧舗装から、</span><br><span class="ln">水道・土木工事まで。</span></h1>
+      <p class="fv-lead">世田谷を拠点に、1974年から。道路と街のインフラに関わる工事を担っています。</p>
     </div>
   </div>
 </section>

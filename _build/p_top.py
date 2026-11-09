@@ -2,8 +2,8 @@ from common import *
 
 P = "@R@assets/photos/"
 
-from cms_hero import top_hero
-HERO = top_hero('top', 'hero-title', 'INFRASTRUCTURE / KURUME KOGYO', '道路の復旧舗装から、<br>水道・土木工事まで。', '世田谷を拠点に、ガス管取替後の復旧舗装工事をはじめ、水道・一般土木・下水道工事に携わる株式会社久留米興業。道路と街のインフラに関わる施工領域をご紹介します。', P + 'field-work-street.jpg', '重機とともに歩道の路盤をつくる施工中の現場', cls='is-p1')
+from cms_hero import top_hero, ink_hero
+HERO = ink_hero('top', 'hero-title', 'INFRASTRUCTURE / KURUME KOGYO', '<span class="ln">道路の復旧舗装から、</span><br><span class="ln">水道・土木工事まで。</span>', '世田谷を拠点に、1974年から。道路と街のインフラに関わる工事を担っています。', [(P + 'field-work-street.jpg', '重機とともに歩道の路盤をつくる施工中の現場')], 'Since 1974', cls='is-p1')
 
 BODY = f'''
 {HERO}

@@ -1,0 +1,88 @@
+/* 2026-11-09 手描きレイヤー（デザイン①の12ページ）：路面に吹き付けるスプレーの筆跡＋社屋の手書き看板。
+   ・白黒の写真に、ライム（オフィスの椅子）と紺（ロゴ）の「吹き付け」の筆跡を重ねる。日本語の見出しは筆文字、英字はマーカー文字。
+   ・筆跡は assets/ink/*.png をマスクにして、要素の背景色（--kk-*）を塗る。文字は必ず筆跡の面（背景色あり）の上に置く＝コントラストが保てる。
+   ・セクションの構造は変えない（CSSだけ）。TOPの721は、写真・筆跡・手書き文字を1枚の画像に仕上げて登録する想定。 */
+:root{--brush:"Yuji Syuku","Noto Serif JP",serif;--marker:"Permanent Marker","Barlow",Arial,sans-serif}
+
+/* ── 筆跡の面 ── */
+.ink{-webkit-mask-image:url(ink/band-a.png);mask-image:url(ink/band-a.png);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.ink-navy{background-color:var(--kk-brand-navy);color:var(--kk-surface)}
+.ink-lime{background-color:var(--kk-accent);color:var(--kk-brand-navy)}
+.ink-deco{display:block;pointer-events:none;-webkit-mask-image:url(ink/band-b.png);mask-image:url(ink/band-b.png);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+
+/* ══════ TOP メインビジュアル（721） ══════ */
+.fv-mv.fv-ink{background:var(--kk-surface-soft)}
+.fv-ink .fv-slide{position:relative;display:block;height:calc(100svh - 86px);min-height:640px;max-height:900px;overflow:hidden;isolation:isolate;background-color:var(--kk-surface-soft)}
+.fv-ink .fv-slide::after{display:none}
+.fv-ink .fv-pics{position:absolute;inset:0;z-index:-1;display:flex}
+.fv-ink .fv-pics img{position:static;flex:1;min-width:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;filter:grayscale(1) contrast(1.06) brightness(1.1)}
+.fv-ink .fv-slide.is-split .fv-pics{gap:6px;background:var(--kk-surface)}
+.fv-ink .fv-pics::after{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--kk-surface) 18%,transparent);pointer-events:none}
+/* 斜めのライムの筆跡（装飾） */
+.fv-ink .fv-d1{position:absolute;z-index:1;left:-6%;bottom:44%;width:60%;height:100px;transform:rotate(-7deg);transform-origin:left center}
+/* 英字のマーカー文字 */
+.fv-ink .fv-en{position:absolute;z-index:2;right:max(24px,6vw);top:9%;margin:0;font:400 clamp(52px,7vw,124px)/1 var(--marker);color:var(--kk-brand-navy);transform:rotate(-7deg);letter-spacing:.01em}
+/* 紺の筆跡の面に、筆文字の見出し */
+.fv-ink .fv-copy{position:absolute;z-index:3;left:-3%;bottom:3%;width:min(1080px,74%);padding:104px 140px 106px max(110px,calc(5% + (100vw - var(--content))/2));transform:rotate(-3deg);transform-origin:left bottom;max-width:none;-webkit-mask-image:url(ink/block.png);mask-image:url(ink/block.png)}
+.fv-ink .fv-copy>*{max-width:none}
+.fv-ink .fv-label{margin:0 0 16px;font:700 12px/1.4 var(--en);letter-spacing:.26em;color:var(--kk-surface)}
+.fv-ink .fv-label::before{display:none}
+.fv-ink h1{margin:0;font-family:var(--brush);font-weight:400;font-size:clamp(34px,4vw,64px);line-height:1.32;letter-spacing:.06em;color:var(--kk-surface)}
+.fv-ink h1 span{color:inherit}
+.fv-ink h1 .ln{display:inline-block}
+.fv-ink .fv-lead{margin:18px 0 0;font-size:14px;line-height:1.9;color:var(--kk-surface);font-weight:500;max-width:36em}
+/* 工事4分類：ライムの筆跡の上に紺の文字 */
+.fv-ink .fv-fields{position:absolute;z-index:4;right:-2%;top:31%;bottom:auto;margin:0;padding:36px 120px 36px 110px;list-style:none;display:flex;flex-wrap:wrap;gap:4px 22px;max-width:min(720px,60%);background-color:var(--kk-surface);transform:rotate(-7deg);transform-origin:right center;border:0;-webkit-mask-image:url(ink/band-b.png);mask-image:url(ink/band-b.png);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.fv-ink .fv-fields li{padding:0;border:0;font-size:14px;font-weight:800;color:var(--kk-brand-navy)}
+.fv-ink .fv-fields li::before{content:none}
+.fv-ink .fv-fields li:first-child{padding-left:0}
+.fv-mv.fv-ink.is-p2 .fv-fields{top:31%}
+
+/* ══════ 下層ページのヒーロー（734 H1 Center） ══════ */
+.page-hero{min-height:560px;background:var(--kk-surface-soft);align-items:flex-end}
+.page-hero .page-hero-img{inset:0;filter:grayscale(1) contrast(1.06) brightness(1.1)}
+.page-hero .page-hero-img::after{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--kk-surface) 16%,transparent)}
+.page-hero .wrap{padding-block:120px 64px;justify-content:flex-end}
+.page-hero .wrap>*{max-width:none}
+.page-hero .eyebrow{display:inline-flex;align-self:flex-start;margin:0 0 -6px 18px;padding:14px 40px 14px 28px;font:400 15px/1.2 var(--marker);letter-spacing:.06em;color:var(--kk-brand-navy);background-color:var(--kk-surface);box-shadow:none;transform:rotate(-3deg);-webkit-mask-image:url(ink/line.png);mask-image:url(ink/line.png);-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.page-hero .eyebrow .line{display:none}
+.page-hero h1{align-self:flex-start;margin:0;padding:58px 120px 62px 76px;font-family:var(--brush);font-weight:400;font-size:clamp(32px,3.6vw,56px);line-height:1.4;letter-spacing:.06em;color:var(--kk-surface);background-color:var(--kk-brand-navy);transform:rotate(-2deg);-webkit-mask-image:url(ink/band-a.png);mask-image:url(ink/band-a.png);-webkit-mask-size:100% 100%;mask-size:100% 100%;max-width:min(900px,92%)}
+.page-hero p.lead,.page-hero .lead{align-self:flex-start;margin:22px 0 0 18px;padding:18px 22px;background:var(--kk-surface);color:var(--kk-text);font-size:14px;line-height:1.95;max-width:min(620px,88%)}
+.page-hero .p2-hero-note{align-self:flex-start;margin:10px 0 0 18px;padding:8px 14px;background:var(--kk-surface);color:var(--kk-brand-navy)}
+
+/* 構成②の、写真が下にあるヒーロー（働くスタッフ／未来／会社情報） */
+[data-structure="p2"] :is(.p2-people-hero,.p2-company-hero) .p2-h1{font-family:var(--brush);font-weight:400;letter-spacing:.06em;line-height:1.45}
+[data-structure="p2"] :is(.p2-people-hero,.p2-company-hero) .section-kicker{font-size:18px}
+[data-structure="p2"] .p2-people-hero .p2-wide img,[data-structure="p2"] .p2-company-hero .half-media img{filter:grayscale(1) contrast(1.06)}
+
+/* ══════ セクション見出し ══════ */
+.section-kicker{font-family:var(--marker);font-weight:400;font-size:17px;letter-spacing:.05em;color:var(--kk-brand-navy)}
+.section-kicker::before{display:none!important}
+.section-kicker span{font-family:var(--jp,"Noto Sans JP"),sans-serif}
+.section-title,.p2-h1{position:relative}
+.section-title::after,.p2-h1::after{content:"";display:block;width:150px;height:16px;margin-top:14px;background-color:var(--kk-accent);transform:rotate(-2deg);-webkit-mask-image:url(ink/line.png);mask-image:url(ink/line.png);-webkit-mask-size:100% 100%;mask-size:100% 100%}
+:is(.section-heading,.section-heading-split)[style*="center"] .section-title::after,.text-center .section-title::after{margin-inline:auto}
+
+@media(max-width:767px){
+  .fv-ink .fv-slide{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;padding-bottom:8px}
+  .fv-ink .fv-pics{position:relative;inset:auto;height:68vw;flex:none}
+  .fv-ink .fv-slide.is-split .fv-pics{gap:4px}
+  .fv-ink .fv-en{top:12px;right:14px;font-size:clamp(34px,10vw,46px)}
+  .fv-ink .fv-d1{display:none}
+  .fv-ink .fv-copy{position:relative;left:auto;bottom:auto;order:2;width:auto;margin:-46px -10px 0 -14px;padding:64px 40px 68px 46px;transform:rotate(-2deg)}
+  .fv-ink h1{font-size:clamp(25px,7.4vw,32px)}
+  .fv-ink .fv-lead{font-size:12.5px}
+  .fv-ink .fv-fields{position:relative;top:auto;right:auto;order:3;max-width:none;margin:-14px -10px 0 6px;padding:26px 46px 26px 44px;gap:2px 14px;transform:rotate(-2deg)}
+  .fv-mv.fv-ink.is-p2 .fv-fields{top:auto}
+  .fv-ink .fv-fields li{font-size:12px}
+  .page-hero{min-height:520px}
+  .page-hero .wrap{padding-block:150px 40px}
+  .page-hero h1{padding:40px 54px 44px 40px;font-size:clamp(24px,6.8vw,30px);max-width:100%}
+  .page-hero .eyebrow{margin-left:6px}
+  .page-hero p.lead,.page-hero .lead{margin-left:0;max-width:100%;font-size:12.5px}
+  .section-kicker{font-size:15px}
+}
+
+/* 配色セットによってはライムが濃くなるため、文字を載せる筆跡は白、ライムは装飾の筆跡だけに使う（全セットで4.5:1以上） */
+.fv-ink .fv-fields li span,.fv-ink .fv-fields li{color:var(--kk-brand-navy)}
+.fv-ink .fv-fields::before{content:none}

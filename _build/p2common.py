@@ -36,6 +36,9 @@ def p2_head(title, desc, root, page):
 <link rel="stylesheet" href="{root}assets/site.css">
 <link rel="stylesheet" href="{root}assets/p2.css">
 <link rel="stylesheet" href="{root}assets/office.css">
+<link rel="stylesheet" href="{root}assets/fonts/yuji-syuku.css">
+<link rel="stylesheet" href="{root}assets/fonts/marker.css">
+<link rel="stylesheet" href="{root}assets/ink.css">
 <script defer src="{root}assets/site.js"></script>
 {switcher_tags(root)}</head>
 <body>

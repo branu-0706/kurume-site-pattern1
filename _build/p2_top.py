@@ -2,8 +2,8 @@ from p2common import *
 
 P = "@R@assets/photos/"
 
-from cms_hero import top_hero
-HERO = top_hero('top-hero', 'hero-title', '1974 / TODAY / NEXT', 'この街とともに、50年以上。<br><span>信頼をつなぎ、次の時代へ。</span>', 'ガス管取替後の復旧舗装工事や水道・土木工事。1974年から積み重ねた仕事と、人を大切にする会社づくり。久留米興業の歩みと、これからを紹介します。', P + 'field-work-street.jpg', '重機とともに歩道の路盤をつくる施工中の現場', cls='is-p2 is-center')
+from cms_hero import top_hero, ink_hero
+HERO = ink_hero('top-hero', 'hero-title', '1974 / TODAY / NEXT', '<span class="ln">この街とともに、</span><span class="ln">50年以上。</span><br><span class="ln">信頼をつなぎ、</span><span class="ln">次の時代へ。</span>', '現場で道路と水道を守る仕事と、人を大切にする会社づくり。', [(P + 'field-work-street.jpg', '重機とともに歩道の路盤をつくる施工中の現場'), (P + 'office-wide-window.jpg', '窓際まで机が並ぶ本社の事務所')], 'Keep &amp; Change', cls='is-p2')
 
 BODY = f'''
 {HERO}
