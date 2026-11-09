@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>ファーストビュー 手描きテスト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Permanent+Marker&family=Yuji+Syuku&family=Noto+Sans+JP:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="../fonts/yuji-syuku.css">
+<link rel="stylesheet" href="../fonts/marker.css">
+<link rel="stylesheet" href="../../assets/theme.css">
+<style>
+/* 検証用。発想：路面に吹き付けるスプレーのマーキング＋社屋の手書き看板。白黒の写真に、ライムと紺の「吹き付け」の筆跡と手書きの文字を重ねる。
+   CMSでは、写真・筆跡・手書き文字を1枚の画像に仕上げて 721 Mainvisual のスライドとして登録し、H1はテキストで別に持つ想定。 */
+:root{--en:"Barlow",Arial,sans-serif;--brush:"Yuji Syuku",serif;--marker:"Permanent Marker",cursive;--jp:"Noto Sans JP",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--jp);color:var(--kk-text);background:var(--kk-page-bg)}
+.note{background:var(--kk-text);color:var(--kk-surface);font-size:13px;line-height:1.8;padding:14px max(16px,4vw)}
+.note b{color:var(--kk-accent)}
+.note a{color:var(--kk-surface)}
+.fv{position:relative;height:calc(100svh - 50px);min-height:620px;max-height:940px;overflow:hidden;isolation:isolate;background:#e9eaeb}
+.fv .photo{position:absolute;inset:0;z-index:-2}
+.fv .photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08) brightness(1.12)}
+.fv .photo::after{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--kk-surface) 22%,transparent)}
+.fv .grain{position:absolute;inset:0;z-index:-1;opacity:.18;mix-blend-mode:multiply;pointer-events:none}
+/* ヘッダー：写真の上に直接置く（白黒写真の明るい面なので紺の文字） */
+.hd{position:absolute;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;gap:28px;padding:22px max(24px,5vw)}
+.hd img{width:66px;height:42px;object-fit:contain;background:var(--kk-surface);padding:4px}
+.hd nav{margin-left:auto;display:flex;gap:30px;font:700 12px/1 var(--en);letter-spacing:.22em;color:var(--kk-brand-navy)}
+.hd .ct{background:var(--kk-brand-navy);color:var(--kk-surface);font:800 12px/1 var(--en);letter-spacing:.24em;padding:16px 26px}
+.strokes{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none}
+.copy{position:absolute;z-index:3}
+.brush{font-family:var(--brush);font-weight:400;line-height:1.25;letter-spacing:.04em;margin:0}
+.marker{font-family:var(--marker);line-height:1;margin:0}
+.side-en{position:absolute;z-index:3;max-width:250px;font:800 11px/1.5 var(--en);letter-spacing:.08em;color:var(--kk-brand-navy);text-transform:uppercase}
+.side-en b{display:block;font-size:17px;letter-spacing:.06em;margin-bottom:12px}
+.count{position:absolute;z-index:3;left:max(24px,5vw);bottom:40px;font:700 13px/1 var(--en);letter-spacing:.2em;color:var(--kk-brand-navy);border-left:2px solid var(--kk-brand-navy);border-bottom:2px solid var(--kk-brand-navy);padding:0 0 10px 12px;height:110px;display:flex;align-items:flex-end}
+.scroll{position:absolute;z-index:3;left:50%;bottom:0;transform:translateX(-50%);width:0;height:0;border-left:70px solid transparent;border-right:70px solid transparent;border-bottom:80px solid var(--kk-brand-navy)}
+.scroll span{position:absolute;left:-40px;top:34px;width:80px;text-align:center;font:800 10px/1.4 var(--en);letter-spacing:.2em;color:var(--kk-surface)}
+h1.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* A：構成①（会社理解）――現場の後ろ姿 */
+.fv-a .photo img{object-position:50% 30%}
+.fv-a .c1{left:max(24px,6vw);top:63%;}
+.fv-a .c1 .brush{font-size:clamp(40px,5.4vw,86px);color:var(--kk-surface);text-shadow:0 0 1px var(--kk-brand-navy)}
+.fv-a .c2{right:max(24px,6vw);top:24%;text-align:right}
+.fv-a .c2 .marker{font-size:clamp(46px,6.4vw,110px);color:var(--kk-brand-navy);transform:rotate(-6deg)}
+.fv-a .side-en.l{left:max(24px,5vw);top:22%}
+.fv-a .side-en.r{right:max(24px,5vw);bottom:12%;text-align:left}
+
+/* B：構成②（ビジョン）――代表の人物写真 */
+.fv-b .photo img{object-position:50% 20%}
+.fv-b .photo{left:30%;right:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
+.fv-b .c1{right:max(24px,5vw);top:76%;text-align:right}
+.fv-b .c1 .brush{font-size:clamp(36px,4.2vw,70px);color:var(--kk-surface)}
+.fv-b .c2{left:max(24px,4vw);top:38%}
+.fv-b .c2 .marker{font-size:clamp(52px,7vw,124px);color:var(--kk-brand-navy);transform:rotate(-8deg)}
+.fv-b .side-en.l{left:max(24px,5vw);top:16%}
+.fv-b .side-en.r{right:max(24px,5vw);top:22%}
+.fv-b .sign{position:absolute;z-index:3;left:max(24px,5vw);top:30%;font:700 13px/1.6 var(--jp);color:var(--kk-brand-navy)}
+
+@media(max-width:767px){
+  .fv{height:auto;min-height:0;aspect-ratio:9/16;max-height:none}
+  .hd nav{display:none}.hd .ct{margin-left:auto;padding:12px 14px;letter-spacing:.1em}
+  .side-en{display:none}.count{display:none}
+  .fv-a .c1{left:20px;top:62%}.fv-a .c2{right:20px;top:20%}
+  .fv-b .photo{left:0;right:0;-webkit-mask-image:none;mask-image:none}.fv-b .c1{right:20px;top:74%}.fv-b .c2{left:20px;top:22%}.fv-b .sign{top:auto;bottom:96px;left:20px;display:none}
+}
+</style>
+</head>
+<body>
+<p class="note"><b>ファーストビュー 手描きテスト（非公開）</b>　発想：<b>路面に吹き付けるスプレーのマーキング</b>と、<b>社屋の手書き看板</b>。白黒の写真に、ライム（オフィスの椅子の色）と紺（ロゴ）の吹き付けの筆跡と、手書きの文字を重ねています。CMSでは、写真・筆跡・手書き文字を1枚の画像に仕上げて <b>721 Mainvisual</b> のスライドとして登録し、H1はテキストで別に持つ想定です。　<a href="../top-p1/">これまでのTOPテストへ</a></p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- 吹き付け塗料のにじみ：輪郭を不規則に揺らす -->
+    <filter id="spray" x="-10%" y="-30%" width="120%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency=".035 .09" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="3" result="g"/>
+      <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.45" result="holes"/>
+      <feComposite in="d" in2="holes" operator="in"/>
+    </filter>
+    <filter id="grainf"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="11"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+</svg>
+
+<!-- A：構成①　721 Mainvisual（写真＋吹き付けの筆跡＋手書き文字を1枚の画像に） -->
+<section class="fv fv-a" aria-labelledby="ha">
+  <h1 class="sr" id="ha">道路の復旧舗装から、水道・土木工事まで。株式会社久留米興業</h1>
+  <div class="photo"><img src="../../assets/photos/worker-back-towel.jpg" alt="ヘルメット姿で道路の工事をする現場職の後ろ姿"></div>
+  <svg class="grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#grainf)"/></svg>
+  <header class="hd"><img src="../../assets/kurume-logo.png" alt="久留米興業 ロゴ"><nav><span>BUSINESS</span><span>COMPANY</span><span>RECRUIT</span><span>CONTACT</span></nav><span class="ct">CONTACT</span></header>
+  <svg class="strokes" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-80 520 C 300 500, 800 420, 1700 220" fill="none" stroke="var(--kk-accent)" stroke-width="84" stroke-linecap="round" filter="url(#spray)"/>
+    <path d="M-60 720 C 400 700, 900 620, 1700 430" fill="none" stroke="var(--kk-brand-navy)" stroke-width="250" stroke-linecap="round" filter="url(#spray)"/>
+  </svg>
+  <div class="copy c2"><p class="marker" aria-hidden="true">Since 1974</p></div>
+  <div class="copy c1"><p class="brush" aria-hidden="true">道路の上も、<br>地面の下も。</p></div>
+  <p class="side-en l"><b>Roads and the ground beneath</b>Restoring pavement after gas main replacement, water, civil and sewer works.</p>
+  <div class="scroll" aria-hidden="true"><span>SCROLL<br>DOWN</span></div>
+</section>
+
+<!-- B：構成②　721 Mainvisual（代表の人物写真） -->
+<section class="fv fv-b" aria-labelledby="hb">
+  <h1 class="sr" id="hb">この街とともに、50年以上。信頼をつなぎ、次の時代へ。株式会社久留米興業</h1>
+  <div class="photo"><img src="../../assets/photos/ceo-portrait.jpg" alt="株式会社久留米興業 代表取締役 川島和範"></div>
+  <svg class="grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#grainf)"/></svg>
+  <header class="hd"><img src="../../assets/kurume-logo.png" alt="久留米興業 ロゴ"><nav><span>ABOUT</span><span>PEOPLE</span><span>FUTURE</span><span>RECRUIT</span></nav><span class="ct">CONTACT</span></header>
+  <svg class="strokes" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-80 740 C 400 740, 900 690, 1700 520" fill="none" stroke="var(--kk-accent)" stroke-width="70" stroke-linecap="round" filter="url(#spray)"/>
+    <path d="M-60 900 C 500 880, 1000 830, 1700 690" fill="none" stroke="var(--kk-brand-navy)" stroke-width="250" stroke-linecap="round" filter="url(#spray)"/>
+  </svg>
+  <div class="copy c2"><p class="marker" aria-hidden="true">Keep &amp; Change</p></div>
+  <div class="copy c1"><p class="brush" aria-hidden="true">守るために、<br>変えていく。</p></div>
+  <p class="side-en l"><b>Since 1974</b>Fifty years of road and water works in Setagaya.</p>
+  <p class="side-en r"><b>The next fifty years</b>Changing how we work, so the work can go on.</p>
+  <p class="sign">代表取締役　川島 和範</p>
+  <div class="scroll" aria-hidden="true"><span>SCROLL<br>DOWN</span></div>
+</section>
+</body>
+</html>
