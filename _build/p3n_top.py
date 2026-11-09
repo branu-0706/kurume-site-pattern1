@@ -44,7 +44,7 @@ def body():
     biz = ""
     for n, anc, h, t, img, alt in BIZ:
         media = (f'<img src="{P}{img}" alt="{alt}" loading="lazy" width="1600" height="1066">' if img else
-                 f'<img class="is-diagram" src="{CS}" alt="道路の断面図。地中の下水道管とマンホール" loading="lazy" width="720" height="520">')
+                 f'<img class="is-diagram" src="{R}assets/n/cross-section-sewer.svg" alt="道路の断面図のうち、地中の下水道管の部分" loading="lazy" width="240" height="160">')
         biz += f'<a class="n-biz-item" href="business/index.html#{anc}" data-layer="{n}"><span class="n-num">{n}</span><h3>{h}</h3><p>{t}</p><div class="n-biz-media">{media}</div><span class="n-more">詳しく見る</span></a>'
 
     works = "".join(f'<li class="n-card"><a href="{OFFICIAL_WORKS}"{X}><div class="n-card-media"><img src="{P}{f}" alt="{a}" loading="lazy" width="1600" height="1066"></div><small>#{en}</small><h3>{t}<br><span>{place}</span></h3><span class="n-more">詳しく見る ↗</span>{XS}</a></li>' for f, a, en, t, place in WORKS)

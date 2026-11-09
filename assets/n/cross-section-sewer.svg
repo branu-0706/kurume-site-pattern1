@@ -1,0 +1,96 @@
+<!-- cross-section.svg と同じ図の、下水道管の部分だけを切り取ったもの（事業内容 04 のカード用） -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="420 325 240 160" role="img" aria-labelledby="cs-t">
+  <title id="cs-t">道路の断面図のうち、地中の下水道管とマンホールにつながる管の部分</title>
+  <defs>
+    <pattern id="gravel" width="14" height="10" patternUnits="userSpaceOnUse">
+      <rect width="14" height="10" fill="#B4A68C"/>
+      <circle cx="3" cy="3" r="1.6" fill="#8E8068"/><circle cx="10" cy="7" r="1.3" fill="#9C8E75"/><circle cx="7" cy="2" r=".9" fill="#D2C6AE"/>
+    </pattern>
+    <pattern id="soil" width="40" height="18" patternUnits="userSpaceOnUse">
+      <rect width="40" height="18" fill="#8C6D50"/>
+      <path d="M0 12 Q10 9 20 12 T40 12" fill="none" stroke="#7B5E43" stroke-width="1.2"/>
+      <circle cx="30" cy="4" r="1.2" fill="#A3866A"/>
+    </pattern>
+    <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+    <style>
+      .lb{fill:#FFFFFF;stroke:#1A2259;stroke-width:2}
+      .tx{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;font-weight:700;font-size:17px;fill:#1A1A1A}
+      .nb{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;font-size:16px;fill:#FFFFFF;text-anchor:middle}
+      .ld{fill:none;stroke:#1A2259;stroke-width:2}
+    </style>
+  </defs>
+
+  <!-- 右側面 -->
+  <polygon points="580,150 690,80 690,108 580,178" fill="#1F1F21"/>
+  <polygon points="580,178 690,108 690,145 580,215" fill="#8F826B"/>
+  <polygon points="580,215 690,145 690,400 580,470" fill="#6F563F"/>
+
+  <!-- 上面：車道・センターライン・歩道 -->
+  <polygon points="20,150 130,80 690,80 580,150" fill="#3A3A3D"/>
+  <polygon points="108,94 668,94 690,80 130,80" fill="#CFCAC0"/>
+  <line x1="108" y1="94" x2="668" y2="94" stroke="#9D988E" stroke-width="3"/>
+  <line x1="64" y1="122" x2="624" y2="122" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="34 22"/>
+  <line x1="36" y1="140" x2="596" y2="140" stroke="#F2B705" stroke-width="2.5"/>
+  <ellipse cx="545" cy="122" rx="22" ry="7" fill="#58585B" stroke="#2A2A2C" stroke-width="2"/>
+  <!-- 掘って管を取り替え、舗装し直した区画 -->
+  <polygon points="150,150 230,150 274,122 194,122" fill="#232325" stroke="#F2B705" stroke-width="2" stroke-dasharray="6 4"/>
+  <g fill="#E8641B"><polygon points="138,150 144,134 150,150"/><polygon points="276,124 282,108 288,124"/></g>
+  <g fill="#FFFFFF"><rect x="140" y="142" width="8" height="2.5"/><rect x="278" y="116" width="8" height="2.5"/></g>
+
+  <!-- 正面：舗装・路盤・土 -->
+  <rect x="20" y="150" width="560" height="28" fill="#2E2E30"/>
+  <rect x="20" y="178" width="560" height="37" fill="url(#gravel)"/>
+  <rect x="20" y="215" width="560" height="255" fill="url(#soil)"/>
+  <rect x="20" y="215" width="560" height="255" fill="url(#deep)"/>
+  <line x1="20" y1="178" x2="580" y2="178" stroke="#141415" stroke-width="2"/>
+  <line x1="20" y1="215" x2="580" y2="215" stroke="#6E6253" stroke-width="2"/>
+  <!-- 掘った溝（埋め戻した部分） -->
+  <rect x="150" y="150" width="80" height="140" fill="#A98C6C"/>
+  <rect x="150" y="150" width="80" height="28" fill="#232325"/>
+  <rect x="150" y="150" width="80" height="140" fill="none" stroke="#F2B705" stroke-width="2" stroke-dasharray="6 4"/>
+
+  <!-- 地中の管 -->
+  <circle cx="190" cy="252" r="21" fill="#F2B705" stroke="#1C1C1C" stroke-width="3"/>
+  <circle cx="190" cy="252" r="12" fill="#3B2E22"/>
+  <circle cx="340" cy="302" r="27" fill="#2F78C8" stroke="#1C1C1C" stroke-width="3"/>
+  <circle cx="340" cy="302" r="17" fill="#163A63"/>
+  <line x1="545" y1="178" x2="545" y2="338" stroke="#5E5E61" stroke-width="16"/>
+  <circle cx="500" cy="388" r="48" fill="#9BA0A6" stroke="#1C1C1C" stroke-width="3"/>
+  <circle cx="500" cy="388" r="34" fill="#4F5357"/>
+  <line x1="545" y1="338" x2="530" y2="352" stroke="#5E5E61" stroke-width="16"/>
+
+  <!-- 外形線 -->
+  <polygon points="20,150 130,80 690,80 690,400 580,470 20,470" fill="none" stroke="#1C1C1C" stroke-width="2"/>
+  <polyline points="20,150 580,150 690,80" fill="none" stroke="#1C1C1C" stroke-width="2"/>
+  <line x1="580" y1="150" x2="580" y2="470" stroke="#1C1C1C" stroke-width="2"/>
+
+  <!-- ラベル（番号＝事業） -->
+  <g>
+    <path class="ld" d="M170 56 V128"/>
+    <rect class="lb" x="20" y="18" width="292" height="38" rx="19"/>
+    <circle cx="39" cy="37" r="14" fill="#1A2259"/><text class="nb" x="39" y="43">01</text>
+    <text class="tx" x="60" y="43">ガス管の取替後、舗装を復旧</text>
+  </g>
+  <g>
+    <path class="ld" d="M520 56 L470 136"/>
+    <rect class="lb" x="400" y="18" width="300" height="38" rx="19"/>
+    <circle cx="419" cy="37" r="14" fill="#1A2259"/><text class="nb" x="419" y="43">03</text>
+    <text class="tx" x="440" y="43">道路そのもの（舗装・路盤）</text>
+  </g>
+  <g>
+    <path class="ld" d="M367 302 H392"/>
+    <rect class="lb" x="392" y="283" width="122" height="38" rx="19"/>
+    <circle cx="411" cy="302" r="14" fill="#1A2259"/><text class="nb" x="411" y="308">02</text>
+    <text class="tx" x="432" y="308">水道管</text>
+  </g>
+  <g>
+    <path class="ld" d="M452 400 H420"/>
+    <rect class="lb" x="200" y="381" width="220" height="38" rx="19"/>
+    <circle cx="219" cy="400" r="14" fill="#1A2259"/><text class="nb" x="219" y="406">04</text>
+    <text class="tx" x="240" y="406">下水道管・マンホール</text>
+  </g>
+  <g>
+    <rect x="40" y="226" width="96" height="26" rx="4" fill="#FFFFFF" opacity=".92"/>
+    <text class="tx" x="48" y="245" style="font-size:14px">ガス管 →</text>
+  </g>
+</svg>
