@@ -120,3 +120,17 @@ html[data-design="p2-b"] .contact-section{border-radius:0;background:#111111}
   html[data-design="p2-b"] .m-entry-list li+li a,html[data-design="p2-b"] .m-people-list li+li a{border-left:0;border-top:1px solid #111111}
   html[data-design="p2-b"] .m-change-list li,html[data-design="p2-b"] .m-change-list li+li{border-right:0;padding:24px 0;border-bottom:1px solid #111111}
 }
+/* 2026-11-09：ボタンと要所をライムに（文字は黒） */
+html[data-design="p2-b"] .m-btn,html[data-design="p2-b"] .m-btn.is-light,html[data-design="p2-b"] .m-split-panel .m-btn.is-light,html[data-design="p2-b"] .m-people .m-btn.is-light{background:#A8C63A;color:#111111;border:0}
+html[data-design="p2-b"] .m-btn::after{background-color:#111111;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23A8C63A' stroke-width='3'/%3E%3C/svg%3E")}
+html[data-design="p2-b"] :is(.m-tag,.m-ctrl button){background:#A8C63A;color:#111111}
+html[data-design="p2-b"] .m-progress i{background:#A8C63A}
+html[data-design="p2-b"] .m-biz-art{background:#A8C63A;color:#111111}
+html[data-design="p2-b"] .m-join-links a:first-child{background:#A8C63A;color:#111111;border-color:#111111}
+html[data-design="p2-b"] .m-future .m-split-panel{background:#A8C63A}
+html[data-design="p2-b"] .m-future .m-split-panel .m-btn{background:#111111;color:#FFFFFF}
+html[data-design="p2-b"] .m-people{background:#FFFFFF}
+html[data-design="p2-b"] .page-hero{background:#FFFFFF!important}
+html[data-design="p2-b"] .page-hero .eyebrow,html[data-design="p2-b"] .page-hero .eyebrow *,html[data-design="p2-b"] .page-hero h1{color:#111111!important}
+html[data-design="p2-b"] .m-entry-media em{background:#A8C63A}
+html[data-design="p2-b"] .m-mani-text .m-mani-last{background:none;color:#111111;padding:0}

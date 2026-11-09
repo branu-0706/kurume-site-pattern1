@@ -1,17 +1,17 @@
-/* パターン③ 派生B：ASPHALT
+/* パターン③ 派生B：ASPHALT（2026-11-09：差し色を重機の黄から安全ベストの蛍光ライムに）
    ベースと同じHTML・同じ内容。見た目だけを大胆に変える：
    ・地はアスファルトの黒、差し色は重機の黄と路面の白線。
    ・角丸をやめ、斜めに切った面（道路を切った断面のイメージ）。
    ・メインビジュアルは写真を全面に敷き、見出しは黒い面に。断面図は右下に大きく。 */
 html[data-pattern="p3"][data-design="p3-b"]{
   --n-bg:#17181A;--n-bg2:#202124;--n-shape:#26272B;--n-ink:#F4F4F2;--n-sub:#C3C5CA;--n-line:#3A3B40;
-  --n-navy:#F2B705;--n-on-navy:#17181A;--n-accent:#F2B705;--n-en:#F2B705;--n-card:#232427;
+  --n-navy:#A8C63A;--n-on-navy:#17181A;--n-accent:#A8C63A;--n-en:#A8C63A;--n-card:#232427;
   --n-hatch:repeating-linear-gradient(90deg,#F4F4F2 0 46px,transparent 46px 74px);
   --kk-page-bg:#17181A!important;--kk-surface:#232427!important;--kk-surface-soft:#202124!important;--kk-primary:#202124!important;--kk-primary-strong:#26272B!important;--kk-primary-soft:#202124!important;
-  --kk-brand-navy:#F4F4F2!important;--kk-brand-blue:#F2B705!important;--kk-text:#F4F4F2!important;--kk-muted-text:#C3C5CA!important;--kk-border:#3A3B40!important;
-  --kk-button-primary-bg:#F2B705!important;--kk-button-primary-text:#17181A!important;--kk-button-secondary-bg:#26272B!important;--kk-button-secondary-text:#F4F4F2!important;--kk-focus-ring:#F2B705!important;--kk-accent-soft:#3A3320!important;
+  --kk-brand-navy:#F4F4F2!important;--kk-brand-blue:#A8C63A!important;--kk-text:#F4F4F2!important;--kk-muted-text:#C3C5CA!important;--kk-border:#3A3B40!important;
+  --kk-button-primary-bg:#A8C63A!important;--kk-button-primary-text:#17181A!important;--kk-button-secondary-bg:#26272B!important;--kk-button-secondary-text:#F4F4F2!important;--kk-focus-ring:#A8C63A!important;--kk-accent-soft:#3A3320!important;
 }
-html[data-design="p3-b"] .n-btn::after{background-color:#17181A;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23F2B705' stroke-width='2.4'/%3E%3C/svg%3E")}
+html[data-design="p3-b"] .n-btn::after{background-color:#17181A;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23A8C63A' stroke-width='2.4'/%3E%3C/svg%3E")}
 html[data-design="p3-b"] .n-btn{border-radius:0;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%);padding-right:40px}
 /* 区切りは路面の白線（センターライン） */
 html[data-design="p3-b"] .n-sec+.n-sec,html[data-design="p3-b"] .n-tiles+.n-sec{border-top:0}
@@ -24,49 +24,49 @@ html[data-design="p3-b"] .n-mv::before{display:none}
 html[data-design="p3-b"] .n-mv-photo{grid-column:1/-1;grid-row:1/3;border-radius:0;min-height:0}
 html[data-design="p3-b"] .n-mv-copy{grid-column:1;grid-row:2;align-self:end;z-index:3;margin:0 0 0 max(24px,calc((100vw - 1180px)/2));padding:40px 48px 44px;background:#17181A;clip-path:polygon(0 0,calc(100% - 48px) 0,100% 100%,0 100%);max-width:640px}
 html[data-design="p3-b"] .n-mv h1{color:#F4F4F2;font-size:clamp(38px,4.2vw,68px)}
-html[data-design="p3-b"] .n-mv-en{color:#F2B705}
+html[data-design="p3-b"] .n-mv-en{color:#A8C63A}
 html[data-design="p3-b"] .n-mv-lead{color:#C3C5CA}
-html[data-design="p3-b"] .n-mv-sub{grid-column:2;grid-row:2;justify-self:end;width:min(26vw,380px)!important;margin:0 max(24px,calc((100vw - 1180px)/2)) 48px 0;background:#17181A;box-shadow:0 0 0 3px #F2B705,16px 16px 0 3px #F4F4F2;clip-path:none}
+html[data-design="p3-b"] .n-mv-sub{grid-column:2;grid-row:2;justify-self:end;width:min(26vw,380px)!important;margin:0 max(24px,calc((100vw - 1180px)/2)) 48px 0;background:#17181A;box-shadow:0 0 0 3px #A8C63A,16px 16px 0 3px #F4F4F2;clip-path:none}
 html[data-design="p3-b"] .n-mv-count{top:24px;bottom:auto;right:max(24px,calc((100vw - 1180px)/2));background:#17181A;color:#F4F4F2;border-radius:0}
-html[data-design="p3-b"] .n-mv-count b{color:#F2B705}
+html[data-design="p3-b"] .n-mv-count b{color:#A8C63A}
 html[data-design="p3-b"] .n-mv-count span{color:#C3C5CA}
 html[data-design="p3-b"] .n-mv-count i{background:#3A3B40}
-html[data-design="p3-b"] .n-mv-count i::after{background:#F2B705}
+html[data-design="p3-b"] .n-mv-count i::after{background:#A8C63A}
 html[data-design="p3-b"] .n-scroll{color:#F4F4F2;z-index:3;background:#17181A;padding:10px 4px}
 html[data-design="p3-b"] .n-scroll::after{background:#F4F4F2}
 
 /* 見出し：黄色の英字を白抜きの輪郭に */
-html[data-design="p3-b"] .n-en{color:transparent;-webkit-text-stroke:2px #F2B705}
+html[data-design="p3-b"] .n-en{color:transparent;-webkit-text-stroke:2px #A8C63A}
 html[data-design="p3-b"] .n-numbers .n-en{color:transparent;-webkit-text-stroke:2px #17181A}
 
 /* 面は角丸をやめて斜めに切る */
 html[data-design="p3-b"] .n-biz-tall{border-radius:0;clip-path:polygon(0 0,100% 0,100% 88%,78% 100%,0 100%)}
-html[data-design="p3-b"] .n-biz-tall figcaption{background:#F2B705;color:#17181A}
+html[data-design="p3-b"] .n-biz-tall figcaption{background:#A8C63A;color:#17181A}
 html[data-design="p3-b"] .n-biz-media,html[data-design="p3-b"] .n-vision-photo{border-radius:0;clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%)}
 html[data-design="p3-b"] .n-vision-photo{clip-path:polygon(18% 0,100% 0,100% 100%,0 100%,0 22%)}
 html[data-design="p3-b"] .n-biz::before,html[data-design="p3-b"] .n-works::before{border-radius:0;background:#1E1F22;clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)}
 html[data-design="p3-b"] .n-vision{background:#1E1F22}
 html[data-design="p3-b"] .n-vision::before{border-color:#26272B;border-radius:0;transform:rotate(18deg)}
-html[data-design="p3-b"] .n-statement{color:#F2B705}
+html[data-design="p3-b"] .n-statement{color:#A8C63A}
 html[data-design="p3-b"] .n-points li{background:#26272B;color:#F4F4F2}
-html[data-design="p3-b"] .n-points b{color:#F2B705}
-html[data-design="p3-b"] .n-num{color:#F2B705;-webkit-text-stroke:0}
+html[data-design="p3-b"] .n-points b{color:#A8C63A}
+html[data-design="p3-b"] .n-num{color:#A8C63A;-webkit-text-stroke:0}
 html[data-design="p3-b"] .n-pick-list a{background:#232427;color:#F4F4F2;border:1px solid #3A3B40}
 html[data-design="p3-b"] .n-pick-ja{background:#232427}
-html[data-design="p3-b"] .n-pick-list a::before{border-radius:0!important;border:0!important;width:260px;height:44px;right:-40px;bottom:36px;background:repeating-linear-gradient(90deg,#F2B705 0 30px,transparent 30px 46px);transform:rotate(-20deg)!important}
+html[data-design="p3-b"] .n-pick-list a::before{border-radius:0!important;border:0!important;width:260px;height:44px;right:-40px;bottom:36px;background:repeating-linear-gradient(90deg,#A8C63A 0 30px,transparent 30px 46px);transform:rotate(-20deg)!important}
 html[data-design="p3-b"] .n-flow-list::before{background:repeating-linear-gradient(90deg,#F4F4F2 0 44px,transparent 44px 70px)}
-html[data-design="p3-b"] .n-step{background:#F2B705;color:#17181A}
+html[data-design="p3-b"] .n-step{background:#A8C63A;color:#17181A}
 html[data-design="p3-b"] .n-card a{box-shadow:none;border:1px solid #3A3B40}
-html[data-design="p3-b"] .n-card.is-more a{background:#F2B705;color:#17181A}
+html[data-design="p3-b"] .n-card.is-more a{background:#A8C63A;color:#17181A}
 html[data-design="p3-b"] .n-card.is-more small,html[data-design="p3-b"] .n-card.is-more .n-more{color:#17181A}
-html[data-design="p3-b"] .n-ctrl button{background:#17181A;border-color:#F2B705;color:#F2B705;border-radius:0}
-html[data-design="p3-b"] .n-progress i{background:#F2B705}
-html[data-design="p3-b"] .n-numbers{background:#F2B705;color:#17181A}
+html[data-design="p3-b"] .n-ctrl button{background:#17181A;border-color:#A8C63A;color:#A8C63A;border-radius:0}
+html[data-design="p3-b"] .n-progress i{background:#A8C63A}
+html[data-design="p3-b"] .n-numbers{background:#A8C63A;color:#17181A}
 html[data-design="p3-b"] .n-numbers .n-ja,html[data-design="p3-b"] .n-num-list dt,html[data-design="p3-b"] .n-num-list p{color:#17181A}
 html[data-design="p3-b"] .n-num-list>div{border-left-color:rgba(23,24,26,.3)}
 html[data-design="p3-b"] .n-numbers::before{border-color:rgba(23,24,26,.08);border-radius:0;transform:rotate(30deg)}
 html[data-design="p3-b"] .n-tile-label{background:#17181A;color:#F4F4F2}
-html[data-design="p3-b"] .n-tile-label small{color:#F2B705}
+html[data-design="p3-b"] .n-tile-label small{color:#A8C63A}
 html[data-design="p3-b"] .n-tile-label em{color:#C3C5CA}
 html[data-design="p3-b"] .n-tag{background:#2E2F33;color:#F4F4F2}
 html[data-design="p3-b"] .n-link{color:#F4F4F2}
@@ -77,21 +77,21 @@ html[data-design="p3-b"] .n-ticker{background:#17181A;border-color:#3A3B40}
 html[data-design="p3-b"] .site-header{background:#17181A!important;border-bottom:1px solid #3A3B40}
 html[data-design="p3-b"] .site-header :is(.desktop-nav a,.brand-wordmark,.brand-wordmark span){color:#F4F4F2}
 html[data-design="p3-b"] .site-header .site-brand img{background:#FFFFFF;padding:3px}
-html[data-design="p3-b"] .site-header .header-contact{background:#F2B705;color:#17181A}
+html[data-design="p3-b"] .site-header .header-contact{background:#A8C63A;color:#17181A}
 html[data-design="p3-b"] .menu-toggle span{background:#F4F4F2}
 html[data-design="p3-b"] .mobile-nav{background:#17181A}
 html[data-design="p3-b"] .mobile-nav a{color:#F4F4F2}
-html[data-design="p3-b"] .site-footer{background:#0F1011!important;border-top:5px solid #F2B705}
+html[data-design="p3-b"] .site-footer{background:#0F1011!important;border-top:5px solid #A8C63A}
 html[data-design="p3-b"] .site-footer .footer-brand img{background:#FFFFFF;padding:3px}
 
 /* 下層ページ */
 html[data-design="p3-b"] .page-hero{background:#17181A!important;color:#F4F4F2}
 html[data-design="p3-b"] .page-hero::before{border-radius:0;background:#1E1F22;transform:rotate(18deg)}
 html[data-design="p3-b"] .page-hero-img{border-radius:0!important;clip-path:polygon(14% 0,100% 0,100% 100%,0 100%)}
-html[data-design="p3-b"] .page-hero .eyebrow{color:transparent!important;-webkit-text-stroke:2px #F2B705}
+html[data-design="p3-b"] .page-hero .eyebrow{color:transparent!important;-webkit-text-stroke:2px #A8C63A}
 html[data-design="p3-b"] .page-hero h1{color:#F4F4F2!important}
 html[data-design="p3-b"] .page-hero :is(.lead,p){color:#C3C5CA!important}
-html[data-design="p3-b"] .section-kicker{color:transparent;-webkit-text-stroke:1.5px #F2B705}
+html[data-design="p3-b"] .section-kicker{color:transparent;-webkit-text-stroke:1.5px #A8C63A}
 html[data-design="p3-b"] .section-kicker span{-webkit-text-stroke:0;color:#F4F4F2}
 html[data-design="p3-b"] main .section{background:#17181A}
 html[data-design="p3-b"] main .section.bg-soft,html[data-design="p3-b"] main .section.bg-blueish{background:#1E1F22}
@@ -111,8 +111,10 @@ html[data-design="p3-b"] :is(.skip-link,.link-card,.tags>li,.flow>li,.fact,.anx,
 html[data-design="p3-b"] :is(.skip-link,.link-card,.tags>li,.flow>li,.fact,.anx,.anx-q>small,.career-col,.info-card,.spec-table,.faq>details,details.gate,.member-mix>li,.voice,.p2-duo-card,.p2-career-col,.p2-honest,.business-card,.is-keep){--navy:#1A2259;--blue:#04447C;--ink:#1F2A33;--muted:#43505C;--border:#CCD6DD}
 /* 白いカードの中の面（表の見出しなど）も明るい色に戻す */
 html[data-design="p3-b"] :is(.skip-link,.link-card,.tags>li,.flow>li,.fact,.anx,.anx-q>small,.career-col,.info-card,.spec-table,.faq>details,details.gate,.member-mix>li,.voice,.p2-duo-card,.p2-career-col,.p2-honest,.business-card,.is-keep){--kk-surface:#FFFFFF!important;--kk-surface-soft:#EEF2F5!important;--kk-primary:#DCE7EF!important;--kk-primary-strong:#C9DCE8!important;--kk-primary-soft:#E8F0F5!important;--surface:#EEF2F5;--surface2:#EEF2F5;--white:#FFFFFF}
-html[data-design="p3-b"] main .section.navy-band{background:#2B2C30;border-left:8px solid #F2B705}
-html[data-design="p3-b"] .career-switch a{background:#232427;color:#F4F4F2;border-color:#F2B705}
-html[data-design="p3-b"] .works-list li>span{background:#232427;color:#F2B705}
+html[data-design="p3-b"] main .section.navy-band{background:#2B2C30;border-left:8px solid #A8C63A}
+html[data-design="p3-b"] .career-switch a{background:#232427;color:#F4F4F2;border-color:#A8C63A}
+html[data-design="p3-b"] .works-list li>span{background:#232427;color:#A8C63A}
 html[data-design="p3-b"] .n-mv-sub{padding:10px}
 html[data-design="p3-b"] .n-pick-list a::before{right:-70px;bottom:-6px;width:200px;opacity:.85}
+html[data-design="p3-b"]{--n-on-key:#17181A}
+html[data-design="p3-b"] .n-btn::after{background-color:#17181A}

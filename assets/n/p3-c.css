@@ -78,3 +78,11 @@ html[data-design="p3-c"] main .section.bg-soft,html[data-design="p3-c"] main .se
 }
 html[data-design="p3-c"] .navy-band .section-kicker{color:#FFFFFF!important}
 @media(max-width:1024px){html[data-design="p3-c"] .n-mv-count{display:none}}
+/* 2026-11-09：ボタンと要所をライムに（地層のいちばん上＝草の色として） */
+html[data-design="p3-c"]{--n-on-key:#2A241D}
+html[data-design="p3-c"] .n-btn::after{background-color:#2A241D}
+html[data-design="p3-c"] .n-step{background:#A8C63A;color:#2A241D}
+html[data-design="p3-c"] .n-pick-en{color:#6F4E2E}
+html[data-design="p3-c"] .n-card.is-more a{background:#A8C63A;color:#2A241D}
+html[data-design="p3-c"] .n-card.is-more small,html[data-design="p3-c"] .n-card.is-more .n-more{color:#2A241D}
+html[data-design="p3-c"] .n-tile-label{border-top-color:#A8C63A}

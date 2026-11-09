@@ -283,3 +283,29 @@ html[data-pattern="p3"] .navy-band :is(.skip-link,.link-card,.tags>li,.flow>li,.
 /* PICK UP：カードの装飾は文字の後ろ・右下に寄せ、文字に掛かる部分ができないようにする */
 .n-pick-list a>span{position:relative;z-index:1}
 .n-pick-list a::before{right:-100px;bottom:-100px}
+
+/* ── 2026-11-09 改修：ネイビーが強すぎる → ボタンと要所をライムに（ライムの上の文字は紺） ── */
+html[data-pattern="p3"]{--n-key:#A8C63A;--n-on-key:#1A2259}
+html[data-pattern="p3"][data-design="p3-a"]{--n-accent:#A8C63A;--kk-accent:#A8C63A!important;--kk-accent-soft:#EDF3D9!important}
+.n-btn{background:var(--n-key);color:var(--n-on-key)}
+.n-btn::after{background-color:var(--n-on-key);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23A8C63A' stroke-width='2.4'/%3E%3C/svg%3E")}
+html[data-pattern="p3"] .site-header .header-contact{background:var(--n-key);color:var(--n-on-key)}
+/* A：紺の面だったところをライムに */
+[data-design="p3-a"] .n-pick-list a{background:var(--n-key);color:var(--n-on-key)}
+[data-design="p3-a"] .n-pick-ja{background:var(--n-key)}
+[data-design="p3-a"] .n-pick-list a::before{border-color:var(--n-navy)}
+[data-design="p3-a"] .n-biz-tall figcaption{background:var(--n-key);color:var(--n-on-key)}
+[data-design="p3-a"] .n-step{background:var(--n-key);color:var(--n-on-key)}
+[data-design="p3-a"] .n-flow-list::before{background:repeating-linear-gradient(90deg,var(--n-key) 0 44px,transparent 44px 70px)}
+[data-design="p3-a"] .n-card.is-more a{background:var(--n-key);color:var(--n-on-key)}
+[data-design="p3-a"] .n-card.is-more small,[data-design="p3-a"] .n-card.is-more .n-more{color:var(--n-on-key)}
+[data-design="p3-a"] .n-numbers{background:var(--n-key);color:var(--n-on-key)}
+[data-design="p3-a"] .n-numbers .n-en,[data-design="p3-a"] .n-numbers .n-ja,[data-design="p3-a"] .n-num-list dt{color:var(--n-on-key)}
+[data-design="p3-a"] .n-num-list p{color:#232B5E}
+[data-design="p3-a"] .n-num-list>div{border-left-color:rgba(26,34,89,.3)}
+[data-design="p3-a"] .n-numbers::before{border-color:rgba(26,34,89,.08)}
+[data-design="p3-a"] .n-ctrl button{background:var(--n-key);border-color:var(--n-key);color:var(--n-on-key)}
+[data-design="p3-a"] .n-progress i,[data-design="p3-a"] .n-mv-count i::after{background:var(--n-key)}
+[data-design="p3-a"] .n-mv-sub{box-shadow:0 0 0 2px var(--n-navy),18px 18px 0 2px var(--n-key)}
+[data-design="p3-a"] .n-tile-label{border-left:8px solid var(--n-key)}
+[data-design="p3-a"] .n-link{border-bottom-color:var(--n-key)}
