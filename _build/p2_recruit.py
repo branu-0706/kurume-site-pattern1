@@ -52,16 +52,6 @@ BODY = f'''
   </div>
 </section>
 <!--CRUMB-->
-<nav class="page-nav" aria-label="このページの目次"><ul class="wrap">
-  <li><a href="#recruit-roles">仕事を知る</a></li>
-  <li><a href="#recruit-reality">仕事のリアル</a></li>
-  <li><a href="#recruit-benefits">制度</a></li>
-  <li><a href="#recruit-voices">社員の声</a></li>
-  <li><a href="#recruit-career">キャリア</a></li>
-  <li><a href="#recruit-offerings">募集要項</a></li>
-  <li><a href="#recruit-faq">よくある質問</a></li>
-  <li><a href="#recruit-cta">応募</a></li>
-</ul></nav>
 
 <!-- 02 MESSAGE #recruit-message｜方式B：CMS 54 Half ＋ 43 Title All。公開側は三人称の紹介文、確認用で一人称の草稿を表示 -->
 <section class="section" id="recruit-message" aria-labelledby="msg-title" data-cms-id="54,43" data-implementation="B">

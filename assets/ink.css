@@ -145,3 +145,11 @@ main>section,main>div,.site-footer{overflow-x:clip}
   :is(.half-media,.sec-shot,.p2-shot,.p2-wide)::after{left:-8px;height:24px}
   .half.is-rev .half-media::after{right:-8px}
 }
+
+/* 白黒の写真は、カーソルを合わせると色が付く（2026-11-09） */
+main img:not([src*="logo"]):not([src*="map"]),.page-hero-img{transition:filter .45s ease}
+main img:not([src*="logo"]):not([src*="map"]):hover,
+main :is(a,figure,.half-media,.business-card,.link-card,.work-card,.person-card,.member,.sec-shot,.p2-shot,.p2-wide,.fv-pics):hover img:not([src*="logo"]):not([src*="map"]),
+.page-hero:hover .page-hero-img{filter:none}
+@media (hover:none){main img:not([src*="logo"]):not([src*="map"]),.page-hero-img{filter:grayscale(1) contrast(1.08) brightness(1.04)}}
+.page-hero:hover .page-hero-img,.fv-ink .fv-pics img:hover{filter:none!important}

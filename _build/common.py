@@ -106,7 +106,7 @@ def page(current, title, desc, depth, body, crumb=None):
     out += '<main id="main">\n'
     if crumb:
         # パンくずはHEROの直後に置く（HEROを最初の視覚要素にするため）
-        body = body.replace("<!--CRUMB-->", breadcrumb(crumb, root))
+        body = body.replace("<!--CRUMB-->", "")  # パンくずは表示しない（2026-11-09）
     marks = {"business-hero": "BUSINESS", "recruit-hero": "RECRUIT", "environment-hero": "WORK STYLE", "people-hero": "PEOPLE", "company-hero": "COMPANY"}
     for hid, word in marks.items():
         body = body.replace(f'class="page-hero" id="{hid}"', f'class="page-hero" id="{hid}" data-mark="{word}"')

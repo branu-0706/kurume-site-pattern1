@@ -95,7 +95,7 @@ def p2_page(current, title, desc, depth, body, crumb=None):
     out = p2_head(title, desc, root, current) + p2_header(current, p2root)
     out += '<main id="main">\n'
     if crumb:
-        body = body.replace("<!--CRUMB-->", p2_breadcrumb(crumb, p2root))
+        body = body.replace("<!--CRUMB-->", "")  # パンくずは表示しない（2026-11-09）
     body = body.replace('<div class="page-hero-img"', '<span class="lane" aria-hidden="true"></span><div class="page-hero-img"')
     out += body + "\n</main>\n" + p2_footer(p2root)
     return out.replace("@R@", root).replace("@P2@", p2root)

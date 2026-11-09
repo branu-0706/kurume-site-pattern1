@@ -56,16 +56,6 @@ BODY = f'''
 </section>
 <!--CRUMB-->
 <!-- ページ内目次｜方式B：CMS multiple_btns（ID要確認）＋ CSS（sticky）。JSなし -->
-<nav class="page-nav" aria-label="このページの目次"><ul class="wrap">
-  <li><a href="#recruit-facts">数字で見る</a></li>
-  <li><a href="#recruit-anxiety">応募前の不安</a></li>
-  <li><a href="#recruit-career">キャリア</a></li>
-  <li><a href="#recruit-first">最初の1か月</a></li>
-  <li><a href="#recruit-income">評価と収入</a></li>
-  <li><a href="#recruit-openings">募集要項</a></li>
-  <li><a href="#recruit-flow">選考の流れ</a></li>
-  <li><a href="#recruit-faq">Q&amp;A</a></li>
-</ul></nav>
 
 <!-- 数字で見る｜方式B：CMS 16 Card Four ＋ CSS。良い数字だけでなく、大変さの数字も並べる -->
 <section class="section" id="recruit-facts" aria-labelledby="facts-title" data-cms-id="16" data-implementation="B">
