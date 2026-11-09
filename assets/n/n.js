@@ -1,7 +1,6 @@
 /* パターン②③（新デザイン）の動き。CMSでは「JS追加」に入れる想定。
    ・[data-n-slider]：メインビジュアルの写真を自動で切り替える（番号・見出し・進み具合の線も連動）
    ・[data-n-track]：横に送るカルーセル（矢印・進み具合の線）
-   ・[data-layer]：事業カードにカーソルを合わせると、断面図の該当番号を強調
    ・.n-rv：画面に入ったら表示（動きを減らす設定では最初から表示）
    動きを減らす設定（prefers-reduced-motion）では自動切替をしない。 */
 (function () {
@@ -41,12 +40,6 @@
     track.addEventListener('scroll', upd, { passive: true });
     window.addEventListener('resize', upd);
     upd();
-  });
-
-  var cs = document.querySelector('.n-mv-cs');
-  document.querySelectorAll('[data-layer]').forEach(function (a) {
-    a.addEventListener('mouseenter', function () { if (cs) cs.setAttribute('data-on', a.getAttribute('data-layer')); });
-    a.addEventListener('mouseleave', function () { if (cs) cs.removeAttribute('data-on'); });
   });
 
   // 表示アニメーションの対象はJSで付ける（HTMLはCMSのまま）。位置だけを動かし、透明にはしない（文字が読めない瞬間を作らない）

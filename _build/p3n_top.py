@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """パターン③（コーポレート／参考：日鉄パイプライン＆エンジニアリング）の TOP 本文。
-軸になる仕掛け：道路の断面図（assets/n/cross-section.svg）。舗装の上と、地面の下の仕事を1枚で見せ、4事業の入口にする。
+軸になる仕掛け：巨大な英字の見出し・大きな角丸で切り抜いた写真・太い縁取りを付けた写真（図は使わない。2026-11-09 断面図は分かりにくいため廃止）。
 コンテンツ：パターン①（事業・進め方・施工実績・会社情報）＋ パターン②（ビジョン・働き方の見直し・人）のミックス。
 HTMLは CMS の section（data-cms-id）をそのまま置き、見た目は assets/n/p3-*.css、動きは assets/n/n.js で付ける。
 パスは pattern3/design-x/ から見た相対パス。"""
@@ -8,7 +8,6 @@ from common import OFFICIAL_WORKS, OFFICIAL_NEWS, OFFICIAL_CONTACT, DISASTER, BL
 
 R = "../../"
 P = R + "assets/photos/"
-CS = R + "assets/n/cross-section.svg"
 X = ' target="_blank" rel="noopener noreferrer"'
 XS = '<span class="sr-only">（外部サイトが開きます）</span>'
 
@@ -23,7 +22,7 @@ BIZ = [
     ("01", "service-gas", "ガス管取替後の復旧舗装工事", "ガス管の取替後に行う道路の舗装復旧工事。掘り返した道路を、元の状態に戻します。", "paving-roller.jpg", "ローラーで舗装を締め固める現場"),
     ("02", "service-water", "水道工事", "水道管の布設・布設替など、給水インフラに関わる工事。", "water-pipe.jpg", "掘削した溝に水道管を布設している現場"),
     ("03", "service-civil", "一般土木工事", "道路の改良・維持など、公共空間の基盤に関わる土木工事。", "civil-road.jpg", "カラー舗装で仕上げた道路"),
-    ("04", "service-sewer", "下水道工事", "下水道の整備など、生活環境を支える工事。", None, None),
+    ("04", "service-sewer", "下水道工事", "下水道の整備など、生活環境を支える工事。", "asphalt-rubble-track.jpg", "掘り起こしたアスファルトの塊と重機の足回り"),
 ]
 
 WORKS = [
@@ -44,14 +43,14 @@ def body():
     biz = ""
     for n, anc, h, t, img, alt in BIZ:
         media = (f'<img src="{P}{img}" alt="{alt}" loading="lazy" width="1600" height="1066">' if img else
-                 f'<img class="is-diagram" src="{R}assets/n/cross-section-sewer.svg" alt="道路の断面図のうち、地中の下水道管の部分" loading="lazy" width="240" height="160">')
-        biz += f'<a class="n-biz-item" href="business/index.html#{anc}" data-layer="{n}"><span class="n-num">{n}</span><h3>{h}</h3><p>{t}</p><div class="n-biz-media">{media}</div><span class="n-more">詳しく見る</span></a>'
+                 f'<img src="{P}asphalt-rubble-track.jpg" alt="掘り起こしたアスファルトの塊と重機の足回り" loading="lazy" width="1600" height="1066">')
+        biz += f'<a class="n-biz-item" href="business/index.html#{anc}"><span class="n-num">{n}</span><h3>{h}</h3><p>{t}</p><div class="n-biz-media">{media}</div><span class="n-more">詳しく見る</span></a>'
 
     works = "".join(f'<li class="n-card"><a href="{OFFICIAL_WORKS}"{X}><div class="n-card-media"><img src="{P}{f}" alt="{a}" loading="lazy" width="1600" height="1066"></div><small>#{en}</small><h3>{t}<br><span>{place}</span></h3><span class="n-more">詳しく見る ↗</span>{XS}</a></li>' for f, a, en, t, place in WORKS)
     works += f'<li class="n-card is-more"><a href="{OFFICIAL_WORKS}"{X}><small>#MORE PROJECTS</small><h3>施工実績を<br>もっと見る</h3><span class="n-more">施工実績の一覧 ↗</span>{XS}</a></li>'
 
     return f'''
-<!-- 01 MAIN VISUAL｜CMS 721 Mainvisual Responsive Slider（写真3枚・自動切替）＋ 734（キャッチ）＋ 画像（道路の断面図）。CTAなし -->
+<!-- 01 MAIN VISUAL｜CMS 721 Mainvisual Responsive Slider（写真3枚・自動切替）＋ 734（キャッチ）＋ 画像（縁取りした写真1枚）。CTAなし -->
 <section class="n-mv" aria-labelledby="h1" data-cms-id="721,734">
   <div class="n-mv-copy">
     <h1 id="h1"><span class="ln">道路の上も、</span><span class="ln">地面の下も。</span></h1>
@@ -61,7 +60,7 @@ def body():
   <div class="n-mv-photo" data-n-slider>{sl}
     <div class="n-mv-count" aria-hidden="true"><b class="n-cur">01</b><span>/ 03</span><em class="n-lab">道路の上の仕事</em><i class="n-bar"></i></div>
   </div>
-  <figure class="n-mv-cs"><img src="{CS}" alt="道路の断面図。舗装の下に路盤があり、地中をガス管・水道管・下水道管が通っている" width="720" height="520"></figure>
+  <figure class="n-mv-sub"><img src="{P}loader-wheel.jpg" alt="資材置き場の重機のタイヤ" width="1600" height="1066" loading="lazy"></figure>
   <p class="n-scroll" aria-hidden="true">SCROLL DOWN</p>
 </section>
 
@@ -70,10 +69,10 @@ def body():
   <div class="wrap"><time datetime="2024-03-08">2024.03.08</time><span class="n-tag">お知らせ</span><a href="{DISASTER}"{X}>令和6年度能登半島地震に伴う災害救援隊について ↗{XS}</a></div>
 </section>
 
-<!-- 03 BUSINESS｜CMS 54 Half（縦長の写真＋縦書きの見出し）＋ 16 Card Four（4事業。断面図の番号と対応） -->
+<!-- 03 BUSINESS｜CMS 54 Half（縦長の写真＋縦書きの見出し）＋ 16 Card Four（4事業） -->
 <section class="n-sec n-biz" aria-labelledby="biz-title" data-cms-id="54,16">
   <div class="wrap">
-    {head("BUSINESS", "事業内容", "biz-title", "道路の上と、地面の下の仕事。", "ガス管取替後の道路復旧から、水道・土木・下水道工事まで。断面図の番号が、それぞれの事業の持ち場です。")}
+    {head("BUSINESS", "事業内容", "biz-title", "道路の上と、地面の下の仕事。", "ガス管取替後の道路復旧から、水道・土木・下水道工事まで。道路の上と地面の下、どちらも私たちの持ち場です。")}
     <div class="n-biz-grid">
       <figure class="n-biz-tall"><img src="{P}field-worker-helmet.jpg" alt="ヘルメット姿で道路の工事をする現場職" loading="lazy" width="1600" height="1066"><figcaption><b>道路と地中の<br>インフラ工事</b><span>暮らしの足元を、つくり直し、守る。</span></figcaption></figure>
       <div class="n-biz-items">{biz}</div>
