@@ -26,6 +26,7 @@
 .sw.y figcaption{background:var(--site-yellow);color:#1A2259}
 .sw.o figcaption{background:var(--site-orange);color:#1A2259}
 .sw.n figcaption{background:#FFFFFF;color:#1A2259}
+.sw.k figcaption{background:#2A2A2A;color:#FFFFFF}
 .p3-half>img{box-shadow:16px 16px 0 var(--site-yellow)}
 @media(max-width:960px){.mv{grid-template-columns:1fr;max-height:none}.mv-photo{grid-row:1}.mv-photo img{height:62vw}.mv-fields{grid-template-columns:1fr 1fr}.mv-fields li:nth-child(3){border-left:0;padding-left:0}}
 @media(max-width:767px){.mv-panel{padding:36px 20px}.mv h1{font-size:clamp(25px,7.4vw,32px)}.swatches{grid-template-columns:1fr}.sw img{aspect-ratio:4/3}.p3-half>img{box-shadow:10px 10px 0 var(--site-yellow)}}

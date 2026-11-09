@@ -102,6 +102,9 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
     if(/data-implementation="[^"]*C/.test(open))problems.push(`[${p}] ファーストビュー: 独自HTML（方式C）になっている`);
     if(/<(a|button)\b/.test(fv))problems.push(`[${p}] ファーストビュー: ボタン・リンクが入っている`);
   }
+  // パターン③のTOPは、パターン①のTOPと同じ見出し（=同じ内容）をすべて持つ（内容量で比べられるように）
+  {const h2=f=>{const fp=path.join(ROOT,f);if(!fs.existsSync(fp))return null;return [...fs.readFileSync(fp,'utf8').matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map(m=>m[1].replace(/<[^>]+>/g,'').replace(/\s/g,''))};
+   const base=h2('index.html');if(base)['a','b','c'].forEach(x=>{const t=h2(`pattern3/design-${x}/index.html`);if(!t)return;const miss=base.filter(h=>!t.includes(h));if(miss.length)problems.push(`[pattern3/design-${x}] パターン①のTOPにある内容が足りない: ${miss.join(' / ')}`)});}
   Object.entries(photoUse).forEach(([site,m])=>Object.entries(m).forEach(([f,ps])=>{if(ps.size>1)problems.push(`写真の使い回し（${site}）: ${f} → ${[...ps].join(', ')}`)}));
   await b.close();
   console.log(problems.length?problems.join('\n'):'OK：問題は見つかりませんでした');

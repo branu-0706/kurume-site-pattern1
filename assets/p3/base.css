@@ -1,12 +1,9 @@
-/* 第3パターン 共通：写真はカラーのまま（フィルタ・暗幕なし）。色は --kk-* のみ。 */
+/* 第3パターン 共通：写真はカラーのまま（フィルタ・暗幕なし）。色は --kk-* のみ。
+   TOPは構成①のTOPと同じ9セクション＋各デザインの見出し・見せ場。body・img・見出し・.wrap など全体の指定は site.css／office.css に任せ、ここでは書かない（下層と揃えるため）。 */
+.mv h1,.mv .h2,.sec .h2,.full .h2,.mv-copy h1{margin:0;word-break:auto-phrase;text-wrap:balance}
+.mv img,.sec .scenes img,.full img,.sw img{display:block;max-width:100%}
 :root{--en:"Barlow",Arial,sans-serif;--jp:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;--disp:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;--w:1200px;--hh:84px}
-*{box-sizing:border-box}
-body{margin:0;font-family:var(--jp);color:var(--kk-text);background:var(--kk-surface);line-height:1.85;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%;height:auto}
-h1,h2,h3{word-break:auto-phrase;text-wrap:balance;margin:0}
 .ln{display:inline-block}
-a{color:inherit}
-.wrap{width:min(calc(100% - 80px),var(--w));margin-inline:auto}
 .p3-bar{background:var(--kk-text);color:var(--kk-surface);font-size:12px;padding:8px 0}
 .p3-bar .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
 .p3-bar a{color:var(--kk-surface)}
