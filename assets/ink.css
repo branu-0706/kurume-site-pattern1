@@ -2,7 +2,7 @@
    ・白黒の写真に、ライム（オフィスの椅子）と紺（ロゴ）の「吹き付け」の筆跡を重ねる。日本語の見出しは筆文字、英字はマーカー文字。
    ・筆跡は assets/ink/*.png をマスクにして、要素の背景色（--kk-*）を塗る。文字は必ず筆跡の面（背景色あり）の上に置く＝コントラストが保てる。
    ・セクションの構造は変えない（CSSだけ）。TOPの721は、写真・筆跡・手書き文字を1枚の画像に仕上げて登録する想定。 */
-:root{--brush:"Yuji Syuku","Noto Serif JP",serif;--marker:"Permanent Marker","Barlow",Arial,sans-serif}
+:root{--brush:"Dela Gothic One","Noto Sans JP",sans-serif;--marker:"Permanent Marker","Barlow",Arial,sans-serif}
 
 /* ── 筆跡の面 ── */
 .ink{-webkit-mask-image:url(ink/band-a.png);mask-image:url(ink/band-a.png);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
@@ -86,3 +86,62 @@
 /* 配色セットによってはライムが濃くなるため、文字を載せる筆跡は白、ライムは装飾の筆跡だけに使う（全セットで4.5:1以上） */
 .fv-ink .fv-fields li span,.fv-ink .fv-fields li{color:var(--kk-brand-navy)}
 .fv-ink .fv-fields::before{content:none}
+
+/* ═════════ 本文側も手描きのトーンへ（2026-11-09 第2弾）：セクションの構造は変えず、CSSだけで ═════════ */
+/* 1. 写真はすべて白黒。色は筆跡の2色だけにする（ロゴ・地図は除く） */
+main img:not([src*="logo"]):not([src*="map"]),.page-hero-img{filter:grayscale(1) contrast(1.08) brightness(1.04)}
+main :is(a,.link-card,.business-card,.work-card):hover img{filter:grayscale(.15) contrast(1.04)}
+main img{transition:filter .5s}
+
+/* 2. 見出しは太い角ゴシック（Dela Gothic One）で大きく */
+.section-title,.p2-h1,.recruit-heading h2,.contact-layout h2{font-family:var(--brush);font-weight:400;letter-spacing:.02em;line-height:1.42}
+.section-title{font-size:clamp(30px,3.6vw,54px)}
+.section-kicker{font-size:20px}
+.section-kicker span{font-size:12px}
+:is(.info-card,.business-card,.link-card,.p2-duo-card,.member,.recruit-entry) h3{font-family:var(--brush);font-weight:400;letter-spacing:.02em}
+
+/* 3. セクションの境目を、ちぎった紙のような筆跡のふちに */
+.section.bg-soft,.section.p2-tint,.section.bg-blueish,.section.bg-surface,.navy-band,.contact-section,.site-footer{position:relative}
+.section.bg-soft::before,.section.p2-tint::before,.section.bg-blueish::before,.section.bg-surface::before,.navy-band::before,.contact-section::before,.site-footer::before{content:"";position:absolute;left:-2%;right:-2%;top:-26px;height:52px;width:auto;background:inherit;background-image:none;z-index:1;pointer-events:none;-webkit-mask-image:url(ink/line.png);mask-image:url(ink/line.png);-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.section.bg-soft::before{background-color:var(--kk-surface-soft)}
+.section.p2-tint::before,.section.bg-blueish::before{background-color:var(--kk-primary-soft)}
+/* 4. 紺の面：TOPのメインビジュアルと同じ紺の面を本文にも */
+.navy-band{background:var(--kk-brand-navy)}
+.navy-band::before{background-color:var(--kk-brand-navy)}
+.navy-band .section-title,.navy-band h2,.navy-band h3{color:var(--kk-surface)}
+.navy-band .section-title::after{background-color:var(--kk-accent)}
+.navy-band :is(p,span,small,li,dd,dt,a,h2,h3,b,strong,.section-kicker,.section-kicker *):not(.info-card *,.link-card *,.card-grid *){color:var(--kk-surface)!important}
+.navy-band .text-link::before{background-color:var(--kk-accent)}
+.contact-section::before{background-color:var(--kk-primary-strong)}
+.site-footer{background:var(--kk-surface-soft);border-top:0}
+.site-footer::before{background-color:var(--kk-surface-soft)}
+
+/* 5. 写真の額：ライムの筆跡を写真の角にかける */
+:is(.half-media,.sec-shot,.p2-shot,.p2-wide){position:relative}
+:is(.half-media,.sec-shot,.p2-shot,.p2-wide)::after{content:"";position:absolute;z-index:2;left:-18px;bottom:-14px;width:min(46%,320px);height:34px;background-color:var(--kk-accent);transform:rotate(-4deg);pointer-events:none;-webkit-mask-image:url(ink/line.png);mask-image:url(ink/line.png);-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.half.is-rev .half-media::after,.member.is-rev .half-media::after{left:auto;right:-18px;transform:rotate(4deg)}
+.sec-shot,.p2-shot{overflow:visible}
+.sec-shot img,.p2-shot img{position:relative}
+
+/* 6. カード：上の線を紺の筆跡に。番号は太字で大きく */
+.info-card,.business-card,.link-card,.p2-duo-card{position:relative;border-top:0!important;box-shadow:none!important}
+.info-card::before,.business-card::before,.link-card::before,.p2-duo-card::before{content:"";position:absolute;z-index:2;left:-6px;top:-8px;width:62%;height:16px;background-color:var(--kk-brand-navy);pointer-events:none;-webkit-mask-image:url(ink/line.png);mask-image:url(ink/line.png);-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.info-card>small:first-child,.p2-bignum,.business-image>span,.flow li .num,.label-num{font-family:var(--brush)!important;font-weight:400}
+.business-card,.link-card{overflow:visible}
+.business-image,.lc-media{overflow:hidden}
+
+/* 7. ボタン：紺の筆跡の形に（ボタンそのものを筆跡の形に切り抜く。フォーカスの輪郭は内側に白で） */
+.btn-dark,.btn-white{background:var(--kk-button-primary-bg)!important;color:var(--kk-button-primary-text)!important;padding:20px 40px;min-height:64px;-webkit-mask-image:url(ink/band-a.png);mask-image:url(ink/band-a.png);-webkit-mask-size:100% 100%;mask-size:100% 100%;box-shadow:none!important}
+.btn-dark:hover,.btn-white:hover{background:var(--kk-brand-blue)!important}
+.btn-dark:focus-visible,.btn-white:focus-visible{outline:3px solid var(--kk-surface);outline-offset:-10px}
+.text-link{position:relative;z-index:0}
+.text-link::before{content:"";position:absolute;left:-4px;right:-4px;bottom:-2px;height:9px;background-color:var(--kk-accent);z-index:-1;-webkit-mask-image:url(ink/line.png);mask-image:url(ink/line.png);-webkit-mask-size:100% 100%;mask-size:100% 100%}
+/* はみ出す筆跡で横スクロールが出ないように */
+main>section,main>div,.site-footer{overflow-x:clip}
+
+@media(max-width:767px){
+  .section-title{font-size:clamp(25px,7vw,32px)}
+  .section-kicker{font-size:17px}
+  :is(.half-media,.sec-shot,.p2-shot,.p2-wide)::after{left:-8px;height:24px}
+  .half.is-rev .half-media::after{right:-8px}
+}
