@@ -11,6 +11,9 @@ const SITES={
   'パターン①×デザイン③':['compare/pattern1/design-b/index.html'],
   'パターン②×デザイン②':['compare/pattern2/design-a/index.html'],
   'パターン②×デザイン③':['compare/pattern2/design-b/index.html'],
+  'パターン③×デザインA':['pattern3/design-a/index.html','pattern3/design-a/business/index.html','pattern3/design-a/recruit/index.html','pattern3/design-a/work-environment/index.html','pattern3/design-a/people/index.html','pattern3/design-a/company/index.html'],
+  'パターン③×デザインB':['pattern3/design-b/index.html','pattern3/design-b/business/index.html','pattern3/design-b/recruit/index.html','pattern3/design-b/work-environment/index.html','pattern3/design-b/people/index.html','pattern3/design-b/company/index.html'],
+  'パターン③×デザインC':['pattern3/design-c/index.html','pattern3/design-c/business/index.html','pattern3/design-c/recruit/index.html','pattern3/design-c/work-environment/index.html','pattern3/design-c/people/index.html','pattern3/design-c/company/index.html'],
   '比較ページ':['compare/index.html'],
 };
 const PAGES=Object.values(SITES).flat();
@@ -84,7 +87,7 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
     await ctx.close();
   }
   /* ファーストビュー：CMS標準セクション（734 H1 Center／721 Mainvisual）を使い、独自HTML（方式C）にしない。CTA・リンクを置かない */
-  for(const p of PAGES.filter(x=>x!=='compare/index.html')){
+  for(const p of PAGES.filter(x=>x!=='compare/index.html'&&!x.startsWith('pattern3/'))){
     const html=fs.readFileSync(path.join(ROOT,p),'utf8');
     const secs=html.match(/<section\b[^>]*>[\s\S]*?<\/section>/g)||[];
     const fv=secs.find(s=>/<h1\b/.test(s));

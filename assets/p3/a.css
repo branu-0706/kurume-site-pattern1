@@ -2,8 +2,8 @@
 .mv-photo{margin:0}
 .mv-photo img{width:100%;height:calc(100svh - var(--hh) - 220px);min-height:440px;max-height:720px;object-fit:cover;object-position:50% 50%}
 .mv-copy{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 64px;align-items:end;padding:40px 0 48px}
-.mv h1{font-family:var(--disp);font-weight:400;font-size:clamp(32px,3.8vw,58px);line-height:1.3;color:var(--kk-brand-navy)}
-.mv .lead{margin:0;font-size:14.5px}
+.mv h1{font-family:var(--disp);font-weight:700;font-size:clamp(32px,3.8vw,58px);line-height:1.3;color:var(--kk-brand-navy)}
+.mv .p3-lead{margin:0;font-size:14.5px}
 .mv-fields{margin:16px 0 0;padding:14px 0 0;list-style:none;display:flex;flex-wrap:wrap;gap:4px 18px;border-top:2px solid var(--kk-brand-navy);font-size:13px;font-weight:700;color:var(--kk-brand-navy)}
 .full{position:relative}
 .full img{width:100%;height:clamp(420px,56vw,700px);object-fit:cover}

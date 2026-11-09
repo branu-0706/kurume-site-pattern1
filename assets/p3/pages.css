@@ -1,0 +1,58 @@
+/* 第3パターン：下層ページ（P1の下層ページの構造そのまま。写真はカラー、CSSで3デザインに分ける）
+   ・見出しは通常のゴシック（Noto Sans JP 700）。極太の書体は使わない。
+   ・文字は写真の上に置かない（無地の面）。 */
+html[data-pattern="p3"] .section-title,html[data-pattern="p3"] .page-hero h1{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;font-weight:700;letter-spacing:.03em}
+
+/* ── A PHOTO FULL：写真を全幅で上に、文字は下の白い面 ── */
+[data-design="p3-a"] .page-hero{flex-direction:column;align-items:stretch;min-height:0;background:var(--kk-surface)}
+[data-design="p3-a"] .page-hero-img{position:relative;inset:auto;order:-1;width:100%;height:clamp(320px,52vh,560px)}
+[data-design="p3-a"] .page-hero .lane{display:none}
+[data-design="p3-a"] .page-hero .wrap{padding-block:44px 56px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:8px 56px;align-items:end}
+[data-design="p3-a"] .page-hero .eyebrow{grid-column:1/-1}
+[data-design="p3-a"] .page-hero h1{font-size:clamp(28px,3.2vw,46px);color:var(--kk-brand-navy)}
+[data-design="p3-a"] .page-hero .lead{margin:0}
+[data-design="p3-a"] .section.bg-soft,[data-design="p3-a"] .section.bg-blueish{background:var(--kk-surface-soft)}
+[data-design="p3-a"] .sec-shot{margin-inline:calc(50% - 50vw)}
+[data-design="p3-a"] .sec-shot img{aspect-ratio:21/8}
+
+/* ── B GALLERY：白い誌面。見出しが先、写真は本文幅で、角は直角・影なし ── */
+[data-design="p3-b"] .page-hero{flex-direction:column;align-items:stretch;min-height:0;background:var(--kk-surface)}
+[data-design="p3-b"] .page-hero .lane{display:none}
+[data-design="p3-b"] .page-hero .wrap{padding-block:64px 32px}
+[data-design="p3-b"] .page-hero h1{font-size:clamp(30px,3.4vw,50px);color:var(--kk-brand-navy)}
+[data-design="p3-b"] .page-hero-img{position:relative;inset:auto;order:2;width:min(calc(100% - 80px),1180px);margin:0 auto 24px;height:clamp(300px,44vw,560px)}
+[data-design="p3-b"] .section.bg-soft,[data-design="p3-b"] .section.bg-blueish,[data-design="p3-b"] .navy-band{background:var(--kk-surface)}
+[data-design="p3-b"] .section+.section{border-top:1px solid var(--kk-border)}
+[data-design="p3-b"] :is(.info-card,.link-card,.business-card){box-shadow:none;border-radius:0}
+[data-design="p3-b"] main img{border-radius:0}
+
+/* ── C SITE COLOR：重機の黄の面に見出し、写真は右に大きく。黄・橙は写真から取った固定の現場色、文字は紺 ── */
+[data-design="p3-c"]{--site-yellow:#F2B705;--site-orange:#F08A24}
+[data-design="p3-c"] .page-hero{background:var(--site-yellow);color:#1A2259;min-height:520px}
+[data-design="p3-c"] .page-hero-img{inset:0 0 0 46%}
+[data-design="p3-c"] .page-hero .lane{display:none}
+[data-design="p3-c"] .page-hero .wrap>*{max-width:min(520px,42vw)}
+[data-design="p3-c"] .page-hero h1{font-size:clamp(28px,3vw,44px);color:#1A2259}
+[data-design="p3-c"] .page-hero :is(.eyebrow,.eyebrow *,.lead,p){color:#1A2259!important}
+[data-design="p3-c"] .page-hero .eyebrow .line{background:#1A2259}
+[data-design="p3-c"] .section-kicker::before{background:var(--site-yellow)!important}
+[data-design="p3-c"] .section-title{position:relative;padding-bottom:18px}
+[data-design="p3-c"] .section-title::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:6px;background:var(--site-yellow)}
+[data-design="p3-c"] :is(.section-heading[style*="center"],.text-center) .section-title::after{left:50%;transform:translateX(-50%)}
+[data-design="p3-c"] :is(.info-card,.business-card,.link-card){border-top:6px solid var(--site-yellow)}
+[data-design="p3-c"] :is(.info-card,.business-card,.link-card):nth-child(3n+2){border-top-color:var(--site-orange)}
+[data-design="p3-c"] :is(.info-card,.business-card,.link-card):nth-child(3n){border-top-color:var(--kk-brand-navy)}
+[data-design="p3-c"] .sec-shot img,[data-design="p3-c"] .half-media img{box-shadow:12px 12px 0 var(--site-yellow)}
+
+@media(max-width:767px){
+  [data-design="p3-a"] .page-hero-img{height:62vw;min-height:240px}
+  [data-design="p3-a"] .page-hero .wrap{grid-template-columns:1fr;padding-block:28px 36px}
+  [data-design="p3-a"] .sec-shot{margin-inline:-19px}
+  [data-design="p3-b"] .page-hero .wrap{padding-block:36px 20px}
+  [data-design="p3-b"] .page-hero-img{width:calc(100% - 38px);height:62vw}
+  [data-design="p3-c"] .page-hero{flex-direction:column;min-height:0}
+  [data-design="p3-c"] .page-hero-img{position:relative;inset:auto;order:-1;width:100%;height:62vw}
+  [data-design="p3-c"] .page-hero .wrap>*{max-width:none}
+  [data-design="p3-c"] .sec-shot img,[data-design="p3-c"] .half-media img{box-shadow:8px 8px 0 var(--site-yellow)}
+}
+[data-pattern="p3"] main>section{overflow-x:clip}

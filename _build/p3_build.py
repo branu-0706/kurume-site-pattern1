@@ -18,7 +18,7 @@ DESIGNS = [
 F4 = [("ガス管取替後の復旧舗装工事", "ガス管の取替後に行う道路の舗装復旧工事。", "paving-roller", "ローラーで舗装を締め固める現場"),
       ("水道工事", "水道管の布設・布設替など、給水インフラに関わる工事。", "water-pipe", "水道管の工事現場"),
       ("一般土木工事", "道路の改良・維持など、公共空間の基盤に関わる工事。", "civil-road", "道路の土木工事"),
-      ("下水道工事", "下水道の整備など、生活環境を支える工事。", "process-remove", "舗装を撤去する作業")]
+      ("下水道工事", "下水道の整備など、生活環境を支える工事。", "work-kyuden", "工事を終えた道路")]
 H1 = '<span class="ln">道路の復旧舗装から、</span><br><span class="ln">水道・土木工事まで。</span>'
 LEAD = "世田谷を拠点に、1974年から。道路と街のインフラに関わる工事を担っています。"
 NAV = "".join(f"<span>{t}</span>" for t in ["TOP", "事業内容", "採用情報", "労働環境", "働くメンバー", "会社情報"])
@@ -51,12 +51,9 @@ def head(key, title):
 '''
 
 
-FOOT = '''
+FOOT_MAIN = '''
 <!-- CONTACT｜CMS 80 H2 Text ＋ ボタン -->
-<section class="p3-contact"><div class="wrap"><div><p class="kicker">CONTACT</p><h2 class="h2">工事のご相談・お問い合わせ</h2><p>道路舗装・水道・土木工事のご相談は、お電話またはお問い合わせフォームから。</p></div><div class="p3-cta"><a class="btn" href="../../company/index.html#company-contact">お問い合わせフォーム</a><p class="tel">TEL <a href="tel:0333093786">03-3309-3786</a></p></div></div></section>
-</main>
-<footer class="ft"><div class="wrap"><img src="../../assets/kurume-logo.png" alt="" width="56" height="35"><p>株式会社久留米興業　東京都世田谷区北烏山6丁目26-28</p></div></footer>
-</body></html>
+<section class="p3-contact"><div class="wrap"><div><p class="kicker">CONTACT</p><h2 class="h2">工事のご相談・お問い合わせ</h2><p>道路舗装・水道・土木工事のご相談は、お電話またはお問い合わせフォームから。</p></div><div class="p3-cta"><a class="p3-btn" href="https://www.kurume-k.jp/contact" target="_blank" rel="noopener noreferrer">お問い合わせフォーム</a><p class="tel">TEL <a href="tel:0333093786">03-3309-3786</a></p></div></div></section>
 '''
 
 
@@ -69,16 +66,16 @@ def page_a():
 <!-- 01 MAIN VISUAL｜CMS 721（写真1枚・カラーのまま。文字は写真の下の白い面） -->
 <section class="mv" aria-labelledby="h1" data-cms-id="721">
   <figure class="mv-photo"><img src="{P}field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="1600" height="1066" fetchpriority="high"></figure>
-  <div class="mv-copy wrap"><div><p class="kicker">INFRASTRUCTURE / KURUME KOGYO</p><h1 id="h1">{H1}</h1></div><div><p class="lead">{LEAD}</p><ul class="mv-fields" aria-label="対応する工事">{"".join(f"<li>{t}</li>" for t,*_ in F4)}</ul></div></div>
+  <div class="mv-copy wrap"><div><p class="kicker">INFRASTRUCTURE / KURUME KOGYO</p><h1 id="h1">{H1}</h1></div><div><p class="p3-lead">{LEAD}</p><ul class="mv-fields" aria-label="対応する工事">{"".join(f"<li>{t}</li>" for t,*_ in F4)}</ul></div></div>
 </section>
 <!-- 02 BUSINESS｜CMS 16 Card Four -->
 <section class="sec"><div class="wrap"><div class="head"><p class="kicker">BUSINESS</p><h2 class="h2">対応する工事</h2></div><div class="biz">{biz_cards()}</div></div></section>
 <!-- 03 ON SITE｜CMS 54 Half（全幅の写真＋白い面の文字） -->
-<section class="full"><img src="{P}excavator-boom-name.jpg" alt="社名の入った重機と資材置き場" loading="lazy" width="1600" height="1066"><div class="full-copy"><p class="kicker">ON SITE</p><h2 class="h2">社名を背負って、<br>街の道路に出ていく。</h2><p>北烏山の資材置き場から、重機と資材を積んで各現場へ。</p></div></section>
+<section class="full"><img src="{P}machine.jpg" alt="社名の入った重機" loading="lazy" width="1600" height="1066"><div class="full-copy"><p class="kicker">ON SITE</p><h2 class="h2">社名を背負って、<br>街の道路に出ていく。</h2><p>北烏山の資材置き場から、重機と資材を積んで各現場へ。</p></div></section>
 <!-- 04 OFFICE｜CMS 54 Half -->
-<section class="sec"><div class="wrap half"><img src="{P}office-wide-window.jpg" alt="窓際まで机が並ぶ本社の事務所" loading="lazy" width="1600" height="1066"><div><p class="kicker">OFFICE</p><h2 class="h2">現場を動かす、<br>北烏山の本社。</h2><p>取引先との調整、見積、書類、工程。現場が予定どおり進むように、本社の社員が支えています。</p></div></div></section>
+<section class="sec"><div class="wrap p3-half"><img src="{P}entrance.jpg" alt="「(株)久留米興業」の看板が掲げられた本社の敷地入口" loading="lazy" width="1600" height="1066"><div><p class="kicker">OFFICE</p><h2 class="h2">現場を動かす、<br>北烏山の本社。</h2><p>取引先との調整、見積、書類、工程。現場が予定どおり進むように、本社の社員が支えています。</p></div></div></section>
 <!-- 05 RECRUIT｜CMS 54 Half -->
-<section class="sec soft"><div class="wrap half is-rev"><img src="{P}compactor-shovel.jpg" alt="締固め機とスコップで路盤を整える二人の現場職" loading="lazy" width="1600" height="1066"><div><p class="kicker">RECRUIT</p><h2 class="h2">未経験から、<br>道路の仕事へ。</h2><p>営業職・現場職ともに、未経験から始めた社員が活躍しています。</p><a class="more" href="../../recruit/index.html">採用情報を見る</a></div></div></section>
+<section class="sec soft"><div class="wrap p3-half is-rev"><img src="{P}field-worker-helmet.jpg" alt="ヘルメット姿で道路の工事をする現場職" loading="lazy" width="1600" height="1066"><div><p class="kicker">RECRUIT</p><h2 class="h2">未経験から、<br>道路の仕事へ。</h2><p>営業職・現場職ともに、未経験から始めた社員が活躍しています。</p><a class="more" href="recruit/index.html">採用情報を見る</a></div></div></section>
 '''
 
 
@@ -86,10 +83,10 @@ def page_b():
     return f'''
 <!-- 01 MAIN VISUAL｜CMS 734（見出し）＋ 721（写真3枚をグリッドで。合成しない） -->
 <section class="mv" aria-labelledby="h1" data-cms-id="734,721">
-  <div class="wrap mv-head"><p class="kicker">INFRASTRUCTURE / KURUME KOGYO</p><h1 id="h1">{H1}</h1><p class="lead">{LEAD}</p></div>
+  <div class="wrap mv-head"><p class="kicker">INFRASTRUCTURE / KURUME KOGYO</p><h1 id="h1">{H1}</h1><p class="p3-lead">{LEAD}</p></div>
   <div class="wrap mv-grid">
     <figure class="g1"><img src="{P}field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="1600" height="1066" fetchpriority="high"><figcaption>歩道の路盤工事</figcaption></figure>
-    <figure class="g2"><img src="{P}office-wide-window.jpg" alt="窓際まで机が並ぶ本社の事務所" width="1600" height="1066"><figcaption>北烏山の本社</figcaption></figure>
+    <figure class="g2"><img src="{P}yard-low-krm.jpg" alt="重機が並ぶ北烏山の資材置き場" width="1600" height="1066"><figcaption>北烏山の資材置き場</figcaption></figure>
     <figure class="g3"><img src="{P}loader-wheel.jpg" alt="資材置き場の重機のタイヤ" width="1600" height="1066"><figcaption>資材置き場</figcaption></figure>
   </div>
   <ul class="wrap mv-fields" aria-label="対応する工事">{"".join(f"<li><span>{i+1:02d}</span>{t}</li>" for i,(t,*_) in enumerate(F4))}</ul>
@@ -98,10 +95,10 @@ def page_b():
 <section class="sec"><div class="wrap"><div class="head"><p class="kicker">BUSINESS</p><h2 class="h2">対応する工事</h2><p>ガス管取替後の道路復旧から、水道・土木・下水道工事まで。</p></div><div class="biz">{biz_cards()}</div></div></section>
 <!-- 03 SCENES｜CMS 42 Card Three（写真のみ・大小） -->
 <section class="sec soft"><div class="wrap"><div class="head"><p class="kicker">SCENES</p><h2 class="h2">現場と本社の、<br>ある一日。</h2></div>
-  <div class="scenes"><figure class="s1"><img src="{P}excavator-boom-name.jpg" alt="社名の入った重機と資材置き場" loading="lazy" width="1600" height="1066"><figcaption>朝、重機を積んで現場へ</figcaption></figure><figure class="s2"><img src="{P}traffic-guard.jpg" alt="道路で誘導する警備員" loading="lazy" width="1600" height="1066"><figcaption>安全を確保して作業開始</figcaption></figure><figure class="s3"><img src="{P}office-team-wide.jpg" alt="社員が机を並べて働く本社の事務所" loading="lazy" width="1600" height="1066"><figcaption>本社で見積と段取り</figcaption></figure><figure class="s4"><img src="{P}compactor-shovel.jpg" alt="締固め機とスコップで路盤を整える二人の現場職" loading="lazy" width="1600" height="1066"><figcaption>路盤を整え、道を元に戻す</figcaption></figure></div>
+  <div class="scenes"><figure class="s1"><img src="{P}machine.jpg" alt="社名の入った重機" loading="lazy" width="1600" height="1066"><figcaption>朝、重機を積んで現場へ</figcaption></figure><figure class="s2"><img src="{P}field-worker-helmet.jpg" alt="ヘルメット姿で道路の工事をする現場職" loading="lazy" width="1600" height="1066"><figcaption>安全を確保して作業開始</figcaption></figure><figure class="s3"><img src="{P}yard-machines.jpg" alt="資材置き場に並ぶ重機と運搬車" loading="lazy" width="1600" height="1066"><figcaption>資材置き場で重機を準備</figcaption></figure><figure class="s4"><img src="{P}work-chisaki.jpg" alt="工事を終えた道路" loading="lazy" width="1600" height="1066"><figcaption>工事を終え、道を元に戻す</figcaption></figure></div>
 </div></section>
 <!-- 04 COMPANY｜CMS 22 Table -->
-<section class="sec"><div class="wrap half"><div><p class="kicker">COMPANY</p><h2 class="h2">1974年から、<br>この街の道路と。</h2><dl class="facts"><div><dt>設立</dt><dd>1974年3月4日</dd></div><div><dt>所在地</dt><dd>東京都世田谷区北烏山6丁目26-28</dd></div><div><dt>関連会社</dt><dd>KRM株式会社</dd></div></dl><a class="more" href="../../company/index.html">会社情報を見る</a></div><img src="{P}yard-gate.jpg" alt="「(株)久留米興業」の看板を掲げた資材置き場の入口" loading="lazy" width="1600" height="1066"></div></section>
+<section class="sec"><div class="wrap p3-half"><div><p class="kicker">COMPANY</p><h2 class="h2">1974年から、<br>この街の道路と。</h2><dl class="p3-facts"><div><dt>設立</dt><dd>1974年3月4日</dd></div><div><dt>所在地</dt><dd>東京都世田谷区北烏山6丁目26-28</dd></div><div><dt>関連会社</dt><dd>KRM株式会社</dd></div></dl><a class="more" href="company/index.html">会社情報を見る</a></div><img src="{P}entrance.jpg" alt="「(株)久留米興業」の看板が掲げられた本社の敷地入口" loading="lazy" width="1600" height="1066"></div></section>
 '''
 
 
@@ -109,7 +106,7 @@ def page_c():
     return f'''
 <!-- 01 MAIN VISUAL｜CMS 721（写真1枚）＋ 734（重機の黄色の面に見出し） -->
 <section class="mv" aria-labelledby="h1" data-cms-id="721,734">
-  <div class="mv-panel"><p class="kicker">INFRASTRUCTURE / KURUME KOGYO</p><h1 id="h1">{H1}</h1><p class="lead">{LEAD}</p></div>
+  <div class="mv-panel"><p class="kicker">INFRASTRUCTURE / KURUME KOGYO</p><h1 id="h1">{H1}</h1><p class="p3-lead">{LEAD}</p></div>
   <figure class="mv-photo"><img src="{P}field-work-street.jpg" alt="重機とともに歩道の路盤をつくる施工中の現場" width="1600" height="1066" fetchpriority="high"></figure>
   <ul class="mv-fields" aria-label="対応する工事">{"".join(f"<li><span>{i+1:02d}</span>{t}</li>" for i,(t,*_) in enumerate(F4))}</ul>
 </section>
@@ -119,20 +116,73 @@ def page_c():
 <section class="sec navy"><div class="wrap"><div class="head"><p class="kicker">COLORS OF THE SITE</p><h2 class="h2">現場の色が、<br>この会社の色。</h2><p>重機の黄色、コーンの橙、作業着の紺。毎日の現場にある色を、そのまま会社の色にしています。</p></div>
   <div class="swatches">
     <figure class="sw y"><img src="{P}loader-wheel.jpg" alt="資材置き場の重機のタイヤ" loading="lazy" width="1600" height="1066"><figcaption><b>MACHINE YELLOW</b>重機の黄色</figcaption></figure>
-    <figure class="sw o"><img src="{P}traffic-guard.jpg" alt="道路で誘導する警備員" loading="lazy" width="1600" height="1066"><figcaption><b>SAFETY ORANGE</b>安全の橙</figcaption></figure>
-    <figure class="sw n"><img src="{P}worker-back-towel.jpg" alt="ヘルメット姿で作業する現場職の後ろ姿" loading="lazy" width="1600" height="1066"><figcaption><b>WORK NAVY</b>作業着の紺</figcaption></figure>
+    <figure class="sw o"><img src="{P}field-worker-helmet.jpg" alt="ヘルメット姿で道路の工事をする現場職" loading="lazy" width="1600" height="1066"><figcaption><b>SAFETY ORANGE</b>安全の橙</figcaption></figure>
+    <figure class="sw n"><img src="{P}operator-lever.jpg" alt="作業着の袖で重機のレバーを握る手元" loading="lazy" width="1600" height="1066"><figcaption><b>WORK NAVY</b>作業着の紺</figcaption></figure>
   </div></div></section>
 <!-- 04 OFFICE｜CMS 54 Half -->
-<section class="sec"><div class="wrap half"><img src="{P}office-wide-window.jpg" alt="窓際まで机が並ぶ本社の事務所" loading="lazy" width="1600" height="1066"><div><p class="kicker">OFFICE</p><h2 class="h2">ライムの椅子が並ぶ、<br>北烏山の本社。</h2><p>取引先との調整、見積、書類、工程。現場が予定どおり進むように、本社の社員が支えています。</p><a class="more" href="../../company/index.html">会社情報を見る</a></div></div></section>
+<section class="sec"><div class="wrap p3-half"><img src="{P}entrance.jpg" alt="「(株)久留米興業」の看板が掲げられた本社の敷地入口" loading="lazy" width="1600" height="1066"><div><p class="kicker">OFFICE</p><h2 class="h2">現場を動かす、<br>北烏山の本社。</h2><p>取引先との調整、見積、書類、工程。現場が予定どおり進むように、本社の社員が支えています。</p><a class="more" href="company/index.html">会社情報を見る</a></div></div></section>
 '''
+
+
+import re as _re
+
+PAGES = ["business", "recruit", "work-environment", "people", "company"]
+
+
+def _rewrite(html, base):
+    """P1の出力HTMLを pattern3/design-x/ 配下へ移すためのパス書き換え。base は元の相対接頭辞（"" か "../"）。"""
+    keep = ("index.html", "#", "http", "tel:", "mailto:") + tuple(p + "/" for p in PAGES)
+    def fix(m):
+        attr, val = m.group(1), m.group(2)
+        if not val.startswith(base):
+            return m.group(0)
+        rest = val[len(base):]
+        if rest.startswith(keep):
+            return m.group(0)
+        return attr + base + "../../" + rest
+    html = _re.sub(r'((?:href|src)=")([^"]*)', fix, html)
+    html = _re.sub(r"(url\(')([^']*)", fix, html)
+    return html
+
+
+def _strip(html, key):
+    for pat in [r'\n<link rel="stylesheet" href="[^"]*(?:ink|marker|dela-gothic|switcher)\.css">', r'\n<script defer src="[^"]*switcher\.js"></script>']:
+        html = _re.sub(pat, "", html)
+    html = _re.sub(r'data-design="d1"', f'data-design="p3-{key[-1]}"', html, count=1)
+    html = html.replace('data-structure="p1"', 'data-structure="p1" data-pattern="p3"', 1)
+    return html
+
+
+def _add_css(html, root, files):
+    links = "".join(f'\n<link rel="stylesheet" href="{root}assets/p3/{f}">' for f in files)
+    return html.replace('/office.css">', '/office.css">' + links, 1)
+
+
+def _bar(html, key, root):
+    return html.replace("<body>", "<body>\n" + bar(key).replace('href="../', f'href="{root}pattern3/').replace(f'href="{root}pattern3/../', f'href="{root}'), 1)
 
 
 def build(out=OUT):
     for (key, letter, name, desc), body in zip(DESIGNS, [page_a, page_b, page_c]):
         d = os.path.join(out, "pattern3", key)
         os.makedirs(d, exist_ok=True)
-        with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
-            f.write(head(key, f"第3パターン {letter} {name}") + body() + FOOT)
+        # TOP：P1 TOP のヘッダー・フッターを使い、本文を第3パターンに差し替える
+        src = open(os.path.join(out, "index.html"), encoding="utf-8").read()
+        html = _strip(_rewrite(src, ""), key)
+        main = body().replace('href="../../', 'href="../../')
+        html = _re.sub(r'<main id="main">.*?</main>', '<main id="main">' + main + FOOT_MAIN + '</main>', html, count=1, flags=_re.S)
+        html = html.replace('<title>', f'<title>第3パターン {letter}｜', 1)
+        html = _add_css(html, "../../", ["base.css", key[-1] + ".css", "pages.css"])
+        html = _bar(html, key, "../../")
+        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(html)
+        # 下層：P1 の下層ページを、写真カラー・第3パターンのCSSで
+        for p in PAGES:
+            src = open(os.path.join(out, p, "index.html"), encoding="utf-8").read()
+            html = _strip(_rewrite(src, "../"), key)
+            html = _add_css(html, "../../../", ["pages.css"])
+            html = _bar(html, key, "../../../")
+            os.makedirs(os.path.join(d, p), exist_ok=True)
+            open(os.path.join(d, p, "index.html"), "w", encoding="utf-8").write(html)
 
 
 if __name__ == "__main__":
