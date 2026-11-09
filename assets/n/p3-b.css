@@ -115,3 +115,4 @@ html[data-design="p3-b"] main .section.navy-band{background:#2B2C30;border-left:
 html[data-design="p3-b"] .career-switch a{background:#232427;color:#F4F4F2;border-color:#F2B705}
 html[data-design="p3-b"] .works-list li>span{background:#232427;color:#F2B705}
 html[data-design="p3-b"] .n-mv-sub{padding:10px}
+html[data-design="p3-b"] .n-pick-list a::before{right:-70px;bottom:-6px;width:200px;opacity:.85}

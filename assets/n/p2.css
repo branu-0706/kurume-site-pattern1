@@ -14,7 +14,8 @@ html[data-pattern="p2"] body{background:var(--m-bg)}
 html[data-pattern="p2"] main{overflow-x:clip}
 
 /* ── 共通 ── */
-.m-sec{position:relative;padding:clamp(72px,8vw,120px) 0;isolation:isolate}
+/* 背景の図形は自分のsectionの中で切る（はみ出すと隣のsectionの文字を隠す） */
+.m-sec{position:relative;padding:clamp(72px,8vw,120px) 0;isolation:isolate;overflow:clip}
 .m-h2{margin:0 0 24px;display:flex;flex-direction:column;gap:10px}
 .m-en{font-family:var(--m-font-en);font-weight:900;font-size:clamp(48px,6.4vw,96px);line-height:.95;letter-spacing:-.01em;color:var(--m-ink);text-transform:uppercase}
 .m-ja{font-size:15px;font-weight:800;color:var(--m-label);letter-spacing:.06em}
