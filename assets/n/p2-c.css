@@ -1,0 +1,142 @@
+/* パターン② 派生C：CINEMA
+   ベースと同じHTML・同じ内容。見た目だけを大胆に変える：
+   ・夜の紺黒を地に、写真を画面いっぱいに。映画のタイトルのように輪郭だけの巨大な英字。
+   ・社員の声は横に送って見る。差し色はライムを光として。 */
+html[data-pattern="p2"][data-design="p2-c"]{--m-bg:#0B0F1A;--m-panel:#151B2B;--m-ink:#F2F3F7;--m-sub:#B9BFCC;--m-line:#2A3246;--m-label:#C9D86A;--m-navy:#1A2259;--m-on:#FFFFFF}
+html[data-design="p2-c"] body{background:#0B0F1A;color:#F2F3F7}
+html[data-design="p2-c"] .m-sec::before{opacity:.0}
+html[data-design="p2-c"] .m-en{color:transparent;-webkit-text-stroke:2px #F2F3F7;font-size:clamp(56px,8vw,140px)}
+html[data-design="p2-c"] .m-h2.is-light .m-en{color:transparent}
+html[data-design="p2-c"] .m-ja{color:#C9D86A}
+html[data-design="p2-c"] .m-text{color:#B9BFCC}
+html[data-design="p2-c"] .m-btn{background:#C9D86A;color:#0B0F1A}
+html[data-design="p2-c"] .m-btn::after{background-color:#0B0F1A;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23C9D86A' stroke-width='3'/%3E%3C/svg%3E")}
+html[data-design="p2-c"] .m-btn.is-light{background:#FFFFFF;color:#0B0F1A}
+
+/* メインビジュアル：写真を全画面に、下に向けて夜の色へ */
+html[data-design="p2-c"] .m-mv{background:#0B0F1A;min-height:calc(100svh - 110px);display:grid}
+html[data-design="p2-c"] .m-mv-photo{grid-area:1/1;height:calc(100svh - 110px);min-height:560px;max-height:none}
+html[data-design="p2-c"] .m-mv-photo::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#0B0F1A)}
+html[data-design="p2-c"] .m-mv-photo{position:relative}
+html[data-design="p2-c"] .m-mv-word{top:auto;bottom:clamp(170px,26vh,260px);color:transparent;-webkit-text-stroke:2px #FFFFFF;text-shadow:none;font-size:clamp(72px,12vw,200px)}
+html[data-design="p2-c"] .m-mv-word span+span{-webkit-text-stroke:2px #C9D86A}
+html[data-design="p2-c"] .m-mv-copy{grid-area:1/1;align-self:end;margin:0;padding:0 max(24px,calc((100vw - 1180px)/2)) 48px;background:transparent;border-radius:0;z-index:2}
+html[data-design="p2-c"] .m-mv-copy>*{background:#0B0F1A;padding:6px 14px}
+html[data-design="p2-c"] .m-mv-copy h1{padding:10px 18px}
+
+/* 宣言文：黒地に光る一文 */
+html[data-design="p2-c"] .m-manifesto{background:#0B0F1A}
+html[data-design="p2-c"] .m-manifesto::before{border-color:rgba(201,216,106,.18);box-shadow:0 0 0 80px rgba(201,216,106,.03),0 0 0 160px rgba(201,216,106,.02)}
+html[data-design="p2-c"] .m-mani-text .m-mani-last{color:#C9D86A}
+html[data-design="p2-c"] .m-mani-links span{color:transparent;-webkit-text-stroke:1.5px #FFFFFF;border-bottom-color:#C9D86A}
+html[data-design="p2-c"] .m-mani-links a:hover span{color:#C9D86A}
+html[data-design="p2-c"] .m-strip{grid-template-columns:repeat(4,1fr);gap:0;padding:56px 0 0}
+html[data-design="p2-c"] .m-strip img,html[data-design="p2-c"] .m-strip img:nth-child(n){height:clamp(200px,24vw,360px);border-radius:0}
+
+/* 入口：写真が主役の縦長カード */
+html[data-design="p2-c"] .m-entry-list a{position:relative;min-height:440px;background:#151B2B;box-shadow:none;border-radius:4px;justify-content:flex-end;isolation:isolate}
+html[data-design="p2-c"] .m-entry-media{position:absolute;inset:0;height:auto;border-radius:0;z-index:-1}
+html[data-design="p2-c"] .m-entry-media::after{inset:30% 0 0;background:linear-gradient(transparent,#0B0F1A 75%)}
+html[data-design="p2-c"] .m-entry-media em{top:20px;bottom:auto;color:transparent;-webkit-text-stroke:1.5px #FFFFFF;font-size:clamp(40px,4vw,60px)}
+html[data-design="p2-c"] .m-entry-list b,html[data-design="p2-c"] .m-entry-list small{background:#0B0F1A;color:#F2F3F7;align-self:flex-start;padding:4px 10px;border-left-color:#C9D86A}
+html[data-design="p2-c"] .m-entry-list small{color:#B9BFCC;margin-bottom:24px}
+html[data-design="p2-c"] .m-card-panel{background:#151B2B}
+html[data-design="p2-c"] .m-biz-list a{background:#151B2B;color:#F2F3F7}
+html[data-design="p2-c"] .m-biz-list small{color:#B9BFCC}
+html[data-design="p2-c"] .m-biz-list a::after{background-color:#C9D86A;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%230B0F1A' stroke-width='3'/%3E%3C/svg%3E")}
+html[data-design="p2-c"] .m-biz-art{background:#C9D86A;color:#0B0F1A}
+
+/* 紺の面と写真：写真を画面幅いっぱいに、文字は黒い帯 */
+html[data-design="p2-c"] .m-split{border-radius:0;margin-inline:calc(50% - 50vw);min-height:620px;position:relative;display:block}
+html[data-design="p2-c"] .m-split-photo{position:absolute;inset:0}
+html[data-design="p2-c"] .m-split-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0B0F1A 0 30%,transparent 70%)}
+html[data-design="p2-c"] .m-split.is-rev .m-split-photo::after{background:linear-gradient(270deg,#0B0F1A 0 30%,transparent 70%)}
+html[data-design="p2-c"] .m-split-panel,html[data-design="p2-c"] .m-split.is-rev .m-split-panel{position:relative;background:#0B0F1A;border-radius:0;margin:0 0 0 max(24px,calc((100vw - 1180px)/2));padding:40px;max-width:560px;min-height:620px;justify-content:center;background:transparent}
+html[data-design="p2-c"] .m-split-panel>*{background:#0B0F1A}
+html[data-design="p2-c"] .m-split-panel h2,html[data-design="p2-c"] .m-split-panel p:not(.m-label){padding:4px 8px}
+html[data-design="p2-c"] .m-split.is-rev .m-split-panel{margin:0 max(24px,calc((100vw - 1180px)/2)) 0 auto}
+html[data-design="p2-c"] .m-split-panel .m-label{color:#C9D86A;padding:4px 8px}
+html[data-design="p2-c"] .m-split-photo figcaption{background:#0B0F1A;color:#F2F3F7}
+html[data-design="p2-c"] .m-wide{border-radius:0;margin-inline:calc(50% - 50vw);aspect-ratio:auto;height:clamp(320px,42vw,600px)}
+html[data-design="p2-c"] .m-change-list li{background:#151B2B}
+html[data-design="p2-c"] .m-change-list span{color:transparent;-webkit-text-stroke:1.5px #C9D86A;font-size:80px}
+html[data-design="p2-c"] .m-change-list span::after{display:none}
+html[data-design="p2-c"] .m-change-list h3{color:#F2F3F7}
+html[data-design="p2-c"] .m-change-list p,html[data-design="p2-c"] .m-note{color:#B9BFCC}
+
+/* 人：横に送るフィルム */
+html[data-design="p2-c"] .m-people{background:#0B0F1A;border-radius:0;margin-inline:0}
+html[data-design="p2-c"] .m-people-list{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:calc(50% - 50vw);padding-right:max(24px,calc(50vw - 590px));scrollbar-width:thin;scrollbar-color:#C9D86A #151B2B}
+html[data-design="p2-c"] .m-people-list li{flex:0 0 clamp(280px,32vw,440px);scroll-snap-align:start}
+html[data-design="p2-c"] .m-people-list a{position:relative;background:#151B2B;color:#F2F3F7;border-radius:0}
+html[data-design="p2-c"] .m-people-list img{aspect-ratio:3/4}
+html[data-design="p2-c"] .m-p-body{background:#151B2B}
+html[data-design="p2-c"] .m-p-body small{color:#C9D86A}
+html[data-design="p2-c"] .m-p-body em{color:#B9BFCC}
+html[data-design="p2-c"] .m-p-body i{color:#F2F3F7}
+html[data-design="p2-c"] .m-duo article{border-color:#2A3246;border-radius:0}
+html[data-design="p2-c"] .m-track a{background:#151B2B;color:#F2F3F7;border-radius:0}
+html[data-design="p2-c"] .m-track img{border-radius:0}
+html[data-design="p2-c"] .m-tag{background:#C9D86A;color:#0B0F1A;border-radius:0}
+html[data-design="p2-c"] .m-news-txt time{color:#C9D86A}
+html[data-design="p2-c"] .m-ctrl button{background:#151B2B;border:1px solid #C9D86A;color:#C9D86A}
+html[data-design="p2-c"] .m-progress{background:#2A3246}
+html[data-design="p2-c"] .m-progress i{background:#C9D86A}
+
+/* JOIN US */
+html[data-design="p2-c"] .m-join{background:#0B0F1A}
+html[data-design="p2-c"] .m-join-photo{border-radius:0;height:calc(100svh - 110px);position:relative}
+html[data-design="p2-c"] .m-join-photo::after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#0B0F1A)}
+html[data-design="p2-c"] .m-join-word{top:auto;bottom:clamp(220px,30vh,320px);color:transparent;-webkit-text-stroke:3px #FFFFFF;text-shadow:none}
+html[data-design="p2-c"] .m-join-body::before{background:#0B0F1A;border-radius:0}
+html[data-design="p2-c"] .m-join-links a{background:#151B2B;color:#F2F3F7}
+html[data-design="p2-c"] .m-join-links a:first-child{background:#C9D86A;color:#0B0F1A}
+html[data-design="p2-c"] .site-header{background:#0B0F1A!important;border-bottom:1px solid #2A3246}
+html[data-design="p2-c"] .site-header :is(.desktop-nav a,.brand-wordmark,.brand-wordmark span){color:#F2F3F7}
+html[data-design="p2-c"] .site-header .site-brand img{background:#FFFFFF;padding:3px}
+html[data-design="p2-c"] .site-header .header-contact{background:#C9D86A;color:#0B0F1A}
+html[data-design="p2-c"] .menu-toggle span{background:#F2F3F7}
+html[data-design="p2-c"] .mobile-nav{background:#0B0F1A}
+html[data-design="p2-c"] .mobile-nav a{color:#F2F3F7}
+html[data-design="p2-c"] .site-footer{background:#05070D!important}
+html[data-design="p2-c"] .site-footer .footer-brand img{background:#FFFFFF;padding:3px}
+
+/* 下層ページ：写真を全幅に、文字は夜の色の面。本文も暗い地に */
+html[data-pattern="p2"][data-design="p2-c"]{--kk-page-bg:#0B0F1A!important;--kk-surface:#151B2B!important;--kk-surface-soft:#111727!important;--kk-primary:#151B2B!important;--kk-primary-strong:#1C2438!important;--kk-primary-soft:#151B2B!important;--kk-text:#F2F3F7!important;--kk-muted-text:#B9BFCC!important;--kk-border:#2A3246!important;--kk-brand-blue:#C9D86A!important;--kk-brand-navy:#F2F3F7!important;--kk-button-primary-bg:#C9D86A!important;--kk-button-primary-text:#0B0F1A!important;--kk-button-secondary-bg:#151B2B!important;--kk-button-secondary-text:#F2F3F7!important;--kk-accent-soft:#2A3220!important;--kk-focus-ring:#C9D86A!important}
+html[data-design="p2-c"] .page-hero{background:#0B0F1A!important}
+html[data-design="p2-c"] .page-hero-img{height:clamp(360px,60vh,640px)}
+html[data-design="p2-c"] .page-hero .wrap::before{background:#0B0F1A;border-radius:0}
+html[data-design="p2-c"] .page-hero .eyebrow,html[data-design="p2-c"] .page-hero .eyebrow *{color:transparent!important;-webkit-text-stroke:2px #FFFFFF}
+html[data-design="p2-c"] .section-kicker{color:transparent;-webkit-text-stroke:1.5px #F2F3F7}
+html[data-design="p2-c"] .section-kicker span{-webkit-text-stroke:0;color:#C9D86A}
+html[data-design="p2-c"] main .section>.wrap{background:#151B2B}
+html[data-design="p2-c"] main .section.navy-band>.wrap{background:#1A2259}
+html[data-design="p2-c"] .contact-section{background:#151B2B;border-radius:0}
+html[data-design="p2-c"] .contact-section .contact-links a{background:#C9D86A}
+@media(max-width:1024px){
+  html[data-design="p2-c"] .m-split{min-height:0}
+  html[data-design="p2-c"] .m-split-photo{position:relative;height:56vw}
+  html[data-design="p2-c"] .m-split-photo::after,html[data-design="p2-c"] .m-split.is-rev .m-split-photo::after{background:linear-gradient(transparent 50%,#0B0F1A)}
+  html[data-design="p2-c"] .m-split-panel,html[data-design="p2-c"] .m-split.is-rev .m-split-panel{margin:-40px 16px 0;min-height:0;max-width:none;padding:24px}
+}
+@media(max-width:767px){
+  html[data-design="p2-c"] .m-mv-photo{height:78svh;min-height:0}
+  html[data-design="p2-c"] .m-mv-word{bottom:220px}
+  html[data-design="p2-c"] .m-strip{grid-template-columns:1fr 1fr}
+  html[data-design="p2-c"] .m-entry-list a{min-height:340px}
+  html[data-design="p2-c"] .m-join-photo{height:70svh}
+}
+/* 代表の写真は縦長なので、全幅には広げず右側だけに */
+html[data-design="p2-c"] .m-leader .m-split-photo{left:46%}
+html[data-design="p2-c"] .m-leader .m-split-photo::after{background:linear-gradient(90deg,#0B0F1A 0,transparent 40%)}
+html[data-design="p2-c"] .m-leader .m-split-photo img{object-position:50% 20%}
+@media(max-width:1024px){[data-design="p2-c"] .m-leader .m-split-photo{left:auto}}
+
+/* 暗い地のデザイン：site.css・office.css が背景を白で固定している部品は白いカードのまま、文字を濃い色に戻す */
+html[data-design="p2-c"] :is(.skip-link,.link-card,.tags>li,.flow>li,.fact,.anx,.anx-q>small,.career-col,.info-card,.spec-table,.faq>details,details.gate,.member-mix>li,.voice,.p2-duo-card,.p2-career-col,.p2-honest,.business-card,.is-keep){--kk-text:#1F2A33!important;--kk-muted-text:#43505C!important;--kk-brand-navy:#1A2259!important;--kk-brand-blue:#04447C!important;--kk-border:#CCD6DD!important;--n-ink:#1A1A1A;--n-sub:#4A4F57;--n-en:#1A2259;color:#1F2A33}
+html[data-design="p2-c"] :is(.skip-link,.link-card,.tags>li,.flow>li,.fact,.anx,.anx-q>small,.career-col,.info-card,.spec-table,.faq>details,details.gate,.member-mix>li,.voice,.p2-duo-card,.p2-career-col,.p2-honest,.business-card,.is-keep){--navy:#1A2259;--blue:#04447C;--ink:#1F2A33;--muted:#43505C;--border:#CCD6DD}
+/* 白いカードの中の面（表の見出しなど）も明るい色に戻す */
+html[data-design="p2-c"] :is(.skip-link,.link-card,.tags>li,.flow>li,.fact,.anx,.anx-q>small,.career-col,.info-card,.spec-table,.faq>details,details.gate,.member-mix>li,.voice,.p2-duo-card,.p2-career-col,.p2-honest,.business-card,.is-keep){--kk-surface:#FFFFFF!important;--kk-surface-soft:#EEF2F5!important;--kk-primary:#DCE7EF!important;--kk-primary-strong:#C9DCE8!important;--kk-primary-soft:#E8F0F5!important;--surface:#EEF2F5;--surface2:#EEF2F5;--white:#FFFFFF}
+html[data-design="p2-c"] .career-switch a{background:#151B2B;color:#F2F3F7;border-color:#C9D86A}
+html[data-design="p2-c"] .works-list li>span{background:#151B2B;color:#C9D86A}
+@media(max-width:767px){html[data-design="p2-c"] .m-mv-word{bottom:300px;font-size:clamp(56px,16vw,80px)}}

@@ -1,4 +1,4 @@
-# パターン②（ビジョン共感）× デザイン①（コーポレート）の共通パーツ。
+# パターン②（ビジョン共感 → 採用）の共通パーツ。2026-11-09〜：参考 GTN 採用サイト。手描き（ink.css）は使わず、assets/n/p2.css で作る。
 # パターン①の site.css / site.js をそのまま使い、差分は assets/p2.css（[data-structure="p2"] にスコープ）に置く。
 # @R@ はサイトのルート（リポジトリ直下）までの相対パス、@P2@ はパターン②TOPまでの相対パスに置換する。
 from common import (demo_tags, OFFICIAL_CONTACT, OFFICIAL_NEWS, OFFICIAL_WORKS, OFFICIAL_RECRUIT, SALES_JOB, KRM, DISASTER, MAPS,
@@ -21,7 +21,7 @@ def switcher_tags(root):
 
 def p2_head(title, desc, root, page):
     return f'''<!doctype html>
-<html lang="ja" class="mode-review" data-structure="p2" data-design="d1" data-page="{page}">
+<html lang="ja" class="mode-review" data-structure="p2" data-pattern="p2" data-design="p2-a" data-page="{page}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -36,11 +36,11 @@ def p2_head(title, desc, root, page):
 <link rel="stylesheet" href="{root}assets/site.css">
 <link rel="stylesheet" href="{root}assets/p2.css">
 <link rel="stylesheet" href="{root}assets/office.css">
-<link rel="stylesheet" href="{root}assets/fonts/dela-gothic.css">
-<link rel="stylesheet" href="{root}assets/fonts/marker.css">
-<link rel="stylesheet" href="{root}assets/ink.css">
+<link rel="stylesheet" href="{root}assets/fonts/display-en.css">
+<link rel="stylesheet" href="{root}assets/n/p2.css">
 <script defer src="{root}assets/site.js"></script>
-{switcher_tags(root)}</head>
+<script defer src="{root}assets/n/n.js"></script>
+</head>
 <body>
 <!-- デザインデモ（パターン② × デザイン①）。CMS移植前の静的プロトタイプであり、本番公開物ではありません。 -->
 <a class="skip-link" href="#main">本文へ移動</a>
@@ -92,7 +92,9 @@ def p2_page(current, title, desc, depth, body, crumb=None):
     """depth: リポジトリ直下からの深さ（/pattern2/ は1、/pattern2/about/ は2）"""
     root = "../" * depth
     p2root = "../" * (depth - 1)
-    out = p2_head(title, desc, root, current) + p2_header(current, p2root)
+    import p2n_build
+    page = dict((k, pth) for k, _, pth in P2_PAGES)[current]
+    out = p2_head(title, desc, root, current).replace("<body>", "<body>\n" + p2n_build.bar("", page, "pattern2/" + page.rsplit("/", 1)[0] if "/" in page else "pattern2"), 1) + p2_header(current, p2root)
     out += '<main id="main">\n'
     if crumb:
         body = body.replace("<!--CRUMB-->", "")  # パンくずは表示しない（2026-11-09）

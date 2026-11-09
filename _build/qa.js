@@ -6,11 +6,11 @@ const BASE=process.env.QA_BASE||'http://localhost:8765/';
 // サイト（写真の使い回しを判定する単位）ごとのページ一覧
 const SITES={
   'パターン①×デザイン①':['index.html','business/index.html','recruit/index.html','work-environment/index.html','people/index.html','company/index.html'],
-  'パターン②×デザイン①':['pattern2/index.html','pattern2/about/index.html','pattern2/recruit/index.html','pattern2/people/index.html','pattern2/future/index.html','pattern2/company/index.html'],
+  'パターン②×デザインA':['pattern2/index.html','pattern2/about/index.html','pattern2/recruit/index.html','pattern2/people/index.html','pattern2/future/index.html','pattern2/company/index.html'],
+  'パターン②×デザインB':['pattern2/design-b/index.html','pattern2/design-b/about/index.html','pattern2/design-b/recruit/index.html','pattern2/design-b/people/index.html','pattern2/design-b/future/index.html','pattern2/design-b/company/index.html'],
+  'パターン②×デザインC':['pattern2/design-c/index.html','pattern2/design-c/about/index.html','pattern2/design-c/recruit/index.html','pattern2/design-c/people/index.html','pattern2/design-c/future/index.html','pattern2/design-c/company/index.html'],
   'パターン①×デザイン②':['compare/pattern1/design-a/index.html'],
   'パターン①×デザイン③':['compare/pattern1/design-b/index.html'],
-  'パターン②×デザイン②':['compare/pattern2/design-a/index.html'],
-  'パターン②×デザイン③':['compare/pattern2/design-b/index.html'],
   'パターン③×デザインA':['pattern3/design-a/index.html','pattern3/design-a/business/index.html','pattern3/design-a/recruit/index.html','pattern3/design-a/work-environment/index.html','pattern3/design-a/people/index.html','pattern3/design-a/company/index.html'],
   'パターン③×デザインB':['pattern3/design-b/index.html','pattern3/design-b/business/index.html','pattern3/design-b/recruit/index.html','pattern3/design-b/work-environment/index.html','pattern3/design-b/people/index.html','pattern3/design-b/company/index.html'],
   'パターン③×デザインC':['pattern3/design-c/index.html','pattern3/design-c/business/index.html','pattern3/design-c/recruit/index.html','pattern3/design-c/work-environment/index.html','pattern3/design-c/people/index.html','pattern3/design-c/company/index.html'],
@@ -91,7 +91,7 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
     await ctx.close();
   }
   /* ファーストビュー：CMS標準セクション（734 H1 Center／721 Mainvisual）を使い、独自HTML（方式C）にしない。CTA・リンクを置かない */
-  for(const p of PAGES.filter(x=>x!=='compare/index.html'&&!x.startsWith('pattern3/'))){
+  for(const p of PAGES.filter(x=>x!=='compare/index.html')){
     const html=fs.readFileSync(path.join(ROOT,p),'utf8');
     const secs=html.match(/<section\b[^>]*>[\s\S]*?<\/section>/g)||[];
     const fv=secs.find(s=>/<h1\b/.test(s));
@@ -102,9 +102,11 @@ const BANNED=['求人票','出典','採用ブログより','公式サイト','�
     if(/data-implementation="[^"]*C/.test(open))problems.push(`[${p}] ファーストビュー: 独自HTML（方式C）になっている`);
     if(/<(a|button)\b/.test(fv))problems.push(`[${p}] ファーストビュー: ボタン・リンクが入っている`);
   }
-  // パターン③のTOPは、パターン①のTOPと同じ見出し（=同じ内容）をすべて持つ（内容量で比べられるように）
-  {const h2=f=>{const fp=path.join(ROOT,f);if(!fs.existsSync(fp))return null;return [...fs.readFileSync(fp,'utf8').matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map(m=>m[1].replace(/<[^>]+>/g,'').replace(/\s/g,''))};
-   const base=h2('index.html');if(base)['a','b','c'].forEach(x=>{const t=h2(`pattern3/design-${x}/index.html`);if(!t)return;const miss=base.filter(h=>!t.includes(h));if(miss.length)problems.push(`[pattern3/design-${x}] パターン①のTOPにある内容が足りない: ${miss.join(' / ')}`)});}
+  // パターン②③のTOPは、パターン①のTOPと比べて内容（本文の文字量）が大きく減っていないこと（デザインの差を内容を減らして出さない）
+  {const vol=f=>{const fp=path.join(ROOT,f);if(!fs.existsSync(fp))return null;const m=fs.readFileSync(fp,'utf8').match(/<main[\s\S]*?<\/main>/);return m?m[0].replace(/<!--[\s\S]*?-->/g,'').replace(/<[^>]+>/g,'').replace(/\s/g,'').length:0};
+   const base=vol('index.html');if(base)['pattern2/index.html','pattern2/design-b/index.html','pattern2/design-c/index.html','pattern3/design-a/index.html','pattern3/design-b/index.html','pattern3/design-c/index.html'].forEach(f=>{const v=vol(f);if(v!==null&&v<base*0.8)problems.push(`[${f}] 内容がパターン①のTOPより大きく少ない（${v}字／${base}字）`)});}
+  // style属性の背景画像（url(...)）が実在するファイルを指しているか（ページを別の階層に写した時のパスずれを防ぐ）
+  for(const p of PAGES){const fp=path.join(ROOT,p);if(!fs.existsSync(fp))continue;for(const m of fs.readFileSync(fp,'utf8').matchAll(/url\(['"]?([^'")]+)['"]?\)/g)){const u=m[1];if(/^(data:|https?:|#)/.test(u))continue;const t=path.join(path.dirname(fp),u.split('#')[0]);if(!fs.existsSync(t))problems.push(`[${p}] 背景画像のパスが切れている: ${u}`)}}
   Object.entries(photoUse).forEach(([site,m])=>Object.entries(m).forEach(([f,ps])=>{if(ps.size>1)problems.push(`写真の使い回し（${site}）: ${f} → ${[...ps].join(', ')}`)}));
   await b.close();
   console.log(problems.length?problems.join('\n'):'OK：問題は見つかりませんでした');

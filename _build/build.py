@@ -38,3 +38,7 @@ write("compare/index.html", open(os.path.join(os.path.dirname(os.path.abspath(__
 
 import p3_build
 p3_build.build(OUT)
+
+# パターン② の派生（B・C）：ベースと同じHTMLを /pattern2/design-b|c/ に写し、CSSだけ差し替える
+import p2n_build
+p2n_build.build(OUT)

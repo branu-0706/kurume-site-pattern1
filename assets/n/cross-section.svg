@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="cs-t">
+  <title id="cs-t">道路の断面図：舗装の下に路盤があり、その下の地中にガス管・水道管・下水道管が通っている</title>
+  <defs>
+    <pattern id="gravel" width="14" height="10" patternUnits="userSpaceOnUse">
+      <rect width="14" height="10" fill="#B4A68C"/>
+      <circle cx="3" cy="3" r="1.6" fill="#8E8068"/><circle cx="10" cy="7" r="1.3" fill="#9C8E75"/><circle cx="7" cy="2" r=".9" fill="#D2C6AE"/>
+    </pattern>
+    <pattern id="soil" width="40" height="18" patternUnits="userSpaceOnUse">
+      <rect width="40" height="18" fill="#8C6D50"/>
+      <path d="M0 12 Q10 9 20 12 T40 12" fill="none" stroke="#7B5E43" stroke-width="1.2"/>
+      <circle cx="30" cy="4" r="1.2" fill="#A3866A"/>
+    </pattern>
+    <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+  </defs>
+
+  <!-- 右側面（暗く） -->
+  <polygon points="580,150 690,80 690,108 580,178" fill="#1F1F21"/>
+  <polygon points="580,178 690,108 690,145 580,215" fill="#8F826B"/>
+  <polygon points="580,215 690,145 690,400 580,470" fill="#6F563F"/>
+
+  <!-- 上面：車道・センターライン・歩道 -->
+  <polygon points="20,150 130,80 690,80 580,150" fill="#3A3A3D"/>
+  <polygon points="108,94 668,94 690,80 130,80" fill="#CFCAC0"/>
+  <line x1="108" y1="94" x2="668" y2="94" stroke="#9D988E" stroke-width="3"/>
+  <line x1="64" y1="122" x2="624" y2="122" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="34 22"/>
+  <line x1="36" y1="140" x2="596" y2="140" stroke="#F2B705" stroke-width="2.5"/>
+  <!-- マンホール（下水道の上） -->
+  <ellipse cx="500" cy="122" rx="22" ry="7" fill="#58585B" stroke="#2A2A2C" stroke-width="2"/>
+  <!-- 工事中の区画：ガス管の上の舗装を復旧している -->
+  <polygon points="130,140 170,114 250,114 210,140" fill="#2A2A2C" stroke="#F2B705" stroke-width="2" stroke-dasharray="6 4"/>
+  <g fill="#E8641B"><polygon points="118,140 124,124 130,140"/><polygon points="244,116 250,100 256,116"/><polygon points="214,142 220,126 226,142"/></g>
+  <g fill="#FFFFFF"><rect x="120" y="132" width="8" height="2.5"/><rect x="246" y="108" width="8" height="2.5"/><rect x="216" y="134" width="8" height="2.5"/></g>
+
+  <!-- 正面：層 -->
+  <rect x="20" y="150" width="560" height="28" fill="#2E2E30"/>
+  <rect x="20" y="178" width="560" height="37" fill="url(#gravel)"/>
+  <rect x="20" y="215" width="560" height="255" fill="url(#soil)"/>
+  <rect x="20" y="215" width="560" height="255" fill="url(#deep)"/>
+  <line x1="20" y1="178" x2="580" y2="178" stroke="#141415" stroke-width="2"/>
+  <line x1="20" y1="215" x2="580" y2="215" stroke="#6E6253" stroke-width="2"/>
+
+  <!-- 地中の管（正面から見た切り口） -->
+  <g>
+    <circle cx="190" cy="262" r="21" fill="#F2B705" stroke="#1C1C1C" stroke-width="3"/>
+    <circle cx="190" cy="262" r="12" fill="#3B2E22"/>
+  </g>
+  <g>
+    <circle cx="340" cy="302" r="27" fill="#2F78C8" stroke="#1C1C1C" stroke-width="3"/>
+    <circle cx="340" cy="302" r="17" fill="#163A63"/>
+  </g>
+  <g>
+    <line x1="500" y1="178" x2="500" y2="338" stroke="#5E5E61" stroke-width="16"/>
+    <circle cx="500" cy="384" r="48" fill="#9BA0A6" stroke="#1C1C1C" stroke-width="3"/>
+    <circle cx="500" cy="384" r="34" fill="#4F5357"/>
+  </g>
+
+  <!-- 番号（事業の 01〜04 と対応） -->
+  <g font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="17" text-anchor="middle">
+    <g><circle cx="190" cy="104" r="15" fill="#1A2259"/><text x="190" y="110" fill="#FFFFFF">01</text></g>
+    <g><circle cx="340" cy="252" r="15" fill="#1A2259"/><text x="340" y="258" fill="#FFFFFF">02</text></g>
+    <g><circle cx="62" cy="197" r="15" fill="#1A2259"/><text x="62" y="203" fill="#FFFFFF">03</text></g>
+    <g><circle cx="566" cy="384" r="15" fill="#1A2259"/><text x="566" y="390" fill="#FFFFFF">04</text></g>
+  </g>
+  <!-- 外形線 -->
+  <polygon points="20,150 130,80 690,80 690,400 580,470 20,470" fill="none" stroke="#1C1C1C" stroke-width="2"/>
+  <polyline points="20,150 580,150 690,80" fill="none" stroke="#1C1C1C" stroke-width="2"/>
+  <line x1="580" y1="150" x2="580" y2="470" stroke="#1C1C1C" stroke-width="2"/>
+</svg>

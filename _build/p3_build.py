@@ -11,9 +11,9 @@ if not os.path.isdir(OUT):
 P = "../../assets/photos/"
 
 DESIGNS = [
-    ("design-a", "A", "PHOTO FULL", "写真を全面に。余白は白、文字は最小限"),
-    ("design-b", "B", "GALLERY", "白い誌面に、写真を大小のグリッドで"),
-    ("design-c", "C", "SITE COLOR", "現場の色（重機の黄・コーンの橙・作業着の紺）を拾う"),
+    ("design-a", "A", "CROSS SECTION", "ベース：白い地に紺の面、道路の断面図と大きな角丸の写真"),
+    ("design-b", "B", "ASPHALT", "派生：アスファルトの黒を地に、路面の白線と重機の黄"),
+    ("design-c", "C", "STRATA", "派生：地層の縞を全面に。生成りの紙と地層の色"),
 ]
 F4 = [("ガス管取替後の復旧舗装工事", "ガス管の取替後に行う道路の舗装復旧工事。", "paving-roller", "ローラーで舗装を締め固める現場"),
       ("水道工事", "水道管の布設・布設替など、給水インフラに関わる工事。", "water-pipe", "水道管の工事現場"),
@@ -155,8 +155,10 @@ def _strip(html, key):
 
 
 def _add_css(html, root, files):
-    links = "".join(f'\n<link rel="stylesheet" href="{root}assets/p3/{f}">' for f in files)
-    return html.replace('/office.css">', '/office.css">' + links, 1)
+    """新デザイン（2026-11-09〜）：英字フォント＋ assets/n/ のCSS＋動き（n.js）"""
+    links = f'\n<link rel="stylesheet" href="{root}assets/fonts/display-en.css">' + "".join(f'\n<link rel="stylesheet" href="{root}assets/n/{f}">' for f in files)
+    html = html.replace('/office.css">', '/office.css">' + links, 1)
+    return html.replace("</head>", f'<script defer src="{root}assets/n/n.js"></script>\n</head>', 1)
 
 
 def _bar(html, key, root):
@@ -164,25 +166,25 @@ def _bar(html, key, root):
 
 
 def build(out=OUT):
-    for (key, letter, name, desc), mv, sig in zip(DESIGNS, [mv_a, mv_b, mv_c], [sig_a, sig_b, sig_c]):
+    import p3n_top
+    for key, letter, name, desc in DESIGNS:
         d = os.path.join(out, "pattern3", key)
         os.makedirs(d, exist_ok=True)
-        # TOP：P1 TOP と同じ9セクション（文言・リンクとも同じ）。メインビジュアルを差し替え、事業内容の後に各デザインの見せ場を1つ足す
+        css = ["p3.css"] + ([f"p3-{key[-1]}.css"] if key != "design-a" else [])
+        # TOP：パターン①のTOPの枠（ヘッダー・フッター）に、新しい本文（①②のミックス）を入れる
         src = open(os.path.join(out, "index.html"), encoding="utf-8").read()
         html = _strip(_rewrite(src, ""), key)
-        html, n = _re.subn(r'<!-- 01 MAIN VISUAL.*?</section>', lambda m: mv().strip(), html, count=1, flags=_re.S)
-        assert n == 1, "P1 TOP のメインビジュアルが見つからない"
-        assert "\n<!-- 04 OUR APPROACH" in html, "P1 TOP の 04 が見つからない"
-        html = html.replace("\n<!-- 04 OUR APPROACH", sig() + "\n<!-- 04 OUR APPROACH", 1)
+        html, n = _re.subn(r'<main id="main">.*?</main>', lambda m: '<main id="main">' + p3n_top.body() + '</main>', html, count=1, flags=_re.S)
+        assert n == 1
         html = html.replace('<title>', f'<title>第3パターン {letter}｜', 1)
-        html = _add_css(html, "../../", ["base.css", key[-1] + ".css", "pages.css", "tone.css"])
+        html = _add_css(html, "../../", css)
         html = _bar(html, key, "../../")
         open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(html)
-        # 下層：P1 の下層ページを、写真カラー・第3パターンのCSSで
+        # 下層：P1 の下層ページを、新デザインのCSSで
         for p in PAGES:
             src = open(os.path.join(out, p, "index.html"), encoding="utf-8").read()
             html = _strip(_rewrite(src, "../"), key)
-            html = _add_css(html, "../../../", ["pages.css", "tone.css"])
+            html = _add_css(html, "../../../", css)
             html = _bar(html, key, "../../../")
             os.makedirs(os.path.join(d, p), exist_ok=True)
             open(os.path.join(d, p, "index.html"), "w", encoding="utf-8").write(html)

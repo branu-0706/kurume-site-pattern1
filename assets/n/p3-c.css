@@ -1,0 +1,79 @@
+/* パターン③ 派生C：STRATA（地層）
+   ベースと同じHTML・同じ内容。見た目だけを大胆に変える：
+   ・生成りの紙の地に、断面図の「層」（アスファルト・路盤・土）の縞をページ全体の区切りに使う。
+   ・メインビジュアルは断面図を主役に大きく、写真はアーチ型の窓に。
+   ・数字の面は土の色、見出しの英字は地層の茶。 */
+html[data-pattern="p3"][data-design="p3-c"]{
+  --n-bg:#F5F1E8;--n-bg2:#ECE5D7;--n-shape:#E4DAC6;--n-ink:#2A241D;--n-sub:#5B5145;--n-line:#D6CBB6;
+  --n-navy:#1A2259;--n-on-navy:#FFFFFF;--n-accent:#C98A1B;--n-en:#6F4E2E;--n-card:#FBF8F2;
+  --n-strata:linear-gradient(180deg,#2E2E30 0 10px,#B4A68C 10px 22px,#8C6D50 22px 40px);
+  --kk-page-bg:#F5F1E8!important;--kk-surface:#FBF8F2!important;--kk-surface-soft:#ECE5D7!important;--kk-primary:#ECE5D7!important;--kk-primary-strong:#E4DAC6!important;--kk-primary-soft:#F0EADF!important;
+  --kk-accent:#C98A1B!important;--kk-brand-navy:#1A2259!important;--kk-brand-blue:#6F4E2E!important;--kk-text:#2A241D!important;--kk-muted-text:#5B5145!important;--kk-border:#D6CBB6!important;
+}
+html[data-design="p3-c"] .n-btn::after{background-color:#C98A1B}
+/* 区切りは地層の縞 */
+html[data-design="p3-c"] .n-sec::after{content:"";position:absolute;left:0;right:0;top:0;height:40px;background:var(--n-strata)}
+html[data-design="p3-c"] .n-sec{padding-top:clamp(110px,11vw,170px)}
+html[data-design="p3-c"] .n-ticker::before{display:none}
+html[data-design="p3-c"] .n-pick::after,html[data-design="p3-c"] .n-contact::after{height:0}
+
+/* メインビジュアル：断面図を主役に、写真はアーチ型の窓 */
+html[data-design="p3-c"] .n-mv{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;background:#F5F1E8}
+html[data-design="p3-c"] .n-mv::before{left:auto;right:-10vw;bottom:auto;top:-20vw;width:60vw;height:60vw;background:#ECE5D7}
+html[data-design="p3-c"] .n-mv-copy{grid-column:1;grid-row:1}
+html[data-design="p3-c"] .n-mv h1{color:#2A241D}
+html[data-design="p3-c"] .n-mv-en{color:#6F4E2E}
+html[data-design="p3-c"] .n-mv-photo{grid-column:2;grid-row:1/3;margin:32px max(24px,calc((100vw - 1180px)/2)) 40px 24px;border-radius:999px 999px 0 0;min-height:0}
+html[data-design="p3-c"] .n-mv-cs{grid-column:1;grid-row:2;width:min(52vw,720px);margin-bottom:24px}
+html[data-design="p3-c"] .n-mv-count{left:50%;right:auto;transform:translateX(-50%);background:#FBF8F2}
+html[data-design="p3-c"] .n-mv-count b{color:#6F4E2E}
+
+/* 写真の形はアーチ、カードは上に地層 */
+html[data-design="p3-c"] .n-biz-tall{border-radius:999px 999px 0 0}
+html[data-design="p3-c"] .n-biz-tall figcaption{background:#6F4E2E}
+html[data-design="p3-c"] .n-biz-media{border-radius:200px 200px 0 0}
+html[data-design="p3-c"] .n-vision-photo{border-radius:999px 999px 0 0}
+html[data-design="p3-c"] .n-biz::before,html[data-design="p3-c"] .n-works::before{background:#ECE5D7}
+html[data-design="p3-c"] .n-num{color:#6F4E2E}
+html[data-design="p3-c"] .n-pick-list a{background:#FBF8F2;color:#2A241D;border-top:24px solid transparent;border-image:var(--n-strata) 40 0 0 0 / 24px 0 0 0;box-shadow:0 1px 0 #D6CBB6}
+html[data-design="p3-c"] .n-pick-ja{background:#FBF8F2}
+html[data-design="p3-c"] .n-pick-en{color:#6F4E2E}
+html[data-design="p3-c"] .n-pick-list a::before{border-color:#E4DAC6}
+html[data-design="p3-c"] .n-vision{background:#ECE5D7}
+html[data-design="p3-c"] .n-vision::before{border-color:#E4DAC6}
+html[data-design="p3-c"] .n-statement{color:#6F4E2E}
+html[data-design="p3-c"] .n-points li{border-left-color:#C98A1B}
+html[data-design="p3-c"] .n-points b{color:#6F4E2E}
+html[data-design="p3-c"] .n-flow-list::before{height:18px;top:21px;background:var(--n-strata);background-size:100% 18px}
+html[data-design="p3-c"] .n-step{background:#2A241D}
+html[data-design="p3-c"] .n-card a{box-shadow:none;border:1px solid #D6CBB6;border-top:0;position:relative}
+html[data-design="p3-c"] .n-card a::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:linear-gradient(180deg,#2E2E30 0 3px,#B4A68C 3px 6px,#8C6D50 6px 10px)}
+html[data-design="p3-c"] .n-card.is-more a{background:#6F4E2E}
+html[data-design="p3-c"] .n-card.is-more small,html[data-design="p3-c"] .n-card.is-more .n-more{color:#F5D27A}
+html[data-design="p3-c"] .n-numbers{background:#6F4E2E;color:#FFFFFF}
+html[data-design="p3-c"] .n-numbers .n-en{color:#F5D27A}
+html[data-design="p3-c"] .n-num-list dt{color:#F5D27A}
+html[data-design="p3-c"] .n-num-list p{color:#EFE6D6}
+html[data-design="p3-c"] .n-numbers::after{background:linear-gradient(180deg,#2E2E30 0 10px,#B4A68C 10px 22px,#5E4632 22px 40px)}
+html[data-design="p3-c"] .n-tile-label{background:#FBF8F2;border-top:10px solid #2E2E30;box-shadow:inset 0 3px 0 #B4A68C}
+html[data-design="p3-c"] .n-tile-label small{color:#6F4E2E}
+html[data-design="p3-c"] .n-contact{background:#ECE5D7}
+html[data-design="p3-c"] .site-header{background:#F5F1E8!important}
+html[data-design="p3-c"] .site-footer{background:#2A241D!important;border-top:12px solid #B4A68C}
+
+/* 下層ページ */
+html[data-design="p3-c"] .page-hero{background:#F5F1E8!important}
+html[data-design="p3-c"] .page-hero::before{background:#ECE5D7}
+html[data-design="p3-c"] .page-hero-img{border-radius:999px 999px 0 0!important;margin:28px max(24px,calc((100vw - 1180px)/2)) 0 0}
+html[data-design="p3-c"] .page-hero{border-bottom:40px solid transparent;border-image:linear-gradient(180deg,#2E2E30 0 25%,#B4A68C 25% 55%,#8C6D50 55% 100%) 40}
+html[data-design="p3-c"] .page-hero .eyebrow,html[data-design="p3-c"] .section-kicker{color:#6F4E2E!important}
+html[data-design="p3-c"] main :is(.half-media img,.duo-photos img){border-radius:999px 999px 0 0}
+html[data-design="p3-c"] main .section.bg-soft,html[data-design="p3-c"] main .section.bg-blueish{background:#ECE5D7}
+@media(max-width:1024px){
+  html[data-design="p3-c"] .n-mv{grid-template-columns:1fr}
+  html[data-design="p3-c"] .n-mv-photo{grid-column:1;grid-row:2;margin:0 24px;aspect-ratio:4/5;max-height:70vh}
+  html[data-design="p3-c"] .n-mv-cs{grid-row:3;width:min(94%,600px);margin:-80px auto 24px}
+  html[data-design="p3-c"] .page-hero-img{margin:16px 16px 0}
+}
+html[data-design="p3-c"] .navy-band .section-kicker{color:#FFFFFF!important}
+@media(max-width:1024px){html[data-design="p3-c"] .n-mv-count{display:none}}

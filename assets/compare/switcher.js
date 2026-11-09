@@ -18,12 +18,12 @@
     'p1-d2':'compare/pattern1/design-a/index.html',
     'p1-d3':'compare/pattern1/design-b/index.html',
     'p2-d1':'pattern2/index.html',
-    'p2-d2':'compare/pattern2/design-a/index.html',
-    'p2-d3':'compare/pattern2/design-b/index.html'
+    'p2-d2':'pattern2/design-b/index.html',
+    'p2-d3':'pattern2/design-c/index.html'
   };
   const S_LABEL={p1:'構成① 会社理解',p2:'構成② ビジョン共感'};
   /* デザインの名前は構成ごとに違う（2026-11-06 改訂） */
-  const D_NAMES={p1:{d1:'基準（会社理解）',d2:'オフィシャル',d3:'表現重視'},p2:{d1:'基準（ビジョン共感）',d2:'独自性重視',d3:'ユニーク表現'}};
+  const D_NAMES={p1:{d1:'基準（会社理解）',d2:'オフィシャル',d3:'表現重視'},p2:{d1:'A NAVY CURVE',d2:'B EDITORIAL',d3:'C CINEMA'}};
   const DL=(s,d)=>'デザイン'+({d1:'①',d2:'②',d3:'③'}[d])+' '+D_NAMES[s][d];
   const S_SHORT={p1:'構成①',p2:'構成②'};
   const D_SHORT={d1:'デザイン①',d2:'デザイン②',d3:'デザイン③'};
@@ -55,11 +55,11 @@
         ['p1','p2'].map(s=>'<label><input type="radio" name="cmp-s" value="'+s+'"'+(s===cur.s?' checked':'')+'><span>'+S_LABEL[s]+'</span></label>').join('')+
       '</fieldset>'+
       '<fieldset class="cmp-group"><legend>デザインパターン</legend>'+
-        ['d1','d2','d3'].map(d=>'<label><input type="radio" name="cmp-d" value="'+d+'"'+(d===cur.d?' checked':'')+'><span class="cmp-dname" data-d="'+d+'">'+DL(cur.s,d)+'</span>'+(d==='d1'?'':'<small>TOPのみ</small>')+'</label>').join('')+
+        ['d1','d2','d3'].map(d=>'<label><input type="radio" name="cmp-d" value="'+d+'"'+(d===cur.d?' checked':'')+'><span class="cmp-dname" data-d="'+d+'">'+DL(cur.s,d)+'</span>'+(d==='d1'?'':'<small>'+(cur.s==='p2'?'':'TOPのみ')+'</small>')+'</label>').join('')+
       '</fieldset>'+
       '<p class="cmp-note" aria-live="polite"></p>'+
       '<a class="cmp-go" href="#">表示する</a>'+
-      '<a class="cmp-hub" href="'+new URL('compare/index.html#'+cur.s+'-'+cur.d+(cur.d==='d1'&&cur.page!=='top'?'-'+cur.page:''),root).href+'">1画面で切り替えて比較・16画面の一覧</a>'+
+      '<a class="cmp-hub" href="'+new URL('compare/index.html#'+cur.s+'-'+cur.d+(cur.d==='d1'&&cur.page!=='top'?'-'+cur.page:''),root).href+'">1画面で切り替えて比較（パターン①②③・全画面の一覧）</a>'+
     '</div>';
   document.body.appendChild(box);
 
