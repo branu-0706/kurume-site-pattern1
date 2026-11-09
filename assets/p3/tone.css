@@ -1,0 +1,104 @@
+/* 第3パターン：写真の色が活きる配色（TOP・下層の全ページ共通。p3_build.py が読み込む）
+   考え方：
+   ・背景は色みのない白・グレー・紙色にする。青みのある面（パターン①の配色）は写真の黄・橙・緑を濁らせるので使わない。
+   ・画面の中で色を持つのは写真だけ。差し色は写真から取った色を1色、線や小さな面だけに使う。
+   ・写真に暗幕・フィルタ・色の重ねをかけない。写真は大きく、枠や影は写真を引き立てる最小限に。
+   ・配色パネル（?palette=）では変えない固定の配色（!important）。文字のコントラストは4.5:1以上（QAで確認）。 */
+
+/* ── A PHOTO FULL：白い壁のギャラリー。文字は黒、差し色は重機の黄を線だけに ── */
+html[data-pattern="p3"][data-design="p3-a"]{
+  --kk-page-bg:#FFFFFF!important;--kk-surface:#FFFFFF!important;--kk-surface-soft:#F4F4F2!important;
+  --kk-primary:#F4F4F2!important;--kk-primary-strong:#E6E6E3!important;--kk-primary-soft:#F7F7F5!important;
+  --kk-accent:#F2B705!important;--kk-accent-soft:#FFF6D6!important;
+  --kk-brand-navy:#141414!important;--kk-brand-blue:#3D3D3D!important;--kk-text:#1A1A1A!important;--kk-muted-text:#4F4F4F!important;
+  --kk-border:#E2E2DF!important;--kk-button-primary-bg:#141414!important;--kk-button-primary-text:#FFFFFF!important;
+  --kk-button-secondary-bg:#F4F4F2!important;--kk-button-secondary-text:#141414!important;--kk-focus-ring:#141414!important;
+}
+
+/* ── B GALLERY：写真集の紙。生成りの紙に、ロゴの紺のインク。写真は白いマットで1枚ずつ見せる ── */
+html[data-pattern="p3"][data-design="p3-b"]{
+  --kk-page-bg:#F5F2EB!important;--kk-surface:#FBFAF6!important;--kk-surface-soft:#EFEBE2!important;
+  --kk-primary:#E9E3D7!important;--kk-primary-strong:#DDD5C5!important;--kk-primary-soft:#F2EEE6!important;
+  --kk-accent:#D9622B!important;--kk-accent-soft:#F6E3D8!important;
+  --kk-brand-navy:#1A2259!important;--kk-brand-blue:#6A4517!important;--kk-text:#2A2622!important;--kk-muted-text:#575047!important;
+  --kk-border:#D8D0C1!important;--kk-button-primary-bg:#1A2259!important;--kk-button-primary-text:#FFFFFF!important;
+  --kk-button-secondary-bg:#E9E3D7!important;--kk-button-secondary-text:#1A2259!important;--kk-focus-ring:#1A2259!important;
+}
+
+/* ── C SITE COLOR：重機の黄とアスファルトの黒。白い面と黄色の面を交互に、文字は黒 ── */
+html[data-pattern="p3"][data-design="p3-c"]{
+  --kk-page-bg:#FFFFFF!important;--kk-surface:#FFFFFF!important;--kk-surface-soft:#F5F3EE!important;
+  --kk-primary:#F2B705!important;--kk-primary-strong:#F2B705!important;--kk-primary-soft:#FCEFC4!important;
+  --kk-accent:#F2B705!important;--kk-accent-soft:#FCEFC4!important;
+  --kk-brand-navy:#1C1C1C!important;--kk-brand-blue:#1C1C1C!important;--kk-text:#1C1C1C!important;--kk-muted-text:#454545!important;
+  --kk-border:#E3E0D8!important;--kk-button-primary-bg:#1C1C1C!important;--kk-button-primary-text:#FFFFFF!important;
+  --kk-button-secondary-bg:#F2B705!important;--kk-button-secondary-text:#1C1C1C!important;--kk-focus-ring:#1C1C1C!important;
+  --site-ink:#1C1C1C;
+}
+
+/* ── 共通：写真のまわりの装飾を減らす ── */
+[data-pattern="p3"] .bg-soft::before,[data-pattern="p3"] .bg-blueish::before{display:none}
+[data-pattern="p3"] .member .half-media::after{display:none}
+[data-pattern="p3"] main img{filter:none!important}
+[data-pattern="p3"] .work-card .work-media img,[data-pattern="p3"] .business-image img{transition:transform .8s ease}
+[data-pattern="p3"] .work-card:hover .work-media img,[data-pattern="p3"] .business-card:hover .business-image img{transform:scale(1.04)}
+
+/* ── A：写真を大きく、角は直角・影なし。帯は白とグレーだけ ── */
+[data-design="p3-a"] main :is(img,.work-media,.business-image,.half-media,.duo-photos figure){border-radius:0!important;box-shadow:none!important}
+[data-design="p3-a"] .work-media{height:400px}
+[data-design="p3-a"] .work-card-main .work-media{height:520px}
+[data-design="p3-a"] .duo-photos{grid-template-columns:1.5fr 1fr;gap:12px}
+[data-design="p3-a"] .duo-photos img{aspect-ratio:4/3}
+[data-design="p3-a"] .business-image{aspect-ratio:1/1;height:auto}
+[data-design="p3-a"] .business-image img{height:100%}
+[data-design="p3-a"] .p1-recruit-band{border-left:0;border-top:4px solid var(--kk-accent)}
+/* 黒い帯：office.css が文字色を !important で指定しているため、色は変数をこの帯の中だけ切り替えて変える */
+[data-design="p3-a"] .contact-section{background:#141414;color:#FFFFFF;--kk-text:#FFFFFF!important;--kk-brand-navy:#FFFFFF!important;--kk-muted-text:#D6D6D6!important}
+[data-design="p3-a"] .contact-section .contact-split>div{background:#FFFFFF;color:#1A1A1A;--kk-text:#1A1A1A!important;--kk-brand-navy:#141414!important;--kk-muted-text:#4F4F4F!important}
+
+/* ── B：写真は白いマットに載せた1枚の「プリント」。キャプションは写真の下に ── */
+[data-design="p3-b"] main :is(.half-media img,.duo-photos img,.work-media img,.business-image img,.sec-shot img,.scenes img,.mv-grid img,.swatches img){background:#FFFFFF;padding:8px;box-shadow:0 1px 2px rgba(42,38,34,.18),0 8px 24px rgba(42,38,34,.08);border-radius:0!important;box-sizing:border-box}
+[data-design="p3-b"] .work-media,[data-design="p3-b"] .business-image{background:transparent;overflow:visible}
+[data-design="p3-b"] .work-card:hover .work-media img,[data-design="p3-b"] .business-card:hover .business-image img{transform:none}
+[data-design="p3-b"] .mv-grid figcaption,[data-design="p3-b"] .scenes figcaption{position:static;background:none;padding:10px 0 0;font-weight:500;color:var(--kk-muted-text)}
+[data-design="p3-b"] .mv-grid figure,[data-design="p3-b"] .scenes figure{overflow:visible;display:flex;flex-direction:column}
+[data-design="p3-b"] .mv-grid img,[data-design="p3-b"] .scenes img{flex:1;min-height:0}
+[data-design="p3-b"] .mv-grid{grid-template-rows:260px 260px;gap:28px 24px}
+[data-design="p3-b"] .scenes{grid-auto-rows:240px;gap:28px 24px}
+[data-design="p3-b"] .section+.section{border-top:1px solid var(--kk-border)}
+[data-design="p3-b"] .section.bg-soft,[data-design="p3-b"] .section.bg-blueish{background:var(--kk-page-bg)}
+[data-design="p3-b"] .profile-strip,[data-design="p3-b"] .info-card,[data-design="p3-b"] .link-card{background:var(--kk-surface)}
+[data-design="p3-b"] .p1-recruit-band{border-left:0;background:var(--kk-surface);box-shadow:0 1px 2px rgba(42,38,34,.14)}
+[data-design="p3-b"] .contact-section{background:var(--kk-primary)}
+[data-design="p3-b"] .section-kicker::before{background:var(--kk-accent)!important}
+
+/* ── C：白と黄の面。写真には黄色の影、黒い帯で写真の色を締める ── */
+[data-design="p3-c"] .sec.navy{background:var(--site-ink)}
+[data-design="p3-c"] .mv-panel,[data-design="p3-c"] .mv h1,[data-design="p3-c"] .mv .p3-lead,[data-design="p3-c"] .mv-panel .kicker{color:var(--site-ink)}
+[data-design="p3-c"] .mv-fields{background:var(--site-ink)}
+[data-design="p3-c"] .sw :is(figcaption){color:var(--site-ink)}
+[data-design="p3-c"] .sw.k figcaption{background:#3A3A3A;color:#FFFFFF}
+[data-design="p3-c"] .sw.n figcaption{background:#FFFFFF}
+[data-design="p3-c"] main :is(.half-media img,.duo-photos img,.work-card-main .work-media){box-shadow:12px 12px 0 var(--site-yellow)}
+[data-design="p3-c"] .business-card{border-top:6px solid var(--site-yellow)}
+[data-design="p3-c"] .business-card:nth-child(2){border-top-color:var(--site-orange)}
+[data-design="p3-c"] .business-card:nth-child(3){border-top-color:var(--site-ink)}
+[data-design="p3-c"] .business-card:nth-child(4){border-top-color:#8A8A8A}
+[data-design="p3-c"] .section.bg-soft,[data-design="p3-c"] .section.bg-blueish{background:var(--kk-surface-soft)}
+[data-design="p3-c"] .p1-recruit-band{border-left:0;background:var(--site-yellow)}
+[data-design="p3-c"] .p1-recruit-band :is(p,span,small){color:var(--site-ink)}
+[data-design="p3-c"] .page-hero{color:var(--site-ink)}
+[data-design="p3-c"] .page-hero h1,[data-design="p3-c"] .page-hero :is(.eyebrow,.eyebrow *,.lead,p){color:var(--site-ink)!important}
+[data-design="p3-c"] .page-hero .eyebrow .line{background:var(--site-ink)}
+
+@media(max-width:767px){
+  [data-design="p3-a"] .work-media,[data-design="p3-a"] .work-card-main .work-media{height:62vw}
+  [data-design="p3-b"] .mv-grid{grid-template-rows:auto auto}
+  [data-design="p3-b"] .scenes{grid-auto-rows:auto}
+  [data-design="p3-b"] :is(.mv-grid,.scenes) img{aspect-ratio:4/3;height:auto;flex:none}
+  [data-design="p3-c"] main :is(.half-media img,.duo-photos img,.work-card-main .work-media){box-shadow:8px 8px 0 var(--site-yellow)}
+}
+/* C：黄色の面の見出しは、面の幅に収まる大きさに（「つないでい／く。」のような泣き別れを防ぐ） */
+[data-design="p3-c"] .page-hero h1{font-size:clamp(26px,2.5vw,38px)!important;word-break:auto-phrase;text-wrap:balance}
+/* C：現場の色の写真は横長にして、1画面を写真だけで埋めない */
+[data-design="p3-c"] .sw img{aspect-ratio:4/3}

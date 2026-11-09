@@ -175,14 +175,14 @@ def build(out=OUT):
         assert "\n<!-- 04 OUR APPROACH" in html, "P1 TOP の 04 が見つからない"
         html = html.replace("\n<!-- 04 OUR APPROACH", sig() + "\n<!-- 04 OUR APPROACH", 1)
         html = html.replace('<title>', f'<title>第3パターン {letter}｜', 1)
-        html = _add_css(html, "../../", ["base.css", key[-1] + ".css", "pages.css"])
+        html = _add_css(html, "../../", ["base.css", key[-1] + ".css", "pages.css", "tone.css"])
         html = _bar(html, key, "../../")
         open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(html)
         # 下層：P1 の下層ページを、写真カラー・第3パターンのCSSで
         for p in PAGES:
             src = open(os.path.join(out, p, "index.html"), encoding="utf-8").read()
             html = _strip(_rewrite(src, "../"), key)
-            html = _add_css(html, "../../../", ["pages.css"])
+            html = _add_css(html, "../../../", ["pages.css", "tone.css"])
             html = _bar(html, key, "../../../")
             os.makedirs(os.path.join(d, p), exist_ok=True)
             open(os.path.join(d, p, "index.html"), "w", encoding="utf-8").write(html)
