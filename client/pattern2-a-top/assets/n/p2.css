@@ -1,0 +1,300 @@
+/* パターン②（ビジョン → 採用／参考：GTN 採用サイト）
+   構造とベースデザイン（A：NAVY CURVE）。派生B・Cは p2-b.css / p2-c.css で上書きする。
+   考え方：
+   ・強い仕掛けを1つに絞る＝「紺の大きな曲面」と「巨大な英字」。宣言文は紺の面に大きく載せる。
+   ・地は薄いグレー、内容は白い角丸の面に。差し色（ライム）は図形として大きく、文字には使わない。
+   ・色は配色パネルの --kk-* をそのまま使う（今の配色のまま）。
+   ・HTMLはCMSのsectionのまま。見た目はここで作る。 */
+html[data-pattern="p2"]{
+  --m-bg:var(--kk-page-bg);--m-panel:var(--kk-surface);--m-navy:var(--kk-brand-navy);--m-on:#FFFFFF;--m-ink:var(--kk-text);--m-sub:var(--kk-muted-text);
+  --m-label:var(--kk-brand-blue);--m-blob:var(--kk-accent);--m-line:var(--kk-border);--m-dark:var(--kk-brand-navy);
+  --m-font-en:"Montserrat","Arial Black",sans-serif;--m-r:20px;
+}
+html[data-pattern="p2"] body{background:var(--m-bg)}
+html[data-pattern="p2"] main{overflow-x:clip}
+
+/* ── 共通 ── */
+/* 背景の図形は自分のsectionの中で切る（はみ出すと隣のsectionの文字を隠す） */
+.m-sec{position:relative;padding:clamp(72px,8vw,120px) 0;isolation:isolate;overflow:clip}
+.m-h2{margin:0 0 24px;display:flex;flex-direction:column;gap:10px}
+.m-en{font-family:var(--m-font-en);font-weight:900;font-size:clamp(48px,6.4vw,96px);line-height:.95;letter-spacing:-.01em;color:var(--m-ink);text-transform:uppercase}
+.m-ja{font-size:15px;font-weight:800;color:var(--m-label);letter-spacing:.06em}
+.m-h2.is-light .m-en,.m-h2.is-light .m-ja{color:var(--m-on)}
+.m-text{font-size:15.5px;line-height:2;color:var(--m-sub);max-width:640px;margin:0 0 28px}
+.m-text.is-light{color:#E6E8F0}
+.m-note{font-size:12.5px;line-height:1.8;color:var(--m-sub);margin:20px 0 0}
+.m-label{margin:0 0 14px;font-family:var(--m-font-en);font-weight:800;font-size:13px;letter-spacing:.16em}
+.m-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-width:220px;min-height:54px;padding:0 18px 0 24px;border-radius:8px;background:var(--m-navy);color:var(--m-on);font-weight:800;font-size:14px;text-decoration:none;transition:transform .3s}
+.m-btn::after{content:"";width:22px;height:22px;border-radius:5px;background:var(--m-on) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%231A2259' stroke-width='3'/%3E%3C/svg%3E") center/14px no-repeat;flex:none}
+.m-btn.is-light{background:var(--m-on);color:var(--m-navy)}
+.m-btn.is-light::after{background-color:var(--m-navy);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23FFFFFF' stroke-width='3'/%3E%3C/svg%3E")}
+.m-btn:hover{transform:translateY(-3px)}
+.m-actions{margin-top:44px;display:flex;justify-content:center}
+.m-sec::before{content:"";position:absolute;z-index:-1;width:clamp(120px,14vw,220px);aspect-ratio:1;border-radius:50%;background:var(--m-blob);pointer-events:none}
+.n-js .n-rv{transform:translateY(32px);transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.n-js .n-rv.is-in{transform:none}
+
+/* ── 01 メインビジュアル：写真＋巨大な英字、下から紺の曲面がせり上がる ── */
+.m-mv{position:relative;background:var(--m-navy);isolation:isolate;overflow:hidden}
+.m-mv-photo{margin:0;height:clamp(420px,calc(100svh - 340px),760px)}
+.m-mv-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.m-mv-word{position:absolute;left:0;right:0;top:clamp(70px,14vh,170px);margin:0;text-align:center;font-family:var(--m-font-en);font-weight:900;font-size:clamp(64px,11.5vw,190px);line-height:.86;letter-spacing:-.02em;color:#FFFFFF;text-shadow:0 4px 40px rgba(0,0,0,.25);pointer-events:none}
+.m-mv-word span{display:block}
+.m-mv-word span+span{color:transparent;-webkit-text-stroke:3px #FFFFFF;text-shadow:none}
+.m-mv-copy{position:relative;margin-top:-110px;padding:96px max(24px,calc((100vw - 1180px)/2)) 24px;background:var(--m-navy);color:var(--m-on);border-radius:50% 50% 0 0/110px 110px 0 0;display:flex;flex-wrap:wrap;gap:16px 56px;align-items:flex-end;justify-content:space-between}
+.m-mv-copy h1{margin:0;font-size:clamp(40px,5vw,80px);line-height:1.2;font-weight:900;letter-spacing:.04em;color:var(--m-on)}
+.m-mv-copy h1 .ln{display:block;white-space:nowrap}
+.m-mv-copy p{margin:0 0 10px;font-size:16px;line-height:1.9;font-weight:700;color:#E6E8F0}
+
+/* ── 02 宣言文：紺の面のまま続ける ── */
+.m-manifesto{position:relative;background:var(--m-navy);color:var(--m-on);padding:clamp(40px,5vw,72px) 0 0;isolation:isolate;overflow:hidden}
+.m-manifesto::before{content:"";position:absolute;z-index:-1;right:-20vw;top:-10vw;width:70vw;aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 80px rgba(255,255,255,.03),0 0 0 160px rgba(255,255,255,.02)}
+.m-mani-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr);gap:40px 64px;align-items:end}
+.m-mani-text p{margin:0 0 30px;font-size:clamp(16px,1.35vw,19px);line-height:2.1;font-weight:700;color:var(--m-on)}
+.m-mani-text .m-mani-last{font-size:clamp(22px,2.2vw,32px);line-height:1.7}
+.m-mani-links{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:22px;justify-items:end;text-align:right}
+.m-mani-links a{display:flex;flex-direction:column;align-items:flex-end;color:var(--m-on);text-decoration:none}
+.m-mani-links span{font-family:var(--m-font-en);font-weight:900;font-size:clamp(34px,3.4vw,52px);line-height:1;border-bottom:4px solid currentColor;padding-bottom:4px;transition:color .3s}
+.m-mani-links small{margin-top:8px;font-size:13px;font-weight:700}
+.m-mani-links a:hover span{color:var(--m-blob)}
+.m-strip{display:grid;grid-template-columns:1.1fr 1.4fr .9fr 1.2fr;gap:14px;align-items:end;padding:56px max(16px,2vw) 0;margin-bottom:-1px}
+.m-strip img{width:100%;object-fit:cover;border-radius:12px 12px 0 0;height:clamp(140px,16vw,260px)}
+.m-strip img:nth-child(2){height:clamp(180px,22vw,340px)}
+.m-strip img:nth-child(3){height:clamp(120px,13vw,200px)}
+.m-manifesto+.m-sec{border-radius:0}
+
+/* ── 03 入口カード ── */
+.m-entry{padding-top:clamp(56px,6vw,88px)}
+.m-entry::before{left:-60px;top:20px}
+.m-entry-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.m-entry-list a{display:flex;flex-direction:column;height:100%;background:var(--m-panel);border-radius:12px;overflow:hidden;color:var(--m-ink);text-decoration:none;box-shadow:0 6px 24px rgba(26,34,89,.07);transition:transform .35s}
+.m-entry-list a:hover{transform:translateY(-6px)}
+.m-entry-list b{margin:26px 24px 8px;padding-left:12px;border-left:5px solid var(--m-navy);font-size:20px;line-height:1.3}
+.m-entry-list small{margin:0 24px 22px;font-size:13px;line-height:1.8;color:var(--m-sub)}
+.m-entry-media{position:relative;margin-top:auto;height:200px;border-radius:50% 50% 0 0/40px 40px 0 0;overflow:hidden}
+.m-entry-media img{width:100%;height:100%;object-fit:cover}
+.m-entry-media::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,var(--m-navy))}
+.m-entry-media em{position:absolute;z-index:1;left:20px;bottom:12px;font-style:normal;font-family:var(--m-font-en);font-weight:900;font-size:clamp(30px,3vw,44px);line-height:1;color:#FFFFFF}
+
+/* ── 04 ABOUT US：白い角丸の面 ── */
+.m-about::before{right:-70px;top:40px}
+.m-card-panel{background:var(--m-panel);border-radius:28px;padding:clamp(32px,5vw,72px)}
+.m-about-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px 64px;align-items:center}
+.m-about-photo{margin:0;aspect-ratio:3/4;max-height:520px;border-radius:16px;overflow:hidden}
+.m-about-photo img{width:100%;height:100%;object-fit:cover}
+.m-biz{margin-top:clamp(56px,6vw,88px)}
+.m-biz-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.m-biz-list a{display:grid;grid-template-columns:96px minmax(0,1fr) 26px;grid-template-rows:auto auto;gap:2px 20px;align-items:center;padding:14px 18px 14px 14px;background:var(--m-panel);border-radius:10px;color:var(--m-ink);text-decoration:none}
+.m-biz-list a::after{content:"";grid-column:3;grid-row:1/3;width:24px;height:24px;border-radius:6px;background:var(--m-navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23FFFFFF' stroke-width='3'/%3E%3C/svg%3E") center/14px no-repeat}
+.m-biz-list img,.m-biz-art{grid-row:1/3;width:96px;height:72px;object-fit:cover;border-radius:6px}
+.m-biz-art{display:grid;place-items:center;background:var(--m-navy);color:var(--m-on);font-family:var(--m-font-en);font-weight:900;font-size:24px}
+.m-biz-list b{font-size:17px;align-self:end}
+.m-biz-list small{font-size:12.5px;color:var(--m-sub);align-self:start}
+
+/* ── 05・08 紺の面と写真を曲線で分ける ── */
+.m-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:16px;overflow:hidden;min-height:440px}
+.m-split-panel{position:relative;z-index:1;background:var(--m-navy);color:var(--m-on);padding:clamp(36px,4.5vw,64px);margin-right:-14%;border-radius:0 50% 50% 0/0 100% 100% 0;padding-right:calc(14% + 40px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.m-split-panel h2{margin:0 0 18px;font-size:clamp(24px,2.5vw,36px);line-height:1.5;font-weight:900;color:var(--m-on)}
+.m-split-panel p:not(.m-label){margin:0 0 28px;font-size:14.5px;line-height:1.95;color:#E6E8F0;max-width:520px}
+.m-split-panel .m-label{color:var(--m-on)}
+.m-split-photo{position:relative;margin:0;min-height:100%}
+.m-split-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.m-split-photo figcaption{position:absolute;right:16px;bottom:16px;padding:6px 12px;background:var(--m-panel);color:var(--m-ink);font-size:12px;font-weight:700;border-radius:4px}
+.m-split.is-rev .m-split-photo{order:-1}
+.m-split.is-rev .m-split-panel{margin:0 0 0 -14%;border-radius:50% 0 0 50%/100% 0 0 100%;padding:clamp(36px,4.5vw,64px) clamp(36px,4.5vw,64px) clamp(36px,4.5vw,64px) calc(14% + 40px)}
+.m-leader::before{left:-50px;bottom:40px}
+
+/* ── 06 働き方の見直し ── */
+.m-change-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px 64px;align-items:end}
+.m-change-head .m-text{margin-bottom:30px}
+.m-wide{margin:0 0 24px;border-radius:20px;overflow:hidden;aspect-ratio:21/8}
+.m-wide img{width:100%;height:100%;object-fit:cover}
+.m-change-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.m-change-list li{background:var(--m-panel);border-radius:14px;padding:28px 28px 30px;position:relative;overflow:hidden}
+.m-change-list span{display:block;font-family:var(--m-font-en);font-weight:900;font-size:56px;line-height:1;color:var(--m-navy);margin-bottom:12px}
+.m-change-list span::after{content:"";display:block;width:44px;height:6px;background:var(--m-blob);margin-top:10px;border-radius:3px}
+.m-change-list h3{margin:0 0 8px;font-size:19px}
+.m-change-list p{margin:0;font-size:14px;line-height:1.85;color:var(--m-sub)}
+.m-change::before{right:-60px;bottom:-40px}
+
+/* ── 07 人：濃い面の角丸パネル ── */
+.m-people{background:var(--m-navy);border-radius:clamp(24px,3vw,48px);margin-inline:max(0px,calc((100vw - 1320px)/2));color:var(--m-on)}
+.m-people::before{display:none}
+.m-people-list{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.m-people-list a{display:flex;flex-direction:column;height:100%;background:var(--m-panel);border-radius:14px;overflow:hidden;color:var(--m-ink);text-decoration:none}
+.m-people-list img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.m-p-body{display:flex;flex-direction:column;gap:6px;padding:20px 22px 22px;flex:1}
+.m-p-body small{font-family:var(--m-font-en);font-weight:800;font-size:12px;letter-spacing:.06em;color:var(--m-label)}
+.m-p-body b{font-size:18px}
+.m-p-body em{font-style:normal;font-size:13.5px;line-height:1.8;color:var(--m-sub)}
+.m-p-body i{margin-top:auto;padding-top:8px;font-style:normal;font-weight:800;font-size:13px;color:var(--m-navy)}
+.m-duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.m-duo article{border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:22px 24px}
+.m-duo small{font-family:var(--m-font-en);font-weight:800;font-size:12px;letter-spacing:.06em;color:#E6E8F0}
+.m-duo h3{margin:4px 0 6px;font-size:18px;color:var(--m-on)}
+.m-duo p{margin:0;font-size:13.5px;line-height:1.8;color:#E6E8F0}
+
+/* ── 09 実際の仕事とお知らせ ── */
+.m-news-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.m-ctrl button{border-radius:50%;width:48px;height:48px;border:0;background:var(--m-navy);color:var(--m-on);font-size:24px;cursor:pointer}
+.m-ctrl button:disabled{opacity:.35}
+.n-ctrl.m-ctrl{display:flex;gap:10px;margin-bottom:28px}
+.m-track{list-style:none;margin:0 calc(50% - 50vw) 0 0;padding:0 max(24px,calc(50vw - 590px)) 8px 0;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.m-track::-webkit-scrollbar{display:none}
+.m-track li{flex:0 0 clamp(260px,24vw,330px);scroll-snap-align:start}
+.m-track a{display:flex;flex-direction:column;gap:12px;height:100%;min-height:300px;padding:18px;background:var(--m-panel);border-radius:14px;color:var(--m-ink);text-decoration:none}
+.m-tag{align-self:flex-start;padding:4px 10px;border-radius:4px;background:var(--m-navy);color:var(--m-on);font-size:11px;font-weight:800}
+.m-track img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.m-track b{font-size:15px;line-height:1.6}
+.m-news-txt{display:flex;flex-direction:column;gap:10px;font-weight:800;font-size:16px;line-height:1.7;margin-top:auto}
+.m-news-txt time{font-family:var(--m-font-en);font-size:14px;color:var(--m-label)}
+.m-progress{height:4px;background:var(--m-line);border-radius:2px;margin-top:24px;position:relative}
+.m-progress i{position:absolute;left:0;top:0;bottom:0;background:var(--m-navy);border-radius:2px}
+
+/* ── 10 JOIN US：集合写真と巨大な英字、紺の曲面で締める ── */
+.m-join{position:relative;background:var(--m-navy);color:var(--m-on);overflow:hidden;isolation:isolate;margin-top:clamp(40px,5vw,80px)}
+.m-join-photo{margin:0;height:clamp(380px,56vw,720px);border-radius:50% 50% 0 0/80px 80px 0 0;overflow:hidden}
+.m-join-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.m-join-word{position:absolute;left:0;right:0;top:clamp(36px,4vw,64px);margin:0;text-align:center;font-family:var(--m-font-en);font-weight:900;font-size:clamp(80px,16vw,260px);line-height:.85;letter-spacing:-.02em;color:#FFFFFF;text-shadow:0 6px 40px rgba(0,0,0,.25);pointer-events:none}
+.m-join-body{position:relative;margin-top:-80px;padding-block:100px 80px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 56px;align-items:end}
+.m-join-body::before{content:"";position:absolute;z-index:-1;inset:0 calc(50% - 50vw);background:var(--m-navy);border-radius:50% 50% 0 0/80px 80px 0 0}
+.m-join-body h2{margin:0;font-size:clamp(26px,3vw,44px);line-height:1.5;font-weight:900;color:var(--m-on)}
+.m-join-links{display:grid;gap:12px;min-width:min(320px,100%)}
+.m-join-links a{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 22px;border-radius:10px;background:var(--m-on);color:var(--m-navy);font-weight:800;text-decoration:none}
+.m-join-links a::after{content:"→"}
+.m-join-links a:first-child{background:var(--m-blob);color:#1A2259}
+
+/* ── 共通ヘッダー・フッター ── */
+html[data-pattern="p2"] .site-header{background:var(--m-panel)}
+html[data-pattern="p2"] .site-footer{background:var(--m-navy);color:var(--m-on);border-top:1px solid rgba(255,255,255,.12)}
+html[data-pattern="p2"] .site-footer :is(a,strong,p,span){color:var(--m-on)}
+
+/* ── 下層ページ：写真の下から紺の曲面がせり上がり、巨大な英字の見出し ── */
+html[data-pattern="p2"] .page-hero{display:flex;flex-direction:column;min-height:0;background:var(--m-navy)!important;color:var(--m-on);overflow:hidden;padding:0}
+html[data-pattern="p2"] .page-hero::after,html[data-pattern="p2"] .page-hero .lane{display:none}
+html[data-pattern="p2"] .page-hero-img{position:relative!important;inset:auto!important;order:-1;width:100%;height:clamp(300px,46vh,520px)}
+html[data-pattern="p2"] .page-hero-img img{width:100%;height:100%;object-fit:cover;filter:none!important}
+html[data-pattern="p2"] .page-hero .wrap{position:relative;margin-top:-80px;padding-block:80px 64px;max-width:none;width:auto;padding-inline:max(24px,calc((100vw - 1180px)/2))}
+html[data-pattern="p2"] .page-hero .wrap::before{content:"";position:absolute;z-index:-1;inset:0;background:var(--m-navy);border-radius:50% 50% 0 0/80px 80px 0 0}
+html[data-pattern="p2"] .page-hero .wrap{isolation:isolate}
+html[data-pattern="p2"] .page-hero .eyebrow{display:block;font-family:var(--m-font-en);font-weight:900;font-size:clamp(40px,5.6vw,84px);line-height:.95;color:#FFFFFF!important;text-transform:uppercase;letter-spacing:-.01em;margin:0 0 16px}
+html[data-pattern="p2"] .page-hero .eyebrow *{color:#FFFFFF!important}
+html[data-pattern="p2"] .page-hero .eyebrow .line{display:none}
+html[data-pattern="p2"] .page-hero h1{color:#FFFFFF!important;font-size:clamp(24px,2.6vw,38px)!important;font-weight:900;line-height:1.5;word-break:auto-phrase;text-wrap:balance}
+html[data-pattern="p2"] .page-hero :is(.lead,p){color:#E6E8F0!important;max-width:640px}
+html[data-pattern="p2"] .section-kicker{font-family:var(--m-font-en);font-weight:900;font-size:clamp(36px,4.2vw,64px);line-height:.95;letter-spacing:-.01em;color:var(--m-ink);text-transform:uppercase;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+html[data-pattern="p2"] .section-kicker::before{display:none}
+html[data-pattern="p2"] .section-kicker span{font-family:"Noto Sans JP",sans-serif;font-size:14px;font-weight:800;color:var(--m-label);text-transform:none;letter-spacing:.06em}
+html[data-pattern="p2"] :is(.navy-band,.p2-navy) .section-kicker,html[data-pattern="p2"] :is(.navy-band,.p2-navy) .section-kicker span,html[data-pattern="p2"] .section-kicker-light,html[data-pattern="p2"] .section-kicker-light span{color:#FFFFFF}
+html[data-pattern="p2"] .section-title{font-weight:900}
+html[data-pattern="p2"] main .section{background:var(--m-bg)}
+html[data-pattern="p2"] main .section>.wrap{background:var(--m-panel);border-radius:28px;padding:clamp(32px,4.5vw,64px)}
+html[data-pattern="p2"] main .section.navy-band{background:var(--m-bg)}
+html[data-pattern="p2"] main .section.navy-band>.wrap{background:var(--m-navy)}
+html[data-pattern="p2"] .bg-soft::before,html[data-pattern="p2"] .bg-blueish::before{display:none}
+html[data-pattern="p2"] main img{filter:none!important}
+html[data-pattern="p2"] :is(.half-media,.duo-photos figure,.p2-wide,.lc-media) img{border-radius:14px}
+html[data-pattern="p2"] .contact-section{background:var(--m-navy);color:var(--m-on);border-radius:50% 50% 0 0/80px 80px 0 0;padding-top:120px}
+html[data-pattern="p2"] .contact-section :is(h2,p,.section-kicker,.section-kicker span){color:#FFFFFF!important}
+html[data-pattern="p2"] .contact-section .contact-links a{background:var(--m-on);color:var(--m-navy)!important;border-radius:10px}
+html[data-pattern="p2"] .contact-section .contact-links a *{color:var(--m-navy)!important}
+
+@media(max-width:1024px){
+  .m-mani-grid{grid-template-columns:1fr}
+  .m-mani-links{justify-items:start;text-align:left;grid-auto-flow:column;justify-content:start;gap:28px}
+  .m-mani-links a{align-items:flex-start}
+  .m-about-grid{grid-template-columns:1fr}
+  .m-about-photo{aspect-ratio:16/10}
+  .m-split,.m-split.is-rev{grid-template-columns:1fr}
+  .m-split-photo{order:-1;min-height:300px}
+  .m-split-panel,.m-split.is-rev .m-split-panel{margin:-60px 0 0;border-radius:50% 50% 0 0/60px 60px 0 0;padding:72px 28px 40px}
+  .m-change-head{grid-template-columns:1fr}
+  .m-join-body{grid-template-columns:1fr}
+}
+@media(max-width:767px){
+  .m-mv-photo{height:62svh}
+  .m-mv-word{top:18vh}
+  .m-mv-copy{margin-top:-60px;padding:64px 20px 16px;border-radius:50% 50% 0 0/60px 60px 0 0}
+  .m-mv-copy h1{font-size:clamp(34px,10vw,46px)}
+  .m-mani-links{grid-auto-flow:row}
+  .m-strip{grid-template-columns:1fr 1fr;padding-top:36px}
+  .m-strip img:nth-child(n){height:120px}
+  .m-entry-list,.m-biz-list,.m-change-list,.m-people-list,.m-duo{grid-template-columns:1fr}
+  .m-biz-list a{grid-template-columns:72px minmax(0,1fr) 24px}
+  .m-biz-list img,.m-biz-art{width:72px;height:56px}
+  .m-wide{aspect-ratio:4/3}
+  .m-people{border-radius:24px;margin-inline:8px}
+  .m-news-head{flex-direction:column;align-items:flex-start}
+  .m-join-word{top:60px}
+  html[data-pattern="p2"] main .section>.wrap{border-radius:18px;padding:28px 20px}
+}
+@media(prefers-reduced-motion:reduce){.m-btn,.m-entry-list a{transition:none}}
+/* デモ用の切替バー（比較ページの中では出さない） */
+.p2-bar{background:#141414;color:#FFFFFF;font-size:12px;padding:8px 0}
+.p2-bar .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.p2-bar a{color:#FFFFFF}
+.p2-bar a[aria-current]{font-weight:800;text-decoration:none;border-bottom:2px solid var(--kk-accent)}
+html.in-hub .p2-bar{display:none}
+/* width/height属性のある画像は、縦横比を指定する時に height:auto を付ける（属性の高さで縦長にならないように） */
+.m-track img,.m-people-list img{height:auto}
+
+/* 紺の帯の中は文字を白に。帯の中の白いカードは文字を濃い色に戻す（site.css・office.css が背景を白で固定している部品） */
+html[data-pattern="p2"] .navy-band,html[data-pattern="p2"] main .section.navy-band>.wrap{--kk-text:#FFFFFF!important;--kk-muted-text:#E6E8F0!important;--kk-brand-navy:#FFFFFF!important;--kk-brand-blue:#FFFFFF!important;--n-ink:#FFFFFF;--n-sub:#E6E8F0;--n-en:#FFFFFF;color:#FFFFFF}
+html[data-pattern="p2"] .navy-band :is(.skip-link,.link-card,.tags>li,.flow>li,.fact,.anx,.anx-q>small,.career-col,.info-card,.spec-table,.faq>details,details.gate,.member-mix>li,.voice,.p2-duo-card,.p2-career-col,.p2-honest,.business-card,.is-keep){--kk-text:#1F2A33!important;--kk-muted-text:#43505C!important;--kk-brand-navy:#1A2259!important;--kk-brand-blue:#04447C!important;--kk-border:#CCD6DD!important;--n-ink:#1A1A1A;--n-sub:#4A4F57;--n-en:#1A2259;color:#1F2A33}
+
+/* site.css の別名（--navy・--ink など）はページの根元で決まるので、帯やカードの中では別名も切り替える */
+html[data-pattern="p2"] .navy-band,html[data-pattern="p2"] main .section.navy-band>.wrap{--navy:#FFFFFF;--blue:#FFFFFF;--ink:#FFFFFF;--muted:#E6E8F0}
+html[data-pattern="p2"] .navy-band :is(.skip-link,.link-card,.tags>li,.flow>li,.fact,.anx,.anx-q>small,.career-col,.info-card,.spec-table,.faq>details,details.gate,.member-mix>li,.voice,.p2-duo-card,.p2-career-col,.p2-honest,.business-card,.is-keep){--navy:#1A2259;--blue:#04447C;--ink:#1F2A33;--muted:#43505C;--border:#CCD6DD}
+/* パターン②の独自の見出しsection（働くスタッフ・会社情報・未来）は白い面に入れず、巨大な英字の見出しで */
+html[data-pattern="p2"] main .section:is(.p2-people-hero,.p2-company-hero)>.wrap{background:transparent;padding:0;border-radius:0}
+html[data-pattern="p2"] main .section:is(.p2-people-hero,.p2-company-hero){padding-top:clamp(56px,7vw,104px)}
+html[data-pattern="p2"] :is(.p2-people-hero,.p2-company-hero) .p2-h1{font-size:clamp(28px,3.2vw,48px);font-weight:900;line-height:1.4;color:var(--m-ink)}
+html[data-pattern="p2"] :is(.p2-people-hero,.p2-company-hero) .p2-wide img{border-radius:20px}
+@media(max-width:767px){.m-mani-text br{display:none}}
+
+/* ── 2026-11-09 改修：ネイビーが強すぎる → ネイビーの大きな面を減らし、ボタンと要所をライムに ──
+   ライムの上の文字は紺（コントラスト7:1以上）。白い文字はライムに載せない。
+   ライムの上に文字を載せるため、配色は承認済みの基準配色（オフィス・ブルーグレー）で固定する（配色パネルの色セットでは変えない）。 */
+html[data-pattern="p2"]{--kk-page-bg:#F5F7F8!important;--kk-surface:#FFFFFF!important;--kk-surface-soft:#EAF0F4!important;--kk-primary:#C9DCE8!important;--kk-primary-strong:#AFC6D6!important;--kk-accent:#A8C63A!important;--kk-accent-soft:#EDF3D9!important;--kk-brand-navy:#1A2259!important;--kk-brand-blue:#04447C!important;--kk-text:#1F2A33!important;--kk-muted-text:#43505C!important;--kk-border:#CCD6DD!important;--kk-button-primary-bg:#1A2259!important;--kk-button-primary-text:#FFFFFF!important;--kk-button-secondary-bg:#C9DCE8!important;--kk-button-secondary-text:#1A2259!important;--kk-focus-ring:#1A2259!important;--kk-navy-16:color-mix(in srgb,var(--kk-brand-navy) 16%,transparent)!important;--kk-navy-shadow:color-mix(in srgb,var(--kk-brand-navy) 22%,transparent)!important;--kk-primary-soft:color-mix(in srgb,var(--kk-primary) 45%,var(--kk-surface))!important;--kk-photo-shade:color-mix(in srgb,var(--kk-text) 55%,transparent)!important;--m-lime:#A8C63A;--m-on-lime:#1A2259}
+/* ボタン：ライム＋紺の文字、矢印は紺の四角 */
+.m-btn,.m-btn.is-light{background:var(--m-lime);color:var(--m-on-lime)}
+.m-btn::after,.m-btn.is-light::after{background-color:var(--m-on-lime);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23A8C63A' stroke-width='3'/%3E%3C/svg%3E")}
+/* メインビジュアル下〜宣言文：紺の大きな面をライムの面に */
+.m-mv{background:var(--m-lime)}
+.m-mv-copy,.m-manifesto{background:var(--m-lime);color:var(--m-on-lime)}
+.m-mv-copy h1,.m-mani-text p,.m-mani-links a{color:var(--m-on-lime)}
+.m-mv-copy p{color:#232B5E}
+.m-manifesto::before{border-color:rgba(26,34,89,.16);box-shadow:0 0 0 80px rgba(26,34,89,.04),0 0 0 160px rgba(26,34,89,.03)}
+.m-mani-links a:hover span{color:#FFFFFF}
+.m-mani-text .m-mani-last{display:inline;background:var(--m-on-lime);color:#FFFFFF;padding:2px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:2}
+/* 入口カード・事業一覧・タグ・カルーセル：要所をライムに */
+.m-entry-list b{border-left-color:var(--m-lime)}
+.m-biz-list a::after{background-color:var(--m-lime);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%231A2259' stroke-width='3'/%3E%3C/svg%3E")}
+.m-biz-art{background:var(--m-lime);color:var(--m-on-lime)}
+.m-tag{background:var(--m-lime);color:var(--m-on-lime)}
+.m-ctrl button{background:var(--m-lime);color:var(--m-on-lime)}
+.m-progress i{background:var(--m-lime)}
+.m-change-list span::after{height:8px}
+/* 未来（2つ目の分割）は面をライムに。代表の面は紺のまま（紺はここと最後だけ） */
+.m-future .m-split-panel{background:var(--m-lime);color:var(--m-on-lime)}
+.m-future .m-split-panel :is(h2,.m-label){color:var(--m-on-lime)}
+.m-future .m-split-panel p:not(.m-label){color:#232B5E}
+.m-future .m-split-panel .m-btn{background:var(--m-on-lime);color:#FFFFFF}
+.m-future .m-split-panel .m-btn::after{background-color:var(--m-lime);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%231A2259' stroke-width='3'/%3E%3C/svg%3E")}
+/* 社員の声：紺の大きな面をやめ、淡いライムの面に */
+.m-people{background:var(--kk-accent-soft);color:var(--m-ink)}
+.m-people .m-h2.is-light .m-en{color:var(--m-ink)}
+.m-people .m-h2.is-light .m-ja{color:var(--m-label)}
+.m-people .m-text.is-light{color:var(--m-sub)}
+.m-duo article{border-color:rgba(26,34,89,.25);background:#FFFFFF}
+.m-duo small,.m-duo p{color:var(--m-sub)}
+.m-duo h3{color:var(--m-ink)}
+/* JOIN US・ヘッダー：ボタンをライムに */
+.m-join-links a:first-child{background:var(--m-lime);color:var(--m-on-lime)}
+html[data-pattern="p2"] .site-header .header-contact{background:var(--m-lime);color:var(--m-on-lime)}
+/* 下層：見出しの曲面をライムに（文字は紺） */
+html[data-pattern="p2"] .page-hero{background:var(--m-lime)!important}
+html[data-pattern="p2"] .page-hero .wrap::before{background:var(--m-lime)}
+html[data-pattern="p2"] .page-hero .eyebrow,html[data-pattern="p2"] .page-hero .eyebrow *,html[data-pattern="p2"] .page-hero h1{color:var(--m-on-lime)!important}
+html[data-pattern="p2"] .page-hero :is(.lead,p){color:#232B5E!important}
+html[data-pattern="p2"] .contact-section .contact-links a{background:var(--m-lime);color:var(--m-on-lime)!important}
