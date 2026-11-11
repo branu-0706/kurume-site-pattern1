@@ -80,7 +80,7 @@ def body():
         <li><a href="@P2@about/index.html#about-business"><img src="{P}paving-roller.jpg" alt="ローラーで舗装を転圧している現場" loading="lazy" width="1600" height="1066"><b>ガス管取替後の復旧舗装工事</b><small>ガス管の取替で掘った道路を、元の舗装に戻す工事</small></a></li>
         <li><a href="@P2@about/index.html#about-business"><img src="{P}water-pipe.jpg" alt="掘削した溝に水道管を布設している現場" loading="lazy" width="1600" height="1066"><b>水道工事</b><small>水道管の布設・布設替などの工事</small></a></li>
         <li><a href="@P2@about/index.html#about-business"><img src="{P}civil-road.jpg" alt="カラー舗装で仕上げた道路" loading="lazy" width="1600" height="1066"><b>一般土木工事</b><small>道路の維持・改良など、街の基盤を整える工事</small></a></li>
-        <li><a href="@P2@about/index.html#about-business"><span class="m-biz-art" aria-hidden="true">04</span><b>下水道工事</b><small>下水道整備など、生活基盤に関わる工事</small></a></li>
+        <li><a href="@P2@about/index.html#about-business"><img src="{P}drain-pipes.jpg" alt="建物の基礎まわりに立ち上がるグレーの排水管と、掘削した地面" loading="lazy" width="678" height="452"><b>下水道工事</b><small>下水道整備など、生活基盤に関わる工事</small></a></li>
       </ul>
     </div>
   </div>
