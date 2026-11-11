@@ -298,3 +298,8 @@ html[data-pattern="p2"] .page-hero .wrap::before{background:var(--m-lime)}
 html[data-pattern="p2"] .page-hero .eyebrow,html[data-pattern="p2"] .page-hero .eyebrow *,html[data-pattern="p2"] .page-hero h1{color:var(--m-on-lime)!important}
 html[data-pattern="p2"] .page-hero :is(.lead,p){color:#232B5E!important}
 html[data-pattern="p2"] .contact-section .contact-links a{background:var(--m-lime);color:var(--m-on-lime)!important}
+/* 2026-11-11 文言修正：見出し・英字が長くなったため、文字の大きさと改行を調整（画面からはみ出さないように） */
+.m-mv-word{font-size:clamp(48px,8.6vw,150px)}
+.m-mv-copy h1{font-size:clamp(30px,4vw,64px)}
+@media(max-width:767px){.m-mv-copy h1 .ln{white-space:normal;word-break:auto-phrase}.m-mv-word{font-size:clamp(34px,11vw,56px)}}
+@media(max-width:767px){.m-mv-copy p{word-break:auto-phrase}.m-mv-copy p br{display:none}}

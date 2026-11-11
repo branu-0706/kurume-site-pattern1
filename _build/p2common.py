@@ -6,10 +6,10 @@ from common import (demo_tags, OFFICIAL_CONTACT, OFFICIAL_NEWS, OFFICIAL_WORKS, 
 
 P2_PAGES = [
     ("top", "TOP", "index.html"),
-    ("about", "久留米興業について", "about/index.html"),
+    ("about", "私たちについて", "about/index.html"),
     ("recruit", "採用情報", "recruit/index.html"),
-    ("people", "働くスタッフ", "people/index.html"),
-    ("future", "久留米興業の未来", "future/index.html"),
+    ("people", "社員紹介", "people/index.html"),
+    ("future", "これからの久留米興業", "future/index.html"),
     ("company", "会社情報", "company/index.html"),
 ]
 
@@ -63,7 +63,7 @@ def p2_header(current, p2root):
     <a class="header-contact" href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">お問い合わせ <span aria-hidden="true">↗</span><span class="sr-only">（外部サイトが開きます）</span></a>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション" hidden>{navs}<a href="{p2root}recruit/index.html#recruit-offerings">募集要項を見る</a><a href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">お問い合わせ ↗</a></nav>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション" hidden>{navs}<a href="{OFFICIAL_CONTACT}" target="_blank" rel="noopener noreferrer">お問い合わせ ↗</a></nav>
 </header>
 '''
 
